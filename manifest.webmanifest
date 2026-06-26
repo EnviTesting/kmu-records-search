@@ -1,0 +1,10 @@
+{
+  "name": "EMA KM Document Search",
+  "short_name": "EMA KM Search",
+  "description": "Mobile-friendly searchable EMA knowledge management document register.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0e1720",
+  "theme_color": "#0e1720",
+  "icons": []
+}

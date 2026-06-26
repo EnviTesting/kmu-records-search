@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0e1720" />
+  <meta name="description" content="Mobile-friendly searchable EMA knowledge management document register." />
+  <title>EMA Knowledge Document Search</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#searchBox">Skip to search</a>
+
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Knowledge Management Framework</p>
+      <h1>EMA Document Search Database</h1>
+      <p class="lede">Find Gazette-referenced EMA documents, legal instruments, forms, registers, reports, policies and public information records. Public links open directly; internal or unlinked records show the EMA Information Centre request pathway.</p>
+    </div>
+    <div class="summary-card" id="summaryCard">Loading database…</div>
+  </header>
+
+  <main>
+    <section class="controls" aria-label="Search controls">
+      <div class="search-row">
+        <label class="search-label" for="searchBox">Search the document register</label>
+        <input id="searchBox" type="search" placeholder="Try: water permit, pawi, air quality, audit, fireworks, CEC1033…" autocomplete="off" inputmode="search" />
+      </div>
+
+      <div class="quick-filter-row" aria-label="Quick filters">
+        <button class="chip active" id="showAllBtn" type="button">All</button>
+        <button class="chip" id="publicOnlyBtn" type="button">Public links</button>
+        <button class="chip" id="requestOnlyBtn" type="button">Request from EMA</button>
+        <button class="chip" id="highPriorityBtn" type="button">High priority</button>
+      </div>
+
+      <button class="filter-toggle" id="filterToggle" type="button" aria-expanded="false" aria-controls="filterPanel">Filters</button>
+
+      <div id="filterPanel" class="filter-panel">
+        <div class="filter-grid">
+          <label>Programme Area<select id="programmeFilter"><option value="">All</option></select></label>
+          <label>Record Category<select id="categoryFilter"><option value="">All</option></select></label>
+          <label>Source Status<select id="statusFilter"><option value="">All</option></select></label>
+          <label>Priority<select id="priorityFilter"><option value="">All</option></select></label>
+          <label>Links<select id="linkFilter"><option value="">Any</option><option value="direct">Has direct link</option><option value="source">Has source / request pathway</option><option value="request">EMA request pathway</option><option value="missing">No source pathway yet</option></select></label>
+        </div>
+        <div class="button-row">
+          <button id="clearBtn" type="button">Clear</button>
+          <button id="downloadBtn" type="button">Download filtered JSON</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="results-meta" aria-label="Search result summary">
+      <div id="resultCount"></div>
+      <div id="activeTerms"></div>
+    </section>
+
+    <section id="results" class="results" aria-live="polite"></section>
+    <div class="load-more-wrap"><button id="loadMoreBtn" class="load-more" type="button" hidden>Load more results</button></div>
+  </main>
+
+  <template id="resultTemplate">
+    <article class="result-card">
+      <div class="card-topline">
+        <span class="record-id"></span>
+        <span class="badge priority"></span>
+        <span class="badge link-state"></span>
+      </div>
+      <h2></h2>
+      <div class="meta-line"></div>
+      <p class="km-value"></p>
+      <details>
+        <summary>Keywords and KM metadata</summary>
+        <div class="keyword-cloud"></div>
+        <dl class="metadata"></dl>
+      </details>
+      <div class="card-actions"></div>
+    </article>
+  </template>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
