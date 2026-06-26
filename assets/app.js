@@ -1,8 +1,8 @@
 (() => {
   'use strict';
 
-  const APP_VERSION = '6.0-hidden-admin';
-  const APP_BUILD = '2026.06.26-github-hardened-v6-hidden-admin';
+  const APP_VERSION = '6.1-annual-yearfix-hidden-admin';
+  const APP_BUILD = '2026.06.26-github-hardened-v6.1-annual-yearfix-hidden-admin';
   const EMA_REQUEST_URL = 'https://www.ema.co.tt/information-centre-general-request/';
   const PAGE_SIZE = 45;
 
@@ -41,6 +41,10 @@
   function array(v){ return Array.isArray(v) ? v : (v == null ? [] : [v]); }
   function uniq(arr){ return Array.from(new Set(arr.filter(Boolean))); }
   function toSlug(v){ return lower(v).replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''); }
+  function extractYearTags(value){
+    const matches = String(value ?? '').match(/\b(19\d{2}|20\d{2})\b/g) || [];
+    return uniq(matches.map(String)).sort((a,b)=>Number(b)-Number(a));
+  }
   function debug(msg, obj){
     const stamp = new Date().toISOString().slice(11,19);
     state.diagnostics.push(`[${stamp}] ${msg}${obj ? ' ' + JSON.stringify(obj) : ''}`);
@@ -261,8 +265,11 @@
       const category = clean(r.record_category || r.record_type || r.type || (database === 'press_releases' ? 'Press Release' : 'Document'));
       const area = clean(r.programme_area || r.theme || r.knowledge_area || 'Cross-cutting');
       const status = clean(r.source_status || r.status || 'Needs Verification');
-      const year = clean(r.year || (r.date_published ? String(r.date_published).slice(0,4) : ''));
-      const date = clean(r.date_published || r.date || year || '');
+      const rawYearText = clean(r.year || '');
+      const rawDate = clean(r.date_published || r.date || '');
+      const yearTags = extractYearTags([rawYearText, rawDate, title, shortTitle].join(' '));
+      const year = clean(rawYearText || (rawDate ? String(rawDate).slice(0,4) : (yearTags[0] || '')));
+      const date = clean(rawDate || year || '');
       const url = clean(r.direct_url || r.source_url || r.url || '');
       const sourcePage = clean(r.source_page_url || r.source_page || '');
       const accessRoute = clean(r.access_route || (url ? 'Public link' : 'EMA Information Centre'));
@@ -270,10 +277,11 @@
       const hasRequest = Boolean(r.has_request_pathway) || /held by ema|request/i.test(status + ' ' + accessRoute + ' ' + r.source_type);
       const hasUrl = Boolean(url);
       const dbLabel = database === 'press_releases' ? 'Press Release Register' : 'Document Access Register';
-      const sortDate = r.date_published ? clean(r.date_published) : (year ? `${year}-01-01` : '');
+      const sortYear = yearTags[0] || extractYearTags(year)[0] || '';
+      const sortDate = rawDate ? clean(rawDate) : (sortYear ? `${sortYear}-01-01` : '');
       const norm = {
         id, database, dbLabel, index,
-        shortTitle, title, category, area, status, year, date, url, sourcePage, accessRoute,
+        shortTitle, title, category, area, status, year, yearTags, date, url, sourcePage, accessRoute,
         sourceType: clean(r.source_type || ''),
         sourceLabel: clean(r.source_label || ''),
         reliability: clean(r.source_reliability || r.verification_status || ''),
@@ -285,14 +293,14 @@
         keywords, hasRequest, hasUrl, sourcePage, sortDate,
         raw: r
       };
-      norm.searchText = lower([norm.shortTitle, norm.title, norm.category, norm.area, norm.status, norm.year, norm.date, norm.dbLabel, norm.accessRoute, norm.notes, norm.kmValue, norm.actionNeeded, ...keywords].join(' '));
+      norm.searchText = lower([norm.shortTitle, norm.title, norm.category, norm.area, norm.status, norm.year, ...yearTags, norm.date, norm.dbLabel, norm.accessRoute, norm.notes, norm.kmValue, norm.actionNeeded, ...keywords].join(' '));
       norm.statusClass = statusClass(norm);
       return norm;
     } catch (err) {
       debug('Record normalisation failed', { database, index, error: err.message });
       return {
         id: `${database}-invalid-${index}`, database, dbLabel: database, index,
-        shortTitle: `Record ${index+1}`, title: 'Malformed record', category: 'Needs Verification', area: 'Unknown', status: 'Needs Verification', year: '', date: '', url: '', sourcePage: '', accessRoute: '', keywords: [], hasRequest: false, hasUrl: false, searchText: '', statusClass: 'verify', notes: 'This record could not be fully read.', raw: r
+        shortTitle: `Record ${index+1}`, title: 'Malformed record', category: 'Needs Verification', area: 'Unknown', status: 'Needs Verification', year: '', yearTags: [], date: '', url: '', sourcePage: '', accessRoute: '', keywords: [], hasRequest: false, hasUrl: false, searchText: '', statusClass: 'verify', notes: 'This record could not be fully read.', raw: r
       };
     }
   }
@@ -329,12 +337,14 @@
     setOptions('areaFilter', state.records.map(r=>r.area));
     setOptions('typeFilter', state.records.map(r=>r.category));
     setOptions('statusFilter', state.records.map(r=>r.status));
-    setOptions('yearFilter', state.records.map(r=>r.year).filter(Boolean).sort((a,b)=>String(b).localeCompare(String(a))));
+    setOptions('yearFilter', state.records.flatMap(r => r.yearTags && r.yearTags.length ? r.yearTags : extractYearTags(r.year)), 'numeric-desc');
   }
-  function setOptions(id, values){
+  function setOptions(id, values, sortMode){
     const el = $(id); if (!el) return;
     const first = el.querySelector('option')?.outerHTML || '<option value="all">All</option>';
-    const vals = uniq(values.map(clean)).sort((a,b)=>a.localeCompare(b));
+    const vals = uniq(values.map(clean));
+    if (sortMode === 'numeric-desc') vals.sort((a,b)=>Number(b)-Number(a) || String(b).localeCompare(String(a)));
+    else vals.sort((a,b)=>a.localeCompare(b));
     el.innerHTML = first + vals.map(v=>`<option value="${esc(v)}">${esc(v)}</option>`).join('');
   }
 
@@ -350,7 +360,7 @@
     if (state.area !== 'all') records = records.filter(r => r.area === state.area);
     if (state.type !== 'all') records = records.filter(r => r.category === state.type);
     if (state.status !== 'all') records = records.filter(r => r.status === state.status);
-    if (state.year !== 'all') records = records.filter(r => r.year === state.year);
+    if (state.year !== 'all') records = records.filter(r => (r.yearTags || []).includes(state.year) || r.year === state.year || String(r.date || '').startsWith(state.year));
     if (q) records = records.map(r => ({ record: r, score: scoreRecord(r, q) })).filter(x => x.score > 0).sort((a,b)=>b.score-a.score).map(x=>x.record);
     state.filtered = records;
     renderResults();

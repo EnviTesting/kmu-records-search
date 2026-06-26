@@ -133,3 +133,11 @@ The public page no longer shows troubleshooting controls to casual users. To rev
 - the Refresh app cache button for GitHub Pages cache issues
 
 This is only a light UI concealment. The code is still visible in the repository, as expected for a static GitHub Pages app.
+
+## v6.1 update — Annual Reports and year filters
+
+This build adds individual EMA Annual Report records for 2005–2024, including separate records for 2020 Part 1 and 2020 Part 2. The records link back to EMA's Annual Reports page and use the direct EMA-linked Google Drive URLs.
+
+Advanced year filtering was also strengthened. The year filter now uses extracted year tags from explicit year/date fields and record titles, so records with multi-year titles such as `2005, 2006, 2008` can be found under each relevant year. The filter no longer treats generic references such as `Updated Public Statement 2024` as the record year for every record.
+
+The hidden admin panel remains available by tapping/clicking the small app version in the footer seven times.
