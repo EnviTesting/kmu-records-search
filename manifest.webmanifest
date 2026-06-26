@@ -4,7 +4,7 @@
   "description": "Mobile-friendly searchable EMA knowledge management document register.",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#0e1720",
-  "theme_color": "#0e1720",
+  "background_color": "#f5faf7",
+  "theme_color": "#009b83",
   "icons": []
 }

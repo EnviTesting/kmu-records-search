@@ -1,0 +1,117 @@
+{
+  "generated_at": "2026-06-26T10:22:50Z",
+  "source_workbook": "EMA_Document_KM_Framework.xlsx",
+  "record_count": 258,
+  "keyword_rule": "20 keywords per record: 5 programme common + 5 title/record unique + 10 discretionary metadata/search terms.",
+  "counts": {
+    "programme_area": {
+      "Cross-cutting": 29,
+      "Air": 20,
+      "CEC": 34,
+      "Biodiversity/ESA/ESS": 35,
+      "Noise": 17,
+      "Water": 32,
+      "Waste": 20,
+      "Corporate Communications / Knowledge Management": 1,
+      "Corporate / Statutory Reporting": 1,
+      "Knowledge Management / Research": 1,
+      "National Environmental Policy": 2,
+      "Biodiversity": 1,
+      "Climate Change": 2,
+      "Public Education / Sustainable Business": 1,
+      "Biodiversity/ESA": 1,
+      "Public Education / Forests": 2,
+      "Public Education / Wetlands": 2,
+      "Public Education": 1,
+      "Public Education / Behaviour Change": 1,
+      "Corporate Strategy": 1,
+      "Quality Management": 1,
+      "Corporate Governance": 1,
+      "Pollution / Public Health": 7,
+      "Climate / MEA": 3,
+      "Governance / Legal": 6,
+      "Information Technology": 1,
+      "Quality / ISO": 7,
+      "HSE / Facilities": 9,
+      "Finance / Procurement": 9,
+      "Finance / Audit": 1,
+      "Human Resources": 9
+    },
+    "record_category": {
+      "Legislation / Legal Instrument": 32,
+      "Form / Guideline / Technical Guidance": 10,
+      "Monitoring Report Series": 1,
+      "Form / Guideline / FAQ": 40,
+      "Form / Guideline / Report / FAQ": 13,
+      "Publication": 4,
+      "Annual Report": 1,
+      "State of Environment Report": 1,
+      "Policy": 1,
+      "Action Plan": 1,
+      "Policy / Strategy": 1,
+      "International Convention Report": 2,
+      "Activity Booklet": 3,
+      "Teachers' Module": 1,
+      "Survey Report": 1,
+      "Strategic Plan": 1,
+      "Quality Policy": 1,
+      "Organisation Structure": 1,
+      "Public Register": 5,
+      "Scientific / Technical Report": 46,
+      "Consultant Report": 29,
+      "Internal Study / Survey / Map": 6,
+      "Manual / Policy / Procedure / Work Instruction": 57
+    },
+    "source_status": {
+      "Held by EMA — Request Required": 127,
+      "Official EMA linked": 84,
+      "EMA hub only / direct link not verified": 7,
+      "Official EMA page listing / individual links to verify": 2,
+      "Official EMA page listing / direct link not verified": 8,
+      "EMA page listing / time-bound document to verify": 1,
+      "Official EMA page / subscription material": 1,
+      "Official EMA page listing / verify individual links": 1,
+      "Public external / EMA policy page listing": 1,
+      "Public external": 7,
+      "Information Centre / website to verify": 3,
+      "Official EMA page found": 2,
+      "Official EMA news page found": 1,
+      "Official online e-summary / public register": 1,
+      "Information Centre / public register": 1,
+      "Public external / article page": 2,
+      "Cited online / project portfolio": 1,
+      "Cited online; full report not located": 5,
+      "Cited online; full PDF not located": 1,
+      "Public external / related public docs": 1,
+      "Information Centre / FOIA likely": 1
+    },
+    "source_type": {
+      "ema_information_centre_request": 127,
+      "public_or_external_link": 129,
+      "ema_public_link": 2
+    },
+    "priority": {
+      "High": 185,
+      "Medium": 66,
+      "Low": 7
+    },
+    "has_direct_url": {
+      "False": 171,
+      "True": 87
+    },
+    "has_source_url": {
+      "False": 128,
+      "True": 130
+    },
+    "has_source_pathway": {
+      "True": 258
+    },
+    "has_request_pathway": {
+      "True": 129,
+      "False": 129
+    }
+  },
+  "source_access_note": "Records without public links are not treated as missing; the Gazette-confirmed pathway is EMA Information Centre request access.",
+  "request_pathway_label": "Held by EMA. Request access through the EMA Information Centre.",
+  "request_pathway_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre."
+}

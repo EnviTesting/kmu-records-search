@@ -7,7 +7,7 @@ It acts as a small JSON-backed database for Gazette-referenced EMA documents and
 ## What is included
 
 - `index.html` — browser search interface
-- `styles.css` — modern dark UI styling
+- `styles.css` — EMA-inspired light UI styling with status-coloured cards and mobile-first controls
 - `app.js` — client-side filtering/search/export logic
 - `data/documents.json` — full KM document database (258 records)
 - `data/search_index.json` — compact searchable index
@@ -113,3 +113,59 @@ Mobile improvements include:
 - basic offline/cache support through `service-worker.js` after the first successful load
 
 The app remains fully static. It can still be hosted from GitHub Pages without a server or database.
+
+
+## GitHub Pages database loading notes
+
+This version is tolerant of different upload layouts. The app first tries to load `data/documents.json`. If that is not present, it also tries root-level JSON files such as `EMA_KM_documents_searchable.json` and `documents.json`.
+
+Recommended upload structure:
+
+```text
+/index.html
+/app.js
+/styles.css
+/manifest.webmanifest
+/service-worker.js
+/data/documents.json
+/data/summary.json
+/data/groups.json
+/data/search_index.json
+```
+
+If you prefer the simplest setup, upload the standalone JSON file to the repository root as:
+
+```text
+EMA_KM_documents_searchable.json
+```
+
+Common causes of the database loading error:
+
+- only `index.html` was uploaded, without the `data` folder;
+- the folder was named `Data` instead of `data`;
+- the file was renamed, for example `documents (1).json`;
+- GitHub Pages is serving an older cached version. Refresh the page or clear the site cache after uploading this fixed version.
+
+
+## EMA-inspired cosmetic update
+
+This version uses a light, minimal visual style designed to feel closer to the EMA website: teal/green accents, soft white cards, rounded action chips and clear status badges. Result cards are lightly colour-coded by source pathway:
+
+- green border/background tint — public direct link available;
+- blue/teal tint — source page available;
+- amber tint — held by EMA / request pathway;
+- neutral grey — needs review.
+
+The **Request from EMA** quick action opens the EMA Information Centre General Request page:
+
+```text
+https://www.ema.co.tt/information-centre-general-request/
+```
+
+The formal FOI request page is also available at:
+
+```text
+https://www.ema.co.tt/foi-request/
+```
+
+The request-required records can still be filtered using **Filters → Links → EMA request pathway**.

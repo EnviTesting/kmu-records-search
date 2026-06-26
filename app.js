@@ -3,27 +3,141 @@ const state = {
   filtered: [],
   summary: null,
   renderLimit: window.matchMedia("(max-width: 640px)").matches ? 40 : 120,
-  baseRenderLimit: window.matchMedia("(max-width: 640px)").matches ? 40 : 120
+  baseRenderLimit: window.matchMedia("(max-width: 640px)").matches ? 40 : 120,
+  loadDiagnostics: []
 };
+
+const DOCUMENT_PATHS = [
+  "data/documents.json",
+  "./data/documents.json",
+  "documents.json",
+  "./documents.json",
+  "EMA_KM_documents_searchable.json",
+  "./EMA_KM_documents_searchable.json",
+  "data/EMA_KM_documents_searchable.json",
+  "./data/EMA_KM_documents_searchable.json"
+];
+
+const SUMMARY_PATHS = [
+  "data/summary.json",
+  "./data/summary.json",
+  "summary.json",
+  "./summary.json"
+];
+
+const REQUEST_LABEL = "Held by EMA. Request access through the EMA Information Centre.";
+const REQUEST_NOTE = "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.";
+const INFO_CENTRE_REQUEST_URL = "https://www.ema.co.tt/information-centre-general-request/";
 
 const byId = id => document.getElementById(id);
 const norm = value => String(value || "").toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "");
 const requestText = doc => `I am requesting access to the following document referenced in EMA's Updated Public Statement 2024: ${doc.title}. Please advise on availability and the process for access through the EMA Information Centre.`;
 
-Promise.all([
-  fetch("data/documents.json").then(r => r.json()),
-  fetch("data/summary.json").then(r => r.json())
-]).then(([docs, summary]) => {
-  state.docs = docs;
-  state.summary = summary;
-  hydrateFilters(docs);
-  renderSummary(summary, docs);
-  applyFilters();
-  registerServiceWorker();
-}).catch(error => {
-  byId("summaryCard").textContent = "The database could not be loaded. Check that data/documents.json is available.";
-  console.error(error);
-});
+init();
+
+async function init() {
+  try {
+    const rawDocs = await loadFirstJson(DOCUMENT_PATHS, true);
+    const docs = normaliseDocumentPayload(rawDocs).map(normaliseRecord);
+    if (!docs.length) throw new Error("Document JSON loaded, but contained no document records.");
+
+    const summary = await loadFirstJson(SUMMARY_PATHS, false).catch(() => buildSummary(docs));
+    state.docs = docs;
+    state.summary = normaliseSummary(summary, docs);
+
+    hydrateFilters(docs);
+    renderSummary(state.summary, docs);
+    applyFilters();
+    registerServiceWorker();
+  } catch (error) {
+    console.error(error);
+    renderLoadError(error);
+  }
+}
+
+async function loadFirstJson(paths, required) {
+  const attempts = [];
+  for (const path of paths) {
+    try {
+      const response = await fetch(path, { cache: "no-store" });
+      attempts.push(`${path}: HTTP ${response.status}`);
+      if (!response.ok) continue;
+      const data = await response.json();
+      state.loadDiagnostics.push(`Loaded ${path}`);
+      return data;
+    } catch (error) {
+      attempts.push(`${path}: ${error.message}`);
+    }
+  }
+  if (!required) throw new Error(`Optional JSON not found. Tried: ${attempts.join(" | ")}`);
+  throw new Error(`Database JSON not found or could not be parsed. Tried: ${attempts.join(" | ")}`);
+}
+
+function normaliseDocumentPayload(payload) {
+  if (Array.isArray(payload)) return payload;
+  if (payload && Array.isArray(payload.documents)) return payload.documents;
+  if (payload && Array.isArray(payload.records)) return payload.records;
+  if (payload && Array.isArray(payload.data)) return payload.data;
+  return [];
+}
+
+function normaliseRecord(doc) {
+  const hasDirectUrl = Boolean(doc.direct_url || doc.has_direct_url);
+  const hasSourceUrl = Boolean(doc.source_url || doc.has_source_url);
+  const hasAnyUrl = hasDirectUrl || hasSourceUrl;
+  const internalHint = Boolean(doc.is_internal_ema_record) || /internal|policy|manual|procedure|sop|audit|valuation|human resource|procurement|hse|qms|quality management/i.test([doc.record_category, doc.title, doc.notes, doc.source_status].join(" "));
+  const requestPathway = Boolean(doc.has_request_pathway) || Boolean(doc.source_placeholder === "EMA_INFORMATION_CENTRE_REQUEST") || (!hasAnyUrl) || internalHint;
+
+  return {
+    ...doc,
+    has_direct_url: hasDirectUrl,
+    has_source_url: hasSourceUrl,
+    has_source_pathway: Boolean(doc.has_source_pathway) || hasSourceUrl || requestPathway,
+    has_request_pathway: requestPathway,
+    source_type: doc.source_type || (requestPathway ? "ema_information_centre_request" : hasDirectUrl ? "public_direct_link" : hasSourceUrl ? "source_page" : "unknown"),
+    source_label: doc.source_label || (requestPathway ? REQUEST_LABEL : ""),
+    source_placeholder: doc.source_placeholder || (requestPathway ? "EMA_INFORMATION_CENTRE_REQUEST" : ""),
+    availability_note: doc.availability_note || (requestPathway ? REQUEST_NOTE : ""),
+    access_route: doc.access_route || (requestPathway ? "EMA Information Centre" : "Public web link"),
+    source_status: doc.source_status || (requestPathway ? "Held by EMA - Request Required" : "Public Link Found")
+  };
+}
+
+function buildSummary(docs) {
+  return {
+    generated_at: new Date().toISOString().slice(0, 10),
+    record_count: docs.length,
+    source_access_note: REQUEST_NOTE,
+    request_pathway_label: REQUEST_LABEL,
+    request_pathway_note: REQUEST_NOTE
+  };
+}
+
+function normaliseSummary(summary, docs) {
+  return {
+    generated_at: summary.generated_at || new Date().toISOString().slice(0, 10),
+    record_count: summary.record_count || docs.length,
+    source_access_note: summary.source_access_note || REQUEST_NOTE,
+    request_pathway_label: summary.request_pathway_label || REQUEST_LABEL,
+    request_pathway_note: summary.request_pathway_note || REQUEST_NOTE,
+    ...summary
+  };
+}
+
+function renderLoadError(error) {
+  const summaryCard = byId("summaryCard");
+  const diagnostics = state.loadDiagnostics.length ? state.loadDiagnostics.join("; ") : error.message;
+  summaryCard.innerHTML = `
+    <div class="load-error">
+      <strong>The database could not be loaded.</strong>
+      <p>Upload the full repository structure, including the <code>data</code> folder, or place <code>EMA_KM_documents_searchable.json</code> in the repository root. GitHub Pages file paths are case-sensitive.</p>
+      <details>
+        <summary>Technical details</summary>
+        <pre>${escapeHtml(diagnostics)}</pre>
+      </details>
+    </div>
+  `;
+}
 
 function hydrateFilters(docs) {
   const fields = [
@@ -65,7 +179,6 @@ function hydrateFilters(docs) {
     applyFilters();
   });
   byId("publicOnlyBtn").addEventListener("click", () => quickFilter({ linkFilter: "direct" }));
-  byId("requestOnlyBtn").addEventListener("click", () => quickFilter({ linkFilter: "request" }));
   byId("highPriorityBtn").addEventListener("click", () => quickFilter({ priorityFilter: "High" }));
 }
 
@@ -80,7 +193,7 @@ function renderSummary(summary, docs) {
       <div><strong>${request}</strong><span>EMA requests</span></div>
       <div><strong>${external}</strong><span>external sources</span></div>
     </div>
-    <small>Generated ${summary.generated_at}</small>
+    <small>Generated ${escapeHtml(summary.generated_at)} • ${escapeHtml(state.loadDiagnostics.join("; "))}</small>
   `;
 }
 
@@ -103,7 +216,7 @@ function applyFilters() {
     if (links === "request" && !doc.has_request_pathway) return false;
     if (links === "missing" && (doc.has_direct_url || doc.has_source_url || doc.has_source_pathway)) return false;
     if (!terms.length) return true;
-    const haystack = norm([doc.title, doc.search_text, doc.programme_area, doc.record_category, doc.source_status, ...(doc.keywords || [])].join(" "));
+    const haystack = norm([doc.title, doc.search_text, doc.programme_area, doc.record_category, doc.source_status, doc.source_label, doc.availability_note, ...(doc.keywords || [])].join(" "));
     return terms.every(term => haystack.includes(term));
   });
   renderResults(state.filtered, terms);
@@ -119,13 +232,20 @@ function renderResults(docs, terms) {
 
   docs.slice(0, shown).forEach(doc => {
     const node = template.content.cloneNode(true);
+    const card = node.querySelector(".result-card");
+    if (doc.has_direct_url) card.classList.add("has-direct");
+    else if (doc.has_source_url) card.classList.add("has-source");
+    else if (doc.has_request_pathway) card.classList.add("has-request");
+    else card.classList.add("needs-review");
     node.querySelector(".record-id").textContent = doc.id;
     const priority = node.querySelector(".priority");
     priority.textContent = doc.priority || "Unprioritised";
     priority.classList.add(norm(doc.priority || "low"));
     const linkState = node.querySelector(".link-state");
     linkState.textContent = doc.has_direct_url ? "Direct link" : doc.has_source_url ? "Source page" : doc.has_request_pathway ? "EMA request pathway" : "No link yet";
-    if (!doc.has_direct_url && !doc.has_source_url && !doc.has_source_pathway) linkState.classList.add("missing");
+    if (doc.has_direct_url) linkState.classList.add("direct");
+    else if (doc.has_source_url) linkState.classList.add("source");
+    else if (!doc.has_source_pathway) linkState.classList.add("missing");
     if (doc.has_request_pathway) linkState.classList.add("request");
     node.querySelector("h2").textContent = doc.title;
     node.querySelector(".meta-line").textContent = [doc.programme_area, doc.record_category, doc.year].filter(Boolean).join(" • ");
@@ -153,7 +273,7 @@ function renderResults(docs, terms) {
     if (doc.direct_url) actions.appendChild(link("Open document", doc.direct_url));
     if (doc.source_url) actions.appendChild(link("Open source page", doc.source_url));
     if (doc.has_request_pathway) {
-      actions.appendChild(requestBadge(doc.source_label || "Held by EMA. Request access through the EMA Information Centre."));
+      actions.appendChild(requestBadge("Open EMA request page"));
       actions.appendChild(copyButton(doc));
     }
     results.appendChild(node);
@@ -183,10 +303,13 @@ function link(label, href) {
 }
 
 function requestBadge(label) {
-  const span = document.createElement("span");
-  span.className = "request-badge";
-  span.textContent = label;
-  return span;
+  const a = document.createElement("a");
+  a.className = "request-badge";
+  a.href = INFO_CENTRE_REQUEST_URL;
+  a.target = "_blank";
+  a.rel = "noopener";
+  a.textContent = label;
+  return a;
 }
 
 function copyButton(doc) {
@@ -225,10 +348,9 @@ function quickFilter(values) {
 }
 
 function updateQuickFilterState() {
-  const buttons = ["showAllBtn", "publicOnlyBtn", "requestOnlyBtn", "highPriorityBtn"].map(byId);
+  const buttons = ["showAllBtn", "publicOnlyBtn", "highPriorityBtn"].map(byId);
   buttons.forEach(button => button.classList.remove("active"));
   if (byId("linkFilter").value === "direct") byId("publicOnlyBtn").classList.add("active");
-  else if (byId("linkFilter").value === "request") byId("requestOnlyBtn").classList.add("active");
   else if (byId("priorityFilter").value === "High") byId("highPriorityBtn").classList.add("active");
   else byId("showAllBtn").classList.add("active");
 }
@@ -261,6 +383,16 @@ function debounce(fn, wait) {
     clearTimeout(timer);
     timer = setTimeout(() => fn(...args), wait);
   };
+}
+
+function escapeHtml(value) {
+  return String(value || "").replace(/[&<>'"]/g, char => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    "'": "&#39;",
+    '"': "&quot;"
+  }[char]));
 }
 
 function registerServiceWorker() {
