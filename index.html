@@ -1,145 +1,85 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#006b5f">
-  <meta name="description" content="A mobile-friendly document access register for EMA-related records, public links, and EMA Information Centre request pathways.">
-  <title>EMA Document Access Register</title>
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="assets/styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#009b83" />
+  <meta name="description" content="Mobile-friendly searchable EMA knowledge management document register." />
+  <title>EMA Knowledge Document Search</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <a class="skip-link" href="#resultsTitle">Skip to results</a>
+  <a class="skip-link" href="#searchBox">Skip to search</a>
 
-  <header class="site-header" role="banner">
-    <div class="header-inner">
-      <div class="brand-copy">
-        <p class="eyebrow">Knowledge access tool</p>
-        <h1>EMA Document Access Register</h1>
-        <p class="subtitle">Find public links, source pages, or records held by EMA.</p>
-      </div>
-      <div class="header-metrics" aria-live="polite">
-        <div class="mini-stat"><strong id="statTotal">—</strong><span>Records</span></div>
-        <div class="mini-stat public"><strong id="statPublic">—</strong><span>Public</span></div>
-        <div class="mini-stat request"><strong id="statRequest">—</strong><span>Held by EMA</span></div>
-      </div>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Knowledge Management Framework</p>
+      <h1>EMA Document Search Database</h1>
+      <p class="lede">Find Gazette-referenced EMA documents, legal instruments, forms, registers, reports, policies and public information records. Public links open directly; internal or unlinked records show the EMA Information Centre request pathway.</p>
     </div>
+    <div class="summary-card" id="summaryCard">Loading database…</div>
   </header>
 
   <main>
-    <section class="search-panel" aria-label="Document search controls">
-      <div class="search-panel-head">
-        <div>
-          <p class="eyebrow">Find a document</p>
-          <h2>Search the register</h2>
-        </div>
-        <button id="openBasket" class="primary-btn basket-shortcut" type="button">Request basket <span id="basketCountPill">0</span></button>
-      </div>
-
+    <section class="controls" aria-label="Search controls">
       <div class="search-row">
-        <label class="sr-only" for="searchInput">Search documents</label>
-        <input id="searchInput" type="search" autocomplete="off" inputmode="search" placeholder="Search title, short name, topic, area, year, or document type">
-        <button id="clearSearch" class="ghost-btn" type="button">Clear</button>
+        <label class="search-label" for="searchBox">Search the document register</label>
+        <input id="searchBox" type="search" placeholder="Try: water permit, pawi, air quality, audit, fireworks, CEC1033…" autocomplete="off" inputmode="search" />
       </div>
 
-      <div class="journey-row">
-        <label for="journeySelect">Document journey</label>
-        <select id="journeySelect">
-          <option value="all">Explore all records</option>
-          <option value="public">Find a public document</option>
-          <option value="request">Request a document held by EMA</option>
-          <option value="forms">Find a form, guide, or application document</option>
-          <option value="laws">Understand a law, rule, or regulation</option>
-          <option value="reports">Find a report, study, or technical document</option>
-          <option value="internal">Find an internal policy or governance record</option>
-        </select>
+      <div class="quick-filter-row" aria-label="Quick filters">
+        <button class="chip chip-all active" id="showAllBtn" type="button">All</button>
+        <button class="chip chip-public" id="publicOnlyBtn" type="button">Public links</button>
+        <a class="chip chip-request" id="requestActionBtn" href="https://www.ema.co.tt/information-centre-general-request/" target="_blank" rel="noopener" aria-label="Open EMA Information Centre General Request page">Request from EMA</a>
+        <button class="chip chip-priority" id="highPriorityBtn" type="button">High priority</button>
       </div>
 
-      <p class="helper-text">Try: <button class="text-chip" data-search="water permit">water permit</button>, <button class="text-chip" data-search="noise variation">noise variation</button>, <button class="text-chip" data-search="CEC">CEC</button>, <button class="text-chip" data-search="annual report">annual report</button>, <button class="text-chip" data-search="HSE policy">HSE policy</button>, or <button class="text-chip" data-search="FOIA">FOIA</button>.</p>
+      <button class="filter-toggle" id="filterToggle" type="button" aria-expanded="false" aria-controls="filterPanel">Filters</button>
 
-      <div class="quick-filter-group" aria-label="Quick filters">
-        <button class="quick-chip is-active" type="button" data-filter="all">All records</button>
-        <button class="quick-chip public" type="button" data-filter="public">Public documents</button>
-        <button class="quick-chip request" type="button" data-filter="request">Held by EMA</button>
-        <button class="quick-chip forms" type="button" data-filter="forms">Forms & guides</button>
-        <button class="quick-chip laws" type="button" data-filter="laws">Laws & rules</button>
-        <button class="quick-chip reports" type="button" data-filter="reports">Reports & studies</button>
-        <button class="quick-chip internal" type="button" data-filter="internal">Internal / governance</button>
-        <button class="quick-chip high" type="button" data-filter="high">Priority records</button>
-      </div>
-
-      <details class="advanced-filters">
-        <summary>More filters</summary>
+      <div id="filterPanel" class="filter-panel">
         <div class="filter-grid">
-          <label>Knowledge area
-            <select id="areaFilter"><option value="">All areas</option></select>
-          </label>
-          <label>Document type
-            <select id="typeFilter"><option value="">All types</option></select>
-          </label>
-          <label>Source status
-            <select id="statusFilter"><option value="">All source statuses</option></select>
-          </label>
-          <label>Priority
-            <select id="priorityFilter"><option value="">All priorities</option></select>
-          </label>
+          <label>Programme Area<select id="programmeFilter"><option value="">All</option></select></label>
+          <label>Record Category<select id="categoryFilter"><option value="">All</option></select></label>
+          <label>Source Status<select id="statusFilter"><option value="">All</option></select></label>
+          <label>Priority<select id="priorityFilter"><option value="">All</option></select></label>
+          <label>Links<select id="linkFilter"><option value="">Any</option><option value="direct">Has direct link</option><option value="source">Has source / request pathway</option><option value="request">EMA request pathway</option><option value="missing">No source pathway yet</option></select></label>
         </div>
-      </details>
-    </section>
-
-    <section class="toolbar" aria-label="Results toolbar">
-      <div>
-        <h2 id="resultsTitle">Document list</h2>
-        <p id="resultCount" class="muted">Loading records…</p>
-      </div>
-      <div class="toolbar-actions">
-        <button id="downloadFilteredCsv" class="secondary-btn" type="button">Download results</button>
+        <div class="button-row">
+          <button id="clearBtn" type="button">Clear</button>
+          <button id="downloadBtn" type="button">Download filtered JSON</button>
+        </div>
       </div>
     </section>
 
-    <section class="register-shell" aria-label="Search results">
-      <div class="desktop-head" aria-hidden="true">
-        <span>Status</span>
-        <span>Document</span>
-        <span>Area</span>
-        <span>Type</span>
-        <span>Year</span>
-        <span>Action</span>
-      </div>
-      <div id="resultsList" class="results-list" aria-live="polite"></div>
-      <div class="load-more-wrap">
-        <button id="loadMore" class="secondary-btn" type="button">Load more results</button>
-      </div>
+    <section class="results-meta" aria-label="Search result summary">
+      <div id="resultCount"></div>
+      <div id="activeTerms"></div>
     </section>
+
+    <section id="results" class="results" aria-live="polite"></section>
+    <div class="load-more-wrap"><button id="loadMoreBtn" class="load-more" type="button" hidden>Load more results</button></div>
   </main>
 
-  <aside id="basketPanel" class="basket-panel" aria-hidden="true" aria-labelledby="basketTitle" role="dialog">
-    <div class="panel-backdrop" data-close-basket></div>
-    <div class="basket-card" role="document">
-      <button class="panel-close" type="button" data-close-basket aria-label="Close request basket">×</button>
-      <h2 id="basketTitle">Document Request Basket</h2>
-      <p class="muted">Add documents here when you want a request list, a link list, or a file for follow-up. Request-required records can be submitted through the EMA Information Centre.</p>
-      <div id="basketItems" class="basket-items"></div>
-      <div class="basket-actions">
-        <button id="copyRequestText" class="primary-btn" type="button">Copy request text</button>
-        <button id="downloadBasketCsv" class="secondary-btn" type="button">Download CSV</button>
-        <button id="downloadBasketJson" class="secondary-btn" type="button">Download JSON</button>
-        <button id="downloadRequestTxt" class="secondary-btn" type="button">Download request text</button>
-        <a id="emaRequestLink" class="link-btn" href="https://www.ema.co.tt/information-centre-general-request/" target="_blank" rel="noopener">Open EMA request page</a>
-        <button id="clearBasket" class="ghost-btn" type="button">Clear basket</button>
+  <template id="resultTemplate">
+    <article class="result-card">
+      <div class="card-topline">
+        <span class="record-id"></span>
+        <span class="badge priority"></span>
+        <span class="badge link-state"></span>
       </div>
-      <details class="generated-text-wrap" open>
-        <summary>Generated request text</summary>
-        <textarea id="generatedRequestText" readonly rows="10"></textarea>
+      <h2></h2>
+      <div class="meta-line"></div>
+      <p class="km-value"></p>
+      <details>
+        <summary>Keywords and KM metadata</summary>
+        <div class="keyword-cloud"></div>
+        <dl class="metadata"></dl>
       </details>
-    </div>
-  </aside>
+      <div class="card-actions"></div>
+    </article>
+  </template>
 
-  <footer>
-    <p>This register is an independent knowledge-management aid based on documents referenced in EMA’s Updated Public Statement 2024, supplemented with public links and request pathways where available. Official copies, access decisions, and document availability should be confirmed through EMA.</p>
-  </footer>
-
-  <script src="assets/app.js" defer></script>
+  <script src="app.js" defer></script>
 </body>
 </html>
