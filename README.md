@@ -55,3 +55,8 @@ Longer note:
 ## Notes
 
 This register is an independent knowledge-management aid based on documents referenced in EMA’s Updated Public Statement 2024, supplemented with public links and request pathways where available. Official copies, access decisions, and document availability should be confirmed through EMA.
+
+
+## Fast list-first interface update
+
+This version moves search and document journeys to the first visible section, shortens the header preamble, and places key metrics in the header. Search results display a short document name first, with the full formal title shown below in smaller text where applicable. Each result includes an inline **Read more** control that expands the row in place with access notes, evidence, keywords and related records. The request basket remains available from the search panel and is optimized for mobile screens.
