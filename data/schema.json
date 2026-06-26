@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EMA Knowledge Access Register Record",
+  "type": "object",
+  "required": ["id", "title", "keywords"],
+  "properties": {
+    "id": { "type": "string" },
+    "database": { "type": "string" },
+    "record_set": { "type": "string" },
+    "title": { "type": "string" },
+    "short_title": { "type": "string" },
+    "record_category": { "type": "string" },
+    "programme_area": { "type": "string" },
+    "source_status": { "type": "string" },
+    "source_url": { "type": ["string", "null"] },
+    "direct_url": { "type": ["string", "null"] },
+    "date_published": { "type": "string" },
+    "year": { "type": ["string", "number", "null"] },
+    "keywords": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+  },
+  "additionalProperties": true
+}

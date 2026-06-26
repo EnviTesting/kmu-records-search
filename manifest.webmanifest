@@ -1,9 +1,9 @@
 {
-  "name": "EMA Document Access Register",
+  "name": "EMA Knowledge Access Register",
   "short_name": "EMA Register",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#f7fbf8",
+  "background_color": "#f4f8f6",
   "theme_color": "#006b5f",
-  "description": "Mobile-friendly search and request-basket interface for EMA document access records."
+  "description": "Search EMA document records and press releases."
 }

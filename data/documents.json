@@ -74,7 +74,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Freedom of Information Act (FOIA)"
+    "short_title": "Freedom of Information Act (FOIA)",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0002",
@@ -151,7 +153,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Environmental Management Act"
+    "short_title": "Environmental Management Act",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0003",
@@ -228,7 +232,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Air Pollution Rules 2014"
+    "short_title": "Air Pollution Rules 2014",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0004",
@@ -305,7 +311,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Air Pollution Fees Regulations 2014"
+    "short_title": "Air Pollution Fees Regulations 2014",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0005",
@@ -382,7 +390,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "CEC Rules 2001"
+    "short_title": "CEC Rules 2001",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0006",
@@ -459,7 +469,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "CEC Designated Activities Order 2001"
+    "short_title": "CEC Designated Activities Order 2001",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0007",
@@ -536,7 +548,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "CEC Designated Activities Order 2007"
+    "short_title": "CEC Designated Activities Order 2007",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0008",
@@ -613,7 +627,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "CEC Designated Activities Order 2008"
+    "short_title": "CEC Designated Activities Order 2008",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0009",
@@ -690,7 +706,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "CEC Fees Regulations 2001"
+    "short_title": "CEC Fees Regulations 2001",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0010",
@@ -767,7 +785,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "ESA Rules 2001"
+    "short_title": "ESA Rules 2001",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0011",
@@ -844,7 +864,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Environmentally Sensitive Areas (Matura), 2004"
+    "short_title": "Environmentally Sensitive Areas (Matura), 2004",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0012",
@@ -921,7 +943,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Environmentally Sensitive Areas (Nariva Swamp), 2006"
+    "short_title": "Environmentally Sensitive Areas (Nariva Swamp), 2006",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0013",
@@ -998,7 +1022,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Environmentally Sensitive Areas (Aripo Savannas), 2007"
+    "short_title": "Environmentally Sensitive Areas (Aripo Savannas), 2007",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0014",
@@ -1075,7 +1101,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "ESS Rules 2001"
+    "short_title": "ESS Rules 2001",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0015",
@@ -1152,7 +1180,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Environmentally Sensitive Species (Pawi), 2005"
+    "short_title": "Environmentally Sensitive Species (Pawi), 2005",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0016",
@@ -1229,7 +1259,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Environmentally Sensitive Species (White-tailed Sabrewing), 2005"
+    "short_title": "Environmentally Sensitive Species (White-tailed Sabrewing), 2005",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0017",
@@ -1306,7 +1338,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Environmentally Sensitive Species (Manatee), 2005"
+    "short_title": "Environmentally Sensitive Species (Manatee), 2005",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0018",
@@ -1383,7 +1417,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Environmentally Sensitive Species (Ocelot), 2013"
+    "short_title": "Environmentally Sensitive Species (Ocelot), 2013",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0019",
@@ -1460,7 +1496,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Environmentally Sensitive Species (Golden Tree Frog), 2013"
+    "short_title": "Environmentally Sensitive Species (Golden Tree Frog), 2013",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0020",
@@ -1537,7 +1575,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Environmentally Sensitive Species (Leatherback Turtle), 2014"
+    "short_title": "Environmentally Sensitive Species (Leatherback Turtle), 2014",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0021",
@@ -1614,7 +1654,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Environmentally Sensitive Species (Loggerhead Turtle), 2014"
+    "short_title": "Environmentally Sensitive Species (Loggerhead Turtle), 2014",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0022",
@@ -1691,7 +1733,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Environmentally Sensitive Species (Green Turtle), 2014"
+    "short_title": "Environmentally Sensitive Species (Green Turtle), 2014",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0023",
@@ -1768,7 +1812,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Environmentally Sensitive Species (Hawksbill), 2014"
+    "short_title": "Environmentally Sensitive Species (Hawksbill), 2014",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0024",
@@ -1845,7 +1891,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Environmentally Sensitive Species (Olive Ridley), 2014"
+    "short_title": "Environmentally Sensitive Species (Olive Ridley), 2014",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0025",
@@ -1922,7 +1970,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Noise Pollution Control Rules 2001"
+    "short_title": "Noise Pollution Control Rules 2001",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0026",
@@ -1999,7 +2049,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Noise Pollution Fees Regulations 2001"
+    "short_title": "Noise Pollution Fees Regulations 2001",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0027",
@@ -2076,7 +2128,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Noise Pollution Amendment Rules 2022"
+    "short_title": "Noise Pollution Amendment Rules 2022",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0028",
@@ -2153,7 +2207,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Water Pollution Rules 2019"
+    "short_title": "Water Pollution Rules 2019",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0029",
@@ -2230,7 +2286,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Water Pollution Fees Regulations 2019"
+    "short_title": "Water Pollution Fees Regulations 2019",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0030",
@@ -2307,7 +2365,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Notice of Final Action for Water Pollution Rules, 2019"
+    "short_title": "Notice of Final Action for Water Pollution Rules, 2019",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0031",
@@ -2384,7 +2444,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Waste Management Rules 2021"
+    "short_title": "Waste Management Rules 2021",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0032",
@@ -2461,7 +2523,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Waste Management Fees Regulations 2021"
+    "short_title": "Waste Management Fees Regulations 2021",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0033",
@@ -2538,7 +2602,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Source Emitter Registration Form A"
+    "short_title": "Source Emitter Registration Form A",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0034",
@@ -2615,7 +2681,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Source Emitter Registration Form A"
+    "short_title": "Source Emitter Registration Form A",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0035",
@@ -2692,7 +2760,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Source Emitter Registration under the Air Pollution Rules, 2014 / Air Guide"
+    "short_title": "Source Emitter Registration under the Air Pollution Rules, 2014 / Air Guide",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0036",
@@ -2769,7 +2839,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Form A — Source Emitter Registration"
+    "short_title": "Form A — Source Emitter Registration",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0037",
@@ -2846,7 +2918,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Application to Transfer Registration Certificate Form E"
+    "short_title": "Application to Transfer Registration Certificate Form E",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0038",
@@ -2923,7 +2997,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Air Pollution Permit Application Form (Form H)"
+    "short_title": "Air Pollution Permit Application Form (Form H)",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0039",
@@ -3000,7 +3076,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Form H Permit Application Form"
+    "short_title": "Form H Permit Application Form",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0040",
@@ -3077,7 +3155,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Ambient Air Quality Monitoring and Stack Emissions Testing Guide"
+    "short_title": "Ambient Air Quality Monitoring and Stack Emissions Testing Guide",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0041",
@@ -3154,7 +3234,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Air Quality Index FAQs / Air FAQs"
+    "short_title": "Air Quality Index FAQs / Air FAQs",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0042",
@@ -3231,7 +3313,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Air Quality Index Brochure"
+    "short_title": "Air Quality Index Brochure",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0043",
@@ -3308,7 +3392,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Ambient Air Quality Monitoring Reports for Trinidad and Tobago"
+    "short_title": "Ambient Air Quality Monitoring Reports for Trinidad and Tobago",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0044",
@@ -3385,7 +3471,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "CEC Process Flowchart"
+    "short_title": "CEC Process Flowchart",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0045",
@@ -3462,7 +3550,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Certificate of Environmental Clearance Process video"
+    "short_title": "Certificate of Environmental Clearance Process video",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0046",
@@ -3539,7 +3629,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "CEC Brochure / CEC Facts"
+    "short_title": "CEC Brochure / CEC Facts",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0047",
@@ -3616,7 +3708,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "EIA FAQs: A Guide to the Environmental Impact Assessment (EIA) Process"
+    "short_title": "EIA FAQs: A Guide to the Environmental Impact Assessment (EIA) Process",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0048",
@@ -3693,7 +3787,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Wastewater or Sewage Treatment Facilities Designated Activity 42 FAQ"
+    "short_title": "Wastewater or Sewage Treatment Facilities Designated Activity 42 FAQ",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0049",
@@ -3770,7 +3866,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Scrap Metal Yard Facilities Designated Activities 36 & 37 FAQ"
+    "short_title": "Scrap Metal Yard Facilities Designated Activities 36 & 37 FAQ",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0050",
@@ -3847,7 +3945,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Waste Incineration FAQ"
+    "short_title": "Waste Incineration FAQ",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0051",
@@ -3924,7 +4024,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Agricultural Activities FAQ"
+    "short_title": "Agricultural Activities FAQ",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0052",
@@ -4001,7 +4103,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Preparing a Claim for Confidentiality for a CEC Application"
+    "short_title": "Preparing a Claim for Confidentiality for a CEC Application",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0053",
@@ -4078,7 +4182,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "the Application for a Certificate of Environmental Clearance"
+    "short_title": "the Application for a Certificate of Environmental Clearance",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0054",
@@ -4155,7 +4261,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Completing the Certificate of Environmental Clearance Application Form A"
+    "short_title": "Completing the Certificate of Environmental Clearance Application Form A",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0055",
@@ -4232,7 +4340,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Submitting the Certificate of Environmental Clearance Application Form A"
+    "short_title": "Submitting the Certificate of Environmental Clearance Application Form A",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0056",
@@ -4309,7 +4419,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Noise Variation Application Form"
+    "short_title": "Noise Variation Application Form",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0057",
@@ -4386,7 +4498,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Noise Application Instructions / Instructional Guide for Completing the…"
+    "short_title": "Noise Application Instructions / Instructional Guide for Completing the…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0058",
@@ -4463,7 +4577,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Application for Renewal of a Variation"
+    "short_title": "Application for Renewal of a Variation",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0059",
@@ -4540,7 +4656,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Code of Practice: Control of Noise in the Music…"
+    "short_title": "Code of Practice: Control of Noise in the Music…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0060",
@@ -4617,7 +4735,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Noise Variation Application Checklist"
+    "short_title": "Noise Variation Application Checklist",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0061",
@@ -4694,7 +4814,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Noise Variation Application Process"
+    "short_title": "Noise Variation Application Process",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0062",
@@ -4771,7 +4893,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Noise Variation Application FAQs"
+    "short_title": "Noise Variation Application FAQs",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0063",
@@ -4848,7 +4972,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Noise FAQ / Noise FAQ Booklet"
+    "short_title": "Noise FAQ / Noise FAQ Booklet",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0064",
@@ -4925,7 +5051,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Information Guide — Event Variation Application"
+    "short_title": "Information Guide — Event Variation Application",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0065",
@@ -5002,7 +5130,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Quick Guide — Event Variation Application"
+    "short_title": "Quick Guide — Event Variation Application",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0066",
@@ -5079,7 +5209,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Deadline dates for submission of VR applications for 2023"
+    "short_title": "Deadline dates for submission of VR applications for 2023",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0067",
@@ -5156,7 +5288,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Report on the results of the public survey on…"
+    "short_title": "Report on the results of the public survey on…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0068",
@@ -5233,7 +5367,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Position Paper on the Management of Fireworks in Trinidad and Tobago"
+    "short_title": "Position Paper on the Management of Fireworks in Trinidad and Tobago",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0069",
@@ -5310,7 +5446,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Water Pollution Rules 2019"
+    "short_title": "Water Pollution Rules 2019",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0070",
@@ -5387,7 +5525,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Form A1 Application: Water Pollution Permit"
+    "short_title": "Form A1 Application: Water Pollution Permit",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0071",
@@ -5464,7 +5604,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Form A1 Sample Form"
+    "short_title": "Form A1 Sample Form",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0072",
@@ -5541,7 +5683,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Form A1 Application: Water Pollution Permit"
+    "short_title": "Form A1 Application: Water Pollution Permit",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0073",
@@ -5618,7 +5762,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Form A2 Application: Water Pollution Permit"
+    "short_title": "Form A2 Application: Water Pollution Permit",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0074",
@@ -5695,7 +5841,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Form A2 Sample Form"
+    "short_title": "Form A2 Sample Form",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0075",
@@ -5772,7 +5920,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Form A2 Application: Water Pollution Permit"
+    "short_title": "Form A2 Application: Water Pollution Permit",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0076",
@@ -5849,7 +5999,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Form A3 Application: Water Pollution Permit"
+    "short_title": "Form A3 Application: Water Pollution Permit",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0077",
@@ -5926,7 +6078,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Form A3 Sample Form"
+    "short_title": "Form A3 Sample Form",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0078",
@@ -6003,7 +6157,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Form A3 Application: Water Pollution Permit"
+    "short_title": "Form A3 Application: Water Pollution Permit",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0079",
@@ -6080,7 +6236,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Permitting — Water Pollution Rules 2019"
+    "short_title": "Permitting — Water Pollution Rules 2019",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0080",
@@ -6157,7 +6315,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Form J — Discharge Monitoring Data Report"
+    "short_title": "Form J — Discharge Monitoring Data Report",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0081",
@@ -6234,7 +6394,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Form J — Discharge Monitoring Data Report"
+    "short_title": "Form J — Discharge Monitoring Data Report",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0082",
@@ -6311,7 +6473,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Permit Annual Discharge Fee Calculation"
+    "short_title": "Permit Annual Discharge Fee Calculation",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0083",
@@ -6388,7 +6552,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Waste Generation Permit Application Form (Form A)"
+    "short_title": "Waste Generation Permit Application Form (Form A)",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0084",
@@ -6465,7 +6631,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Waste Generation Permit Sample Application Form (Form A)"
+    "short_title": "Waste Generation Permit Sample Application Form (Form A)",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0085",
@@ -6542,7 +6710,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Waste Generation Permit Application Guide"
+    "short_title": "Waste Generation Permit Application Guide",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0086",
@@ -6619,7 +6789,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Waste Management Fees Calculation"
+    "short_title": "Waste Management Fees Calculation",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0087",
@@ -6696,7 +6868,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Waste Handling Permit Application Form"
+    "short_title": "Waste Handling Permit Application Form",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0088",
@@ -6773,7 +6947,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Waste Handling Permit Application Guide"
+    "short_title": "Waste Handling Permit Application Guide",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0089",
@@ -6850,7 +7026,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Waste Handling Permit Sample Form"
+    "short_title": "Waste Handling Permit Sample Form",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0090",
@@ -6927,7 +7105,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Public Guide Waste Management Rules, 2021 and Waste Management…"
+    "short_title": "Public Guide Waste Management Rules, 2021 and Waste Management…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0091",
@@ -7004,7 +7184,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Public Guide for Transboundary Movement of Hazardous Waste"
+    "short_title": "Public Guide for Transboundary Movement of Hazardous Waste",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0092",
@@ -7081,7 +7263,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Revised notification and movement documents for the control of…"
+    "short_title": "Revised notification and movement documents for the control of…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0093",
@@ -7158,7 +7342,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Proper Management of Electronic Waste / E-Waste Management Brochure"
+    "short_title": "Proper Management of Electronic Waste / E-Waste Management Brochure",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0094",
@@ -7235,7 +7421,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Waste Oil FAQ"
+    "short_title": "Waste Oil FAQ",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0095",
@@ -7312,7 +7500,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Waste Batteries FAQ"
+    "short_title": "Waste Batteries FAQ",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0096",
@@ -7389,7 +7579,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Lighting Waste FAQ"
+    "short_title": "Lighting Waste FAQ",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0097",
@@ -7466,7 +7658,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "EMA News"
+    "short_title": "EMA News",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0098",
@@ -7543,7 +7737,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Annual Reports"
+    "short_title": "Annual Reports",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0099",
@@ -7620,7 +7816,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "State of the Environment reports"
+    "short_title": "State of the Environment reports",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0100",
@@ -7697,7 +7895,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "National Environmental Policy, 2018"
+    "short_title": "National Environmental Policy, 2018",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0101",
@@ -7774,7 +7974,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "National Environmental Action Plan"
+    "short_title": "National Environmental Action Plan",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0102",
@@ -7851,7 +8053,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "National Biodiversity Strategy Action Plan"
+    "short_title": "National Biodiversity Strategy Action Plan",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0103",
@@ -7928,7 +8132,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Initial National Communication of Trinidad and Tobago under the UNFCCC"
+    "short_title": "Initial National Communication of Trinidad and Tobago under the UNFCCC",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0104",
@@ -8005,7 +8211,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Second National Communication of Trinidad and Tobago under the UNFCCC, 2013"
+    "short_title": "Second National Communication of Trinidad and Tobago under the UNFCCC, 2013",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0105",
@@ -8082,7 +8290,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Green Business"
+    "short_title": "Green Business",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0106",
@@ -8159,7 +8369,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Matura National Park: An Environmentally Sensitive Area"
+    "short_title": "Matura National Park: An Environmentally Sensitive Area",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0107",
@@ -8236,7 +8448,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Forests and You: Activity Booklet"
+    "short_title": "Forests and You: Activity Booklet",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0108",
@@ -8313,7 +8527,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Importance of Wetlands: Activity Booklet"
+    "short_title": "Importance of Wetlands: Activity Booklet",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0109",
@@ -8390,7 +8606,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Litter: Activity Booklet"
+    "short_title": "Litter: Activity Booklet",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0110",
@@ -8467,7 +8685,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Wetlands: A Teachers' Module"
+    "short_title": "Wetlands: A Teachers' Module",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0111",
@@ -8544,7 +8764,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Mystic Mora"
+    "short_title": "Mystic Mora",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0112",
@@ -8621,7 +8843,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "National environmental literacy / awareness survey"
+    "short_title": "National environmental literacy / awareness survey",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0113",
@@ -8698,7 +8922,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Strategic Plan 2022–2026"
+    "short_title": "Strategic Plan 2022–2026",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0114",
@@ -8774,7 +9000,9 @@
     "availability_note": "Public source page identified; request or verify the official copy through the EMA Information Centre where an authoritative file/version is required.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "EMA 9001:2015 Quality Policy, 2019"
+    "short_title": "EMA 9001:2015 Quality Policy, 2019",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0115",
@@ -8851,7 +9079,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "EMA Approved Organisation Structure"
+    "short_title": "EMA Approved Organisation Structure",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0116",
@@ -8928,7 +9158,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Air — Register of Emitter Facilities"
+    "short_title": "Air — Register of Emitter Facilities",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0117",
@@ -9005,7 +9237,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Certificates of Environmental Clearance — National Register"
+    "short_title": "Certificates of Environmental Clearance — National Register",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0118",
@@ -9082,7 +9316,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Noise Variation Register"
+    "short_title": "Noise Variation Register",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0119",
@@ -9159,7 +9395,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Water Polluters Register"
+    "short_title": "Water Polluters Register",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0120",
@@ -9236,7 +9474,9 @@
     "availability_note": null,
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Waste Permit Register"
+    "short_title": "Waste Permit Register",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0121",
@@ -9313,7 +9553,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Draft Environmental Code: A Consolidated Text of Environmental Laws (2000)."
+    "short_title": "Draft Environmental Code: A Consolidated Text of Environmental Laws (2000).",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0122",
@@ -9390,7 +9632,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Effluent from Forrest Park Landfill — Groundwater from Well at Springvale"
+    "short_title": "Effluent from Forrest Park Landfill — Groundwater from Well at Springvale",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0123",
@@ -9467,7 +9711,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Final Report on Lead Particulate at the St. Joseph Boys’ School"
+    "short_title": "Final Report on Lead Particulate at the St. Joseph Boys’ School",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0124",
@@ -9544,7 +9790,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Report on the Investigation of the Fish Kill at the Caroni Swamp"
+    "short_title": "Report on the Investigation of the Fish Kill at the Caroni Swamp",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0125",
@@ -9621,7 +9869,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Final report on the fingerprinting analysis of an oil spill at Chaguaramas"
+    "short_title": "Final report on the fingerprinting analysis of an oil spill at Chaguaramas",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0126",
@@ -9698,7 +9948,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Report of an oil spill at Chaguaramas"
+    "short_title": "Report of an oil spill at Chaguaramas",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0127",
@@ -9775,7 +10027,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Report of oil spill at Chaguaramas"
+    "short_title": "Report of oil spill at Chaguaramas",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0128",
@@ -9852,7 +10106,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "North Trinidad Water Quality Monitoring Report"
+    "short_title": "North Trinidad Water Quality Monitoring Report",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0129",
@@ -9929,7 +10185,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Groundwater Quality Assessment"
+    "short_title": "Groundwater Quality Assessment",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0130",
@@ -10006,7 +10264,9 @@
     "availability_note": "OCR-derived title; verify punctuation/title against source Gazette before final publication use.",
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Blood Lead Levels in Primary School Children"
+    "short_title": "Blood Lead Levels in Primary School Children",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0131",
@@ -10083,7 +10343,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Groundwater Quality Assessment"
+    "short_title": "Groundwater Quality Assessment",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0132",
@@ -10160,7 +10422,9 @@
     "availability_note": "OCR-derived title; verify punctuation/title against source Gazette before final publication use.",
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Blood Lead Levels in Primary School Children"
+    "short_title": "Blood Lead Levels in Primary School Children",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0133",
@@ -10237,7 +10501,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Volume of Soil-Lead Contamination at Demerara Pond Area"
+    "short_title": "Volume of Soil-Lead Contamination at Demerara Pond Area",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0134",
@@ -10314,7 +10580,9 @@
     "availability_note": "OCR-derived title; verify punctuation/title against source Gazette before final publication use.",
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Lead Sampling and Analysis at La Chance Trace and…"
+    "short_title": "Lead Sampling and Analysis at La Chance Trace and…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0135",
@@ -10391,7 +10659,9 @@
     "availability_note": "OCR-derived title; verify punctuation/title against source Gazette before final publication use.",
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "National Hazardous Waste Inventory"
+    "short_title": "National Hazardous Waste Inventory",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0136",
@@ -10468,7 +10738,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Final report on water quality monitoring of selected recreational…"
+    "short_title": "Final report on water quality monitoring of selected recreational…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0137",
@@ -10545,7 +10817,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "River assessment reports: May 2007"
+    "short_title": "River assessment reports: May 2007",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0138",
@@ -10622,7 +10896,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Chemical water quality of rivers of Trinidad and Tobago"
+    "short_title": "Chemical water quality of rivers of Trinidad and Tobago",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0139",
@@ -10699,7 +10975,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Use of benthic macroinvertebrates to assess anthropogenic impacts in…"
+    "short_title": "Use of benthic macroinvertebrates to assess anthropogenic impacts in…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0140",
@@ -10776,7 +11054,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Investigation and assessment of potential lead contaminated sites in…"
+    "short_title": "Investigation and assessment of potential lead contaminated sites in…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0141",
@@ -10853,7 +11133,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Determination of the volume of lead contamination at three sites in Trinidad"
+    "short_title": "Determination of the volume of lead contamination at three sites in Trinidad",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0142",
@@ -10930,7 +11212,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Point Lisas Air Quality Monitoring Report"
+    "short_title": "Point Lisas Air Quality Monitoring Report",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0143",
@@ -11007,7 +11291,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "National Environmental Literacy/Awareness Survey, 2016."
+    "short_title": "National Environmental Literacy/Awareness Survey, 2016.",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0144",
@@ -11084,7 +11370,9 @@
     "availability_note": "OCR-derived title; verify punctuation/title against source Gazette before final publication use.",
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Quarry Rehabilitation Guidebook"
+    "short_title": "Quarry Rehabilitation Guidebook",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0145",
@@ -11161,7 +11449,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Aripo Savannas ESA Management Plan"
+    "short_title": "Aripo Savannas ESA Management Plan",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0146",
@@ -11238,7 +11528,9 @@
     "availability_note": "OCR-derived title; verify punctuation/title against source Gazette before final publication use.",
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Aripo Savannas ESA Management Plan"
+    "short_title": "Aripo Savannas ESA Management Plan",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0147",
@@ -11315,7 +11607,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Aripo Savannas Environmentally Sensitive Area Implementation Plan/ Prepared by…"
+    "short_title": "Aripo Savannas Environmentally Sensitive Area Implementation Plan/ Prepared by…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0148",
@@ -11392,7 +11686,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Aripo Savannas ESA Management Plan"
+    "short_title": "Aripo Savannas ESA Management Plan",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0149",
@@ -11469,7 +11765,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Case study of the participatory planning process for the…"
+    "short_title": "Case study of the participatory planning process for the…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0150",
@@ -11546,7 +11844,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Aripo Savannas Environmentally Sensitive Area Participatory Geographic Information Systems…"
+    "short_title": "Aripo Savannas Environmentally Sensitive Area Participatory Geographic Information Systems…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0151",
@@ -11623,7 +11923,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Aripo Savannas ESA Management Plan"
+    "short_title": "Aripo Savannas ESA Management Plan",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0152",
@@ -11700,7 +12002,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Aripo Savannas ESA Management Plan"
+    "short_title": "Aripo Savannas ESA Management Plan",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0153",
@@ -11777,7 +12081,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Aripo Savannas ESA Management Plan"
+    "short_title": "Aripo Savannas ESA Management Plan",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0154",
@@ -11854,7 +12160,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Participatory planning and management of protected areas / Prepared…"
+    "short_title": "Participatory planning and management of protected areas / Prepared…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0155",
@@ -11931,7 +12239,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Guideline on the Application of Risk Assessment in CEC…"
+    "short_title": "Guideline on the Application of Risk Assessment in CEC…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0156",
@@ -12008,7 +12318,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Cumulative Impact Assessment Practitioners Guide (2008) Prepared for the…"
+    "short_title": "Cumulative Impact Assessment Practitioners Guide (2008) Prepared for the…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0157",
@@ -12085,7 +12397,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Towards a Methodology for Marine SEA in Trinidad and…"
+    "short_title": "Towards a Methodology for Marine SEA in Trinidad and…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0158",
@@ -12162,7 +12476,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Marine Strategic Environmental Assessment"
+    "short_title": "Marine Strategic Environmental Assessment",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0159",
@@ -12239,7 +12555,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Review and Assessment of the EIA Process in Trinidad and Tobago. Volume 1"
+    "short_title": "Review and Assessment of the EIA Process in Trinidad and Tobago. Volume 1",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0160",
@@ -12316,7 +12634,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Environmental Impact Assessment Practitioners Guide (Draft Final) Prepared for…"
+    "short_title": "Environmental Impact Assessment Practitioners Guide (Draft Final) Prepared for…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0161",
@@ -12393,7 +12713,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Air Dispersion Modelling Report and EIA Sections, Proposed Aluminium…"
+    "short_title": "Air Dispersion Modelling Report and EIA Sections, Proposed Aluminium…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0162",
@@ -12470,7 +12792,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Review of Supplementary Report, Proposed Aluminium Complex by Alutrint…"
+    "short_title": "Review of Supplementary Report, Proposed Aluminium Complex by Alutrint…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0163",
@@ -12547,7 +12871,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Review of Alutrint Responses dated Nov 23, 2006. On…"
+    "short_title": "Review of Alutrint Responses dated Nov 23, 2006. On…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0164",
@@ -12624,7 +12950,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Review of Human Health Ecological Risk Assessment. Proposed Aluminium…"
+    "short_title": "Review of Human Health Ecological Risk Assessment. Proposed Aluminium…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0165",
@@ -12701,7 +13029,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Review of sedimentation and erosion studies for Chatham. CECo851/2004"
+    "short_title": "Review of sedimentation and erosion studies for Chatham. CECo851/2004",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0166",
@@ -12778,7 +13108,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Review of NGC’s response to the Review and Assessment Report. CEC1516/2006"
+    "short_title": "Review of NGC’s response to the Review and Assessment Report. CEC1516/2006",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0167",
@@ -12855,7 +13187,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Environmental Impact Assessment, Ambient Monitoring, Dispersion Modeling, and Quantitative…"
+    "short_title": "Environmental Impact Assessment, Ambient Monitoring, Dispersion Modeling, and Quantitative…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0168",
@@ -12932,7 +13266,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Peer Review of Applicant’s Response to the Review and…"
+    "short_title": "Peer Review of Applicant’s Response to the Review and…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0169",
@@ -13009,7 +13345,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Peer Review Air Dispersion Modelling and Risk Assessment, CariSal…"
+    "short_title": "Peer Review Air Dispersion Modelling and Risk Assessment, CariSal…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0170",
@@ -13086,7 +13424,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Critical Review of Risk Assessment Report and Air Modelling…"
+    "short_title": "Critical Review of Risk Assessment Report and Air Modelling…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0171",
@@ -13163,7 +13503,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Critical Review of Westlake’s Supplemental Response to the EMA"
+    "short_title": "Critical Review of Westlake’s Supplemental Response to the EMA",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0172",
@@ -13240,7 +13582,9 @@
     "availability_note": "OCR-derived title; verify punctuation/title against source Gazette before final publication use.",
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "The installation of a natural gas distribution pipeline and…"
+    "short_title": "The installation of a natural gas distribution pipeline and…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0173",
@@ -13317,7 +13661,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "The Establishment of a Marine Port and Fish-Landing Facility…"
+    "short_title": "The Establishment of a Marine Port and Fish-Landing Facility…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0174",
@@ -13394,7 +13740,9 @@
     "availability_note": "OCR-derived title; verify punctuation/title against source Gazette before final publication use.",
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "National Hazardous Waste Inventory"
+    "short_title": "National Hazardous Waste Inventory",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0175",
@@ -13471,7 +13819,9 @@
     "availability_note": "OCR-derived title; verify punctuation/title against source Gazette before final publication use.",
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Reforestation scheme: final report. (Nariva Swamp Restoration Initiative)"
+    "short_title": "Reforestation scheme: final report. (Nariva Swamp Restoration Initiative)",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0176",
@@ -13548,7 +13898,9 @@
     "availability_note": "OCR-derived title; verify punctuation/title against source Gazette before final publication use.",
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Nariva Restoration Social Impact Assessment"
+    "short_title": "Nariva Restoration Social Impact Assessment",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0177",
@@ -13625,7 +13977,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Watershed Vulnerability Assessment using the WRASTIC Approach for Trinidad…"
+    "short_title": "Watershed Vulnerability Assessment using the WRASTIC Approach for Trinidad…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0178",
@@ -13702,7 +14056,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Needs Assessment Consultation Report"
+    "short_title": "Needs Assessment Consultation Report",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0179",
@@ -13779,7 +14135,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Non-point Source Pollution Management Programme"
+    "short_title": "Non-point Source Pollution Management Programme",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0180",
@@ -13856,7 +14214,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Development of the Ambient Water quality Standards for Trinidad…"
+    "short_title": "Development of the Ambient Water quality Standards for Trinidad…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0181",
@@ -13933,7 +14293,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Environmental Assessment of the Quarry Sector"
+    "short_title": "Environmental Assessment of the Quarry Sector",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0182",
@@ -14010,7 +14372,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Institutional Strengthening Design "
+    "short_title": "Institutional Strengthening Design ",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0183",
@@ -14087,7 +14451,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Institutional Strengthening Design "
+    "short_title": "Institutional Strengthening Design ",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0184",
@@ -14164,7 +14530,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Review of Legislation and Policy Relevant to Environmental Management…"
+    "short_title": "Review of Legislation and Policy Relevant to Environmental Management…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0185",
@@ -14241,7 +14609,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Review and assessment of Mixing Zone Study (MZS). CEC4195/2014"
+    "short_title": "Review and assessment of Mixing Zone Study (MZS). CEC4195/2014",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0186",
@@ -14318,7 +14688,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Review and assessment of Mixing Zone Study (MZS). CEC3047/2011"
+    "short_title": "Review and assessment of Mixing Zone Study (MZS). CEC3047/2011",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0187",
@@ -14395,7 +14767,9 @@
     "availability_note": "OCR-derived title; verify punctuation/title against source Gazette before final publication use.",
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "South-West Peninsula Baseline Risk Assessment"
+    "short_title": "South-West Peninsula Baseline Risk Assessment",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0188",
@@ -14472,7 +14846,9 @@
     "availability_note": "OCR-derived title; verify punctuation/title against source Gazette before final publication use.",
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "National Wildlife Survey"
+    "short_title": "National Wildlife Survey",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0189",
@@ -14549,7 +14925,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Watershed Improvement Plans Final Report"
+    "short_title": "Watershed Improvement Plans Final Report",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0190",
@@ -14626,7 +15004,9 @@
     "availability_note": "OCR-derived title; verify punctuation/title against source Gazette before final publication use.",
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Review of Legislation, Regulations, Policies and Programmes (2022)."
+    "short_title": "Review of Legislation, Regulations, Policies and Programmes (2022).",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0191",
@@ -14703,7 +15083,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Revised Draft Environmental Code (2021)."
+    "short_title": "Revised Draft Environmental Code (2021).",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0192",
@@ -14780,7 +15162,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Report on Critical Review for Qualitative Risk Assessment May…"
+    "short_title": "Report on Critical Review for Qualitative Risk Assessment May…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0193",
@@ -14857,7 +15241,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Critical Review for CEC Application CEC5601/2018-July 2022 CEC5601/2022"
+    "short_title": "Critical Review for CEC Application CEC5601/2018-July 2022 CEC5601/2022",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0194",
@@ -14934,7 +15320,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Critical Review of a Qualitative Risk Assessment (Appendix E)…"
+    "short_title": "Critical Review of a Qualitative Risk Assessment (Appendix E)…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0195",
@@ -15011,7 +15399,9 @@
     "availability_note": "OCR-derived title; verify punctuation/title against source Gazette before final publication use.",
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Field Survey Handbook"
+    "short_title": "Field Survey Handbook",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0196",
@@ -15088,7 +15478,9 @@
     "availability_note": "OCR-derived title; verify punctuation/title against source Gazette before final publication use.",
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Matura ESA Baseline Survey"
+    "short_title": "Matura ESA Baseline Survey",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0197",
@@ -15165,7 +15557,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Ivan Laughlin 2004. Boundaries of The Aripo Savannas Strict Nature Reserve."
+    "short_title": "Ivan Laughlin 2004. Boundaries of The Aripo Savannas Strict Nature Reserve.",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0198",
@@ -15242,7 +15636,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Ali Deonanan & Associates Ltd 2005. Boundaries of the…"
+    "short_title": "Ali Deonanan & Associates Ltd 2005. Boundaries of the…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0199",
@@ -15319,7 +15715,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Ali Deonanan & Associates Ltd, Boundaries of Proposed Environmentally…"
+    "short_title": "Ali Deonanan & Associates Ltd, Boundaries of Proposed Environmentally…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0200",
@@ -15396,7 +15794,9 @@
     "availability_note": "OCR-derived title; verify punctuation/title against source Gazette before final publication use.",
     "has_source_pathway": true,
     "has_request_pathway": false,
-    "short_title": "Fourth National Report of Trinidad and Tobago to the…"
+    "short_title": "Fourth National Report of Trinidad and Tobago to the…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0201",
@@ -15473,7 +15873,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Trinidad and Tobago Forest Cover Inventory Maps, 2010. United…"
+    "short_title": "Trinidad and Tobago Forest Cover Inventory Maps, 2010. United…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0202",
@@ -15550,7 +15952,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Code of Conduct Policy — 2022"
+    "short_title": "Code of Conduct Policy — 2022",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0203",
@@ -15627,7 +16031,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Conflict of Interest Policy & Declaration Form 2020"
+    "short_title": "Conflict of Interest Policy & Declaration Form 2020",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0204",
@@ -15704,7 +16110,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Information Technology Policy, 2023"
+    "short_title": "Information Technology Policy, 2023",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0205",
@@ -15781,7 +16189,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Media and Social Media Policy, 2019"
+    "short_title": "Media and Social Media Policy, 2019",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0206",
@@ -15857,7 +16267,9 @@
     "availability_note": "Public source page identified; request or verify the official copy through the EMA Information Centre where an authoritative file/version is required.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "EMA’s 9001:2015 Quality Policy, 2019"
+    "short_title": "EMA’s 9001:2015 Quality Policy, 2019",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0207",
@@ -15934,7 +16346,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Procedure: Control of Documented Information — 2024"
+    "short_title": "Procedure: Control of Documented Information — 2024",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0208",
@@ -16011,7 +16425,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Procedure: Change Management — 2024"
+    "short_title": "Procedure: Change Management — 2024",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0209",
@@ -16088,7 +16504,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Environmental, Social, Health and Safety Management Policy Statement, 2022"
+    "short_title": "Environmental, Social, Health and Safety Management Policy Statement, 2022",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0210",
@@ -16165,7 +16583,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "HSE Management System Manual, 2024"
+    "short_title": "HSE Management System Manual, 2024",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0211",
@@ -16242,7 +16662,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Policy for the Retention of External Legal Counsel, 2016"
+    "short_title": "Policy for the Retention of External Legal Counsel, 2016",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0212",
@@ -16319,7 +16741,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Procedural Rules for the Board of Directors of the EMA, 2021"
+    "short_title": "Procedural Rules for the Board of Directors of the EMA, 2021",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0213",
@@ -16396,7 +16820,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Strategic Planning & Annual Objective Setting Manual — 2022"
+    "short_title": "Strategic Planning & Annual Objective Setting Manual — 2022",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0214",
@@ -16473,7 +16899,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Accounting and Finance Policy and Standard Operating Procedures Manual, 2019"
+    "short_title": "Accounting and Finance Policy and Standard Operating Procedures Manual, 2019",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0215",
@@ -16550,7 +16978,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Anti-Fraud Policy and Procedures, 2019"
+    "short_title": "Anti-Fraud Policy and Procedures, 2019",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0216",
@@ -16627,7 +17057,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Internal Audit Manual, 2020"
+    "short_title": "Internal Audit Manual, 2020",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0217",
@@ -16704,7 +17136,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Investment Policy and Procedures, 2019"
+    "short_title": "Investment Policy and Procedures, 2019",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0218",
@@ -16781,7 +17215,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Payment of Allowances for Overseas Travel Policy, 2017"
+    "short_title": "Payment of Allowances for Overseas Travel Policy, 2017",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0219",
@@ -16858,7 +17294,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Procurement, Disposal and Retention Policy 2023"
+    "short_title": "Procurement, Disposal and Retention Policy 2023",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0220",
@@ -16935,7 +17373,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Handbook for Procurement Retention and Disposal of Public Property 2023"
+    "short_title": "Handbook for Procurement Retention and Disposal of Public Property 2023",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0221",
@@ -17012,7 +17452,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Public Sector Investment Programme (PSIP) — Guidelines & Process Flow — 2021"
+    "short_title": "Public Sector Investment Programme (PSIP) — Guidelines & Process Flow — 2021",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0222",
@@ -17089,7 +17531,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Project Management Manual 2022"
+    "short_title": "Project Management Manual 2022",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0223",
@@ -17166,7 +17610,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Anti-Money Laundering/Countering the Financing of Terrorism/Countering Proliferation Finance and…"
+    "short_title": "Anti-Money Laundering/Countering the Financing of Terrorism/Countering Proliferation Finance and…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0224",
@@ -17243,7 +17689,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Vehicle Usage Policy and Procedures, 2022"
+    "short_title": "Vehicle Usage Policy and Procedures, 2022",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0225",
@@ -17320,7 +17768,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "VTM / Credit Card Policy and Procedure, 2021"
+    "short_title": "VTM / Credit Card Policy and Procedure, 2021",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0226",
@@ -17397,7 +17847,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Conflict of Interest Policy, 2020"
+    "short_title": "Conflict of Interest Policy, 2020",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0227",
@@ -17474,7 +17926,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Delegated Authorities for Human Resource Management, 2022"
+    "short_title": "Delegated Authorities for Human Resource Management, 2022",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0228",
@@ -17551,7 +18005,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Human Resource Policy and Procedures Manual, 2014"
+    "short_title": "Human Resource Policy and Procedures Manual, 2014",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0229",
@@ -17628,7 +18084,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Employee Performance Management Handbook, 2018"
+    "short_title": "Employee Performance Management Handbook, 2018",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0230",
@@ -17705,7 +18163,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Employee Benefits Policy 2021"
+    "short_title": "Employee Benefits Policy 2021",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0231",
@@ -17782,7 +18242,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Employee Leave Policy, 2022"
+    "short_title": "Employee Leave Policy, 2022",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0232",
@@ -17859,7 +18321,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Gender Policy and Action Plan 2022"
+    "short_title": "Gender Policy and Action Plan 2022",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0233",
@@ -17936,7 +18400,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Orientation Policy, 2021"
+    "short_title": "Orientation Policy, 2021",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0234",
@@ -18013,7 +18479,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Recruitment and Selection Policy — 2022"
+    "short_title": "Recruitment and Selection Policy — 2022",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0235",
@@ -18090,7 +18558,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Remote Work Policy and Guidelines 2022"
+    "short_title": "Remote Work Policy and Guidelines 2022",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0236",
@@ -18167,7 +18637,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Whistleblower Policy and Procedure, 2022"
+    "short_title": "Whistleblower Policy and Procedure, 2022",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0237",
@@ -18244,7 +18716,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Workplace Harassment Policy, 2020"
+    "short_title": "Workplace Harassment Policy, 2020",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0238",
@@ -18321,7 +18795,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Infectious Diseases Protocol"
+    "short_title": "Infectious Diseases Protocol",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0239",
@@ -18398,7 +18874,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Infectious Diseases Protocol"
+    "short_title": "Infectious Diseases Protocol",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0240",
@@ -18475,7 +18953,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Infectious Diseases Protocol: Isolation of Employees Whilst at Work, 2023"
+    "short_title": "Infectious Diseases Protocol: Isolation of Employees Whilst at Work, 2023",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0241",
@@ -18552,7 +19032,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Infectious Diseases Protocol"
+    "short_title": "Infectious Diseases Protocol",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0242",
@@ -18629,7 +19111,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Infectious Diseases Guide for the Safe Return to Work for the EMA, 2023"
+    "short_title": "Infectious Diseases Guide for the Safe Return to Work for the EMA, 2023",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0243",
@@ -18706,7 +19190,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "the Administration of First Aid (to Staff & Visitors)…"
+    "short_title": "the Administration of First Aid (to Staff & Visitors)…",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0244",
@@ -18783,7 +19269,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "PPE Care Guidelines, 2023"
+    "short_title": "PPE Care Guidelines, 2023",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0245",
@@ -18860,7 +19348,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Policy for ‘Form A’ Amendment Made Under CEC Rules, 2024"
+    "short_title": "Policy for ‘Form A’ Amendment Made Under CEC Rules, 2024",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0246",
@@ -18937,7 +19427,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Prescribed Matters Policy Made Under the NPCR, 2023"
+    "short_title": "Prescribed Matters Policy Made Under the NPCR, 2023",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0247",
@@ -19014,7 +19506,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Guideline — Payment Plan for Annual Permit Fees, 2021"
+    "short_title": "Guideline — Payment Plan for Annual Permit Fees, 2021",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0248",
@@ -19091,7 +19585,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Procedure: Control of Non-conforming Outputs — 2023"
+    "short_title": "Procedure: Control of Non-conforming Outputs — 2023",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0249",
@@ -19168,7 +19664,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Procedure: Corrective Action and Preventive Action 2024"
+    "short_title": "Procedure: Corrective Action and Preventive Action 2024",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0250",
@@ -19245,7 +19743,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Procedure: Management Review 2023"
+    "short_title": "Procedure: Management Review 2023",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0251",
@@ -19322,7 +19822,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Quality Management Systems Manual 2024"
+    "short_title": "Quality Management Systems Manual 2024",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0252",
@@ -19399,7 +19901,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Procedure: Emergency Response Plan (ERP) for EMA Locations, 2022"
+    "short_title": "Procedure: Emergency Response Plan (ERP) for EMA Locations, 2022",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0253",
@@ -19476,7 +19980,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Standard operating procedures"
+    "short_title": "Standard operating procedures",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0254",
@@ -19553,7 +20059,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Water Pollution Management Programme"
+    "short_title": "Water Pollution Management Programme",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0255",
@@ -19630,7 +20138,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Performance Monitoring Framework for Permit Monitoring and Complaints Unit"
+    "short_title": "Performance Monitoring Framework for Permit Monitoring and Complaints Unit",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0256",
@@ -19707,7 +20217,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Compliance Monitoring and Enforcement Policy (Draft)"
+    "short_title": "Compliance Monitoring and Enforcement Policy (Draft)",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0257",
@@ -19784,7 +20296,9 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Work Instruction — Transmission of Correspondence"
+    "short_title": "Work Instruction — Transmission of Correspondence",
+    "database": "documents",
+    "record_set": "Document Access Register"
   },
   {
     "id": "EMA-KM-0258",
@@ -19861,6 +20375,8 @@
     "availability_note": "This document is referenced in EMA’s Updated Public Statement 2024 and should be held by or accessible through EMA. No public online copy is currently linked in this register. Request access through the EMA Information Centre.",
     "has_source_pathway": true,
     "has_request_pathway": true,
-    "short_title": "Guideline: Payment Plan for Annual Permit Fees"
+    "short_title": "Guideline: Payment Plan for Annual Permit Fees",
+    "database": "documents",
+    "record_set": "Document Access Register"
   }
 ]

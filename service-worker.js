@@ -1,12 +1,14 @@
-const CACHE_NAME = 'ema-register-two-db-20260626-v1';
-const ASSETS = ['./','./index.html','./assets/styles.css','./assets/app.js','./data/documents.json','./data/press_releases.json','./documents.json','./press_releases.json','./manifest.webmanifest'];
-self.addEventListener('install', event => { event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS)).catch(() => null)); self.skipWaiting(); });
-self.addEventListener('activate', event => { event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k))))); self.clients.claim(); });
-self.addEventListener('fetch', event => {
-  if (event.request.method !== 'GET') return;
-  event.respondWith(fetch(event.request).then(response => {
-    const clone = response.clone();
-    caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone)).catch(() => null);
-    return response;
-  }).catch(() => caches.match(event.request).then(match => match || caches.match('./index.html'))));
+// Cache-reset service worker. This app intentionally does not cache assets during active GitHub Pages testing.
+self.addEventListener('install', event => {
+  self.skipWaiting();
+  event.waitUntil(caches.keys().then(keys => Promise.all(keys.map(k => caches.delete(k)))));
+});
+self.addEventListener('activate', event => {
+  event.waitUntil((async () => {
+    const keys = await caches.keys();
+    await Promise.all(keys.map(k => caches.delete(k)));
+    await self.registration.unregister();
+    const clients = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
+    for (const client of clients) client.navigate(client.url);
+  })());
 });
