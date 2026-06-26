@@ -1,10 +1,9 @@
 {
-  "name": "EMA KM Document Search",
-  "short_name": "EMA KM Search",
-  "description": "Mobile-friendly searchable EMA knowledge management document register.",
+  "name": "EMA Document Access Register",
+  "short_name": "EMA Register",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#f5faf7",
-  "theme_color": "#009b83",
-  "icons": []
+  "background_color": "#f7fbf8",
+  "theme_color": "#006b5f",
+  "description": "Mobile-friendly search and request-basket interface for EMA document access records."
 }
