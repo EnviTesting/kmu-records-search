@@ -118,3 +118,18 @@ This repository uses a split licensing approach.
 - Code: MIT License. See `LICENSE`.
 - Curated metadata, JSON records, taxonomy, and documentation: CC BY 4.0. See `LICENSE-DATA`.
 - Official EMA, Government of Trinidad and Tobago, UN, UWI, World Bank, consultant, and third-party documents linked or referenced are not licensed by this repository. They remain subject to their own copyright, access, and reuse terms.
+
+
+## Separated search/results layout
+
+This version removes the sticky search-panel behaviour so result rows no longer appear to slide underneath the search controls. The search panel and record list are visually separated for easier reading on GitHub Pages and mobile browsers.
+
+## Hidden diagnostics
+
+The public page no longer shows troubleshooting controls to casual users. To reveal the admin/diagnostics panel, tap or click the small app version text in the footer seven times. The hidden panel includes:
+
+- app version/build information
+- database load diagnostics
+- the Refresh app cache button for GitHub Pages cache issues
+
+This is only a light UI concealment. The code is still visible in the repository, as expected for a static GitHub Pages app.

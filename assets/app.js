@@ -1,7 +1,8 @@
 (() => {
   'use strict';
 
-  const APP_VERSION = '2026.06.26-github-hardened-v4';
+  const APP_VERSION = '6.0-hidden-admin';
+  const APP_BUILD = '2026.06.26-github-hardened-v6-hidden-admin';
   const EMA_REQUEST_URL = 'https://www.ema.co.tt/information-centre-general-request/';
   const PAGE_SIZE = 45;
 
@@ -79,7 +80,7 @@
     populateFilters();
     applyFiltersAndRender();
     renderBasket();
-    debug('Initialised', { version: APP_VERSION, records: state.records.length });
+    debug('Initialised', { version: APP_BUILD, records: state.records.length });
   }
 
   function bindEvents(){
@@ -98,7 +99,7 @@
     $('copyRequestBtn')?.addEventListener('click', copyRequestText);
     $('downloadCsvBtn')?.addEventListener('click', () => downloadCsv(state.basket, 'ema-record-basket.csv'));
     $('downloadJsonBtn')?.addEventListener('click', () => downloadJson(state.basket, 'ema-record-basket.json'));
-    $('diagnosticsToggle')?.addEventListener('click', () => $('diagnosticsPanel')?.classList.toggle('hidden'));
+    bindHiddenAdminUnlock();
     $('resetCacheBtn')?.addEventListener('click', () => unregisterOldServiceWorkers(true));
 
     $('quickFiltersToggle')?.addEventListener('click', () => {
@@ -157,6 +158,43 @@
       if (addBtn) { addToBasket(addBtn.getAttribute('data-id')); return; }
       const removeBtn = e.target.closest('[data-action="remove-basket"]');
       if (removeBtn) { removeFromBasket(removeBtn.getAttribute('data-id')); return; }
+    });
+  }
+
+  function bindHiddenAdminUnlock(){
+    const versionEl = $('appVersion');
+    const adminPanel = $('adminPanel');
+    if (!versionEl || !adminPanel) return;
+    let taps = 0;
+    let firstTapAt = 0;
+    const neededTaps = 7;
+    const windowMs = 8000;
+
+    function unlockAdmin(){
+      adminPanel.classList.remove('hidden');
+      adminPanel.setAttribute('data-unlocked', 'true');
+      renderDiagnostics();
+      debug('Hidden diagnostics panel unlocked');
+    }
+
+    function countTap(){
+      if (adminPanel.getAttribute('data-unlocked') === 'true') return;
+      const now = Date.now();
+      if (!firstTapAt || now - firstTapAt > windowMs) {
+        firstTapAt = now;
+        taps = 0;
+      }
+      taps += 1;
+      if (taps >= neededTaps) unlockAdmin();
+    }
+
+    versionEl.addEventListener('click', countTap);
+    versionEl.addEventListener('dblclick', countTap);
+    versionEl.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        countTap();
+      }
     });
   }
 
@@ -526,6 +564,7 @@
     const panel = $('diagnosticsPanel'); if (!panel) return;
     const info = {
       version: APP_VERSION,
+      build: APP_BUILD,
       loadedPaths: state.loadedPaths,
       rawCounts: { documents: state.raw.documents.length, press_releases: state.raw.press_releases.length },
       normalisedCount: state.records.length,

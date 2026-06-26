@@ -66,7 +66,6 @@
       <div class="toggle-row">
         <button class="ghost" type="button" id="quickFiltersToggle" aria-expanded="true" aria-controls="quickFilters">Hide quick filters</button>
         <button class="ghost" type="button" id="advancedToggle" aria-expanded="false" aria-controls="advancedFilters">Show advanced search</button>
-        <button class="ghost danger-lite" type="button" id="resetCacheBtn" title="Use if GitHub Pages still shows an old version">Refresh app cache</button>
       </div>
 
       <div class="quick-filters" id="quickFilters" role="group" aria-label="Quick filters">
@@ -155,11 +154,20 @@
   </aside>
 
   <footer class="footer">
-    <div>
-      <strong>App version:</strong> <span id="appVersion">—</span> · <button type="button" class="footer-link" id="diagnosticsToggle">Diagnostics</button>
+    <div class="footer-mainline">
+      <span>This register is a knowledge-management aid. Official copies, access decisions, and availability should be confirmed through EMA.</span>
+      <span class="version-shell" aria-label="App version">v<span id="appVersion" class="secret-version" tabindex="0">—</span></span>
     </div>
-    <div id="diagnosticsPanel" class="diagnostics hidden"></div>
-    <p>This register is a knowledge-management aid. Official copies, access decisions, and availability should be confirmed through EMA.</p>
+    <div id="adminPanel" class="admin-panel hidden" aria-live="polite">
+      <div class="admin-head">
+        <div>
+          <strong>Admin tools</strong>
+          <small>Version and diagnostics for GitHub Pages troubleshooting.</small>
+        </div>
+        <button class="ghost danger-lite" type="button" id="resetCacheBtn" title="Use if GitHub Pages still shows an old cached version">Refresh app cache</button>
+      </div>
+      <div id="diagnosticsPanel" class="diagnostics"></div>
+    </div>
   </footer>
 
   <script src="assets/app.js" defer></script>
