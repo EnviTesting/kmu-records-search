@@ -1,0 +1,9 @@
+{
+  "name": "EMA Knowledge Access Register",
+  "short_name": "EMA Register",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f4f8f6",
+  "theme_color": "#006b5f",
+  "description": "Search EMA documents, judgments and News & Events with source and access information."
+}

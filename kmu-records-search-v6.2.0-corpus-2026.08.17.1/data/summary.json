@@ -1,0 +1,81 @@
+{
+  "generated_at": "2026-08-17T14:30:00Z",
+  "corpus_version": "2026.08.17.1",
+  "application_version": "6.2.0",
+  "record_count": 394,
+  "counts": {
+    "record_set": {
+      "Documents": 279,
+      "News & Events": 85,
+      "Judgments & Proceedings": 30
+    },
+    "document_category": {
+      "Legislation / Legal Instrument": 32,
+      "Form / Guideline / Technical Guidance": 10,
+      "Monitoring Report Series": 1,
+      "Form / Guideline / FAQ": 40,
+      "Form / Guideline / Report / FAQ": 13,
+      "Publication": 4,
+      "Annual Report": 22,
+      "State of Environment Report": 1,
+      "Policy": 1,
+      "Action Plan": 1,
+      "Policy / Strategy": 1,
+      "International Convention Report": 2,
+      "Activity Booklet": 3,
+      "Teachers' Module": 1,
+      "Survey Report": 1,
+      "Strategic Plan": 1,
+      "Quality Policy": 1,
+      "Organisation Structure": 1,
+      "Public Register": 5,
+      "Scientific / Technical Report": 46,
+      "Consultant Report": 29,
+      "Internal Study / Survey / Map": 6,
+      "Manual / Policy / Procedure / Work Instruction": 57
+    },
+    "document_source_status": {
+      "Held by EMA — Request Required": 127,
+      "Official EMA linked": 83,
+      "EMA hub only / direct link not verified": 7,
+      "Official EMA page listing / individual links to verify": 2,
+      "Official EMA page listing / direct link not verified": 8,
+      "EMA page listing / time-bound document to verify": 1,
+      "Official EMA page / subscription material": 1,
+      "EMA Source Page": 1,
+      "Official EMA page listing / verify individual links": 1,
+      "Public external / EMA policy page listing": 1,
+      "Public external": 7,
+      "Information Centre / website to verify": 3,
+      "Official EMA page found": 2,
+      "Official EMA news page found": 1,
+      "Official online e-summary / public register": 1,
+      "Information Centre / public register": 1,
+      "Public external / article page": 2,
+      "Cited online / project portfolio": 1,
+      "Cited online; full report not located": 5,
+      "Cited online; full PDF not located": 1,
+      "Public external / related public docs": 1,
+      "Information Centre / FOIA likely": 1,
+      "Public Link Found": 21
+    },
+    "legal_court": {
+      "Environmental Commission": 14,
+      "Judicial Committee of the Privy Council": 6,
+      "High Court of Trinidad and Tobago": 5,
+      "Court of Appeal of Trinidad and Tobago": 5
+    },
+    "legal_record_type": {
+      "Judgment": 21,
+      "Appeal record": 1,
+      "Ruling": 2,
+      "Costs decision": 1,
+      "Reasons": 1,
+      "Assessment decision": 1,
+      "Permission to Appeal Decision": 2,
+      "Appeal Proceeding": 1
+    }
+  },
+  "source_access_note": "Records without public links are not treated as missing; use the listed access route or contact EMA/KMU for assistance.",
+  "corpus_maintenance": "Suggest missing or corrected records through the Knowledge Management Unit; public users do not edit the corpus directly."
+}

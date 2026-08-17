@@ -1,0 +1,343 @@
+[
+  {
+    "programme_area": "Air",
+    "common_terms": [
+      "air pollution",
+      "air quality",
+      "source emitter",
+      "ambient monitoring",
+      "air permit"
+    ],
+    "count": 20
+  },
+  {
+    "programme_area": "Biodiversity",
+    "common_terms": [
+      "biodiversity",
+      "species conservation",
+      "ecosystem services",
+      "habitat management",
+      "protected area"
+    ],
+    "count": 1
+  },
+  {
+    "programme_area": "Biodiversity/ESA",
+    "common_terms": [
+      "biodiversity",
+      "environmentally sensitive area",
+      "protected area",
+      "habitat management",
+      "species conservation"
+    ],
+    "count": 1
+  },
+  {
+    "programme_area": "Biodiversity/ESA/ESS",
+    "common_terms": [
+      "biodiversity",
+      "environmentally sensitive area",
+      "environmentally sensitive species",
+      "protected area",
+      "species conservation"
+    ],
+    "count": 35
+  },
+  {
+    "programme_area": "CEC",
+    "common_terms": [
+      "certificate environmental clearance",
+      "cec",
+      "eia",
+      "designated activities",
+      "environmental impact assessment"
+    ],
+    "count": 34
+  },
+  {
+    "programme_area": "Climate / MEA",
+    "common_terms": [
+      "climate change",
+      "mea",
+      "unfccc",
+      "convention reporting",
+      "national communication"
+    ],
+    "count": 3
+  },
+  {
+    "programme_area": "Climate Change",
+    "common_terms": [
+      "climate change",
+      "unfccc",
+      "greenhouse gases",
+      "mitigation",
+      "adaptation"
+    ],
+    "count": 2
+  },
+  {
+    "programme_area": "Corporate / Statutory Reporting",
+    "common_terms": [
+      "annual report",
+      "statutory reporting",
+      "corporate reporting",
+      "public accountability",
+      "ema publications"
+    ],
+    "count": 1
+  },
+  {
+    "programme_area": "Corporate Communications / Knowledge Management",
+    "common_terms": [
+      "corporate communications",
+      "knowledge management",
+      "media",
+      "public information",
+      "ema publications"
+    ],
+    "count": 1
+  },
+  {
+    "programme_area": "Corporate Governance",
+    "common_terms": [
+      "corporate governance",
+      "organisation structure",
+      "board",
+      "leadership",
+      "accountability"
+    ],
+    "count": 1
+  },
+  {
+    "programme_area": "Corporate Strategy",
+    "common_terms": [
+      "strategic plan",
+      "corporate strategy",
+      "performance planning",
+      "objectives",
+      "governance"
+    ],
+    "count": 1
+  },
+  {
+    "programme_area": "Cross-cutting",
+    "common_terms": [
+      "ema",
+      "environmental management",
+      "governance",
+      "foia",
+      "public statement"
+    ],
+    "count": 29
+  },
+  {
+    "programme_area": "Finance / Audit",
+    "common_terms": [
+      "finance",
+      "audit",
+      "financial statements",
+      "external audit",
+      "accountability"
+    ],
+    "count": 1
+  },
+  {
+    "programme_area": "Finance / Procurement",
+    "common_terms": [
+      "finance",
+      "procurement",
+      "public property",
+      "audit",
+      "asset management"
+    ],
+    "count": 9
+  },
+  {
+    "programme_area": "Governance / Legal",
+    "common_terms": [
+      "governance",
+      "legal services",
+      "board policy",
+      "compliance",
+      "statutory authority"
+    ],
+    "count": 6
+  },
+  {
+    "programme_area": "HSE / Facilities",
+    "common_terms": [
+      "health and safety",
+      "hse",
+      "facilities management",
+      "emergency response",
+      "office safety"
+    ],
+    "count": 9
+  },
+  {
+    "programme_area": "Human Resources",
+    "common_terms": [
+      "human resources",
+      "staff policy",
+      "employee management",
+      "workplace policy",
+      "recruitment"
+    ],
+    "count": 9
+  },
+  {
+    "programme_area": "Information Technology",
+    "common_terms": [
+      "information technology",
+      "it policy",
+      "digital governance",
+      "systems",
+      "cybersecurity"
+    ],
+    "count": 1
+  },
+  {
+    "programme_area": "Knowledge Management / Research",
+    "common_terms": [
+      "knowledge management",
+      "research",
+      "environmental data",
+      "information centre",
+      "evidence base"
+    ],
+    "count": 1
+  },
+  {
+    "programme_area": "National Environmental Policy",
+    "common_terms": [
+      "national environmental policy",
+      "nep",
+      "policy framework",
+      "sustainable development",
+      "environmental governance"
+    ],
+    "count": 2
+  },
+  {
+    "programme_area": "Noise",
+    "common_terms": [
+      "noise pollution",
+      "noise variation",
+      "npcr",
+      "event variation",
+      "noise control"
+    ],
+    "count": 17
+  },
+  {
+    "programme_area": "Pollution / Public Health",
+    "common_terms": [
+      "pollution",
+      "public health",
+      "lead",
+      "environmental monitoring",
+      "contamination"
+    ],
+    "count": 7
+  },
+  {
+    "programme_area": "Public Education",
+    "common_terms": [
+      "public education",
+      "environmental awareness",
+      "education material",
+      "community outreach",
+      "students"
+    ],
+    "count": 1
+  },
+  {
+    "programme_area": "Public Education / Behaviour Change",
+    "common_terms": [
+      "public education",
+      "behaviour change",
+      "environmental literacy",
+      "survey",
+      "awareness"
+    ],
+    "count": 1
+  },
+  {
+    "programme_area": "Public Education / Forests",
+    "common_terms": [
+      "public education",
+      "forests",
+      "activity booklet",
+      "environmental awareness",
+      "students"
+    ],
+    "count": 2
+  },
+  {
+    "programme_area": "Public Education / Sustainable Business",
+    "common_terms": [
+      "public education",
+      "green business",
+      "sustainable business",
+      "environmental awareness",
+      "private sector"
+    ],
+    "count": 1
+  },
+  {
+    "programme_area": "Public Education / Wetlands",
+    "common_terms": [
+      "public education",
+      "wetlands",
+      "activity booklet",
+      "environmental awareness",
+      "students"
+    ],
+    "count": 2
+  },
+  {
+    "programme_area": "Quality / ISO",
+    "common_terms": [
+      "quality management",
+      "iso 9001",
+      "document control",
+      "corrective action",
+      "management review"
+    ],
+    "count": 7
+  },
+  {
+    "programme_area": "Quality Management",
+    "common_terms": [
+      "quality management",
+      "iso 9001",
+      "quality policy",
+      "process improvement",
+      "document control"
+    ],
+    "count": 1
+  },
+  {
+    "programme_area": "Waste",
+    "common_terms": [
+      "waste management",
+      "waste permit",
+      "hazardous waste",
+      "waste handling",
+      "waste generation"
+    ],
+    "count": 20
+  },
+  {
+    "programme_area": "Water",
+    "common_terms": [
+      "water pollution",
+      "water permit",
+      "water quality",
+      "discharge monitoring",
+      "annual discharge fee"
+    ],
+    "count": 32
+  }
+]

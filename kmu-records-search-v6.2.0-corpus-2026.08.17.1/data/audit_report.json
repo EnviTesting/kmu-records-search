@@ -1,0 +1,43 @@
+{
+  "corpus_version": "2026.08.17.1",
+  "audit_date": "2026-08-17",
+  "record_count": 394,
+  "counts": {
+    "documents": 279,
+    "news_events": 85,
+    "judgments": 30
+  },
+  "findings": [
+    {
+      "severity": "Info",
+      "check": "Audit result",
+      "record_id": "—",
+      "finding": "No integrity or conservative-description issues detected by automated checks.",
+      "status": "Passed"
+    }
+  ],
+  "resolved_during_audit": [
+    {
+      "severity": "Medium",
+      "record_id": "EMA-KM-0120",
+      "issue": "The Waste Permit Register record contained the literal text “Official EMA” in the direct_url field.",
+      "resolution": "Removed the invalid direct URL, retained the EMA Information Centre / Waste Unit access pathway, and added a neutral availability note.",
+      "status": "Resolved"
+    }
+  ],
+  "automated_checks": [
+    "required metadata",
+    "cross-set ID uniqueness",
+    "URL syntax",
+    "context presence",
+    "interpretive wording screen",
+    "legal status/type consistency",
+    "latest News & Events date",
+    "summary count reconciliation"
+  ],
+  "limitations": [
+    "Automated URL checks validate syntax, not live availability of every external page.",
+    "The legal inventory is a verified working set and is not labelled exhaustive of every proceeding involving EMA.",
+    "Descriptions derived from official pages are intentionally brief and should not replace the authoritative source text."
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EMA Knowledge Management Document Record",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "record_category",
+    "programme_area",
+    "keywords"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "record_category": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "programme_area": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "gazette_section": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "year": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_status": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "access_route": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_url": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "direct_url": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_reliability": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "custodian_or_owner": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "km_value": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "priority": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "action_needed": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "has_source_url": {
+      "type": "boolean"
+    },
+    "has_direct_url": {
+      "type": "boolean"
+    },
+    "keyword_common_group": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "string"
+      }
+    },
+    "keyword_unique": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "string"
+      }
+    },
+    "keyword_discretionary": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": {
+        "type": "string"
+      }
+    },
+    "keywords": {
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 20,
+      "items": {
+        "type": "string"
+      }
+    },
+    "search_text": {
+      "type": "string"
+    },
+    "source_type": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_label": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_placeholder": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "availability_note": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "has_source_pathway": {
+      "type": "boolean"
+    },
+    "has_request_pathway": {
+      "type": "boolean"
+    },
+    "is_internal_ema_record": {
+      "type": "boolean"
+    }
+  }
+}

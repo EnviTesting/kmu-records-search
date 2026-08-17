@@ -1,0 +1,14 @@
+{
+  "application_version": "6.2.0",
+  "corpus_version": "2026.08.17.1",
+  "generated_at": "2026-08-17T14:30:00Z",
+  "effective_date": "2026-08-17",
+  "record_sets": {
+    "documents": 279,
+    "news_events": 85,
+    "judgments_proceedings": 30,
+    "total": 394
+  },
+  "maintenance_note": "Public users can search and select records. Corpus additions or corrections are routed to the Knowledge Management Unit for review.",
+  "legal_coverage_note": "Judgments & Proceedings is a verified working legal inventory drawn from the Environmental Commission judgment index, Judiciary of Trinidad and Tobago, Judicial Committee of the Privy Council and selected legal sources where an official archival page was not reliably retrievable. It is not labelled as an exhaustive list of every proceeding involving EMA."
+}
