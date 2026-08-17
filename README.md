@@ -6,7 +6,7 @@ Static GitHub Pages search interface for three public-facing record sets:
 2. **Judgments & Proceedings** — `data/judgments.json`
 3. **EMA News & Events** — `data/press_releases.json`
 
-**Application version:** 6.2.1  
+**Application version:** 6.2.2  
 **Corpus version:** 2026.08.17.1  
 **Release date:** 17 August 2026
 
@@ -15,6 +15,13 @@ Static GitHub Pages search interface for three public-facing record sets:
 The tool is a retrieval tool. It does not provide legal advice, infer organisational positions, or state institutional effects that are not expressly established by the source material. Brief record descriptions are intentionally conservative and are used only to help a user understand what a record is about before opening the authoritative source.
 
 Public users can search, filter, select, export and open records. Corpus additions and corrections are not made from the public interface; users are directed to contact the Knowledge Management Unit for review.
+
+## v6.2.2 interface update
+
+- Added a compact **Suggest a record or correction** disclosure to the right side of the results header.
+- When expanded, the left side shows the current counts for Documents, Judgments & Proceedings, and News & Events; the right side provides Knowledge Management contact guidance and the authoritative-source reminder.
+- Added **Report broken link** directly to search-result rows as a secondary text action where a source link exists.
+- Corpus version remains **2026.08.17.1**; this is an interface-only maintenance release.
 
 ## v6.2.1 maintenance update
 
@@ -91,7 +98,7 @@ data/press_releases.json
 - Where no reliable official direct link is available, use a source/index page or a clearly labelled legal source rather than inventing a URL.
 - A repeated case name at different court levels is not a duplicate when it represents a separate proceeding.
 - The legal inventory is a verified working set; it is **not labelled as exhaustive of every proceeding involving EMA**.
-- The Knowledge Management contact is configured in the `KMU_CONTACT_EMAIL` constant near the top of `assets/app.js`. Version 6.2.1 uses `rseemungal@ema.co.tt` for record suggestions, corrections, search assistance and broken-link reports.
+- The Knowledge Management contact is configured in the `KMU_CONTACT_EMAIL` constant near the top of `assets/app.js`. Version 6.2.2 uses `rseemungal@ema.co.tt` for record suggestions, corrections, search assistance and broken-link reports.
 
 ## Validation and audit
 

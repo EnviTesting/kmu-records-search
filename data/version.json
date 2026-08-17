@@ -1,5 +1,5 @@
 {
-  "application_version": "6.2.1",
+  "application_version": "6.2.2",
   "corpus_version": "2026.08.17.1",
   "generated_at": "2026-08-17T16:46:00Z",
   "effective_date": "2026-08-17",
@@ -9,6 +9,6 @@
     "judgments_proceedings": 30,
     "total": 394
   },
-  "maintenance_note": "Public users can search and select records. Record suggestions, corrections and broken-link reports are routed to Knowledge Management at rseemungal@ema.co.tt for review.",
+  "maintenance_note": "Public users can search and select records. Record suggestions/corrections are available from the expandable results support area, and broken-link reports are available directly from search results. Both route to Knowledge Management at rseemungal@ema.co.tt for review.",
   "legal_coverage_note": "Judgments & Proceedings is a verified working legal inventory drawn from the Environmental Commission judgment index, Judiciary of Trinidad and Tobago, Judicial Committee of the Privy Council and selected legal sources where an official archival page was not reliably retrievable. It is not labelled as an exhaustive list of every proceeding involving EMA."
 }

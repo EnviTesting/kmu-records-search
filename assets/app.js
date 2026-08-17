@@ -1,8 +1,8 @@
 (() => {
   'use strict';
 
-  const APP_VERSION = '6.2.1';
-  const APP_BUILD = '2026.08.17-kmu-doc-search-v6.2.1';
+  const APP_VERSION = '6.2.2';
+  const APP_BUILD = '2026.08.17-kmu-doc-search-v6.2.2';
   const EMA_REQUEST_URL = 'https://www.ema.co.tt/information-centre-general-request/';
   const KMU_CONTACT_EMAIL = 'rseemungal@ema.co.tt'; // Knowledge Management contact for record suggestions, corrections and broken-link reports.
   const CORPUS_VERSION = '2026.08.17.1';
@@ -106,6 +106,7 @@
     $('loadMoreBtn')?.addEventListener('click', () => { state.visibleCount += PAGE_SIZE; renderResults(); });
     $('exportResultsBtn')?.addEventListener('click', () => downloadCsv(state.filtered, 'ema-current-results.csv'));
     $('openBasketBtn')?.addEventListener('click', openBasket);
+    $('recordSuggestionToggle')?.addEventListener('click', toggleRecordSuggestionPanel);
     $('closeBasketBtn')?.addEventListener('click', closeBasket);
     $('clearBasketBtn')?.addEventListener('click', () => { state.basket = []; saveBasket(); renderBasket(); renderResults(); });
     $('copyRequestBtn')?.addEventListener('click', copyRequestText);
@@ -434,7 +435,9 @@
     const body = $('resultsBody');
     if (!body) { debug('Missing resultsBody element'); return; }
     const total = state.filtered.length;
-    safeText('resultCount', `${total} record${total===1?'':'s'} found`);
+    safeText('resultCount', `${total} result${total===1?'':'s'}`);
+    renderResultBreakdown();
+    updateRecordSuggestionLink();
     const visible = state.filtered.slice(0, state.visibleCount);
     if (!visible.length) {
       body.innerHTML = '<tr><td colspan="6">No records found. Try another keyword or clear filters.</td></tr>';
@@ -469,7 +472,7 @@
       <td data-label="Area">${esc(r.area || '—')}</td>
       <td data-label="Type">${esc(r.category || '—')}</td>
       <td data-label="Year / Date">${esc(r.date || r.year || '—')}</td>
-      <td data-label="Action"><div class="action-stack">${primaryAction}<button class="ghost" type="button" data-action="details" data-id="${esc(r.id)}">${state.expandedId===r.id?'Show less':'View record'}</button><button class="ghost select-toggle${isSelected?' selected':''}" type="button" aria-pressed="${isSelected?'true':'false'}" data-action="toggle-basket" data-id="${esc(r.id)}">${isSelected?'✓ Added':'+ Add'}</button></div></td>
+      <td data-label="Action"><div class="result-action-cell"><div class="action-stack">${primaryAction}<button class="ghost" type="button" data-action="details" data-id="${esc(r.id)}">${state.expandedId===r.id?'Show less':'View record'}</button><button class="ghost select-toggle${isSelected?' selected':''}" type="button" aria-pressed="${isSelected?'true':'false'}" data-action="toggle-basket" data-id="${esc(r.id)}">${isSelected?'✓ Added':'+ Add'}</button></div>${r.hasUrl?`<a class="result-secondary-link" href="${esc(brokenLinkMailto(r))}">Report broken link</a>`:''}</div></td>
     </tr>`;
   }
 
@@ -512,6 +515,32 @@
 
   function hasActiveFilters(){
     return Boolean(state.query || state.database !== 'all' || state.quickFilter !== 'all' || state.area !== 'all' || state.type !== 'all' || state.status !== 'all' || state.year !== 'all');
+  }
+
+  function toggleRecordSuggestionPanel(){
+    const panel=$('recordSuggestionPanel');
+    const btn=$('recordSuggestionToggle');
+    if (!panel || !btn) return;
+    const opening=panel.classList.contains('hidden');
+    panel.classList.toggle('hidden', !opening);
+    btn.setAttribute('aria-expanded', String(opening));
+    const mark=btn.querySelector('.disclosure-mark');
+    if (mark) mark.textContent=opening?'▴':'▾';
+  }
+
+  function renderResultBreakdown(){
+    const counts={documents:0,judgments:0,press_releases:0};
+    for (const r of state.filtered) {
+      if (Object.prototype.hasOwnProperty.call(counts,r.database)) counts[r.database]+=1;
+    }
+    safeText('resultDocumentsCount', counts.documents);
+    safeText('resultJudgmentsCount', counts.judgments);
+    safeText('resultNewsCount', counts.press_releases);
+  }
+
+  function updateRecordSuggestionLink(){
+    const link=$('recordSuggestionLink');
+    if (link) link.href=kmuMailto();
   }
 
   function activeFilterSummary(){

@@ -1,5 +1,17 @@
 # Changelog
 
+## 6.2.2 — 2026-08-17
+
+Corpus version: **2026.08.17.1** (unchanged)
+
+- Reworked the results header into a cleaner results/support layout.
+- Added an expandable **Suggest a record or correction** disclosure on the right side of the results header.
+- When expanded, shows the current result-set breakdown on the left and Knowledge Management contact guidance on the right.
+- Moved the authoritative-source guidance into the expandable support area to reduce permanent page clutter.
+- Added **Report broken link** as a secondary action directly on search-result rows for records with source URLs.
+- Broken-link and record-suggestion emails continue to route to `rseemungal@ema.co.tt`.
+- No corpus records were added, removed or reclassified.
+
 ## 6.2.1 — 2026-08-17
 
 Corpus version: **2026.08.17.1** (unchanged)

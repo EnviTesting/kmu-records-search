@@ -103,10 +103,29 @@
 
     <section class="results-panel" aria-labelledby="resultsHeading">
       <div class="results-head">
-        <div>
-          <h2 id="resultsHeading">Results</h2>
-          <p id="resultCount">Loading records…</p>
+        <div class="results-summary-line">
+          <div class="results-title-block">
+            <h2 id="resultsHeading">Results</h2>
+            <p id="resultCount">Loading records…</p>
+          </div>
+          <button class="text-disclosure" type="button" id="recordSuggestionToggle" aria-expanded="false" aria-controls="recordSuggestionPanel">
+            Suggest a record or correction <span aria-hidden="true" class="disclosure-mark">▾</span>
+          </button>
         </div>
+
+        <div id="recordSuggestionPanel" class="results-support-panel hidden">
+          <div class="results-breakdown" aria-label="Results breakdown">
+            <span><strong id="resultDocumentsCount">0</strong> Documents</span>
+            <span><strong id="resultJudgmentsCount">0</strong> Judgments &amp; Proceedings</span>
+            <span><strong id="resultNewsCount">0</strong> News &amp; Events</span>
+          </div>
+          <div class="results-support-contact">
+            <strong>Can't find a record or noticed something incorrect?</strong>
+            <p>Contact Knowledge Management to suggest an addition or correction. This tool supports search and retrieval of document records and source links; refer to the original source for the authoritative text.</p>
+            <a id="recordSuggestionLink" href="mailto:rseemungal@ema.co.tt?subject=EMA%20Document%20Search%20Tool%20%E2%80%93%20record%20suggestion">Email Knowledge Management</a>
+          </div>
+        </div>
+
         <div class="results-actions">
           <button class="ghost" type="button" id="exportResultsBtn">Export current results</button>
           <button class="primary" type="button" id="openBasketBtn">Selected records <span id="basketCount">0</span></button>
@@ -159,7 +178,7 @@
 
   <footer class="footer">
     <div class="footer-mainline">
-      <span>This tool supports search and retrieval of document records and source links. Refer to the original source for the authoritative text. <a href="mailto:rseemungal@ema.co.tt?subject=EMA%20Document%20Search%20Tool%20%E2%80%93%20record%20suggestion">Suggest a record or correction</a>.</span>
+      <span>EMA Document Search Tool · Knowledge Management</span>
       <span class="version-shell" aria-label="App version">v<span id="appVersion" class="secret-version" tabindex="0">—</span></span>
     </div>
     <div id="adminPanel" class="admin-panel hidden" aria-live="polite">
