@@ -1,10 +1,10 @@
 (() => {
   'use strict';
 
-  const APP_VERSION = '6.2.0';
-  const APP_BUILD = '2026.08.17-kmu-corpus-v6.2.0';
+  const APP_VERSION = '6.2.1';
+  const APP_BUILD = '2026.08.17-kmu-doc-search-v6.2.1';
   const EMA_REQUEST_URL = 'https://www.ema.co.tt/information-centre-general-request/';
-  const KMU_CONTACT_EMAIL = 'ema@ema.co.tt'; // Official EMA contact. Replace here if a dedicated KMU mailbox is adopted.
+  const KMU_CONTACT_EMAIL = 'rseemungal@ema.co.tt'; // Knowledge Management contact for record suggestions, corrections and broken-link reports.
   const CORPUS_VERSION = '2026.08.17.1';
   const PAGE_SIZE = 45;
 
@@ -491,7 +491,7 @@
         <div class="index-grid">
           <div class="info-box context-box"><h4>About this record</h4><p>${esc(description)}</p>${r.descriptionSource?`<p class="source-note">Context source: <a href="${esc(r.descriptionSource)}" target="_blank" rel="noopener">open source</a></p>`:''}</div>
           ${legalDetails}
-          <div class="info-box"><h4>Source and access</h4><p>${esc(r.accessRoute || r.sourceLabel || statusLabel(r))}</p>${sourceLink}${sourcePage}</div>
+          <div class="info-box"><h4>Source and access</h4><p>${esc(r.accessRoute || r.sourceLabel || statusLabel(r))}</p>${sourceLink}${sourcePage}${r.hasUrl?`<p class="source-note"><a href="${esc(brokenLinkMailto(r))}">Report a broken link</a></p>`:''}</div>
         </div>
         <div class="index-grid secondary-grid">
           <div class="info-box"><h4>Record details</h4><p><strong>ID:</strong> ${esc(r.id)}<br><strong>Record set:</strong> ${esc(r.dbLabel)}<br><strong>Type:</strong> ${esc(r.category)}<br><strong>Date:</strong> ${esc(r.date || r.year || '—')}<br><strong>Source status:</strong> ${esc(r.status)}</p></div>
@@ -526,10 +526,10 @@
   }
 
   function kmuMailto(){
-    const subject='EMA Knowledge Access Register – search assistance / possible missing record';
+    const subject='EMA Document Search Tool – search assistance / possible missing record';
     const filters=activeFilterSummary();
     const body=[
-      'I was searching the EMA Knowledge Access Register and would like assistance locating a record or suggesting a possible addition/correction.',
+      'I was searching the EMA Document Search Tool and would like assistance locating a record or suggesting a possible addition/correction.',
       '',
       `Search used: ${state.query || '(none)'}`,
       `Active filters: ${filters.length ? filters.join('; ') : '(none)'}`,
@@ -537,6 +537,22 @@
       'Record or subject I was looking for:',
       '',
       'Additional details:'
+    ].join('\n');
+    return `mailto:${KMU_CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
+  function brokenLinkMailto(r){
+    const subject='EMA Document Search Tool – broken link report';
+    const body=[
+      'I found a link in the EMA Document Search Tool that may be broken or may no longer lead to the expected record.',
+      '',
+      `Record title: ${r.title || r.shortTitle || '(not available)'}`,
+      `Record ID: ${r.id || '(not available)'}`,
+      `Primary link: ${r.url || '(not available)'}`,
+      `Source/index page: ${r.sourcePage || '(not available)'}`,
+      '',
+      'Issue noticed:',
+      ''
     ].join('\n');
     return `mailto:${KMU_CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
@@ -603,7 +619,7 @@
     lines.push('Subject: Request for access to documents referenced in EMA’s public records');
     lines.push('');
     if (requestItems.length) {
-      lines.push('I am requesting access to the following records referenced in EMA’s Updated Public Statement 2024 or captured in the EMA Knowledge Access Register:');
+      lines.push('I am requesting access to the following records referenced in EMA’s Updated Public Statement 2024 or captured in the EMA Document Search Tool:');
       requestItems.forEach((r,i)=>lines.push(`${i+1}. ${r.title} [${r.id}]`));
       lines.push('');
       lines.push('These records are listed as held by or accessible through EMA, but no public online copy is currently linked in this register. I am requesting guidance on availability and access through the EMA Information Centre.');

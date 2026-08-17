@@ -1,4 +1,4 @@
-# EMA Knowledge Access Register
+# EMA Document Search Tool
 
 Static GitHub Pages search interface for three public-facing record sets:
 
@@ -6,17 +6,25 @@ Static GitHub Pages search interface for three public-facing record sets:
 2. **Judgments & Proceedings** — `data/judgments.json`
 3. **EMA News & Events** — `data/press_releases.json`
 
-**Application version:** 6.2.0  
+**Application version:** 6.2.1  
 **Corpus version:** 2026.08.17.1  
 **Release date:** 17 August 2026
 
 ## Product approach
 
-The register is a retrieval tool. It does not provide legal advice, infer organisational positions, or state institutional effects that are not expressly established by the source material. Brief record descriptions are intentionally conservative and are used only to help a user understand what a record is about before opening the authoritative source.
+The tool is a retrieval tool. It does not provide legal advice, infer organisational positions, or state institutional effects that are not expressly established by the source material. Brief record descriptions are intentionally conservative and are used only to help a user understand what a record is about before opening the authoritative source.
 
 Public users can search, filter, select, export and open records. Corpus additions and corrections are not made from the public interface; users are directed to contact the Knowledge Management Unit for review.
 
-## v6.2 changes
+## v6.2.1 maintenance update
+
+- Renamed the public-facing product to **EMA Document Search Tool**.
+- Set the Knowledge Management contact to **rseemungal@ema.co.tt**.
+- Added a contextual **Report a broken link** action to records that have a source link. The email is pre-filled with the record title, record ID and captured source URLs.
+- Updated low-result search assistance and record-suggestion emails to use the new product name and Knowledge Management contact.
+- Corpus version remains **2026.08.17.1**; no record data were added or removed in this maintenance release.
+
+## v6.2.0 corpus update
 
 - Added a dedicated **Judgments & Proceedings** record set.
 - Added the Environmental Commission's published EMA-related judgment inventory plus verified High Court, Court of Appeal and Privy Council records.
@@ -83,7 +91,7 @@ data/press_releases.json
 - Where no reliable official direct link is available, use a source/index page or a clearly labelled legal source rather than inventing a URL.
 - A repeated case name at different court levels is not a duplicate when it represents a separate proceeding.
 - The legal inventory is a verified working set; it is **not labelled as exhaustive of every proceeding involving EMA**.
-- Change the `KMU_CONTACT_EMAIL` constant near the top of `assets/app.js` if a dedicated KMU mailbox is adopted. Version 6.2 uses the official EMA general contact email as the public contact route.
+- The Knowledge Management contact is configured in the `KMU_CONTACT_EMAIL` constant near the top of `assets/app.js`. Version 6.2.1 uses `rseemungal@ema.co.tt` for record suggestions, corrections, search assistance and broken-link reports.
 
 ## Validation and audit
 

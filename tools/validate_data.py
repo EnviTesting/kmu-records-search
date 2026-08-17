@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validation for the static EMA Knowledge Access Register corpus."""
+"""Validation for the static EMA Document Search Tool corpus."""
 import json
 from pathlib import Path
 from urllib.parse import urlparse
