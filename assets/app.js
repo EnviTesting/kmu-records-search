@@ -1,13 +1,15 @@
 (() => {
   'use strict';
 
-  const APP_VERSION = '6.1-annual-yearfix-hidden-admin';
-  const APP_BUILD = '2026.06.26-github-hardened-v6.1-annual-yearfix-hidden-admin';
+  const APP_VERSION = '6.2.0';
+  const APP_BUILD = '2026.08.17-kmu-corpus-v6.2.0';
   const EMA_REQUEST_URL = 'https://www.ema.co.tt/information-centre-general-request/';
+  const KMU_CONTACT_EMAIL = 'ema@ema.co.tt'; // Official EMA contact. Replace here if a dedicated KMU mailbox is adopted.
+  const CORPUS_VERSION = '2026.08.17.1';
   const PAGE_SIZE = 45;
 
   const state = {
-    raw: { documents: [], press_releases: [] },
+    raw: { documents: [], press_releases: [], judgments: [] },
     records: [],
     filtered: [],
     visibleCount: PAGE_SIZE,
@@ -61,6 +63,12 @@
       'EMA_KM_documents_searchable.json',
       './EMA_KM_documents_searchable.json'
     ],
+    judgments: [
+      'data/judgments.json',
+      './data/judgments.json',
+      'judgments.json',
+      './judgments.json'
+    ],
     press_releases: [
       'data/press_releases.json',
       './data/press_releases.json',
@@ -99,10 +107,10 @@
     $('exportResultsBtn')?.addEventListener('click', () => downloadCsv(state.filtered, 'ema-current-results.csv'));
     $('openBasketBtn')?.addEventListener('click', openBasket);
     $('closeBasketBtn')?.addEventListener('click', closeBasket);
-    $('clearBasketBtn')?.addEventListener('click', () => { state.basket = []; saveBasket(); renderBasket(); });
+    $('clearBasketBtn')?.addEventListener('click', () => { state.basket = []; saveBasket(); renderBasket(); renderResults(); });
     $('copyRequestBtn')?.addEventListener('click', copyRequestText);
-    $('downloadCsvBtn')?.addEventListener('click', () => downloadCsv(state.basket, 'ema-record-basket.csv'));
-    $('downloadJsonBtn')?.addEventListener('click', () => downloadJson(state.basket, 'ema-record-basket.json'));
+    $('downloadCsvBtn')?.addEventListener('click', () => downloadCsv(state.basket, 'ema-selected-records.csv'));
+    $('downloadJsonBtn')?.addEventListener('click', () => downloadJson(state.basket, 'ema-selected-records.json'));
     bindHiddenAdminUnlock();
     $('resetCacheBtn')?.addEventListener('click', () => unregisterOldServiceWorkers(true));
 
@@ -149,6 +157,13 @@
         applyFiltersAndRender();
         return;
       }
+      const lowAction = e.target.closest('[data-low-action]');
+      if (lowAction) {
+        const action=lowAction.getAttribute('data-low-action');
+        if (action==='clear-filters') clearAllFilters();
+        if (action==='search-all') { state.database='all'; state.quickFilter='all'; state.journey='all'; const journey=$('journeySelect'); if(journey) journey.value='all'; syncQuickFilters(); $$('.tab').forEach(b=>b.classList.toggle('active',b.getAttribute('data-database')==='all')); state.visibleCount=PAGE_SIZE; applyFiltersAndRender(); }
+        return;
+      }
       const detailBtn = e.target.closest('[data-action="details"]');
       if (detailBtn) {
         const id = detailBtn.getAttribute('data-id');
@@ -158,8 +173,8 @@
       }
       const minimiseBtn = e.target.closest('[data-action="minimise"]');
       if (minimiseBtn) { state.expandedId = null; renderResults(); return; }
-      const addBtn = e.target.closest('[data-action="add"]');
-      if (addBtn) { addToBasket(addBtn.getAttribute('data-id')); return; }
+      const addBtn = e.target.closest('[data-action="toggle-basket"]');
+      if (addBtn) { toggleBasket(addBtn.getAttribute('data-id')); return; }
       const removeBtn = e.target.closest('[data-action="remove-basket"]');
       if (removeBtn) { removeFromBasket(removeBtn.getAttribute('data-id')); return; }
     });
@@ -206,22 +221,24 @@
     showNotice('Loading databases…', '');
     const results = await Promise.allSettled([
       loadFirstJson(DATASETS.documents, 'documents'),
-      loadFirstJson(DATASETS.press_releases, 'press_releases')
+      loadFirstJson(DATASETS.press_releases, 'press_releases'),
+      loadFirstJson(DATASETS.judgments, 'judgments')
     ]);
-    const [docsResult, pressResult] = results;
+    const [docsResult, pressResult, judgmentsResult] = results;
     if (docsResult.status === 'fulfilled') state.raw.documents = docsResult.value;
     if (pressResult.status === 'fulfilled') state.raw.press_releases = pressResult.value;
+    if (judgmentsResult.status === 'fulfilled') state.raw.judgments = judgmentsResult.value;
 
-    const loadedCount = state.raw.documents.length + state.raw.press_releases.length;
+    const loadedCount = state.raw.documents.length + state.raw.press_releases.length + state.raw.judgments.length;
     if (!loadedCount) {
-      showNotice('No databases loaded. Check that data/documents.json and data/press_releases.json were uploaded to GitHub Pages.', 'error');
-    } else if (docsResult.status === 'rejected' || pressResult.status === 'rejected') {
+      showNotice('No databases loaded. Check that data/documents.json, data/press_releases.json and data/judgments.json were uploaded to GitHub Pages.', 'error');
+    } else if (docsResult.status === 'rejected' || pressResult.status === 'rejected' || judgmentsResult.status === 'rejected') {
       showNotice(`Partial load: ${loadedCount} records loaded. One database could not be read; search still works for loaded records.`, 'error');
     } else {
       showNotice(`${loadedCount} records loaded.`, 'success');
       setTimeout(() => hide('loadNotice'), 1200);
     }
-    debug('Data load results', { documents: state.raw.documents.length, press_releases: state.raw.press_releases.length, paths: state.loadedPaths });
+    debug('Data load results', { documents: state.raw.documents.length, press_releases: state.raw.press_releases.length, judgments: state.raw.judgments.length, paths: state.loadedPaths });
   }
 
   async function loadFirstJson(paths, label){
@@ -246,7 +263,8 @@
   function normaliseAllRecords(){
     const documents = state.raw.documents.map((r, i) => normaliseRecord(r, 'documents', i));
     const press = state.raw.press_releases.map((r, i) => normaliseRecord(r, 'press_releases', i));
-    state.records = [...documents, ...press].filter(Boolean);
+    const judgments = state.raw.judgments.map((r, i) => normaliseRecord(r, 'judgments', i));
+    state.records = [...documents, ...judgments, ...press].filter(Boolean);
     // stable order: most recent press first, then documents by title if no date
     state.records.sort((a,b) => {
       const da = a.sortDate || '0000-00-00';
@@ -254,6 +272,11 @@
       if (da !== db) return db.localeCompare(da);
       return a.shortTitle.localeCompare(b.shortTitle);
     });
+    // Refresh saved selections against the current corpus so browser-local
+    // selections never retain stale metadata after a corpus update.
+    const selectedIds = new Set((state.basket || []).map(r => r.id));
+    state.basket = state.records.filter(r => selectedIds.has(r.id));
+    saveBasket();
     updateMetrics();
   }
 
@@ -262,7 +285,7 @@
       const title = clean(r.title || r.formal_title || r.name || `Untitled record ${index+1}`);
       const shortTitle = clean(r.short_title || makeShortTitle(title));
       const id = clean(r.id || `${database}-${index+1}`);
-      const category = clean(r.record_category || r.record_type || r.type || (database === 'press_releases' ? 'Press Release' : 'Document'));
+      const category = clean(r.record_category || r.record_type || r.type || (database === 'press_releases' ? 'News & Events' : (database === 'judgments' ? 'Judgment' : 'Document')));
       const area = clean(r.programme_area || r.theme || r.knowledge_area || 'Cross-cutting');
       const status = clean(r.source_status || r.status || 'Needs Verification');
       const rawYearText = clean(r.year || '');
@@ -276,7 +299,7 @@
       const keywords = uniq([...array(r.keywords), ...array(r.keyword_common_group), ...array(r.keyword_unique), ...array(r.keyword_discretionary)].map(clean)).slice(0, 30);
       const hasRequest = Boolean(r.has_request_pathway) || /held by ema|request/i.test(status + ' ' + accessRoute + ' ' + r.source_type);
       const hasUrl = Boolean(url);
-      const dbLabel = database === 'press_releases' ? 'Press Release Register' : 'Document Access Register';
+      const dbLabel = database === 'press_releases' ? 'News & Events' : (database === 'judgments' ? 'Judgments & Proceedings' : 'Document Access Register');
       const sortYear = yearTags[0] || extractYearTags(year)[0] || '';
       const sortDate = rawDate ? clean(rawDate) : (sortYear ? `${sortYear}-01-01` : '');
       const norm = {
@@ -286,14 +309,21 @@
         sourceLabel: clean(r.source_label || ''),
         reliability: clean(r.source_reliability || r.verification_status || ''),
         availabilityNote: clean(r.availability_note || r.notes || ''),
-        notes: clean(r.notes || r.summary_snippet || r.km_value || ''),
+        description: clean(r.description || r.summary_snippet || ''),
+        descriptionBasis: clean(r.description_basis || ''),
+        descriptionSource: clean(r.description_source_url || ''),
+        court: clean(r.court || ''),
+        caseNumber: clean(r.case_number || ''),
+        citation: clean(r.citation || ''),
+        caseStatus: clean(r.case_status || ''),
+        notes: clean(r.notes || r.summary_snippet || ''),
         kmValue: clean(r.km_value || ''),
         priority: clean(r.priority || ''),
         actionNeeded: clean(r.action_needed || suggestedAction(status, hasUrl, hasRequest, database)),
         keywords, hasRequest, hasUrl, sourcePage, sortDate,
         raw: r
       };
-      norm.searchText = lower([norm.shortTitle, norm.title, norm.category, norm.area, norm.status, norm.year, ...yearTags, norm.date, norm.dbLabel, norm.accessRoute, norm.notes, norm.kmValue, norm.actionNeeded, ...keywords].join(' '));
+      norm.searchText = lower([norm.shortTitle, norm.title, norm.category, norm.area, norm.status, norm.year, ...yearTags, norm.date, norm.dbLabel, norm.accessRoute, norm.description, norm.notes, norm.court, norm.caseNumber, norm.citation, norm.caseStatus, ...keywords].join(' '));
       norm.statusClass = statusClass(norm);
       return norm;
     } catch (err) {
@@ -329,8 +359,8 @@
   function updateMetrics(){
     safeText('metricTotal', state.records.length);
     safeText('metricDocuments', state.records.filter(r=>r.database==='documents').length);
+    safeText('metricJudgments', state.records.filter(r=>r.database==='judgments').length);
     safeText('metricPress', state.records.filter(r=>r.database==='press_releases').length);
-    safeText('metricRequests', state.records.filter(r=>r.hasRequest).length);
   }
 
   function populateFilters(){
@@ -372,10 +402,11 @@
       case 'public': return r.hasUrl && !r.hasRequest;
       case 'request': return r.hasRequest;
       case 'forms': return /form|guide|application|instruction|booklet|checklist|permit/.test(hay);
-      case 'law': return /law|legal|rule|regulation|act|notice|order|legislation/.test(hay);
+      case 'law': return r.database === 'judgments' || /law|legal|rule|regulation|act|notice|order|legislation|judgment|appeal|court/.test(hay);
       case 'reports': return /report|study|survey|assessment|monitoring|technical|inventory|audit|valuation/.test(hay);
       case 'internal': return /internal|policy|manual|procedure|sop|governance|procurement|human resource|hse|quality/.test(hay) || /internal/i.test(r.sourceType);
-      case 'press': return r.database === 'press_releases' || /press release|media release|latest news/.test(hay);
+      case 'press': return r.database === 'press_releases' || /press release|media release|news & events|public communication/.test(hay);
+      case 'judgments': return r.database === 'judgments';
       case 'priority': return /high|priority|request/.test(lower(r.priority + ' ' + r.actionNeeded));
       default: return true;
     }
@@ -408,6 +439,7 @@
     if (!visible.length) {
       body.innerHTML = '<tr><td colspan="6">No records found. Try another keyword or clear filters.</td></tr>';
       const lm = $('loadMoreBtn'); if (lm) lm.classList.add('hidden');
+      renderLowResultAssist(total);
       return;
     }
     const rows = [];
@@ -422,18 +454,22 @@
     }
     body.innerHTML = rows.join('');
     const lm = $('loadMoreBtn'); if (lm) lm.classList.toggle('hidden', state.visibleCount >= total);
+    renderLowResultAssist(total);
   }
 
   function renderRow(r){
-    const primaryAction = r.hasUrl ? `<a class="primary" href="${esc(r.url)}" target="_blank" rel="noopener">Open</a>` : (r.hasRequest ? `<a class="primary" href="${EMA_REQUEST_URL}" target="_blank" rel="noopener">Request</a>` : '');
-    const formal = r.title && r.title !== r.shortTitle ? `<small>${esc(r.title)}</small>` : `<small>${esc(r.dbLabel)}</small>`;
-    return `<tr class="result-row row-${r.statusClass}" data-id="${esc(r.id)}">
-      <td data-label="Status"><span class="status-pill status-${r.statusClass}">${esc(statusLabel(r))}</span></td>
-      <td data-label="Record" class="title-cell"><strong>${esc(r.shortTitle)}</strong>${formal}<span class="meta-sm">${esc(r.dbLabel)}</span></td>
+    const primaryAction = r.hasUrl ? `<a class="primary" href="${esc(r.url)}" target="_blank" rel="noopener">Open source</a>` : (r.hasRequest ? `<a class="primary" href="${EMA_REQUEST_URL}" target="_blank" rel="noopener">Request access</a>` : '');
+    const formal = r.title && r.title !== r.shortTitle ? `<small>${esc(r.title)}</small>` : '';
+    const isSelected = state.basket.some(item => item.id === r.id);
+    const legalMeta = r.database === 'judgments' ? [r.court, r.citation || r.caseNumber, r.caseStatus].filter(Boolean).join(' · ') : '';
+    const context = legalMeta || r.description || r.dbLabel;
+    return `<tr class="result-row row-${r.statusClass}${isSelected?' is-selected':''}" data-id="${esc(r.id)}">
+      <td data-label="Access"><span class="status-pill status-${r.statusClass}">${esc(statusLabel(r))}</span></td>
+      <td data-label="Record" class="title-cell"><strong>${esc(r.shortTitle)}</strong>${formal}<span class="meta-sm">${esc(context)}</span></td>
       <td data-label="Area">${esc(r.area || '—')}</td>
       <td data-label="Type">${esc(r.category || '—')}</td>
       <td data-label="Year / Date">${esc(r.date || r.year || '—')}</td>
-      <td data-label="Action"><div class="action-stack">${primaryAction}<button class="ghost" type="button" data-action="details" data-id="${esc(r.id)}">${state.expandedId===r.id?'Show less':'Read more'}</button><button class="ghost" type="button" data-action="add" data-id="${esc(r.id)}">Add</button></div></td>
+      <td data-label="Action"><div class="action-stack">${primaryAction}<button class="ghost" type="button" data-action="details" data-id="${esc(r.id)}">${state.expandedId===r.id?'Show less':'View record'}</button><button class="ghost select-toggle${isSelected?' selected':''}" type="button" aria-pressed="${isSelected?'true':'false'}" data-action="toggle-basket" data-id="${esc(r.id)}">${isSelected?'✓ Added':'+ Add'}</button></div></td>
     </tr>`;
   }
 
@@ -442,23 +478,24 @@
   }
 
   function renderDetailRow(r){
-    const note = r.availabilityNote || r.notes || 'No additional note captured.';
-    const linkText = r.hasUrl ? `<p><a href="${esc(r.url)}" target="_blank" rel="noopener">Open source link</a></p>` : '';
-    const sourcePage = r.sourcePage ? `<p><a href="${esc(r.sourcePage)}" target="_blank" rel="noopener">Open source/archive page</a></p>` : '';
+    const sourceLink = r.hasUrl ? `<p><a href="${esc(r.url)}" target="_blank" rel="noopener">Open source</a></p>` : '';
+    const sourcePage = r.sourcePage && r.sourcePage !== r.url ? `<p><a href="${esc(r.sourcePage)}" target="_blank" rel="noopener">Open source/index page</a></p>` : '';
+    const description = r.description || `${r.category || 'Record'} catalogued under ${r.area || 'Cross-cutting'}.`;
+    const legalDetails = r.database === 'judgments' ? `<div class="info-box"><h4>Proceeding details</h4><p>${r.court?`<strong>Court:</strong> ${esc(r.court)}<br>`:''}${r.caseNumber?`<strong>Case no.:</strong> ${esc(r.caseNumber)}<br>`:''}${r.citation?`<strong>Citation:</strong> ${esc(r.citation)}<br>`:''}${r.caseStatus?`<strong>Status:</strong> ${esc(r.caseStatus)}`:''}</p></div>` : '';
     return `<tr class="detail-row"><td colspan="6">
       <div class="index-card ${r.statusClass}">
         <div class="index-card-head">
           <div><h3>${esc(r.shortTitle)}</h3><p class="meta-sm">${esc(r.title)}</p></div>
-          <button class="ghost" type="button" data-action="minimise">Minimise</button>
+          <button class="ghost" type="button" data-action="minimise">Close details</button>
         </div>
         <div class="index-grid">
-          <div class="info-box"><h4>Access pathway</h4><p>${esc(r.accessRoute || r.sourceLabel || statusLabel(r))}</p>${linkText}${sourcePage}</div>
-          <div class="info-box"><h4>Why this record is included</h4><p>${esc(r.kmValue || r.reliability || 'Included in the register as a public knowledge or access record.')}</p></div>
-          <div class="info-box"><h4>Suggested action</h4><p>${esc(r.actionNeeded || suggestedAction(r.status, r.hasUrl, r.hasRequest, r.database))}</p></div>
+          <div class="info-box context-box"><h4>About this record</h4><p>${esc(description)}</p>${r.descriptionSource?`<p class="source-note">Context source: <a href="${esc(r.descriptionSource)}" target="_blank" rel="noopener">open source</a></p>`:''}</div>
+          ${legalDetails}
+          <div class="info-box"><h4>Source and access</h4><p>${esc(r.accessRoute || r.sourceLabel || statusLabel(r))}</p>${sourceLink}${sourcePage}</div>
         </div>
-        <div class="index-grid">
-          <div class="info-box"><h4>Source note</h4><p>${esc(note)}</p></div>
-          <div class="info-box"><h4>Record data</h4><p><strong>ID:</strong> ${esc(r.id)}<br><strong>Database:</strong> ${esc(r.dbLabel)}<br><strong>Status:</strong> ${esc(r.status)}<br><strong>Priority:</strong> ${esc(r.priority || '—')}</p></div>
+        <div class="index-grid secondary-grid">
+          <div class="info-box"><h4>Record details</h4><p><strong>ID:</strong> ${esc(r.id)}<br><strong>Record set:</strong> ${esc(r.dbLabel)}<br><strong>Type:</strong> ${esc(r.category)}<br><strong>Date:</strong> ${esc(r.date || r.year || '—')}<br><strong>Source status:</strong> ${esc(r.status)}</p></div>
+          <div class="info-box"><h4>Source note</h4><p>${esc(r.availabilityNote || 'Refer to the linked source for the authoritative text.')}</p></div>
           <div class="info-box"><h4>Keywords</h4><div class="keyword-list">${r.keywords.slice(0,20).map(k=>`<span class="keyword">${esc(k)}</span>`).join('') || '<span class="meta-sm">No keywords captured.</span>'}</div></div>
         </div>
       </div>
@@ -469,8 +506,58 @@
     if (r.statusClass === 'request') return 'Held by EMA';
     if (r.statusClass === 'external') return 'External source';
     if (r.statusClass === 'source') return 'EMA source page';
-    if (r.statusClass === 'public') return r.database === 'press_releases' ? 'EMA public post' : 'Public link';
+    if (r.statusClass === 'public') return r.database === 'press_releases' ? 'EMA public post' : (r.database === 'judgments' ? 'Court source' : 'Public link');
     return 'Needs review';
+  }
+
+  function hasActiveFilters(){
+    return Boolean(state.query || state.database !== 'all' || state.quickFilter !== 'all' || state.area !== 'all' || state.type !== 'all' || state.status !== 'all' || state.year !== 'all');
+  }
+
+  function activeFilterSummary(){
+    const parts=[];
+    if (state.database !== 'all') parts.push(`Record set: ${state.database === 'press_releases' ? 'News & Events' : state.database === 'judgments' ? 'Judgments & Proceedings' : 'Documents'}`);
+    if (state.quickFilter !== 'all') parts.push(`Quick filter: ${state.quickFilter}`);
+    if (state.area !== 'all') parts.push(`Area: ${state.area}`);
+    if (state.type !== 'all') parts.push(`Type: ${state.type}`);
+    if (state.status !== 'all') parts.push(`Source status: ${state.status}`);
+    if (state.year !== 'all') parts.push(`Year: ${state.year}`);
+    return parts;
+  }
+
+  function kmuMailto(){
+    const subject='EMA Knowledge Access Register – search assistance / possible missing record';
+    const filters=activeFilterSummary();
+    const body=[
+      'I was searching the EMA Knowledge Access Register and would like assistance locating a record or suggesting a possible addition/correction.',
+      '',
+      `Search used: ${state.query || '(none)'}`,
+      `Active filters: ${filters.length ? filters.join('; ') : '(none)'}`,
+      '',
+      'Record or subject I was looking for:',
+      '',
+      'Additional details:'
+    ].join('\n');
+    return `mailto:${KMU_CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
+  function clearAllFilters(){
+    state.database='all'; state.quickFilter='all'; state.journey='all'; state.area='all'; state.type='all'; state.status='all'; state.year='all'; state.visibleCount=PAGE_SIZE;
+    $$('.tab').forEach(b=>b.classList.toggle('active',b.getAttribute('data-database')==='all'));
+    syncQuickFilters();
+    const journey=$('journeySelect'); if (journey) journey.value='all';
+    ['areaFilter','typeFilter','statusFilter','yearFilter'].forEach(id=>{ const el=$(id); if(el) el.value='all'; });
+    applyFiltersAndRender();
+  }
+
+  function renderLowResultAssist(total){
+    const el=$('lowResultAssist'); if(!el) return;
+    if (!hasActiveFilters() || total >= 5) { el.classList.add('hidden'); el.innerHTML=''; return; }
+    const zero=total===0;
+    const clearButton=activeFilterSummary().length ? '<button class="ghost" type="button" data-low-action="clear-filters">Clear filters</button>' : '';
+    const allButton=state.database!=='all' ? '<button class="ghost" type="button" data-low-action="search-all">Search all record types</button>' : '';
+    el.innerHTML=`<div><strong>${zero?'No records found':'Looking for something else?'}</strong><p>${zero?'Try checking the spelling, using fewer words, or removing filters.':`Only ${total} record${total===1?'':'s'} matched this search. You can broaden the search or contact the Knowledge Management Unit if you believe a relevant record may be missing.`}</p></div><div class="low-result-actions">${allButton}${clearButton}<a class="primary link-btn" href="${esc(kmuMailto())}">Contact Knowledge Management Unit</a></div>`;
+    el.classList.remove('hidden');
   }
 
   function showNotice(text, mode){
@@ -485,27 +572,31 @@
     try { return JSON.parse(localStorage.getItem('emaRecordBasketV4') || '[]'); } catch { return []; }
   }
   function saveBasket(){ localStorage.setItem('emaRecordBasketV4', JSON.stringify(state.basket)); safeText('basketCount', state.basket.length); }
-  function addToBasket(id){
+  function toggleBasket(id){
     const rec = state.records.find(r => r.id === id);
     if (!rec) return;
-    if (!state.basket.some(r => r.id === id)) state.basket.push(rec);
-    saveBasket(); renderBasket(); showNotice(`Added “${rec.shortTitle}” to the basket.`, 'success'); setTimeout(()=>hide('loadNotice'), 1200);
+    const selected = state.basket.some(r => r.id === id);
+    if (selected) state.basket = state.basket.filter(r => r.id !== id); else state.basket.push(rec);
+    saveBasket(); renderBasket(); renderResults();
+    showNotice(selected ? `Removed “${rec.shortTitle}” from selected records.` : `Added “${rec.shortTitle}” to selected records.`, 'success');
+    setTimeout(()=>hide('loadNotice'), 1100);
   }
-  function removeFromBasket(id){ state.basket = state.basket.filter(r => r.id !== id); saveBasket(); renderBasket(); }
+  function addToBasket(id){ if (!state.basket.some(r=>r.id===id)) toggleBasket(id); }
+  function removeFromBasket(id){ state.basket = state.basket.filter(r => r.id !== id); saveBasket(); renderBasket(); renderResults(); }
   function openBasket(){ $('basketDrawer')?.classList.add('open'); $('basketDrawer')?.setAttribute('aria-hidden','false'); renderBasket(); }
   function closeBasket(){ $('basketDrawer')?.classList.remove('open'); $('basketDrawer')?.setAttribute('aria-hidden','true'); }
 
   function renderBasket(){
     safeText('basketCount', state.basket.length);
     const el = $('basketItems'); if (!el) return;
-    if (!state.basket.length) { el.className = 'basket-items empty'; el.textContent = 'No records added yet.'; safeText('requestOutput', buildRequestText()); return; }
+    if (!state.basket.length) { el.className = 'basket-items empty'; el.textContent = 'No records selected yet.'; safeText('requestOutput', buildRequestText()); return; }
     el.className = 'basket-items';
     el.innerHTML = state.basket.map(r => `<div class="basket-item"><strong>${esc(r.shortTitle)}</strong><small>${esc(r.dbLabel)} · ${esc(statusLabel(r))}</small><button class="ghost" type="button" data-action="remove-basket" data-id="${esc(r.id)}">Remove</button></div>`).join('');
     const out = $('requestOutput'); if (out) out.value = buildRequestText();
   }
 
   function buildRequestText(){
-    if (!state.basket.length) return 'Add records to the basket to generate request text.';
+    if (!state.basket.length) return 'Select records to generate request text.';
     const requestItems = state.basket.filter(r => r.hasRequest || !r.hasUrl);
     const linkItems = state.basket.filter(r => r.hasUrl);
     const lines = [];
@@ -576,7 +667,8 @@
       version: APP_VERSION,
       build: APP_BUILD,
       loadedPaths: state.loadedPaths,
-      rawCounts: { documents: state.raw.documents.length, press_releases: state.raw.press_releases.length },
+      rawCounts: { documents: state.raw.documents.length, press_releases: state.raw.press_releases.length, judgments: state.raw.judgments.length },
+      corpusVersion: CORPUS_VERSION,
       normalisedCount: state.records.length,
       filteredCount: state.filtered.length,
       userAgent: navigator.userAgent

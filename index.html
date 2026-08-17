@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#006b5f" />
-  <meta name="description" content="Search public EMA-related documents, press releases, source pages, and request pathways." />
+  <meta name="description" content="Search publicly available EMA documents, judgments and public communications, with source and access information." />
   <title>EMA Knowledge Access Register</title>
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="stylesheet" href="assets/styles.css" />
@@ -16,14 +16,14 @@
     <div class="header-wrap">
       <div class="title-block">
         <p class="eyebrow">Knowledge Access Register</p>
-        <h1>Find EMA records fast</h1>
-        <p class="lede">Search documents, source pages, and EMA press releases. Open public links or prepare a request for records held by EMA.</p>
+        <h1>EMA Knowledge Access Register</h1>
+        <p class="lede">Search documents, judgments and EMA News & Events. Open the original source or select records for reference and access requests.</p>
       </div>
       <div class="metric-strip" aria-label="Register metrics">
         <div class="metric"><span id="metricTotal">—</span><small>Total</small></div>
         <div class="metric"><span id="metricDocuments">—</span><small>Documents</small></div>
-        <div class="metric"><span id="metricPress">—</span><small>Press</small></div>
-        <div class="metric"><span id="metricRequests">—</span><small>Held by EMA</small></div>
+        <div class="metric"><span id="metricJudgments">—</span><small>Judgments</small></div>
+        <div class="metric"><span id="metricPress">—</span><small>News & Events</small></div>
       </div>
     </div>
   </header>
@@ -38,7 +38,8 @@
         <div class="db-tabs" role="group" aria-label="Choose database">
           <button class="tab active" type="button" data-database="all">All</button>
           <button class="tab" type="button" data-database="documents">Documents</button>
-          <button class="tab" type="button" data-database="press_releases">Press releases</button>
+          <button class="tab" type="button" data-database="judgments">Judgments</button>
+          <button class="tab" type="button" data-database="press_releases">News &amp; Events</button>
         </div>
       </div>
 
@@ -49,19 +50,20 @@
           <option value="public">I need to find a public document</option>
           <option value="request">I need to request a document held by EMA</option>
           <option value="forms">I need a form, guide, or application document</option>
-          <option value="law">I need to understand a law, rule, or regulation</option>
+          <option value="law">I need a law, rule, regulation, or legal record</option>
+          <option value="judgments">I need a judgment or court proceeding</option>
           <option value="reports">I need a report, study, or technical document</option>
           <option value="internal">I need an internal policy or governance document</option>
-          <option value="press">I need press releases or public updates</option>
+          <option value="press">I need EMA News &amp; Events or public updates</option>
         </select>
       </div>
 
       <div class="search-box">
         <label class="sr-only" for="searchInput">Search records</label>
-        <input id="searchInput" type="search" autocomplete="off" placeholder="Search title, topic, law, unit, keyword, year, or document type" />
+        <input id="searchInput" type="search" autocomplete="off" placeholder="Search by title, subject, case, legislation, keyword or year" />
         <button class="primary" type="button" id="clearSearchBtn">Clear</button>
       </div>
-      <p class="examples">Try: <button type="button" class="text-chip" data-example="air">air</button> <button type="button" class="text-chip" data-example="water permit">water permit</button> <button type="button" class="text-chip" data-example="noise variation">noise variation</button> <button type="button" class="text-chip" data-example="CEC">CEC</button> <button type="button" class="text-chip" data-example="press release">press release</button></p>
+      <p class="examples">Try: <button type="button" class="text-chip" data-example="air">air</button> <button type="button" class="text-chip" data-example="water permit">water permit</button> <button type="button" class="text-chip" data-example="noise variation">noise variation</button> <button type="button" class="text-chip" data-example="CEC">CEC</button> <button type="button" class="text-chip" data-example="polluter pays">polluter pays</button> <button type="button" class="text-chip" data-example="press release">news release</button></p>
 
       <div class="toggle-row">
         <button class="ghost" type="button" id="quickFiltersToggle" aria-expanded="true" aria-controls="quickFilters">Hide quick filters</button>
@@ -76,8 +78,9 @@
         <button type="button" class="filter" data-filter="law">Laws & rules</button>
         <button type="button" class="filter" data-filter="reports">Reports & studies</button>
         <button type="button" class="filter" data-filter="internal">Internal / governance</button>
-        <button type="button" class="filter" data-filter="press">Media releases</button>
-        <button type="button" class="filter" data-filter="priority">Priority records</button>
+        <button type="button" class="filter" data-filter="judgments">Judgments</button>
+        <button type="button" class="filter" data-filter="press">News &amp; Events</button>
+        
       </div>
 
       <div class="advanced hidden" id="advancedFilters">
@@ -106,7 +109,7 @@
         </div>
         <div class="results-actions">
           <button class="ghost" type="button" id="exportResultsBtn">Export current results</button>
-          <button class="primary" type="button" id="openBasketBtn">Record basket <span id="basketCount">0</span></button>
+          <button class="primary" type="button" id="openBasketBtn">Selected records <span id="basketCount">0</span></button>
         </div>
       </div>
 
@@ -114,7 +117,7 @@
         <table class="results-table">
           <thead>
             <tr>
-              <th scope="col">Status</th>
+              <th scope="col">Access</th>
               <th scope="col">Record</th>
               <th scope="col">Area</th>
               <th scope="col">Type</th>
@@ -127,6 +130,7 @@
           </tbody>
         </table>
       </div>
+      <section id="lowResultAssist" class="low-result-assist hidden" aria-live="polite"></section>
       <div class="load-more-row"><button class="ghost" type="button" id="loadMoreBtn">Load more</button></div>
     </section>
   </main>
@@ -135,18 +139,18 @@
     <div class="basket-card">
       <div class="basket-head">
         <div>
-          <h2 id="basketTitle">Record Basket</h2>
-          <p>Collect public links and request-required records, then export or prepare request text.</p>
+          <h2 id="basketTitle">Selected records</h2>
+          <p>Review records you selected, then export the list or prepare request text where needed.</p>
         </div>
         <button class="icon-btn" type="button" id="closeBasketBtn" aria-label="Close basket">×</button>
       </div>
-      <div id="basketItems" class="basket-items empty">No records added yet.</div>
+      <div id="basketItems" class="basket-items empty">No records selected yet.</div>
       <div class="basket-actions">
         <button class="primary" type="button" id="copyRequestBtn">Copy request text</button>
         <button class="ghost" type="button" id="downloadCsvBtn">Download CSV</button>
         <button class="ghost" type="button" id="downloadJsonBtn">Download JSON</button>
         <a class="ghost link-btn" href="https://www.ema.co.tt/information-centre-general-request/" target="_blank" rel="noopener">Open EMA request page</a>
-        <button class="ghost danger-lite" type="button" id="clearBasketBtn">Clear basket</button>
+        <button class="ghost danger-lite" type="button" id="clearBasketBtn">Clear all</button>
       </div>
       <label class="request-output-label" for="requestOutput">Generated request text</label>
       <textarea id="requestOutput" rows="8" readonly></textarea>
@@ -155,7 +159,7 @@
 
   <footer class="footer">
     <div class="footer-mainline">
-      <span>This register is a knowledge-management aid. Official copies, access decisions, and availability should be confirmed through EMA.</span>
+      <span>This register supports search and retrieval of public records and access pathways. Refer to the original source for the authoritative text. <a href="mailto:ema@ema.co.tt?subject=EMA%20Knowledge%20Access%20Register%20%E2%80%93%20record%20suggestion">Suggest a record or correction</a>.</span>
       <span class="version-shell" aria-label="App version">v<span id="appVersion" class="secret-version" tabindex="0">—</span></span>
     </div>
     <div id="adminPanel" class="admin-panel hidden" aria-live="polite">

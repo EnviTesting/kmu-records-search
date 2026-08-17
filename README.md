@@ -1,28 +1,37 @@
-# EMA Knowledge Access Register — GitHub Hardened Build
+# EMA Knowledge Access Register
 
-This is a static GitHub Pages-ready register for searching two linked databases:
+Static GitHub Pages search interface for three public-facing record sets:
 
-1. **Document Access Register** (`data/documents.json`)
-2. **Press Release Register** (`data/press_releases.json`)
+1. **Document Access Register** — `data/documents.json`
+2. **Judgments & Proceedings** — `data/judgments.json`
+3. **EMA News & Events** — `data/press_releases.json`
 
-The interface is mobile-first, list-first, and designed to keep the first view simple: search, journey selection, quick filters, results, and a record basket.
+**Application version:** 6.2.0  
+**Corpus version:** 2026.08.17.1  
+**Release date:** 17 August 2026
 
-## What was strengthened in this build
+## Product approach
 
-- Database loading is separated from interface rendering.
-- The app loads the two databases independently; if one fails, the other can still be searched.
-- Optional UI elements are guarded so missing header metrics or panels do not break the app.
-- Records are normalised into one internal model before rendering.
-- Search works across both databases with weighted scoring.
-- Result rows use a fallback renderer so one malformed record cannot blank the table.
-- The old service-worker/offline cache problem is addressed: this build unregisters old service workers and clears old caches.
-- A visible app version and diagnostics panel are included in the footer.
-- Root-level JSON fallback files are included for GitHub Pages troubleshooting, but the canonical files are in `data/`.
-- A data validator is included at `tools/validate_data.py`.
+The register is a retrieval tool. It does not provide legal advice, infer organisational positions, or state institutional effects that are not expressly established by the source material. Brief record descriptions are intentionally conservative and are used only to help a user understand what a record is about before opening the authoritative source.
 
-## Recommended GitHub upload structure
+Public users can search, filter, select, export and open records. Corpus additions and corrections are not made from the public interface; users are directed to contact the Knowledge Management Unit for review.
 
-Upload the **contents** of this folder to the repository root:
+## v6.2 changes
+
+- Added a dedicated **Judgments & Proceedings** record set.
+- Added the Environmental Commission's published EMA-related judgment inventory plus verified High Court, Court of Appeal and Privy Council records.
+- Distinguishes judgments, rulings, permission decisions and pending appeal proceedings.
+- Updated **EMA News & Events through 17 August 2026**, adding six entries after the prior 5 June 2026 cutoff.
+- Added brief contextual descriptions to records. Descriptions are either source-grounded or explicitly limited to catalogue metadata.
+- Changed **Add** into a toggle: `+ Add` → `✓ Added`; clicking again removes the record.
+- Renamed the visible basket to **Selected records**.
+- Added assistance when a search returns **0–4 results**, including a pre-filled contact action for the Knowledge Management Unit.
+- Removed the public-facing "Why this record is included" and "Suggested action" interpretation panels.
+- Added corpus version metadata and a post-build audit.
+
+## GitHub Pages deployment
+
+Upload the **contents of this folder** to the repository root, preserving the folder structure.
 
 ```text
 index.html
@@ -31,11 +40,20 @@ assets/
   styles.css
 data/
   documents.json
+  judgments.json
   press_releases.json
   search_index.json
+  summary.json
+  version.json
+  audit_report.json
   schema.json
 tools/
   validate_data.py
+  audit_corpus.py
+scripts/
+  build_terms.py
+VERSION.json
+AUDIT_2026-08-17.md
 manifest.webmanifest
 service-worker.js
 README.md
@@ -44,100 +62,54 @@ LICENSE-DATA
 NOTICE
 ```
 
-The canonical database paths are:
+Then enable **Settings → Pages** for the repository branch/root used for the site.
+
+## Canonical data files
+
+Edit the files in `data/` first. Root-level copies are retained only as loading fallbacks for GitHub Pages.
+
+The public app loads:
 
 ```text
 data/documents.json
+data/judgments.json
 data/press_releases.json
 ```
 
-Root-level JSON copies are included as fallback only. Do not manually edit both versions. Edit the canonical `data/` versions first, then copy them to the root only if you still want fallback support.
+## Corpus governance
 
-## GitHub Pages setup
+- Do not add interpretive statements about the EMA or the effect of a judgment unless an authoritative source expressly establishes the statement and the wording is suitable for a neutral catalogue.
+- For legal records, preserve the distinction between a **judgment**, **ruling**, **permission-to-appeal decision** and **pending appeal proceeding**.
+- Where no reliable official direct link is available, use a source/index page or a clearly labelled legal source rather than inventing a URL.
+- A repeated case name at different court levels is not a duplicate when it represents a separate proceeding.
+- The legal inventory is a verified working set; it is **not labelled as exhaustive of every proceeding involving EMA**.
+- Change the `KMU_CONTACT_EMAIL` constant near the top of `assets/app.js` if a dedicated KMU mailbox is adopted. Version 6.2 uses the official EMA general contact email as the public contact route.
 
-1. Create or open your GitHub repository.
-2. Upload all files and folders from this package to the repository root.
-3. Go to **Settings → Pages**.
-4. Select the branch and root folder.
-5. Wait a few minutes for GitHub Pages to publish.
-6. Open the page in an incognito/private window for first testing.
+## Validation and audit
 
-## If the page looks old or behaves strangely
-
-Earlier versions used a service worker cache. This build tries to remove old cached files, but browsers can still hold old content briefly.
-
-Try these in order:
-
-1. Click **Refresh app cache** in the search panel.
-2. Hard refresh: `Ctrl + F5` on Windows.
-3. Open the page in an incognito/private window.
-4. On mobile, close the browser tab fully and reopen it.
-5. Add `?v=4` to the end of the GitHub Pages URL.
-
-## Built-in diagnostics
-
-At the bottom of the page, click **Diagnostics**. It shows:
-
-- app version
-- which JSON paths loaded
-- record counts
-- current filtered count
-- recent runtime notes
-
-This is meant to make GitHub troubleshooting easier.
-
-## Data validation
-
-From a local terminal in the project folder:
+Run:
 
 ```bash
 python tools/validate_data.py
+python tools/audit_corpus.py
+node --check assets/app.js
 ```
 
-Expected result for this build:
+The audit checks required metadata, duplicate IDs, URL syntax, contextual descriptions, conservative wording, legal status/type consistency, News & Events freshness and summary counts.
 
-- 258 document records
-- 79 press release records
-- 337 total records
-- 20 keywords per record
+`AUDIT_2026-08-17.md` records the release audit and `data/audit_report.json` provides machine-readable results.
 
-## Record basket
+## Record selection
 
-The Record Basket can collect both public/source links and request-required records. It can:
+Selected records are stored in browser local storage. Users can:
 
-- generate request text
-- copy request text
-- export a CSV
-- export JSON
-- open the EMA Information Centre General Request page
+- add/remove a record from the result row;
+- review Selected records;
+- export CSV or JSON;
+- generate access-request text for records that do not have a public direct link.
 
-## Licence
+## Licensing
 
-This repository uses a split licensing approach.
-
-- Code: MIT License. See `LICENSE`.
-- Curated metadata, JSON records, taxonomy, and documentation: CC BY 4.0. See `LICENSE-DATA`.
-- Official EMA, Government of Trinidad and Tobago, UN, UWI, World Bank, consultant, and third-party documents linked or referenced are not licensed by this repository. They remain subject to their own copyright, access, and reuse terms.
-
-
-## Separated search/results layout
-
-This version removes the sticky search-panel behaviour so result rows no longer appear to slide underneath the search controls. The search panel and record list are visually separated for easier reading on GitHub Pages and mobile browsers.
-
-## Hidden diagnostics
-
-The public page no longer shows troubleshooting controls to casual users. To reveal the admin/diagnostics panel, tap or click the small app version text in the footer seven times. The hidden panel includes:
-
-- app version/build information
-- database load diagnostics
-- the Refresh app cache button for GitHub Pages cache issues
-
-This is only a light UI concealment. The code is still visible in the repository, as expected for a static GitHub Pages app.
-
-## v6.1 update — Annual Reports and year filters
-
-This build adds individual EMA Annual Report records for 2005–2024, including separate records for 2020 Part 1 and 2020 Part 2. The records link back to EMA's Annual Reports page and use the direct EMA-linked Google Drive URLs.
-
-Advanced year filtering was also strengthened. The year filter now uses extracted year tags from explicit year/date fields and record titles, so records with multi-year titles such as `2005, 2006, 2008` can be found under each relevant year. The filter no longer treats generic references such as `Updated Public Statement 2024` as the record year for every record.
-
-The hidden admin panel remains available by tapping/clicking the small app version in the footer seven times.
+- Code: MIT (`LICENSE`)
+- Curated metadata and repository documentation: CC BY 4.0 (`LICENSE-DATA`)
+- Linked official EMA, Government, court, tribunal and third-party source materials retain their own copyright and reuse terms.
