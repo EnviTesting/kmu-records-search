@@ -1,0 +1,180 @@
+[
+  {
+    "id": "SP-ARIPO",
+    "name": "Aripo Savannas",
+    "island": "Trinidad",
+    "lat": 10.585,
+    "lon": -61.207,
+    "topic": "Biodiversity, Ecosystems & Protected Areas",
+    "match_terms": [
+      "aripo savannas",
+      "aripo"
+    ],
+    "precision": "approximate",
+    "note": "Representative preview location; not presented as an EMA legal, regulatory, survey or GIS boundary.",
+    "data_version": "2026.08.26.1"
+  },
+  {
+    "id": "SP-NARIVA",
+    "name": "Nariva Swamp",
+    "island": "Trinidad",
+    "lat": 10.389,
+    "lon": -61.055,
+    "topic": "Biodiversity, Ecosystems & Protected Areas",
+    "match_terms": [
+      "nariva swamp",
+      "nariva"
+    ],
+    "precision": "approximate",
+    "note": "Representative preview location; map is for knowledge base discovery, not regulatory delineation.",
+    "data_version": "2026.08.26.1"
+  },
+  {
+    "id": "SP-MATURA",
+    "name": "Matura",
+    "island": "Trinidad",
+    "lat": 10.67,
+    "lon": -61.05,
+    "topic": "Biodiversity, Ecosystems & Protected Areas",
+    "match_terms": [
+      "matura"
+    ],
+    "precision": "approximate",
+    "note": "Representative preview location.",
+    "data_version": "2026.08.26.1"
+  },
+  {
+    "id": "SP-CARONI",
+    "name": "Caroni Swamp",
+    "island": "Trinidad",
+    "lat": 10.6,
+    "lon": -61.47,
+    "topic": "Coastal & Marine",
+    "match_terms": [
+      "caroni swamp",
+      "caroni"
+    ],
+    "precision": "approximate",
+    "note": "Representative preview location.",
+    "data_version": "2026.08.26.1"
+  },
+  {
+    "id": "SP-BUCCOO",
+    "name": "Buccoo Reef / Bon Accord Lagoon",
+    "island": "Tobago",
+    "lat": 11.17,
+    "lon": -60.82,
+    "topic": "Coastal & Marine",
+    "match_terms": [
+      "buccoo reef",
+      "bon accord",
+      "buccoo"
+    ],
+    "precision": "approximate",
+    "note": "Representative preview location.",
+    "data_version": "2026.08.26.1"
+  },
+  {
+    "id": "SP-NETOBAGO",
+    "name": "North-East Tobago",
+    "island": "Tobago",
+    "lat": 11.29,
+    "lon": -60.56,
+    "topic": "Biodiversity, Ecosystems & Protected Areas",
+    "match_terms": [
+      "north-east tobago",
+      "northeast tobago",
+      "north east tobago"
+    ],
+    "precision": "regional",
+    "note": "Regional preview point representing records explicitly about North-East Tobago.",
+    "data_version": "2026.08.26.1"
+  },
+  {
+    "id": "SP-POINTLISAS",
+    "name": "Point Lisas",
+    "island": "Trinidad",
+    "lat": 10.405,
+    "lon": -61.49,
+    "topic": "Industry, Extractives & Quarrying",
+    "match_terms": [
+      "point lisas",
+      "plipdeco"
+    ],
+    "precision": "approximate",
+    "note": "Representative industrial-area preview location.",
+    "data_version": "2026.08.26.1"
+  },
+  {
+    "id": "SP-ARIMA",
+    "name": "Arima",
+    "island": "Trinidad",
+    "lat": 10.637,
+    "lon": -61.282,
+    "topic": "Water & Watersheds",
+    "match_terms": [
+      "arima"
+    ],
+    "precision": "municipal",
+    "note": "Municipal preview point; records may refer to the wider Arima area.",
+    "data_version": "2026.08.26.1"
+  },
+  {
+    "id": "SP-BEETHAM",
+    "name": "Beetham / Port of Spain East",
+    "island": "Trinidad",
+    "lat": 10.642,
+    "lon": -61.505,
+    "topic": "Waste, Chemicals & Circular Economy",
+    "match_terms": [
+      "beetham"
+    ],
+    "precision": "approximate",
+    "note": "Representative preview location; not a facility boundary.",
+    "data_version": "2026.08.26.1"
+  },
+  {
+    "id": "SP-CHAG",
+    "name": "Chaguaramas",
+    "island": "Trinidad",
+    "lat": 10.685,
+    "lon": -61.633,
+    "topic": "Coastal & Marine",
+    "match_terms": [
+      "chaguaramas"
+    ],
+    "precision": "approximate",
+    "note": "Representative discovery location; not a project or legal boundary.",
+    "data_version": "2026.08.26.1"
+  },
+  {
+    "id": "SP-MAINRIDGE",
+    "name": "Main Ridge",
+    "island": "Tobago",
+    "lat": 11.25,
+    "lon": -60.67,
+    "topic": "Biodiversity, Ecosystems & Protected Areas",
+    "match_terms": [
+      "main ridge",
+      "main ridge forest reserve"
+    ],
+    "precision": "approximate",
+    "note": "Representative discovery location.",
+    "data_version": "2026.08.26.1"
+  },
+  {
+    "id": "SP-ANGELS",
+    "name": "Angel's Reef",
+    "island": "Tobago",
+    "lat": 11.183,
+    "lon": -60.72,
+    "topic": "Coastal & Marine",
+    "match_terms": [
+      "angel's reef",
+      "angels reef"
+    ],
+    "precision": "approximate",
+    "note": "Representative discovery location for explicitly linked climate/marine records.",
+    "data_version": "2026.08.26.1"
+  }
+]

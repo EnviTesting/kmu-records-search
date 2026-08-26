@@ -1,0 +1,9 @@
+{
+  "channel_id": "UCNijSNnsG3RHDWVC8-LIC8g",
+  "handle": "@emauthority",
+  "channel_url": "https://www.youtube.com/channel/UCNijSNnsG3RHDWVC8-LIC8g",
+  "uploads_playlist_id": "UUNijSNnsG3RHDWVC8-LIC8g",
+  "canonical_database": "data/videos.json",
+  "inventory_seed_count": 32,
+  "note": "The shipped video database contains verified searchable records from v6.12. The harvester merges additional public uploads into videos.json when a YouTube API key is available."
+}

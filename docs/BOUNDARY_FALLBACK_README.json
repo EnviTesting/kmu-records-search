@@ -1,0 +1,10 @@
+{
+  "title": "Trinidad and Tobago ADM1 local map fallback",
+  "source": "User-supplied shapefile: tto_adm1_v2.zip",
+  "crs": "EPSG:4326",
+  "feature_count": 15,
+  "use_note": "Used only as a visual fallback/reference layer in Spatial Discovery. It is not presented as an EMA legal, regulatory, cadastral or survey boundary.",
+  "derived_file": "data/tt_adm1_fallback.geojson",
+  "original_archive": "tto_adm1_v2.zip (user-supplied working source; intentionally not included in the cleaned GitHub package)",
+  "publication_note": "The derived GeoJSON is included because Spatial Discovery requires a local fallback. Confirm source licensing and institutional publication requirements before public deployment."
+}

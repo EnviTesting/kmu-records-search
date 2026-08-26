@@ -1,0 +1,30 @@
+{
+  "knowledge_areas": [
+    "Air & Atmosphere",
+    "Water & Watersheds",
+    "Waste, Chemicals & Circular Economy",
+    "Biodiversity, Ecosystems & Protected Areas",
+    "Coastal & Marine",
+    "Climate Change & Resilience",
+    "Energy & Low-Carbon Transition",
+    "Industry, Extractives & Quarrying",
+    "Land, Development & CEC",
+    "Noise & Community Impacts",
+    "Environmental Governance, Law & Policy",
+    "Education, Participation & Partnerships",
+    "Corporate & Institutional Management"
+  ],
+  "record_types": [
+    "Legislation & Legal Instrument",
+    "Court / Tribunal Record",
+    "Policy, Strategy & Plan",
+    "Technical / Research Report",
+    "Monitoring / Performance Report",
+    "Guidance / Procedure / Form",
+    "Dataset / Data Table / Register",
+    "Parliamentary / Oversight Record",
+    "News / Media / Video",
+    "Corporate / Administrative Record"
+  ],
+  "note": "User-facing controlled vocabulary. Original programme-area and record-type values are retained on records as *_original fields."
+}

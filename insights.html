@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#006b5f" />
+  <meta name="description" content="Explore knowledge-area, record-type, source and media-archive coverage in the EMA environmental information knowledge base." />
+  <title>Knowledge Insights · EMA Document Search Tool</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/insights.css" />
+  <link rel="stylesheet" href="assets/mylist.css" />
+</head>
+<body class="insights-page">
+  <a class="skip-link" href="#topicChart">Skip to chart</a>
+  <header class="app-header insights-header">
+    <div class="header-wrap">
+      <div class="title-block">
+        <p class="eyebrow">Knowledge Management · Knowledge coverage</p>
+        <h1>Knowledge Insights</h1>
+        <p class="lede">Explore coverage across EMA records and selected national, regional and international environmental sources using a simplified knowledge-area and record-type vocabulary.</p>
+        <p class="tool-meta-line">Data updated 26 Aug 2026 · 654 knowledge records · 13 controlled knowledge areas · 10 simplified record types</p>
+      </div>
+      <div class="insights-header-links"><a class="back-search" href="index.html">← Back to search</a><a class="back-search" href="preview.html">Spatial Discovery →</a><a class="back-search" href="news.html">EMA in the News →</a></div>
+    </div>
+  </header>
+
+  <main class="insights-shell">
+    <section class="insights-summary-grid" aria-label="Knowledge-base summary">
+      <div class="insight-card"><span id="insightTotal">—</span><small>Records in view</small></div>
+      <div class="insight-card"><span id="insightCategories">—</span><small>Categories represented</small></div>
+      <div class="insight-card wide"><span id="insightLargest">—</span><small>Largest knowledge area · <b id="insightLargestNote">—</b></small></div>
+      <div class="insight-card"><span id="insightYearCoverage">—</span><small id="insightYearNote">with identifiable year</small></div>
+    </section>
+
+    <section class="insights-control-panel" aria-labelledby="controlsHeading">
+      <div><p class="eyebrow">Explore the information</p><h2 id="controlsHeading">Coverage view</h2></div>
+      <div class="insights-page-controls">
+        <label>Group by
+          <select id="groupBy"><option value="area">Knowledge area</option><option value="type">Record type</option><option value="source_level">Source level</option></select>
+        </label>
+        <label>Source
+          <select id="sourceFilter"><option value="all">All sources</option><option value="ema">EMA</option><option value="parliament">Parliament</option><option value="gazette">Government Gazette</option><option value="government">Government policy / agencies</option><option value="court">Courts / tribunals</option><option value="statistical">Research &amp; statistics</option><option value="regional">Regional sources</option><option value="international">International — T&amp;T only</option><option value="video">Video</option></select>
+        </label>
+        <label>From year<select id="fromYear"><option value="all">All years</option></select></label>
+        <label>To year<select id="toYear"><option value="all">All years</option></select></label>
+        <label class="external-inline"><input id="externalScope" type="checkbox" checked /> Include related sources</label>
+        <button class="ghost" id="resetInsights" type="button">Reset view</button>
+      </div>
+    </section>
+
+    <section class="insights-main-grid">
+      <article class="dashboard-panel chart-panel">
+        <div class="panel-heading"><div><p class="eyebrow">Distribution</p><h2>Information coverage</h2></div><p>Counts describe indexed information coverage only. They do not measure environmental importance, condition, risk, legal effect, compliance or regulatory performance.</p></div>
+        <div id="topicChart" class="insights-bar-chart" role="img" aria-label="Knowledge base distribution chart"></div>
+      </article>
+
+      <aside class="dashboard-side">
+        <section class="dashboard-panel"><p class="eyebrow">Source balance</p><h2>Where records come from</h2><div id="sourceMix" class="source-mix"></div></section>
+        <section class="dashboard-panel"><p class="eyebrow">Metadata quality</p><h2>Discovery readiness</h2><p class="meta-sm">These percentages describe indexing completeness, not authority or quality of the underlying source.</p><div id="dataQuality" class="data-quality"></div></section>
+        <section class="dashboard-panel gap-panel"><p class="eyebrow">Potential gaps</p><h2>Low-coverage categories</h2><p class="meta-sm">Prompts for collection review—not proof that information or environmental activity is absent.</p><div id="gapList" class="gap-list"></div><p id="gapThreshold" class="meta-sm"></p></section>
+        <section class="dashboard-panel media-insight-panel"><p class="eyebrow">Media archive</p><h2>EMA in the News</h2><div id="mediaInsight"></div><p><a href="news.html">Open media search &amp; insights →</a></p></section>
+        <section class="dashboard-panel"><p class="eyebrow">Data catalogue</p><h2>Dataset Discovery</h2><div id="datasetInsight"></div><p><a href="datasets.html">Browse datasets and sources →</a></p></section>
+      </aside>
+    </section>
+
+    <section class="coverage-guidance"><strong>How to use this page</strong><p>A large category may reflect strong documentation, a heavily represented regulatory programme, or simply better harvesting. A small category may indicate a genuine collection gap, different terminology, records held by another institution, weak metadata, or material that has not yet been digitised. Investigate before drawing conclusions.</p></section>
+  </main>
+
+  <footer class="footer"><div class="footer-mainline"><span>EMA Document Search Tool · Knowledge Insights</span><span><a href="index.html">Return to search</a></span></div></footer>
+  <script src="assets/mylist.js"></script><script src="assets/insights.js"></script>
+</body>
+</html>

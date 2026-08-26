@@ -1,0 +1,18 @@
+[
+  {
+    "id": "tt-adm1-fallback",
+    "name": "Trinidad and Tobago ADM1 fallback boundary layer",
+    "purpose": "Local geographic fallback for Spatial Discovery when the OSM basemap or Leaflet map cannot be displayed.",
+    "source": "User-supplied tto_adm1_v2.zip",
+    "provenance_status": "Not independently verified by EMA in this prototype",
+    "crs": "EPSG:4326",
+    "feature_count": 15,
+    "bounds": [
+      -61.930137634277344,
+      10.042917251586914,
+      -60.49208450317383,
+      11.359584808349553
+    ],
+    "use_note": "Use as a navigation/discovery backdrop only. Do not treat these boundaries as an EMA legal, regulatory or survey determination."
+  }
+]

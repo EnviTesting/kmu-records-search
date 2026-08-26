@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="theme-color" content="#006b5f" />
+  <meta name="description" content="Browse datasets and data-bearing sources indexed by the EMA Document Search Tool." />
+  <title>Dataset Discovery · EMA Document Search Tool</title>
+  <link rel="stylesheet" href="assets/styles.css" /><link rel="stylesheet" href="assets/datasets.css" /><link rel="stylesheet" href="assets/mylist.css" />
+</head>
+<body>
+  <a class="skip-link" href="#datasetSearch">Skip to dataset search</a>
+  <header class="app-header"><div class="header-wrap"><div class="title-block"><p class="eyebrow">Knowledge Management · Data catalogue</p><h1>Dataset Discovery</h1><p class="lede">Find structured datasets, data tables, survey collections and data-bearing publications, with their source agency, coverage and access pathway.</p><p class="tool-meta-line">Catalogue updated 26 Aug 2026 · 64 entries · includes national, regional and international sources</p></div><div class="insights-header-links"><a class="back-search" href="index.html">← Back to search</a><a class="back-search" href="insights.html">Knowledge Insights →</a><a class="back-search" href="preview.html">Spatial Discovery →</a></div></div></header>
+  <main class="app-shell dataset-shell">
+    <section class="search-panel"><div class="search-topline"><div><h2>Search datasets</h2><p>This catalogue identifies data sources; some entries are downloadable datasets while others are reports or surveys containing structured tables.</p></div></div><form id="datasetForm" class="search-box"><label class="sr-only" for="datasetSearch">Search datasets</label><input id="datasetSearch" type="search" placeholder="Search renewable energy, employment, waste, air quality…" /><button class="primary" type="submit">Search</button><button class="ghost" type="button" id="datasetReset">Clear</button></form><div class="dataset-filters"><label>Knowledge area<select id="datasetArea"><option value="all">All areas</option></select></label><label>Source<select id="datasetSource"><option value="all">All sources</option></select></label><label>Dataset kind<select id="datasetKind"><option value="all">All kinds</option></select></label><label>Access<select id="datasetAccess"><option value="all">All access</option><option value="open_online">Open / downloadable</option><option value="reference_only">Reference only</option><option value="request_ema">Request from EMA</option></select></label></div></section>
+    <section class="results-panel"><div class="results-head"><div class="results-title-block"><h2>Datasets and data sources</h2><p id="datasetCount">—</p><p class="results-use-note">Source agency and hosting location are kept separate where known. Verify the original dataset metadata before analysis or formal use.</p></div></div><div class="table-wrap"><table class="results-table dataset-table"><thead><tr><th>Access</th><th>Dataset / source</th><th>Knowledge area</th><th>Source agency</th><th>Coverage</th><th>Action</th></tr></thead><tbody id="datasetBody"></tbody></table></div></section>
+  </main>
+  <footer class="footer"><div class="footer-mainline"><span>EMA Document Search Tool · Dataset Discovery</span><span><a href="index.html">Return to search</a></span></div></footer>
+  <script src="assets/mylist.js"></script><script src="assets/datasets.js"></script>
+</body></html>

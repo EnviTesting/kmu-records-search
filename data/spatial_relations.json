@@ -1,0 +1,51 @@
+[
+  {
+    "place_id": "aripo",
+    "record_ids": [
+      "REG-CANARI-001"
+    ]
+  },
+  {
+    "place_id": "caroni",
+    "record_ids": [
+      "REG-CANARI-002",
+      "REG-BCRC-001"
+    ]
+  },
+  {
+    "place_id": "beetham",
+    "record_ids": [
+      "REG-BCRC-001"
+    ]
+  },
+  {
+    "place_id": "nariva",
+    "record_ids": [
+      "REG-CANARI-002"
+    ]
+  },
+  {
+    "place_id": "matura",
+    "record_ids": [
+      "REG-CANARI-002"
+    ]
+  },
+  {
+    "place_id": "mainridge",
+    "record_ids": [
+      "REG-CANARI-002"
+    ]
+  },
+  {
+    "place_id": "netobago",
+    "record_ids": [
+      "REG-CANARI-002"
+    ]
+  },
+  {
+    "place_id": "angelsreef",
+    "record_ids": [
+      "REG-CCCCC-002"
+    ]
+  }
+]

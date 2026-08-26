@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#006b5f" />
+  <meta name="description" content="Search the EMA in the News media-monitoring archive and review high-level topic and source coverage." />
+  <title>EMA in the News · EMA Document Search Tool</title>
+  <link rel="stylesheet" href="assets/news.css" />
+  <link rel="stylesheet" href="assets/mylist.css" />
+</head>
+<body>
+  <a class="skip-link" href="#newsMain">Skip to content</a>
+  <header class="news-header">
+    <div class="news-header-wrap">
+      <div>
+        <p class="eyebrow">Knowledge Management · Media monitoring</p>
+        <h1>EMA in the News</h1>
+        <p class="lede">Search indexed external media coverage and review what was reported, by whom and when. The archive supports information discovery and does not represent EMA findings, views or an assessment of environmental condition.</p>
+        <p class="news-tool-meta">Data updated 26 Aug 2026 · Coverage 11 Dec 2025–24 Jul 2026 · Archived clipping/OCR-only records excluded</p>
+      </div>
+      <nav class="news-nav" aria-label="Knowledge tool navigation">
+        <a href="index.html">← Search tool</a>
+        <a href="insights.html">Knowledge Insights</a>
+        <a href="preview.html">Spatial Discovery</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="newsMain" class="news-shell">
+    <section class="use-note">
+      <strong>How to read this page</strong>
+      <span>Article counts describe the captured media archive only. Multiple outlets may report the same event, and frequency of reporting should not be interpreted as frequency, severity, compliance status or environmental risk. Use the original article where available.</span>
+    </section>
+
+    <div class="news-tabs" role="tablist" aria-label="News views">
+      <button class="news-tab active" id="dashboardTab" type="button" role="tab" aria-selected="true" aria-controls="dashboardPanel">Knowledge Insights</button>
+      <button class="news-tab" id="searchNewsTab" type="button" role="tab" aria-selected="false" aria-controls="searchNewsPanel">Search</button>
+    </div>
+
+    <section id="dashboardPanel" class="news-panel" role="tabpanel" aria-labelledby="dashboardTab">
+      <div class="summary-grid" aria-label="Media archive summary">
+        <article><strong id="newsTotal">—</strong><span>Media articles indexed</span></article>
+        <article><strong id="newsDateRange">—</strong><span>Coverage</span></article>
+        <article><strong id="newsOutletCount">—</strong><span>Publications / sources</span></article>
+        <article><strong id="newsOnlineCount">—</strong><span>Direct article links</span></article>
+      </div>
+
+      <div class="dashboard-grid">
+        <article class="panel-card">
+          <div class="panel-heading"><div><p class="eyebrow">Knowledge areas</p><h2>Topics represented in media coverage</h2></div><p>Uses the same simplified knowledge-area vocabulary as the main knowledge tool.</p></div>
+          <div id="newsTopicChart" class="bar-chart" role="img" aria-label="EMA in the News topic distribution"></div>
+        </article>
+        <article class="panel-card">
+          <div class="panel-heading"><div><p class="eyebrow">Source coverage</p><h2>Most represented publications</h2></div><p>Source labels reflect the media-monitoring register and may include records requiring publication confirmation.</p></div>
+          <div id="newsOutletChart" class="bar-chart" role="img" aria-label="EMA in the News publication distribution"></div>
+        </article>
+      </div>
+
+      <article class="panel-card recent-media-panel">
+        <div class="panel-heading"><div><p class="eyebrow">Recent records</p><h2>Latest captured headlines</h2></div><button class="news-inline-button" id="showSearchFromLatest" type="button">Search archive</button></div>
+        <div id="latestNewsList" class="latest-list"></div>
+      </article>
+    </section>
+
+    <section id="searchNewsPanel" class="news-panel hidden" role="tabpanel" aria-labelledby="searchNewsTab">
+      <div class="news-search-controls media-search-controls">
+        <label class="search-wide">Search headlines and indexed topics
+          <input id="newsSearchInput" type="search" placeholder="Search plastic pollution, CEC, renewable energy, Aripo…" autocomplete="off" />
+        </label>
+        <label>Year<select id="newsYearFilter"><option value="all">All years</option></select></label>
+        <label>Knowledge area<select id="newsTopicFilter"><option value="all">All areas</option></select></label>
+        <label>Publication<select id="newsOutletFilter"><option value="all">All publications</option></select></label>
+        <label>Link status<select id="newsLinkFilter"><option value="all">All link statuses</option><option value="online">Direct article available</option><option value="supporting">Supporting / related link</option><option value="unavailable">No public article link</option></select></label>
+        <label>Sort<select id="newsSort"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="title">Headline A–Z</option><option value="source">Publication A–Z</option></select></label>
+        <button id="resetNewsSearch" type="button">Reset</button>
+      </div>
+      <div class="results-line"><strong id="newsResultCount">—</strong><span>matching article records</span></div>
+      <div id="newsResults" class="news-results"></div>
+    </section>
+  </main>
+
+  <footer class="news-footer">EMA Document Search Tool · EMA in the News · <a href="index.html">Return to search</a></footer>
+  <script src="assets/mylist.js"></script>
+  <script src="assets/news.js"></script>
+</body>
+</html>

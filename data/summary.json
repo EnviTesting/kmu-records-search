@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-08-26T15:55:00Z",
+  "data_version": "2026.08.26.1",
+  "application_version": "7.3.0",
+  "effective_date": "2026-08-26",
+  "record_count": 654,
+  "counts": {
+    "documents": 279,
+    "judgments": 30,
+    "press_releases": 108,
+    "external_references": 49,
+    "parliamentary_evidence": 35,
+    "gazette_records": 15,
+    "statistical_context": 42,
+    "regional_references": 21,
+    "international_references": 43,
+    "videos": 32
+  },
+  "media_archive_count": 785,
+  "dataset_catalog_count": 64,
+  "spatial_place_count": 12,
+  "environmental_observance_count": 22,
+  "source_access_note": "Records without public links are not treated as missing; use the listed access route, Information Centre request pathway or reference source.",
+  "knowledge_base_maintenance": "The master list is generated from the canonical data/*.json source files. v7.3 retains the v6.12 application structure while adding controlled knowledge-area/record-type metadata and curated regional records.",
+  "preview_note": "Spatial Discovery uses the locally stored Trinidad and Tobago ADM1 GeoJSON as the canonical browser boundary asset. The optional media layer is off by default and does not change knowledge-record coverage counts.",
+  "news_note": "EMA in the News uses 785 public-safe headline records covering 11 December 2025 to 24 July 2026. Archived clipping/OCR-only records and EMA-unit/manager mappings are excluded.",
+  "international_scope_note": "The international collection remains restricted to Trinidad and Tobago-specific submissions, country/site/project records or country datasets. Broader Caribbean material is held in the separate regional collection.",
+  "video_note": "The searchable video database ships with 32 verified records from v6.12 and can be expanded by the official EMA YouTube harvester using channel UCNijSNnsG3RHDWVC8-LIC8g. The harvester merges into videos.json rather than relying on an empty placeholder file.",
+  "deduplication_note": "The same intellectual document is not duplicated solely because it appears in multiple repositories; alternate source or host links should be attached to the primary record where practical.",
+  "use_note": "Descriptions, classifications, map associations, media categories and related-record suggestions support information discovery only and do not provide legal advice, legal interpretation, compliance status or an EMA determination."
+}

@@ -1,0 +1,145 @@
+[
+  {
+    "programme_area": "Air & Atmosphere",
+    "common_terms": [
+      "pollution",
+      "public health",
+      "lead",
+      "environmental monitoring",
+      "contamination"
+    ],
+    "count": 3
+  },
+  {
+    "programme_area": "Biodiversity, Ecosystems & Protected Areas",
+    "common_terms": [
+      "biodiversity",
+      "environmentally sensitive species",
+      "protected area",
+      "species conservation",
+      "conservation"
+    ],
+    "count": 78
+  },
+  {
+    "programme_area": "Climate Change & Resilience",
+    "common_terms": [
+      "international",
+      "climate change",
+      "Parliament",
+      "UNFCCC",
+      "adaptation"
+    ],
+    "count": 62
+  },
+  {
+    "programme_area": "Coastal & Marine",
+    "common_terms": [
+      "biodiversity",
+      "coastal",
+      "held by ema",
+      "ema information centre",
+      "request access"
+    ],
+    "count": 26
+  },
+  {
+    "programme_area": "Corporate & Institutional Management",
+    "common_terms": [
+      "held by ema",
+      "ema information centre",
+      "request access",
+      "gazette confirmed",
+      "information centre request"
+    ],
+    "count": 143
+  },
+  {
+    "programme_area": "Education, Participation & Partnerships",
+    "common_terms": [
+      "public communication",
+      "media release",
+      "latest news",
+      "public education",
+      "public record"
+    ],
+    "count": 32
+  },
+  {
+    "programme_area": "Energy & Low-Carbon Transition",
+    "common_terms": [
+      "electricity",
+      "energy efficiency",
+      "Parliament",
+      "renewable energy",
+      "Energy"
+    ],
+    "count": 13
+  },
+  {
+    "programme_area": "Environmental Governance, Law & Policy",
+    "common_terms": [
+      "governance",
+      "held by ema",
+      "ema information centre",
+      "request access",
+      "gazette confirmed"
+    ],
+    "count": 90
+  },
+  {
+    "programme_area": "Industry, Extractives & Quarrying",
+    "common_terms": [
+      "oil and gas",
+      "Industry",
+      "Central Statistical Office",
+      "statistics",
+      "environmental context"
+    ],
+    "count": 13
+  },
+  {
+    "programme_area": "Land, Development & CEC",
+    "common_terms": [
+      "certificate environmental clearance",
+      "cec",
+      "eia",
+      "designated activities",
+      "environmental impact assessment"
+    ],
+    "count": 85
+  },
+  {
+    "programme_area": "Noise & Community Impacts",
+    "common_terms": [
+      "noise pollution",
+      "noise variation",
+      "noise",
+      "npcr",
+      "event variation"
+    ],
+    "count": 36
+  },
+  {
+    "programme_area": "Waste, Chemicals & Circular Economy",
+    "common_terms": [
+      "waste",
+      "waste management",
+      "waste permit",
+      "hazardous waste",
+      "waste handling"
+    ],
+    "count": 51
+  },
+  {
+    "programme_area": "Water & Watersheds",
+    "common_terms": [
+      "water",
+      "infrastructure",
+      "WASA",
+      "Parliament",
+      "Water Security"
+    ],
+    "count": 22
+  }
+]

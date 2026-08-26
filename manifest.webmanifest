@@ -1,0 +1,9 @@
+{
+  "name": "EMA Document Search Tool",
+  "short_name": "EMA Document Search",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f4f8f6",
+  "theme_color": "#006b5f",
+  "description": "Search EMA records and optional related national, regional and international environmental sources, including statistics, datasets and verified video."
+}

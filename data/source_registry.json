@@ -1,0 +1,142 @@
+[
+  {
+    "id": "ema",
+    "name": "Environmental Management Authority",
+    "level": "EMA",
+    "role": "Primary EMA records, public information and verified video source",
+    "url": "https://www.ema.co.tt/"
+  },
+  {
+    "id": "parliament",
+    "name": "Parliament of Trinidad and Tobago",
+    "level": "National",
+    "role": "Parliamentary and oversight records",
+    "url": "https://www.ttparliament.org/"
+  },
+  {
+    "id": "cso",
+    "name": "Central Statistical Office",
+    "level": "National",
+    "role": "National statistical and dataset source",
+    "url": "https://cso.gov.tt/"
+  },
+  {
+    "id": "swmcol",
+    "name": "Trinidad and Tobago Solid Waste Management Company Limited",
+    "level": "National",
+    "role": "Solid-waste and recycling information",
+    "url": "https://swmcol.co.tt/"
+  },
+  {
+    "id": "ima",
+    "name": "Institute of Marine Affairs",
+    "level": "National",
+    "role": "Marine and coastal scientific source",
+    "url": "https://www.ima.gov.tt/"
+  },
+  {
+    "id": "canari",
+    "name": "Caribbean Natural Resources Institute",
+    "level": "Regional",
+    "role": "Caribbean natural-resource governance and T&T project evidence",
+    "url": "https://canari.org/"
+  },
+  {
+    "id": "caricom",
+    "name": "Caribbean Community",
+    "level": "Regional",
+    "role": "Regional policy and statistics",
+    "url": "https://caricom.org/"
+  },
+  {
+    "id": "ccreee",
+    "name": "Caribbean Centre for Renewable Energy and Energy Efficiency",
+    "level": "Regional",
+    "role": "Regional energy knowledge and T&T energy report cards",
+    "url": "https://www.ccreee.org/"
+  },
+  {
+    "id": "carpha",
+    "name": "Caribbean Public Health Agency",
+    "level": "Regional",
+    "role": "Environmental health, climate-health, air/water/chemicals context",
+    "url": "https://www.carpha.org/"
+  },
+  {
+    "id": "ccccc",
+    "name": "Caribbean Community Climate Change Centre",
+    "level": "Regional",
+    "role": "Regional climate data, tools and clearinghouse",
+    "url": "https://caribbeanclimate.org/"
+  },
+  {
+    "id": "unep-cep",
+    "name": "UNEP Caribbean Environment Programme",
+    "level": "Regional",
+    "role": "Cartagena Convention, marine pollution, LBS/SPAW/oil spill regional framework",
+    "url": "https://www.unep.org/cep/"
+  },
+  {
+    "id": "bcrc",
+    "name": "Basel Convention Regional Centre for Training and Technology Transfer for the Caribbean",
+    "level": "Regional",
+    "role": "Waste, chemicals and plastic-pollution projects",
+    "url": "https://www.bcrc-caribbean.org/"
+  },
+  {
+    "id": "oecs",
+    "name": "Organisation of Eastern Caribbean States",
+    "level": "Regional–Comparative",
+    "role": "Comparative Eastern Caribbean environmental policy and project learning; not a T&T governing framework",
+    "url": "https://www.oecs.int/"
+  },
+  {
+    "id": "worldbank",
+    "name": "World Bank",
+    "level": "International",
+    "role": "International datasets and Caribbean/T&T climate-development evidence",
+    "url": "https://www.worldbank.org/"
+  },
+  {
+    "id": "youtube-ema",
+    "name": "Environmental Management Authority — Official YouTube",
+    "level": "EMA",
+    "role": "Official public video metadata; videos remain hosted by YouTube",
+    "url": "https://www.youtube.com/channel/UCNijSNnsG3RHDWVC8-LIC8g"
+  },
+  {
+    "id": "cdema",
+    "name": "Caribbean Disaster Emergency Management Agency",
+    "level": "Regional",
+    "role": "Disaster risk, resilience and comprehensive disaster management",
+    "url": "https://www.cdema.org/"
+  },
+  {
+    "id": "crfm",
+    "name": "Caribbean Regional Fisheries Mechanism",
+    "level": "Regional",
+    "role": "Fisheries, coastal and marine technical evidence",
+    "url": "https://www.crfm.net/"
+  },
+  {
+    "id": "cdb",
+    "name": "Caribbean Development Bank",
+    "level": "Regional",
+    "role": "Caribbean development, climate, infrastructure and energy-transition analysis",
+    "url": "https://www.caribank.org/"
+  },
+  {
+    "id": "undp",
+    "name": "United Nations Development Programme",
+    "level": "International",
+    "role": "T&T-specific development and environmental programme evidence",
+    "url": "https://www.undp.org/trinidad-and-tobago"
+  },
+  {
+    "id": "ocean-conservancy",
+    "name": "Ocean Conservancy / International Coastal Cleanup",
+    "level": "International",
+    "role": "Marine-litter and coastal-cleanup data with country reporting",
+    "url": "https://oceanconservancy.org/"
+  }
+]

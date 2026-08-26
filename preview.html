@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#006b5f" />
+  <meta name="description" content="Prototype spatial and environmental calendar views for the EMA Document Search Tool." />
+  <title>EMA Document Search Tool — Spatial Discovery</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <link rel="stylesheet" href="assets/preview.css" />
+  <link rel="stylesheet" href="assets/mylist.css" />
+</head>
+<body>
+  <header class="preview-header">
+    <div class="preview-header-wrap">
+      <div>
+        <p class="eyebrow">Knowledge Management · Spatial discovery</p>
+        <h1>Spatial Discovery</h1>
+        <p class="lede">Explore Trinidad and Tobago environmental information by place and environmental observance while keeping the main search as the primary record-search tool.</p>
+        <p class="preview-tool-meta">Data updated 26 Aug 2026 · 12 curated discovery places · media overlay off by default</p>
+      </div>
+      <nav class="preview-nav" aria-label="Preview navigation">
+        <a href="index.html">← Search tool</a>
+        <a href="insights.html">Knowledge Insights</a>
+        <a href="news.html">EMA in the News</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="preview-shell">
+    <section class="prototype-note" aria-label="Prototype warning">
+      <strong>Discovery view</strong>
+      <span>Spatial locations and administrative-area matches are discovery aids, not EMA legal, regulatory or survey determinations. Record density shows information coverage, not environmental condition, risk or regulatory performance. Where available, the map uses OpenStreetMap for context and a locally stored Trinidad and Tobago administrative boundary layer as fallback.</span>
+    </section>
+
+    <div class="preview-tabs" role="tablist" aria-label="Preview modes">
+      <button class="preview-tab active" id="mapTab" type="button" role="tab" aria-selected="true" aria-controls="mapPanel">Map</button>
+      <button class="preview-tab" id="calendarTab" type="button" role="tab" aria-selected="false" aria-controls="calendarPanel">Environmental calendar</button>
+    </div>
+
+    <section id="mapPanel" class="preview-panel" role="tabpanel" aria-labelledby="mapTab">
+      <div class="panel-heading">
+        <div>
+          <p class="kicker">Spatial discovery</p>
+          <h2>Where does the information relate to?</h2>
+          <p>Select a place to see records whose titles, descriptions or keywords explicitly reference it. The view uses a curated spatial index that can be expanded over time.</p>
+        </div>
+        <div class="panel-stat"><strong id="mappedRecordCount">—</strong><span>records matched to preview places</span></div>
+      </div>
+
+      <div class="map-toolbar">
+        <label>Source
+          <select id="mapSourceFilter">
+            <option value="all">All sources</option>
+            <option value="ema">EMA</option>
+            <option value="parliament">Parliament</option>
+            <option value="gazette">Government Gazette</option>
+            <option value="government">Government policy / agencies</option>
+            <option value="court">Courts / tribunals</option>
+            <option value="statistical">Research & statistics</option>
+            <option value="regional">Regional sources</option>
+            <option value="international">International · T&T only</option>
+            <option value="video">Video</option>
+          </select>
+        </label>
+        <label>Topic
+          <select id="mapTopicFilter"><option value="all">All topics</option></select>
+        </label>
+        <label>Spatial view
+          <select id="mapViewMode">
+            <option value="both">Places + administrative coverage</option>
+            <option value="places">Places only</option>
+            <option value="regions">Administrative coverage only</option>
+          </select>
+        </label>
+        <label class="media-map-toggle"><input id="mediaMapToggle" type="checkbox" /> Show media articles</label>
+        <button id="resetMapFilters" type="button">Reset</button>
+      </div>
+
+      <div class="map-layout">
+        <div class="map-card">
+          <div id="leafletMap" class="leaflet-map" role="application" aria-label="Interactive map of Trinidad and Tobago environmental information"></div>
+          <div id="mapFallback" class="map-fallback hidden" role="img" aria-label="Fallback administrative outline of Trinidad and Tobago"></div>
+          <div id="mapStatus" class="map-status" aria-live="polite">Preparing map…</div>
+          <div class="map-legend"><span><i class="dot"></i> Clickable information place</span><span><i class="area-key"></i> Administrative shading reflects explicit area matches</span><span>Counts describe information coverage only</span></div>
+        </div>
+
+        <aside class="place-panel" id="placePanel" aria-live="polite">
+          <p class="empty-state">Choose a place marker or administrative area to inspect related records.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="calendarPanel" class="preview-panel hidden" role="tabpanel" aria-labelledby="calendarTab">
+      <div class="panel-heading">
+        <div>
+          <p class="kicker">EMA-guided environmental observances</p>
+          <h2>Environmental calendar</h2>
+          <p>The dates start from EMA’s Environmental Calendar. Each item links back to EMA and, where applicable, to the UN body, treaty secretariat or campaign steward responsible for the international observance.</p>
+        </div>
+        <div class="panel-stat"><strong id="observanceCount">—</strong><span>EMA-listed dates</span></div>
+      </div>
+
+      <div class="calendar-notice">
+        <strong>Source handling</strong>
+        <span>Not every observance is a UN-designated day. The interface labels non-UN campaigns separately instead of assigning them a false international custodian.</span>
+      </div>
+
+      <div class="calendar-toolbar">
+        <label>Topic
+          <select id="calendarTopicFilter"><option value="all">All topics</option></select>
+        </label>
+        <a class="ema-calendar-link" href="https://www.ema.co.tt/environmental-calendar/" target="_blank" rel="noopener">EMA Environmental Calendar ↗</a>
+        <a class="ema-calendar-link secondary" href="https://drive.google.com/file/d/1fIatD-HlnoZsQjQCEY8PrW4qrSll8K1Y/view?usp=sharing" target="_blank" rel="noopener">EMA 2026 calendar PDF ↗</a>
+      </div>
+
+      <div id="calendarGrid" class="calendar-grid"></div>
+    </section>
+  </main>
+
+  <footer class="preview-footer">
+    <p>Spatial Discovery companion page for the EMA Document Search Tool. Map and relationship displays support discovery only and do not constitute legal advice or an EMA determination. <a href="index.html">Return to Search</a>.</p>
+  </footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="assets/mylist.js"></script>
+  <script src="assets/preview.js"></script>
+</body>
+</html>
