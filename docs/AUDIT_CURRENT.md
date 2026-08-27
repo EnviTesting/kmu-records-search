@@ -1,7 +1,7 @@
-# Knowledge base Audit — 2026-08-26
+# Knowledge base Audit — 2026-08-27
 
-**Data version:** 2026.08.26.1
-**Records audited:** 654
+**Data version:** 2026.08.27.4
+**Records audited:** 931
 
 ## Automated checks
 
@@ -18,7 +18,7 @@
 
 ## Findings
 
-- **Info — News freshness note** — —: Latest captured EMA News & Events date is 2026-08-18; this 2026-08-26 release updates other source families and does not imply a same-day EMA news refresh. (Passed)
+- **Info — News freshness note** — —: Latest captured EMA News & Events date is 2026-08-18; this 2026-08-27 release updates other source families and does not imply a same-day EMA news refresh. (Passed)
 
 ## Resolved during audit (history)
 

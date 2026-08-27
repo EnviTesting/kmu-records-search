@@ -1,11 +1,11 @@
 (() => {
   'use strict';
 
-  const APP_VERSION = '7.3.0';
-  const APP_BUILD = '2026.08.26-kmu-doc-search-v7.3.0';
+  const APP_VERSION = '8.0.0';
+  const APP_BUILD = '2026.08.27-trace-v8.0.0';
   const EMA_REQUEST_URL = 'https://www.ema.co.tt/information-centre-general-request/';
   const KMU_CONTACT_EMAIL = 'rseemungal@ema.co.tt'; // Knowledge Management contact for record suggestions, corrections and broken-link reports.
-  const DATA_VERSION = '2026.08.26.1';
+  const DATA_VERSION = '2026.08.27.4';
   const PAGE_SIZE = 45;
   const RELATED_DATABASES = new Set(['external_references','parliamentary_evidence','gazette_records','statistical_context','regional_references','international_references','videos']);
 
@@ -413,9 +413,12 @@
       const date = clean(rawDate || year || '');
       const url = safeHref(r.direct_url || r.source_url || r.url || '');
       const sourcePage = safeHref(r.source_page_url || r.source_page || '');
-      const accessRoute = clean(r.access_route || (url ? 'Public link' : 'EMA Information Centre'));
+      const rawAccessStatus = clean(r.access_status || '');
+      const requestUrl = safeHref(r.request_url || '');
+      const requestAgency = requestUrl && /ima\.gov\.tt/i.test(requestUrl) ? 'ima' : (/institute of marine affairs/i.test(String(r.source_agency || r.issuer || r.source_family || '')) && /request/i.test(String(r.availability_note || r.access_route || '')) ? 'ima' : 'ema');
+      const accessRoute = clean(r.access_route || (url ? 'Public link' : (requestAgency==='ima' ? 'Institute of Marine Affairs Library' : 'EMA Information Centre')));
       const keywords = uniq([...array(r.keywords), ...array(r.keyword_common_group), ...array(r.keyword_unique), ...array(r.keyword_discretionary)].map(clean)).slice(0, 30);
-      const hasRequest = Boolean(r.has_request_pathway) || /held by ema|request/i.test(status + ' ' + accessRoute + ' ' + r.source_type);
+      const hasRequest = Boolean(r.has_request_pathway) || ['request_ema','request_ima'].includes(rawAccessStatus) || /held by ema|request/i.test(status + ' ' + accessRoute + ' ' + (r.source_type||'') + ' ' + (r.availability_note||''));
       const hasUrl = Boolean(url);
       const hasPublicLink = Boolean(url || sourcePage);
       const dbLabels = {documents:'Document Access Register',press_releases:'News & Events',judgments:'Judgments & Proceedings',external_references:'Government Policies & Strategies',parliamentary_evidence:'Parliamentary Evidence',gazette_records:'Government Gazette & Legal Notices',statistical_context:'Research & Statistical Context',regional_references:'Regional Environmental Sources',international_references:'International — Trinidad & Tobago only',videos:'Environmental Video'};
@@ -453,10 +456,10 @@
         kmValue: clean(r.km_value || ''),
         priority: clean(r.priority || ''),
         actionNeeded: clean(r.action_needed || suggestedAction(status, hasUrl, hasRequest, database)),
-        keywords, hasRequest, hasUrl, hasPublicLink, sourcePage, publicUrl: url || sourcePage, sortDate,
+        keywords, hasRequest, hasUrl, hasPublicLink, sourcePage, requestUrl, requestAgency, rawAccessStatus, publicUrl: url || ((rawAccessStatus==='reference_only'||rawAccessStatus==='request_ima'||rawAccessStatus==='request_ema') ? '' : sourcePage), sortDate,
         raw: r
       };
-      norm.accessStatus = deriveAccessStatus({url:norm.url,sourcePage:norm.sourcePage,status:norm.status,accessRoute:norm.accessRoute,availabilityNote:norm.availabilityNote,hasRequest:norm.hasRequest});
+      norm.accessStatus = deriveAccessStatus({url:norm.url,sourcePage:norm.sourcePage,status:norm.status,accessRoute:norm.accessRoute,availabilityNote:norm.availabilityNote,hasRequest:norm.hasRequest,rawAccessStatus:norm.rawAccessStatus,requestAgency:norm.requestAgency});
       norm.searchText = lower([norm.shortTitle, norm.title, norm.category, norm.area, norm.status, norm.year, ...yearTags, norm.date, norm.dbLabel, norm.accessRoute, norm.description, norm.notes, norm.issuer, norm.sourceAgency, norm.hostAgency, norm.relationship, norm.authorityNote, norm.court, norm.caseNumber, norm.citation, norm.caseStatus, norm.sourceFamily, norm.repositoryBody, norm.contributor, norm.country, ...norm.alternateSources.map(x=>clean(x?.label || x?.repository || x?.url || x)), ...keywords].join(' '));
       norm.statusClass = statusClass(norm);
       return norm;
@@ -475,18 +478,19 @@
     return t.length > 68 ? t.slice(0,65).trim() + '…' : t;
   }
 
-  function deriveAccessStatus({url,sourcePage,status,accessRoute,availabilityNote,hasRequest}){
+  function deriveAccessStatus({url,sourcePage,status,accessRoute,availabilityNote,hasRequest,rawAccessStatus,requestAgency}){
     const text=lower([status,accessRoute,availabilityNote].join(' '));
-    const publicLink=Boolean(url||sourcePage);
+    if(['open_online','request_ema','request_ima','reference_only','link_review'].includes(rawAccessStatus)) return rawAccessStatus;
     if(/broken link|dead link|link under review|link review|url needs|needs link verification/.test(text)) return 'link_review';
-    if(publicLink) return 'open_online';
-    if(hasRequest) return 'request_ema';
+    if(url) return 'open_online';
+    if(hasRequest) return requestAgency==='ima' ? 'request_ima' : 'request_ema';
+    if(sourcePage && !/request|held by|reference only/.test(text)) return 'open_online';
     if(/needs verification|unverified|review source|verify access/.test(text)) return 'link_review';
     return 'reference_only';
   }
 
   function accessLabel(r){
-    return {open_online:'Open online',request_ema:'Request from EMA',reference_only:'Reference only',link_review:'Link under review'}[r.accessStatus] || 'Access not confirmed';
+    return {open_online:'Open online',request_ema:'Request from EMA',request_ima:'Request from the IMA',reference_only:'Reference only',link_review:'Link under review'}[r.accessStatus] || 'Access not confirmed';
   }
 
   function suggestedAction(status, hasUrl, hasRequest, database){
@@ -497,7 +501,7 @@
 
   function statusClass(r){
     if(r.accessStatus==='open_online') return 'public';
-    if(r.accessStatus==='request_ema') return 'request';
+    if(r.accessStatus==='request_ema' || r.accessStatus==='request_ima') return 'request';
     if(r.accessStatus==='reference_only') return 'reference';
     return 'verify';
   }
@@ -626,7 +630,7 @@
     const hay = r.searchText;
     switch(filter){
       case 'public': return r.accessStatus==='open_online';
-      case 'request': return r.accessStatus==='request_ema';
+      case 'request': return r.accessStatus==='request_ema' || r.accessStatus==='request_ima';
       case 'forms': return /form|guide|application|instruction|booklet|checklist|permit/.test(hay);
       case 'law': return r.database === 'judgments' || /law|legal|rule|regulation|act|notice|order|legislation|judgment|appeal|court/.test(hay);
       case 'reports': return /report|study|survey|assessment|monitoring|technical|inventory|audit|valuation/.test(hay);
@@ -729,7 +733,9 @@
   }
 
   function renderRow(r){
-    const primaryAction = r.publicUrl ? `<a class="primary" href="${esc(r.publicUrl)}" target="_blank" rel="noopener">${r.database==='videos'?'Watch video':'Open source'}</a>` : (r.accessStatus==='request_ema' ? `<a class="primary" href="${EMA_REQUEST_URL}" target="_blank" rel="noopener">Request from EMA</a>` : '');
+    const requestTarget = r.accessStatus==='request_ima' ? (r.requestUrl || 'https://www.ima.gov.tt/library/') : EMA_REQUEST_URL;
+    const requestText = r.accessStatus==='request_ima' ? 'Request from the IMA' : 'Request from EMA';
+    const primaryAction = r.publicUrl ? `<a class="primary" href="${esc(r.publicUrl)}" target="_blank" rel="noopener">${r.database==='videos'?'Watch video':'Open source'}</a>` : (['request_ema','request_ima'].includes(r.accessStatus) ? `<a class="primary" href="${esc(requestTarget)}" target="_blank" rel="noopener">${requestText}</a>` : '');
     const formal = r.title && r.title !== r.shortTitle ? `<small>${esc(r.title)}</small>` : '';
     const isSelected = state.basket.some(item => item.id === r.id);
     const legalMeta = r.database === 'judgments' ? [r.court, r.citation || r.caseNumber, r.caseStatus].filter(Boolean).join(' · ') : '';
@@ -769,7 +775,7 @@
 
   function renderRelatedInformation(r){
     const rows=relatedFor(r); if(!rows.length) return '';
-    return `<div class="info-box related-info-box"><h4>Related information</h4><p class="source-note">Connections are discovery aids based on curated indexing or shared topics. They do not state legal applicability, legal hierarchy, policy effect or EMA endorsement.</p><div class="related-records">${rows.map(item=>{const x=item.record;const open=x.publicUrl?`<a href="${esc(x.publicUrl)}" target="_blank" rel="noopener">Open source</a>`:(x.accessStatus==='request_ema'?`<a href="${EMA_REQUEST_URL}" target="_blank" rel="noopener">Request from EMA</a>`:'');const selected=state.basket.some(b=>b.id===x.id);return `<article class="related-record"><span class="relationship-label">${esc(item.label)}</span><strong>${esc(x.shortTitle)}</strong><small>${esc(sourceGroupLabel(x))}${x.year?` · ${esc(x.year)}`:''} · ${esc(accessLabel(x))}</small>${item.note?`<p>${esc(item.note)}</p>`:''}<div class="related-actions">${open}<button type="button" class="text-link" data-action="search-record" data-id="${esc(x.id)}">Find in search</button><button type="button" class="text-link" data-action="toggle-basket" data-id="${esc(x.id)}">${selected?'Remove from List':'+ Add to List'}</button></div></article>`}).join('')}</div></div>`;
+    return `<div class="info-box related-info-box"><h4>Related information</h4><p class="source-note">Connections are discovery aids based on curated indexing or shared topics. They do not state legal applicability, legal hierarchy, policy effect or EMA endorsement.</p><div class="related-records">${rows.map(item=>{const x=item.record;const open=x.publicUrl?`<a href="${esc(x.publicUrl)}" target="_blank" rel="noopener">Open source</a>`:(x.accessStatus==='request_ima'?`<a href="${esc(x.requestUrl||'https://www.ima.gov.tt/library/')}" target="_blank" rel="noopener">Request from the IMA</a>`:(x.accessStatus==='request_ema'?`<a href="${EMA_REQUEST_URL}" target="_blank" rel="noopener">Request from EMA</a>`:''));const selected=state.basket.some(b=>b.id===x.id);return `<article class="related-record"><span class="relationship-label">${esc(item.label)}</span><strong>${esc(x.shortTitle)}</strong><small>${esc(sourceGroupLabel(x))}${x.year?` · ${esc(x.year)}`:''} · ${esc(accessLabel(x))}</small>${item.note?`<p>${esc(item.note)}</p>`:''}<div class="related-actions">${open}<button type="button" class="text-link" data-action="search-record" data-id="${esc(x.id)}">Find in search</button><button type="button" class="text-link" data-action="toggle-basket" data-id="${esc(x.id)}">${selected?'Remove from List':'+ Add to List'}</button></div></article>`}).join('')}</div></div>`;
   }
 
   function renderDetailRow(r){
@@ -851,10 +857,10 @@
   }
 
   function kmuMailto(){
-    const subject='EMA Document Search Tool – search assistance / possible missing record';
+    const subject='TRACE – search assistance / possible missing record';
     const filters=activeFilterSummary();
     const body=[
-      'I was searching the EMA Document Search Tool and would like assistance locating a record or suggesting a possible addition/correction.',
+      'I was searching TRACE and would like assistance locating a record or suggesting a possible addition/correction.',
       '',
       `Search used: ${state.query || '(none)'}`,
       `Active filters: ${filters.length ? filters.join('; ') : '(none)'}`,
@@ -867,9 +873,9 @@
   }
 
   function brokenLinkMailto(r){
-    const subject='EMA Document Search Tool – broken link report';
+    const subject='TRACE – broken link report';
     const body=[
-      'I found a link in the EMA Document Search Tool that may be broken or may no longer lead to the expected record.',
+      'I found a link in TRACE that may be broken or may no longer lead to the expected record.',
       '',
       `Record title: ${r.title || r.shortTitle || '(not available)'}`,
       `Record ID: ${r.id || '(not available)'}`,
@@ -981,6 +987,7 @@
   function buildRequestText(){
     if (!state.basket.length) return 'Add records to My List to generate an EMA-style reference list.';
     const requestItems = state.basket.filter(r => r.accessStatus === 'request_ema');
+    const imaRequestItems = state.basket.filter(r => r.accessStatus === 'request_ima');
     const lines = [];
     lines.push('EMA DOCUMENT SEARCH TOOL — MY LIST');
     lines.push('');
@@ -988,12 +995,18 @@
     state.basket.forEach((r,i)=>lines.push(`${i+1}. ${formatEmaReference(r)}`));
     if (requestItems.length) {
       lines.push('');
-      lines.push('Information Centre assistance requested');
+      lines.push('EMA Information Centre assistance requested');
       lines.push('The following selected records are indexed with an EMA Information Centre request pathway. Please advise on availability or access:');
       requestItems.forEach((r,i)=>lines.push(`${i+1}. ${r.title} [${r.id}]`));
     }
+    if (imaRequestItems.length) {
+      lines.push('');
+      lines.push('Institute of Marine Affairs library access');
+      lines.push('The following selected records are indexed as IMA-held/request records. Please consult the IMA Library for availability or access:');
+      imaRequestItems.forEach((r,i)=>lines.push(`${i+1}. ${r.title} [${r.id}]`));
+    }
     lines.push('');
-    lines.push('Generated from the EMA Document Search Tool for information discovery. Verify citation and source details before formal, regulatory or legal reliance. The tool does not provide legal advice or an EMA determination.');
+    lines.push('Generated from TRACE for environmental information discovery. Verify citation and source details before formal, regulatory or legal reliance. The tool does not provide legal advice or an EMA determination.');
     return lines.join('\n');
   }
 

@@ -11,37 +11,125 @@
     "count": 3
   },
   {
+    "programme_area": "Biodiversity & Protected Areas",
+    "common_terms": [
+      "IMA",
+      "Institute of Marine Affairs",
+      "press release",
+      "SPAW",
+      "Cartagena Convention"
+    ],
+    "count": 3
+  },
+  {
+    "programme_area": "Biodiversity / Sea Turtles",
+    "common_terms": [
+      "Grande Riviere",
+      "leatherback turtle",
+      "turtle eggs",
+      "artificial incubation",
+      "sea turtle conservation"
+    ],
+    "count": 1
+  },
+  {
     "programme_area": "Biodiversity, Ecosystems & Protected Areas",
     "common_terms": [
       "biodiversity",
-      "environmentally sensitive species",
       "protected area",
       "species conservation",
+      "environmentally sensitive species",
       "conservation"
     ],
-    "count": 78
+    "count": 109
+  },
+  {
+    "programme_area": "Climate & Disaster Risk",
+    "common_terms": [
+      "ODPM",
+      "Office of Disaster Preparedness and Management",
+      "Ministry of National Security",
+      "Ministry of Homeland Security",
+      "emergency planning"
+    ],
+    "count": 7
+  },
+  {
+    "programme_area": "Climate & Energy",
+    "common_terms": [
+      "IMA",
+      "Institute of Marine Affairs",
+      "press release",
+      "blue carbon",
+      "carbon credits"
+    ],
+    "count": 1
   },
   {
     "programme_area": "Climate Change & Resilience",
     "common_terms": [
       "international",
       "climate change",
-      "Parliament",
       "UNFCCC",
-      "adaptation"
+      "Climate",
+      "Parliament"
     ],
-    "count": 62
+    "count": 118
+  },
+  {
+    "programme_area": "Climate Change / Coastal & Marine",
+    "common_terms": [
+      "climate change",
+      "mitigation",
+      "adaptation",
+      "coastal sectors",
+      "coastal management"
+    ],
+    "count": 1
+  },
+  {
+    "programme_area": "Climate Change, Resilience & Cross-cutting Policy",
+    "common_terms": [
+      "Office of the Prime Minister",
+      "gender",
+      "climate change",
+      "natural resource management",
+      "environment"
+    ],
+    "count": 1
   },
   {
     "programme_area": "Coastal & Marine",
     "common_terms": [
-      "biodiversity",
-      "coastal",
-      "held by ema",
-      "ema information centre",
-      "request access"
+      "Coastal",
+      "IDB",
+      "IMA",
+      "Tobago",
+      "coastal"
     ],
-    "count": 26
+    "count": 63
+  },
+  {
+    "programme_area": "Coastal & Marine / Sargassum",
+    "common_terms": [
+      "sargassum",
+      "response plan",
+      "marine algae",
+      "coastal management",
+      "Sargassum management"
+    ],
+    "count": 1
+  },
+  {
+    "programme_area": "Coastal Processes / Shoreline",
+    "common_terms": [
+      "beaches",
+      "bays",
+      "coastal conservation",
+      "shoreline",
+      "coastal monitoring"
+    ],
+    "count": 2
   },
   {
     "programme_area": "Corporate & Institutional Management",
@@ -52,7 +140,7 @@
       "gazette confirmed",
       "information centre request"
     ],
-    "count": 143
+    "count": 145
   },
   {
     "programme_area": "Education, Participation & Partnerships",
@@ -74,7 +162,18 @@
       "renewable energy",
       "Energy"
     ],
-    "count": 13
+    "count": 15
+  },
+  {
+    "programme_area": "Energy, Climate & Emissions",
+    "common_terms": [
+      "RIC",
+      "electricity",
+      "energy efficiency",
+      "decarbonisation",
+      "energy policy"
+    ],
+    "count": 6
   },
   {
     "programme_area": "Environmental Governance, Law & Policy",
@@ -85,18 +184,51 @@
       "request access",
       "gazette confirmed"
     ],
-    "count": 90
+    "count": 132
+  },
+  {
+    "programme_area": "Fisheries / Biodiversity",
+    "common_terms": [
+      "Grande Riviere",
+      "handline fishing",
+      "net fishing",
+      "leatherback turtle",
+      "sea turtles"
+    ],
+    "count": 1
+  },
+  {
+    "programme_area": "Governance & Institutions",
+    "common_terms": [
+      "ODPM",
+      "FOIA",
+      "public statement",
+      "disaster risk management",
+      "climate change adaptation"
+    ],
+    "count": 1
   },
   {
     "programme_area": "Industry, Extractives & Quarrying",
     "common_terms": [
       "oil and gas",
-      "Industry",
-      "Central Statistical Office",
-      "statistics",
-      "environmental context"
+      "quarrying",
+      "pipeline",
+      "petroleum",
+      "mining"
     ],
-    "count": 13
+    "count": 26
+  },
+  {
+    "programme_area": "Land & Spatial Planning",
+    "common_terms": [
+      "ODPM",
+      "Office of Disaster Preparedness and Management",
+      "Ministry of National Security",
+      "Ministry of Homeland Security",
+      "Northern Range"
+    ],
+    "count": 1
   },
   {
     "programme_area": "Land, Development & CEC",
@@ -107,7 +239,29 @@
       "designated activities",
       "environmental impact assessment"
     ],
-    "count": 85
+    "count": 95
+  },
+  {
+    "programme_area": "Marine Pollution / Environmental Quality",
+    "common_terms": [
+      "heavy metals",
+      "marine pollution",
+      "IMA",
+      "Institute of Marine Affairs",
+      "seawater"
+    ],
+    "count": 2
+  },
+  {
+    "programme_area": "Marine Pollution / Oil Spill Risk",
+    "common_terms": [
+      "oil spill",
+      "shipping",
+      "Caribbean Sea",
+      "marine pollution",
+      "GIS"
+    ],
+    "count": 1
   },
   {
     "programme_area": "Noise & Community Impacts",
@@ -121,6 +275,50 @@
     "count": 36
   },
   {
+    "programme_area": "Pollution & Waste",
+    "common_terms": [
+      "IMA",
+      "Institute of Marine Affairs",
+      "press release",
+      "Tobago oil spill",
+      "oil spill"
+    ],
+    "count": 2
+  },
+  {
+    "programme_area": "Sustainable Development & Green Economy",
+    "common_terms": [
+      "trade policy",
+      "green industries",
+      "environment and trade",
+      "green economy",
+      "industrial policy"
+    ],
+    "count": 1
+  },
+  {
+    "programme_area": "Transport, Energy & Emissions",
+    "common_terms": [
+      "electric vehicles",
+      "transport emissions",
+      "charging infrastructure",
+      "air pollution",
+      "energy transition"
+    ],
+    "count": 1
+  },
+  {
+    "programme_area": "Waste & Circular Economy",
+    "common_terms": [
+      "IMA",
+      "Institute of Marine Affairs",
+      "press release",
+      "marine plastic litter",
+      "plastic pollution"
+    ],
+    "count": 1
+  },
+  {
     "programme_area": "Waste, Chemicals & Circular Economy",
     "common_terms": [
       "waste",
@@ -129,17 +327,61 @@
       "hazardous waste",
       "waste handling"
     ],
-    "count": 51
+    "count": 74
   },
   {
     "programme_area": "Water & Watersheds",
     "common_terms": [
       "water",
-      "infrastructure",
       "WASA",
-      "Parliament",
-      "Water Security"
+      "ESMP",
+      "ESA",
+      "IDB"
     ],
-    "count": 22
+    "count": 44
+  },
+  {
+    "programme_area": "Water Quality / Coastal & Marine",
+    "common_terms": [
+      "bacteriological water quality",
+      "Bonasse",
+      "Fullerton",
+      "Cedros Bay",
+      "bathing water"
+    ],
+    "count": 1
+  },
+  {
+    "programme_area": "Water Quality / Watersheds",
+    "common_terms": [
+      "heavy metals",
+      "Caura",
+      "Tacarigua",
+      "Caroni River Basin",
+      "water quality"
+    ],
+    "count": 1
+  },
+  {
+    "programme_area": "Water Resources & Watersheds",
+    "common_terms": [
+      "environmental management authority",
+      "held by EMA",
+      "request access",
+      "EMA Information Centre",
+      "watershed improvement plan"
+    ],
+    "count": 2
+  },
+  {
+    "programme_area": "Wetlands / Coastal & Marine",
+    "common_terms": [
+      "Caroni Swamp",
+      "benthic communities",
+      "macrofauna",
+      "wetlands",
+      "ecosystem health"
+    ],
+    "count": 1
   }
 ]

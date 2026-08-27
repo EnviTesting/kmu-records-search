@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#006b5f" />
-  <meta name="description" content="Search publicly available EMA documents, judgments and public communications, with source and access information." />
-  <title>EMA Document Search Tool</title>
+  <meta name="description" content="TRACE helps discover EMA records and related environmental information for Trinidad and Tobago, with source and access information." />
+  <title>TRACE — Environmental Information Discovery Platform</title>
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
@@ -16,9 +16,10 @@
     <div class="header-wrap">
       <div class="title-block">
         <p class="eyebrow">Knowledge Management</p>
-        <h1>EMA Document Search Tool</h1>
+        <h1>TRACE</h1>
+        <p class="product-descriptor">Environmental Information Discovery Platform</p>
         <p class="lede">Find EMA records and related environmental source material for Trinidad and Tobago. Descriptions support discovery only; check the original published source and applicable EMA process before relying on the information.</p>
-        <p class="tool-meta-line">Data updated 26 Aug 2026 · 654 knowledge records · indexed coverage 1992–2026</p>
+        <p class="tool-meta-line">Data updated 27 Aug 2026 · 931 knowledge records · indexed coverage 1988–2026</p>
       </div>
       <div class="header-tools">
         <div class="metric-strip" aria-label="Register metrics">
@@ -79,7 +80,7 @@
       <div class="quick-filters hidden" id="quickFilters" role="group" aria-label="Quick filters">
         <button type="button" class="filter active" data-filter="all">All records</button>
         <button type="button" class="filter" data-filter="public">Open online</button>
-        <button type="button" class="filter" data-filter="request">Request from EMA</button>
+        <button type="button" class="filter" data-filter="request">Request / library access</button>
         <button type="button" class="filter" data-filter="forms">Forms & guides</button>
         <button type="button" class="filter" data-filter="law">Laws & rules</button>
         <button type="button" class="filter" data-filter="reports">Reports & studies</button>
@@ -171,6 +172,7 @@
               <option value="all">All access</option>
               <option value="open_online">Open online</option>
               <option value="request_ema">Request from EMA</option>
+              <option value="request_ima">Request from the IMA</option>
               <option value="reference_only">Reference only</option>
               <option value="link_review">Link under review</option>
             </select>
@@ -212,7 +214,7 @@
 
   <footer class="footer">
     <div class="footer-mainline">
-      <span>EMA Document Search Tool · Knowledge Management</span><span class="legal-use-note">Information discovery tool — not legal advice or an EMA determination.</span>
+      <span>TRACE · Environmental Information Discovery Platform · EMA Knowledge Management</span><span class="legal-use-note">Information discovery tool — not legal advice or an EMA determination.</span>
       <span class="version-shell" aria-label="App version">v<span id="appVersion" class="secret-version" tabindex="0">—</span></span>
     </div>
     <div id="adminPanel" class="admin-panel hidden" aria-live="polite">

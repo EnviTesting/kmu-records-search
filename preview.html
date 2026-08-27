@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#006b5f" />
-  <meta name="description" content="Prototype spatial and environmental calendar views for the EMA Document Search Tool." />
-  <title>EMA Document Search Tool — Spatial Discovery</title>
+  <meta name="description" content="TRACE spatial information-discovery and environmental-calendar views for EMA and related Trinidad and Tobago environmental sources." />
+  <title>TRACE — Spatial Discovery</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <link rel="stylesheet" href="assets/preview.css" />
   <link rel="stylesheet" href="assets/mylist.css" />
@@ -17,7 +17,7 @@
         <p class="eyebrow">Knowledge Management · Spatial discovery</p>
         <h1>Spatial Discovery</h1>
         <p class="lede">Explore Trinidad and Tobago environmental information by place and environmental observance while keeping the main search as the primary record-search tool.</p>
-        <p class="preview-tool-meta">Data updated 26 Aug 2026 · 12 curated discovery places · media overlay off by default</p>
+        <p class="preview-tool-meta">TRACE · Data updated 27 Aug 2026 · 12 curated discovery places · 9 AAQMN stations · optional media and IMA layers off by default</p>
       </div>
       <nav class="preview-nav" aria-label="Preview navigation">
         <a href="index.html">← Search tool</a>
@@ -74,6 +74,15 @@
           </select>
         </label>
         <label class="media-map-toggle"><input id="mediaMapToggle" type="checkbox" /> Show media articles</label>
+        <label class="media-map-toggle"><input id="aaqmnMapToggle" type="checkbox" /> Show AAQMN stations</label>
+        <label>IMA layer
+          <select id="imaLayerSelect" title="Only one IMA Marine Data Hub layer is displayed at a time.">
+            <option value="off">Off</option>
+            <option value="ima_caroni_wq">Caroni water-quality stations</option>
+            <option value="ima_wetlands">Wetlands locations</option>
+            <option value="ima_oil_gas_blocks">Oil & gas blocks</option>
+          </select>
+        </label>
         <button id="resetMapFilters" type="button">Reset</button>
       </div>
 
@@ -82,7 +91,7 @@
           <div id="leafletMap" class="leaflet-map" role="application" aria-label="Interactive map of Trinidad and Tobago environmental information"></div>
           <div id="mapFallback" class="map-fallback hidden" role="img" aria-label="Fallback administrative outline of Trinidad and Tobago"></div>
           <div id="mapStatus" class="map-status" aria-live="polite">Preparing map…</div>
-          <div class="map-legend"><span><i class="dot"></i> Clickable information place</span><span><i class="area-key"></i> Administrative shading reflects explicit area matches</span><span>Counts describe information coverage only</span></div>
+          <div class="map-legend"><span><i class="dot"></i> Knowledge records</span><span><i class="media-key"></i> Media coverage</span><span><i class="air-key"></i> AAQMN station</span><span><i class="ima-key"></i> IMA layer</span><span><i class="area-key"></i> Administrative coverage</span><span>Counts describe information coverage only</span></div>
         </div>
 
         <aside class="place-panel" id="placePanel" aria-live="polite">
@@ -119,7 +128,7 @@
   </main>
 
   <footer class="preview-footer">
-    <p>Spatial Discovery companion page for the EMA Document Search Tool. Map and relationship displays support discovery only and do not constitute legal advice or an EMA determination. <a href="index.html">Return to Search</a>.</p>
+    <p>TRACE Spatial Discovery companion page. Map and relationship displays support discovery only and do not constitute legal advice or an EMA determination. <a href="index.html">Return to Search</a>.</p>
   </footer>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="assets/mylist.js"></script>

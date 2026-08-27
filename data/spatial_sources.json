@@ -14,5 +14,25 @@
       11.359584808349553
     ],
     "use_note": "Use as a navigation/discovery backdrop only. Do not treat these boundaries as an EMA legal, regulatory or survey determination."
+  },
+  {
+    "id": "ema-aaqmn-stations",
+    "name": "EMA Ambient Air Quality Monitoring Network station register",
+    "purpose": "Optional AAQMN station discovery layer linking monitoring locations to related records.",
+    "source": "EMA reports and source-attributed host-site verification register",
+    "provenance_status": "Mixed: four EMA-published GPS conversions; remaining host/locality coordinates explicitly flagged for verification",
+    "crs": "EPSG:4326",
+    "feature_count": 9,
+    "use_note": "Coordinates marked provisional or host-site are not presented as exact EMA station GPS."
+  },
+  {
+    "id": "ima-marine-data-hub",
+    "name": "IMA Marine Data Hub ArcGIS REST services",
+    "purpose": "Optional public spatial layers for record discovery, introduced one layer at a time.",
+    "source": "Institute of Marine Affairs Marine Data Hub",
+    "provenance_status": "Official IMA public data service",
+    "crs": "Runtime query requests EPSG:4326",
+    "feature_count": null,
+    "use_note": "Layer presence supports information discovery only. TRACE does not interpret environmental condition, regulatory status or project boundaries."
   }
 ]

@@ -1,0 +1,116 @@
+{
+  "product": "TRACE — Environmental Information Discovery Platform",
+  "application_version": "8.0.0",
+  "data_version": "2026.08.27.4",
+  "effective_date": "2026-08-27",
+  "searchable_record_count": 931,
+  "media_story_count": 701,
+  "media_article_count": 785,
+  "media_source_option_count": 963,
+  "dataset_catalog_count": 68,
+  "aaqmn_station_count": 9,
+  "ima_optional_spatial_layer_count": 3,
+  "release_audit": "docs/RELEASE_AUDIT_v8.0.0.md",
+  "core_file_hashes": [
+    {
+      "path": "index.html",
+      "bytes": 13497,
+      "sha256": "c04c2b0cd64c8147df9a6fbde05f98f20131380a87ed4b2e1875a969b5b1aec6"
+    },
+    {
+      "path": "insights.html",
+      "bytes": 6152,
+      "sha256": "a6c8c1a72fcd051f826fa515fbfe3e0498ebf166ad5a7dade0fc2db9a3d4687d"
+    },
+    {
+      "path": "preview.html",
+      "bytes": 8009,
+      "sha256": "94b94074560a2f0911238d4d6c003498f62e6330994e6e168a229038b070ba39"
+    },
+    {
+      "path": "news.html",
+      "bytes": 5841,
+      "sha256": "3a359e19894da86fcebcfd141c4f105bee0422d6b644b70b4fdac80e75c8c529"
+    },
+    {
+      "path": "datasets.html",
+      "bytes": 3475,
+      "sha256": "539902735e10a7d8e1155952374245c074995058ccb5fd57a36bd88bac0fe626"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7863,
+      "sha256": "ef1290bf7ed304dab5a0b929fe4350bf8cd0aa1469ed53be8ff56d0612efac4e"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 7543,
+      "sha256": "be174e33d02212240d402e03002c76b519c2dab90d61f067509e26ff2f3270ba"
+    },
+    {
+      "path": "VERSION.json",
+      "bytes": 455,
+      "sha256": "f27feac484e4a7099baac80dd1c2541bb3bef669774fc0e30617d8f5812c7995"
+    },
+    {
+      "path": "data/version.json",
+      "bytes": 455,
+      "sha256": "f27feac484e4a7099baac80dd1c2541bb3bef669774fc0e30617d8f5812c7995"
+    },
+    {
+      "path": "data/summary.json",
+      "bytes": 2784,
+      "sha256": "0c1efa93b27535f670902a47ad5e6c58352ff42a8a740bc7f6e74120ac575a00"
+    },
+    {
+      "path": "data/master_list.json",
+      "bytes": 2839129,
+      "sha256": "7aecfe02cbd207850dd80388e683b2f056679ea02b20f8a77f2dfdf228519413"
+    },
+    {
+      "path": "data/search_index.json",
+      "bytes": 1204189,
+      "sha256": "240a73ad308bb100074d69542f737d4b98dc40efc0063791b2a348036b8a8c80"
+    },
+    {
+      "path": "data/related_index.json",
+      "bytes": 1187289,
+      "sha256": "6f03bd63af6b5bd0577a9702ec8a35797f2acc69bcb2b214862e884b3035f514"
+    },
+    {
+      "path": "data/ema_news_stories.json",
+      "bytes": 826916,
+      "sha256": "fc15e6956e92fbdbb833b8e78691c339851b86630f986e9f00f0e90146bcbdaf"
+    },
+    {
+      "path": "data/ema_in_news.json",
+      "bytes": 1561484,
+      "sha256": "e35cc92b72c3c02d11c6d533e85b69bb4630ca28c7ff6eb93c3334f3d6a65364"
+    },
+    {
+      "path": "data/ema_news_sources.json",
+      "bytes": 409573,
+      "sha256": "2927622803de6cf30daca4ef3c880c5f4732f9900bb62097ad6ec7352a389bc6"
+    },
+    {
+      "path": "data/aaqmn_stations.json",
+      "bytes": 6979,
+      "sha256": "db45f6f9521a83a7e1adf05d5b8e4cc38802178731a0ab74b8b4ea8ebdadc56c"
+    },
+    {
+      "path": "data/dataset_catalog.json",
+      "bytes": 65784,
+      "sha256": "f8ab28790fbfe06fce280018b45266fc2287f953c08e7dd176b319fc915d6201"
+    },
+    {
+      "path": "data/spatial_layers.json",
+      "bytes": 2585,
+      "sha256": "04e54249c4c2b0042c42bf4bc935e1a349cbdf79c8fa43b82cb66d7e111ef82e"
+    },
+    {
+      "path": "data/search_terms.json",
+      "bytes": 12987,
+      "sha256": "748fe4796ed5a4ca09e840b43ee7d21a0fe6323c19a7c78fcb04631544a733c5"
+    }
+  ]
+}

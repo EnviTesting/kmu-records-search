@@ -2,7 +2,7 @@
 
 ## Geographic boundary
 
-The EMA Document Search Tool is hard-restricted to **Trinidad and Tobago**. A record may be hosted outside Trinidad and Tobago, but it must materially describe, regulate, report on, designate, analyse or provide data for Trinidad and Tobago.
+TRACE is hard-restricted to **Trinidad and Tobago**. A record may be hosted outside Trinidad and Tobago, but it must materially describe, regulate, report on, designate, analyse or provide data for Trinidad and Tobago.
 
 ## Core source families
 

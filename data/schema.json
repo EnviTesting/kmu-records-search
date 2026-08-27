@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "EMA Document Search Tool Record",
+  "title": "TRACE Knowledge Record",
   "type": "object",
   "required": [
     "id",
@@ -216,6 +216,7 @@
       "enum": [
         "open_online",
         "request_ema",
+        "request_ima",
         "reference_only",
         "link_review",
         null

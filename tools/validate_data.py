@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validation for the static EMA Document Search Tool knowledge base."""
+"""Validation for the static TRACE knowledge base."""
 import json
 from pathlib import Path
 from urllib.parse import urlparse
@@ -69,13 +69,40 @@ def check_preview_page():
 
 def check_news_page():
     problems=[]
-    required=[ROOT/'news.html', ROOT/'assets'/'news.js', ROOT/'assets'/'news.css', ROOT/'data'/'ema_in_news.json']
+    required=[ROOT/'news.html', ROOT/'assets'/'news.js', ROOT/'assets'/'news.css', ROOT/'data'/'ema_in_news.json', ROOT/'data'/'ema_news_stories.json', ROOT/'data'/'ema_news_sources.json']
     for path in required:
         if not path.exists(): problems.append(f"{path.relative_to(ROOT)}: required EMA in the News asset is missing")
     if (ROOT/'index.html').exists() and 'href="news.html"' not in (ROOT/'index.html').read_text(encoding='utf-8'):
         problems.append('index.html: EMA in the News link is missing')
-    if (ROOT/'assets'/'news.js').exists() and 'ema_in_news.json' not in (ROOT/'assets'/'news.js').read_text(encoding='utf-8'):
-        problems.append('assets/news.js: missing EMA in the News media dataset hook')
+    if (ROOT/'assets'/'news.js').exists():
+        js=(ROOT/'assets'/'news.js').read_text(encoding='utf-8')
+        for dataset in ['ema_in_news.json','ema_news_stories.json','ema_news_sources.json']:
+            if dataset not in js: problems.append(f'assets/news.js: missing media dataset hook for {dataset}')
+    paths=[ROOT/'data'/'ema_news_stories.json',ROOT/'data'/'ema_in_news.json',ROOT/'data'/'ema_news_sources.json']
+    if all(x.exists() for x in paths):
+        stories=json.loads(paths[0].read_text(encoding='utf-8')); articles=json.loads(paths[1].read_text(encoding='utf-8')); sources=json.loads(paths[2].read_text(encoding='utf-8'))
+        meta=json.loads((ROOT/'data'/'version.json').read_text(encoding='utf-8')) if (ROOT/'data'/'version.json').exists() else {}
+        expected=[('media_story_count',len(stories)),('media_archive_count',len(articles)),('media_source_option_count',len(sources))]
+        for key,actual in expected:
+            if meta.get(key) is not None and meta.get(key)!=actual: problems.append(f'data/version.json: {key} says {meta.get(key)} vs {actual}')
+        story_ids=[r.get('id') for r in stories]; article_ids=[r.get('id') for r in articles]; source_ids=[r.get('id') for r in sources]
+        if len(set(story_ids))!=len(story_ids): problems.append('ema_news_stories.json: duplicate story IDs')
+        if len(set(article_ids))!=len(article_ids): problems.append('ema_in_news.json: duplicate article IDs')
+        if len(set(source_ids))!=len(source_ids): problems.append('ema_news_sources.json: duplicate source-option IDs')
+        story_set=set(story_ids); article_by_id={r.get('id'):r for r in articles}
+        grouped={}
+        for a in articles:
+            sid=a.get('story_id'); grouped.setdefault(sid,[]).append(a.get('id'))
+            if sid not in story_set: problems.append(f"ema_in_news.json: article {a.get('id')} references missing story {sid}")
+            if str(a.get('display_source') or a.get('outlet') or '').strip()=='103.1FM': problems.append(f"ema_in_news.json: unnormalised 103.1FM publisher on {a.get('id')}")
+        for st in stories:
+            ids=st.get('article_ids') or []; sid=st.get('id')
+            if set(ids)!=set(grouped.get(sid,[])): problems.append(f"ema_news_stories.json: story/article membership mismatch for {sid}")
+            if st.get('article_count')!=len(ids): problems.append(f"ema_news_stories.json: article_count mismatch for {sid}")
+        for src in sources:
+            aid=src.get('article_id'); sid=src.get('story_id'); a=article_by_id.get(aid)
+            if not a: problems.append(f"ema_news_sources.json: source {src.get('id')} references missing article {aid}")
+            elif a.get('story_id')!=sid: problems.append(f"ema_news_sources.json: story mismatch on source {src.get('id')}")
     return problems
 
 def valid_url(value):
@@ -117,7 +144,7 @@ def validate(path: Path):
         if path.name in {"parliamentary_evidence.json", "gazette_records.json", "statistical_context.json", "regional_references.json", "international_references.json", "videos.json"}:
             for field in ["source_family", "issuer", "environmental_relationship", "source_reliability"]:
                 if not rec.get(field): problems.append(f"row {i}: curated source missing {field}")
-        if rec.get('access_status') not in {'open_online','request_ema','reference_only','link_review'}:
+        if rec.get('access_status') not in {'open_online','request_ema','request_ima','reference_only','link_review'}:
             problems.append(f"row {i}: invalid or missing access_status {rec.get('access_status')}")
         if path.name == 'statistical_context.json':
             for field in ['source_agency','host_agency']:

@@ -1,0 +1,178 @@
+[
+  {
+    "id": "aaqmn_pos_beetham",
+    "name": "Port of Spain",
+    "site_name": "WASA Beetham Wastewater Treatment Plant",
+    "lat": 10.6425559,
+    "lon": -61.4940554,
+    "aliases": [
+      "Port-of-Spain",
+      "Port of Spain",
+      "POS",
+      "Beetham"
+    ],
+    "coordinate_status": "official_ema_gps_converted_from_wgs84_utm20n",
+    "needs_verification": false,
+    "source": "EMA Ambient Air Quality Monitoring Report, Q4 2020",
+    "source_url": "https://cso.gov.tt/wp-content/uploads/2022/09/Q4-2020-AAQMN-Report-final.pdf",
+    "notes": "EMA source gives UTM Zone 20N: X 664727.996, Y 1176857.003; converted to decimal WGS84.",
+    "knowledge_area": "Air & Atmosphere",
+    "layer": "AAQMN",
+    "source_agency": "Environmental Management Authority"
+  },
+  {
+    "id": "aaqmn_point_lisas",
+    "name": "Point Lisas",
+    "site_name": "PLIPDECO House, Orinoco Drive, Point Lisas Industrial Estate",
+    "lat": 10.4160327,
+    "lon": -61.4746778,
+    "aliases": [
+      "Point Lisas",
+      "Pt Lisas",
+      "Pt. Lisas"
+    ],
+    "coordinate_status": "official_ema_gps_converted_from_wgs84_utm20n",
+    "needs_verification": false,
+    "source": "EMA Ambient Air Quality Monitoring Report, Q4 2020",
+    "source_url": "https://cso.gov.tt/wp-content/uploads/2022/09/Q4-2020-AAQMN-Report-final.pdf",
+    "notes": "EMA source gives UTM Zone 20N: X 666970.000, Y 1151813.005; converted to decimal WGS84.",
+    "knowledge_area": "Air & Atmosphere",
+    "layer": "AAQMN",
+    "source_agency": "Environmental Management Authority"
+  },
+  {
+    "id": "aaqmn_san_fernando",
+    "name": "San Fernando",
+    "site_name": "Southern Academy for the Performing Arts (SAPA)",
+    "lat": 10.2680076,
+    "lon": -61.4670484,
+    "aliases": [
+      "San Fernando",
+      "SAPA"
+    ],
+    "coordinate_status": "official_ema_gps_converted_from_wgs84_utm20n",
+    "needs_verification": false,
+    "source": "EMA Ambient Air Quality Monitoring Report, Q4 2020",
+    "source_url": "https://cso.gov.tt/wp-content/uploads/2022/09/Q4-2020-AAQMN-Report-final.pdf",
+    "notes": "EMA source gives UTM Zone 20N: X 667884.000, Y 1135445.000; converted to decimal WGS84.",
+    "knowledge_area": "Air & Atmosphere",
+    "layer": "AAQMN",
+    "source_agency": "Environmental Management Authority"
+  },
+  {
+    "id": "aaqmn_signal_hill",
+    "name": "Signal Hill",
+    "site_name": "Signal Hill Secondary School, Tobago",
+    "lat": 11.1745536,
+    "lon": -60.7600744,
+    "aliases": [
+      "Signal Hill",
+      "Signal Hill Tobago"
+    ],
+    "coordinate_status": "official_ema_gps_converted_from_wgs84_utm20n",
+    "needs_verification": false,
+    "source": "EMA Ambient Air Quality Monitoring Report, Q4 2020",
+    "source_url": "https://cso.gov.tt/wp-content/uploads/2022/09/Q4-2020-AAQMN-Report-final.pdf",
+    "notes": "EMA source gives UTM Zone 20N: X 744611.001, Y 1236207.001; converted to decimal WGS84.",
+    "knowledge_area": "Air & Atmosphere",
+    "layer": "AAQMN",
+    "source_agency": "Environmental Management Authority"
+  },
+  {
+    "id": "aaqmn_arima",
+    "name": "Arima",
+    "site_name": "Holy Cross College, Calvary Hill",
+    "lat": 10.64824,
+    "lon": -61.28407,
+    "aliases": [
+      "Arima",
+      "Calvary Hill",
+      "Holy Cross College"
+    ],
+    "coordinate_status": "facility_geocode_public_map",
+    "needs_verification": true,
+    "source": "EMA/Newsday confirms station at Holy Cross College; facility coordinate from OpenStreetMap-derived Mapcarta",
+    "source_url": "https://newsday.co.tt/2023/01/24/arima-gets-ema-air-quality-monitoring-system/",
+    "notes": "Station site is confirmed; coordinate is the host facility point, not an EMA-published station GPS.",
+    "knowledge_area": "Air & Atmosphere",
+    "layer": "AAQMN",
+    "source_agency": "Environmental Management Authority"
+  },
+  {
+    "id": "aaqmn_point_fortin",
+    "name": "Point Fortin",
+    "site_name": "Point Fortin East Secondary School, Egypt Village",
+    "lat": 10.16483,
+    "lon": -61.67171,
+    "aliases": [
+      "Point Fortin",
+      "Point Fortin East Secondary",
+      "Point Fortin Senior Comprehensive"
+    ],
+    "coordinate_status": "facility_geocode_public_map",
+    "needs_verification": true,
+    "source": "Government PSIP confirms Point Fortin East Secondary as AAQMN site; facility coordinate from OpenStreetMap-derived Mapcarta",
+    "source_url": "https://www.planning.gov.tt/sites/default/files/2021%20Public-Sector-Investment-Programme.pdf",
+    "notes": "Use as host-site coordinate pending an EMA-published station GPS.",
+    "knowledge_area": "Air & Atmosphere",
+    "layer": "AAQMN",
+    "source_agency": "Environmental Management Authority"
+  },
+  {
+    "id": "aaqmn_mayaro",
+    "name": "Mayaro",
+    "site_name": "MSC Public Parking, Guayaguayare Mayaro Road",
+    "lat": 10.28849,
+    "lon": -61.00677,
+    "aliases": [
+      "Mayaro",
+      "MSC Public Parking"
+    ],
+    "coordinate_status": "facility_geocode_public_map",
+    "needs_verification": true,
+    "source": "AQICN identifies EMA feed site as MSC Public Parking; facility coordinate from OpenStreetMap-derived Mapcarta",
+    "source_url": "https://aqicn.org/station/%40565555/",
+    "notes": "Station host-site identification is strong; coordinate is the parking-area feature centroid.",
+    "knowledge_area": "Air & Atmosphere",
+    "layer": "AAQMN",
+    "source_agency": "Environmental Management Authority"
+  },
+  {
+    "id": "aaqmn_toco",
+    "name": "Toco",
+    "site_name": "Toco — exact host site not located in public sources reviewed",
+    "lat": 10.83684,
+    "lon": -60.93768,
+    "aliases": [
+      "Toco"
+    ],
+    "coordinate_status": "provisional_locality_centroid",
+    "needs_verification": true,
+    "source": "EMA confirms operational Toco AAQMS; coordinate currently uses Toco locality point only",
+    "source_url": "https://www.ema.co.tt/",
+    "notes": "DO NOT treat as exact station GPS. Replace once the EMA/AQMIS site coordinate or host facility is confirmed.",
+    "knowledge_area": "Air & Atmosphere",
+    "layer": "AAQMN",
+    "source_agency": "Environmental Management Authority"
+  },
+  {
+    "id": "aaqmn_kings_bay",
+    "name": "King's Bay",
+    "site_name": "King's Bay Water Treatment Plant, Tobago",
+    "lat": 11.28488,
+    "lon": -60.54496,
+    "aliases": [
+      "King's Bay",
+      "Kings Bay",
+      "King’s Bay"
+    ],
+    "coordinate_status": "host_facility_coordinate",
+    "needs_verification": true,
+    "source": "EMA confirms station at King's Bay Water Treatment Plant; published water-treatment-facility coordinate used",
+    "source_url": "https://www.ema.co.tt/2025/07/16/media-release-new-air-quality-monitoring-station-installed-in-kings-bay-tobago/",
+    "notes": "EMA confirms the host facility and the network total of nine; coordinate is for the WTP, not a separately published station GPS.",
+    "knowledge_area": "Air & Atmosphere",
+    "layer": "AAQMN",
+    "source_agency": "Environmental Management Authority"
+  }
+]

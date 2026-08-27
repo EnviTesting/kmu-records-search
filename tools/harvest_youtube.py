@@ -10,6 +10,8 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 DATA=ROOT/'data'
 CFG=json.loads((DATA/'youtube_channel.json').read_text(encoding='utf-8'))
+VERSION_META=json.loads((DATA/'version.json').read_text(encoding='utf-8'))
+DATA_VERSION=VERSION_META['data_version']
 CHANNEL=CFG['channel_id']
 UPLOADS=CFG.get('uploads_playlist_id') or ('UU'+CHANNEL[2:] if CHANNEL.startswith('UC') else '')
 API='https://www.googleapis.com/youtube/v3'
@@ -107,7 +109,7 @@ for item in items:
       'issuer':'Environmental Management Authority','source_agency':'Environmental Management Authority','host_agency':'YouTube',
       'source_level':'EMA','description':desc,'keywords':['Environmental Management Authority','EMA','Trinidad and Tobago','video'],
       'country':'Trinidad and Tobago','country_scope':'national','media_type':'video','access_status':'open_online',
-      'youtube_video_id':v,'channel_id':CHANNEL,'data_version':'2026.08.26.1'
+      'youtube_video_id':v,'channel_id':CHANNEL,'data_version':DATA_VERSION
     })
     by_video[v]=existing[-1]; added+=1
 

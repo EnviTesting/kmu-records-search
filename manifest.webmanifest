@@ -1,9 +1,9 @@
 {
-  "name": "EMA Document Search Tool",
-  "short_name": "EMA Document Search",
+  "name": "TRACE — Environmental Information Discovery Platform",
+  "short_name": "TRACE",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f4f8f6",
   "theme_color": "#006b5f",
-  "description": "Search EMA records and optional related national, regional and international environmental sources, including statistics, datasets and verified video."
+  "description": "Discover EMA records and optional related national, regional and international environmental information, datasets, media and spatial associations for Trinidad and Tobago."
 }

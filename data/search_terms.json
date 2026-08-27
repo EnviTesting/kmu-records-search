@@ -1,37 +1,674 @@
 [
-  {"canonical":"CEC","concept":"Certificate of Environmental Clearance","aliases":["certificate of environmental clearance","environmental clearance"],"related":["EIA","environmental impact assessment","designated activity"]},
-  {"canonical":"EIA","concept":"Environmental Impact Assessment","aliases":["environmental impact assessment"],"related":["CEC","certificate of environmental clearance"]},
-  {"canonical":"ESA","concept":"Environmentally Sensitive Area","aliases":["environmentally sensitive area","environmentally sensitive areas"],"related":["protected area","biodiversity","management plan"]},
-  {"canonical":"ESS","concept":"Environmentally Sensitive Species","aliases":["environmentally sensitive species"],"related":["wildlife","biodiversity","species conservation"]},
-  {"canonical":"WPR","concept":"Water Pollution Rules","aliases":["water pollution rules"],"related":["water pollution permit","effluent","wastewater"]},
-  {"canonical":"APR","concept":"Air Pollution Rules","aliases":["air pollution rules"],"related":["air permit","source emitter","emissions"]},
-  {"canonical":"WMR","concept":"Waste Management Rules","aliases":["waste management rules"],"related":["waste generator","solid waste","hazardous waste"]},
-  {"canonical":"NPCR","concept":"Noise Pollution Control Rules","aliases":["noise pollution control rules"],"related":["noise variation","noise management"]},
-  {"canonical":"AAQMN","concept":"Ambient Air Quality Monitoring Network","aliases":["ambient air quality monitoring network","air quality monitoring network"],"related":["air quality","ambient air","monitoring station"]},
-  {"canonical":"GHG","concept":"Greenhouse Gas","aliases":["greenhouse gas","greenhouse gases"],"related":["emissions","climate change","MRV"]},
-  {"canonical":"NDC","concept":"Nationally Determined Contribution","aliases":["nationally determined contribution","nationally determined contributions"],"related":["climate change","Paris Agreement","mitigation"]},
-  {"canonical":"BTR","concept":"Biennial Transparency Report","aliases":["biennial transparency report"],"related":["UNFCCC","MRV","GHG inventory"]},
-  {"canonical":"IWRM","concept":"Integrated Water Resources Management","aliases":["integrated water resources management"],"related":["water security","watershed","drought"]},
-  {"canonical":"POP","concept":"Persistent Organic Pollutant","aliases":["persistent organic pollutant","persistent organic pollutants","POPs"],"related":["Stockholm Convention","hazardous substances","chemicals"]},
-  {"canonical":"quarrying","concept":"Quarrying","aliases":["quarry","quarries","aggregate extraction"],"related":["minerals","mining","land degradation","CEC"]},
-  {"canonical":"landfill","concept":"Landfills","aliases":["landfills","dump","dumpsite","dumpsites"],"related":["solid waste","leachate","waste management"]},
-  {"canonical":"solid waste","concept":"Solid Waste","aliases":["garbage","municipal waste","refuse"],"related":["waste management","landfill","recycling"]},
-  {"canonical":"mangrove","concept":"Mangroves","aliases":["mangroves"],"related":["wetland","coastal ecosystem","biodiversity"]},
-  {"canonical":"wetland","concept":"Wetlands","aliases":["wetlands"],"related":["Ramsar","mangrove","biodiversity","water"]},
-  {"canonical":"protected area","concept":"Protected Areas","aliases":["protected areas","protected land"],"related":["ESA","biodiversity","management plan"]},
-  {"canonical":"noise permit","concept":"Noise Variation","aliases":["noise variation","variation for noise","noise exemption"],"related":["noise pollution","NPCR"]},
-  {"canonical":"water permit","concept":"Water Pollution Permit","aliases":["water pollution permit","discharge permit"],"related":["WPR","effluent","wastewater"]},
-  {"canonical":"air permit","concept":"Air Pollution Permit","aliases":["air pollution permit","air permit"],"related":["APR","source emitter","emissions"]},
-  {"canonical":"climate resilience","concept":"Climate Resilience","aliases":["climate adaptation","adaptation","resilience"],"related":["climate change","drought","flooding"]},
-  {"canonical":"oil spill","concept":"Oil Spills","aliases":["oil spills","hydrocarbon spill","petroleum spill"],"related":["marine pollution","chemical spill","emergency response"]},
-  {"canonical":"chemical spill","concept":"Chemical Spills","aliases":["chemical release","hazardous spill"],"related":["hazardous substances","emergency response","pollution"]},
-  {"canonical":"biodiversity","concept":"Biodiversity","aliases":["biological diversity"],"related":["wildlife","ecosystem","species","protected area"]},
-  {"canonical":"watershed","concept":"Watersheds","aliases":["watersheds","catchment","catchments"],"related":["water resources","river basin","IWRM"]},
-  {"canonical":"air quality","concept":"Air Quality","aliases":["ambient air quality"],"related":["AAQMN","emissions","particulate matter"]},
-  {"canonical":"PM2.5","concept":"Fine Particulate Matter","aliases":["PM 2.5","fine particulate matter"],"related":["air quality","particulate matter"]},
-  {"canonical":"PM10","concept":"Particulate Matter PM10","aliases":["PM 10","particulate matter"],"related":["air quality","AAQMN"]},
-  {"canonical":"FOIA","concept":"Freedom of Information","aliases":["freedom of information","freedom of information act"],"related":["Information Centre","public statement","document access"]},
-  {"canonical":"MRV","concept":"Measurement Reporting and Verification","aliases":["measurement reporting and verification","measurement, reporting and verification"],"related":["GHG","BTR","NDC"]},
-  {"canonical":"NBSAP","concept":"National Biodiversity Strategy and Action Plan","aliases":["national biodiversity strategy and action plan","biodiversity strategy and action plan"],"related":["CBD","biodiversity","protected areas"]},
-  {"canonical":"ICZM","concept":"Integrated Coastal Zone Management","aliases":["integrated coastal zone management"],"related":["coastal","marine","climate adaptation"]}
+  {
+    "canonical": "CEC",
+    "concept": "Certificate of Environmental Clearance",
+    "aliases": [
+      "certificate of environmental clearance",
+      "environmental clearance"
+    ],
+    "related": [
+      "EIA",
+      "environmental impact assessment",
+      "designated activity"
+    ]
+  },
+  {
+    "canonical": "EIA",
+    "concept": "Environmental Impact Assessment",
+    "aliases": [
+      "environmental impact assessment"
+    ],
+    "related": [
+      "CEC",
+      "certificate of environmental clearance"
+    ]
+  },
+  {
+    "canonical": "ESA",
+    "concept": "Environmentally Sensitive Area",
+    "aliases": [
+      "environmentally sensitive area",
+      "environmentally sensitive areas"
+    ],
+    "related": [
+      "protected area",
+      "biodiversity",
+      "management plan"
+    ]
+  },
+  {
+    "canonical": "ESS",
+    "concept": "Environmentally Sensitive Species",
+    "aliases": [
+      "environmentally sensitive species"
+    ],
+    "related": [
+      "wildlife",
+      "biodiversity",
+      "species conservation"
+    ]
+  },
+  {
+    "canonical": "WPR",
+    "concept": "Water Pollution Rules",
+    "aliases": [
+      "water pollution rules"
+    ],
+    "related": [
+      "water pollution permit",
+      "effluent",
+      "wastewater"
+    ]
+  },
+  {
+    "canonical": "APR",
+    "concept": "Air Pollution Rules",
+    "aliases": [
+      "air pollution rules"
+    ],
+    "related": [
+      "air permit",
+      "source emitter",
+      "emissions"
+    ]
+  },
+  {
+    "canonical": "WMR",
+    "concept": "Waste Management Rules",
+    "aliases": [
+      "waste management rules"
+    ],
+    "related": [
+      "waste generator",
+      "solid waste",
+      "hazardous waste"
+    ]
+  },
+  {
+    "canonical": "NPCR",
+    "concept": "Noise Pollution Control Rules",
+    "aliases": [
+      "noise pollution control rules"
+    ],
+    "related": [
+      "noise variation",
+      "noise management"
+    ]
+  },
+  {
+    "canonical": "AAQMN",
+    "concept": "Ambient Air Quality Monitoring Network",
+    "aliases": [
+      "ambient air quality monitoring network",
+      "air quality monitoring network"
+    ],
+    "related": [
+      "air quality",
+      "ambient air",
+      "monitoring station"
+    ]
+  },
+  {
+    "canonical": "GHG",
+    "concept": "Greenhouse Gas",
+    "aliases": [
+      "greenhouse gas",
+      "greenhouse gases"
+    ],
+    "related": [
+      "emissions",
+      "climate change",
+      "MRV"
+    ]
+  },
+  {
+    "canonical": "NDC",
+    "concept": "Nationally Determined Contribution",
+    "aliases": [
+      "nationally determined contribution",
+      "nationally determined contributions"
+    ],
+    "related": [
+      "climate change",
+      "Paris Agreement",
+      "mitigation"
+    ]
+  },
+  {
+    "canonical": "BTR",
+    "concept": "Biennial Transparency Report",
+    "aliases": [
+      "biennial transparency report"
+    ],
+    "related": [
+      "UNFCCC",
+      "MRV",
+      "GHG inventory"
+    ]
+  },
+  {
+    "canonical": "IWRM",
+    "concept": "Integrated Water Resources Management",
+    "aliases": [
+      "integrated water resources management"
+    ],
+    "related": [
+      "water security",
+      "watershed",
+      "drought"
+    ]
+  },
+  {
+    "canonical": "POP",
+    "concept": "Persistent Organic Pollutant",
+    "aliases": [
+      "persistent organic pollutant",
+      "persistent organic pollutants",
+      "POPs"
+    ],
+    "related": [
+      "Stockholm Convention",
+      "hazardous substances",
+      "chemicals"
+    ]
+  },
+  {
+    "canonical": "quarrying",
+    "concept": "Quarrying",
+    "aliases": [
+      "quarry",
+      "quarries",
+      "aggregate extraction"
+    ],
+    "related": [
+      "minerals",
+      "mining",
+      "land degradation",
+      "CEC"
+    ]
+  },
+  {
+    "canonical": "landfill",
+    "concept": "Landfills",
+    "aliases": [
+      "landfills",
+      "dump",
+      "dumpsite",
+      "dumpsites"
+    ],
+    "related": [
+      "solid waste",
+      "leachate",
+      "waste management"
+    ]
+  },
+  {
+    "canonical": "solid waste",
+    "concept": "Solid Waste",
+    "aliases": [
+      "garbage",
+      "municipal waste",
+      "refuse"
+    ],
+    "related": [
+      "waste management",
+      "landfill",
+      "recycling"
+    ]
+  },
+  {
+    "canonical": "mangrove",
+    "concept": "Mangroves",
+    "aliases": [
+      "mangroves"
+    ],
+    "related": [
+      "wetland",
+      "coastal ecosystem",
+      "biodiversity"
+    ]
+  },
+  {
+    "canonical": "wetland",
+    "concept": "Wetlands",
+    "aliases": [
+      "wetlands"
+    ],
+    "related": [
+      "Ramsar",
+      "mangrove",
+      "biodiversity",
+      "water"
+    ]
+  },
+  {
+    "canonical": "protected area",
+    "concept": "Protected Areas",
+    "aliases": [
+      "protected areas",
+      "protected land"
+    ],
+    "related": [
+      "ESA",
+      "biodiversity",
+      "management plan"
+    ]
+  },
+  {
+    "canonical": "noise permit",
+    "concept": "Noise Variation",
+    "aliases": [
+      "noise variation",
+      "variation for noise",
+      "noise exemption"
+    ],
+    "related": [
+      "noise pollution",
+      "NPCR"
+    ]
+  },
+  {
+    "canonical": "water permit",
+    "concept": "Water Pollution Permit",
+    "aliases": [
+      "water pollution permit",
+      "discharge permit"
+    ],
+    "related": [
+      "WPR",
+      "effluent",
+      "wastewater"
+    ]
+  },
+  {
+    "canonical": "air permit",
+    "concept": "Air Pollution Permit",
+    "aliases": [
+      "air pollution permit",
+      "air permit"
+    ],
+    "related": [
+      "APR",
+      "source emitter",
+      "emissions"
+    ]
+  },
+  {
+    "canonical": "climate resilience",
+    "concept": "Climate Resilience",
+    "aliases": [
+      "climate adaptation",
+      "adaptation",
+      "resilience"
+    ],
+    "related": [
+      "climate change",
+      "drought",
+      "flooding"
+    ]
+  },
+  {
+    "canonical": "oil spill",
+    "concept": "Oil Spills",
+    "aliases": [
+      "oil spills",
+      "hydrocarbon spill",
+      "petroleum spill"
+    ],
+    "related": [
+      "marine pollution",
+      "chemical spill",
+      "emergency response"
+    ]
+  },
+  {
+    "canonical": "chemical spill",
+    "concept": "Chemical Spills",
+    "aliases": [
+      "chemical release",
+      "hazardous spill"
+    ],
+    "related": [
+      "hazardous substances",
+      "emergency response",
+      "pollution"
+    ]
+  },
+  {
+    "canonical": "biodiversity",
+    "concept": "Biodiversity",
+    "aliases": [
+      "biological diversity"
+    ],
+    "related": [
+      "wildlife",
+      "ecosystem",
+      "species",
+      "protected area"
+    ]
+  },
+  {
+    "canonical": "watershed",
+    "concept": "Watersheds",
+    "aliases": [
+      "watersheds",
+      "catchment",
+      "catchments"
+    ],
+    "related": [
+      "water resources",
+      "river basin",
+      "IWRM"
+    ]
+  },
+  {
+    "canonical": "air quality",
+    "concept": "Air Quality",
+    "aliases": [
+      "ambient air quality"
+    ],
+    "related": [
+      "AAQMN",
+      "emissions",
+      "particulate matter"
+    ]
+  },
+  {
+    "canonical": "PM2.5",
+    "concept": "Fine Particulate Matter",
+    "aliases": [
+      "PM 2.5",
+      "fine particulate matter"
+    ],
+    "related": [
+      "air quality",
+      "particulate matter"
+    ]
+  },
+  {
+    "canonical": "PM10",
+    "concept": "Particulate Matter PM10",
+    "aliases": [
+      "PM 10",
+      "particulate matter"
+    ],
+    "related": [
+      "air quality",
+      "AAQMN"
+    ]
+  },
+  {
+    "canonical": "FOIA",
+    "concept": "Freedom of Information",
+    "aliases": [
+      "freedom of information",
+      "freedom of information act"
+    ],
+    "related": [
+      "Information Centre",
+      "public statement",
+      "document access"
+    ]
+  },
+  {
+    "canonical": "MRV",
+    "concept": "Measurement Reporting and Verification",
+    "aliases": [
+      "measurement reporting and verification",
+      "measurement, reporting and verification"
+    ],
+    "related": [
+      "GHG",
+      "BTR",
+      "NDC"
+    ]
+  },
+  {
+    "canonical": "NBSAP",
+    "concept": "National Biodiversity Strategy and Action Plan",
+    "aliases": [
+      "national biodiversity strategy and action plan",
+      "biodiversity strategy and action plan"
+    ],
+    "related": [
+      "CBD",
+      "biodiversity",
+      "protected areas"
+    ]
+  },
+  {
+    "canonical": "ICZM",
+    "concept": "Integrated Coastal Zone Management",
+    "aliases": [
+      "integrated coastal zone management"
+    ],
+    "related": [
+      "coastal",
+      "marine",
+      "climate adaptation"
+    ]
+  },
+  {
+    "canonical": "IMA",
+    "concept": "Institute of Marine Affairs",
+    "aliases": [
+      "Institute of Marine Affairs",
+      "IMA Trinidad",
+      "Marine Data Hub"
+    ],
+    "related": [
+      "marine research",
+      "coastal",
+      "water quality",
+      "coral reefs",
+      "mangroves"
+    ]
+  },
+  {
+    "canonical": "Marine Data Hub",
+    "concept": "IMA Marine Data Hub",
+    "aliases": [
+      "MDH",
+      "ArcGIS Marine Data Hub",
+      "IMA data hub"
+    ],
+    "related": [
+      "spatial data",
+      "wetlands",
+      "oil and gas blocks",
+      "water quality stations"
+    ]
+  },
+  {
+    "canonical": "coral reef",
+    "concept": "Coral Reefs",
+    "aliases": [
+      "coral reefs",
+      "reef health",
+      "coral bleaching"
+    ],
+    "related": [
+      "Tobago reefs",
+      "marine biodiversity",
+      "bleaching",
+      "restoration"
+    ]
+  },
+  {
+    "canonical": "seagrass",
+    "concept": "Seagrass Ecosystems",
+    "aliases": [
+      "seagrasses",
+      "seagrass beds"
+    ],
+    "related": [
+      "Bon Accord Lagoon",
+      "blue carbon",
+      "marine habitat",
+      "coastal"
+    ]
+  },
+  {
+    "canonical": "Sargassum",
+    "concept": "Sargassum",
+    "aliases": [
+      "sargassum seaweed",
+      "Sargassum response"
+    ],
+    "related": [
+      "coastal management",
+      "marine pollution",
+      "beaches"
+    ]
+  },
+  {
+    "canonical": "blue carbon",
+    "concept": "Blue Carbon",
+    "aliases": [
+      "coastal blue carbon",
+      "blue carbon credits"
+    ],
+    "related": [
+      "mangroves",
+      "seagrass",
+      "climate mitigation",
+      "nature-based solutions"
+    ]
+  },
+  {
+    "canonical": "oil and gas blocks",
+    "concept": "Offshore Oil and Gas Blocks",
+    "aliases": [
+      "oil blocks",
+      "gas blocks",
+      "offshore blocks",
+      "offshore energy blocks"
+    ],
+    "related": [
+      "petroleum",
+      "seismic survey",
+      "pipelines",
+      "offshore wells",
+      "CEC"
+    ]
+  },
+  {
+    "canonical": "Caroni River Basin",
+    "concept": "Caroni River Basin",
+    "aliases": [
+      "Caroni basin",
+      "Caroni watershed"
+    ],
+    "related": [
+      "water quality",
+      "Caroni River",
+      "WASA",
+      "IMA",
+      "pollution"
+    ]
+  },
+  {
+    "canonical": "Vision 2030",
+    "concept": "Vision 2030",
+    "aliases": [
+      "National Development Strategy 2016-2030",
+      "Vision 2030 strategy"
+    ],
+    "related": [
+      "sustainable development",
+      "planning",
+      "environment",
+      "SDGs"
+    ]
+  },
+  {
+    "canonical": "PSIP",
+    "concept": "Public Sector Investment Programme",
+    "aliases": [
+      "Public Sector Investment Programme",
+      "PSIP Trinidad"
+    ],
+    "related": [
+      "capital programme",
+      "environment projects",
+      "water sector",
+      "protected areas"
+    ]
+  },
+  {
+    "canonical": "ODPM",
+    "concept": "Office of Disaster Preparedness and Management",
+    "aliases": [
+      "Office of Disaster Preparedness and Management",
+      "National Response Framework"
+    ],
+    "related": [
+      "flood plan",
+      "drought plan",
+      "landslide plan",
+      "hazard mitigation",
+      "emergency response"
+    ]
+  },
+  {
+    "canonical": "Social Development",
+    "concept": "Ministry of the People, Social Development and Family Services",
+    "aliases": [
+      "Ministry of Social Development",
+      "MSDFS",
+      "social sector investment programme"
+    ],
+    "related": [
+      "flood relief",
+      "vulnerability",
+      "resilience",
+      "food security",
+      "community"
+    ]
+  },
+  {
+    "canonical": "Environmental Compendium",
+    "concept": "CSO Environmental Statistics Compendia",
+    "aliases": [
+      "Compendium of Environmental Statistics",
+      "environment statistics compendium"
+    ],
+    "related": [
+      "CSO",
+      "environmental statistics",
+      "water",
+      "waste",
+      "biodiversity",
+      "energy"
+    ]
+  },
+  {
+    "canonical": "marine plastics",
+    "concept": "Marine Plastic Litter",
+    "aliases": [
+      "marine plastic litter",
+      "marine debris",
+      "plastic pollution"
+    ],
+    "related": [
+      "circular economy",
+      "coastal pollution",
+      "waste",
+      "IMA"
+    ]
+  },
+  {
+    "canonical": "hydrotest discharge",
+    "concept": "Pipeline Hydrotest Discharge",
+    "aliases": [
+      "hydrotest water discharge",
+      "pipeline hydrotest"
+    ],
+    "related": [
+      "water pollution",
+      "oil and gas",
+      "discharge permit",
+      "WPR"
+    ]
+  }
 ]

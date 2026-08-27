@@ -1,0 +1,5 @@
+{
+  "release_state": "not_run_in_release_environment",
+  "note": "Run the Refresh TRACE source candidates GitHub Action to refresh optional IMA Marine Data Hub caches. Existing caches are preserved if upstream services are unavailable.",
+  "layers": {}
+}

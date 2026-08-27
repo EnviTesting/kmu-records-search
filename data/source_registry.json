@@ -138,5 +138,89 @@
     "level": "International",
     "role": "Marine-litter and coastal-cleanup data with country reporting",
     "url": "https://oceanconservancy.org/"
+  },
+  {
+    "id": "planning",
+    "name": "Ministry of Planning, Economic Affairs and Development",
+    "level": "National",
+    "role": "National planning, policy, PSIP, development and environmental-policy source",
+    "url": "https://www.planning.gov.tt/"
+  },
+  {
+    "id": "energy",
+    "name": "Ministry of Energy and Energy Industries",
+    "level": "National",
+    "role": "Energy, petroleum, quarry/minerals and sector technical guidance",
+    "url": "https://www.energy.gov.tt/"
+  },
+  {
+    "id": "mpu",
+    "name": "Ministry of Public Utilities",
+    "level": "National",
+    "role": "Water, wastewater, utilities policy and project environmental documentation",
+    "url": "https://www.mpu.gov.tt/"
+  },
+  {
+    "id": "msdfs",
+    "name": "Ministry of the People, Social Development and Family Services",
+    "level": "National",
+    "role": "Social-sector, vulnerability, relief and resilience context; personal/household data are not mapped",
+    "url": "https://social.gov.tt/"
+  },
+  {
+    "id": "trade",
+    "name": "Ministry of Trade, Investment and Tourism",
+    "level": "National",
+    "role": "Trade, industry, scrap-metal and sustainable-practice policy context",
+    "url": "https://tradeind.gov.tt/"
+  },
+  {
+    "id": "rdlg",
+    "name": "Ministry of Rural Development and Local Government",
+    "level": "National",
+    "role": "Municipal services, drainage, waste, sanitation and local disaster-risk context",
+    "url": "https://rdlg.gov.tt/"
+  },
+  {
+    "id": "odpm",
+    "name": "Office of Disaster Preparedness and Management",
+    "level": "National",
+    "role": "National hazard, emergency, spill, mitigation and response-planning source",
+    "url": "https://odpm.gov.tt/"
+  },
+  {
+    "id": "ric",
+    "name": "Regulated Industries Commission",
+    "level": "National",
+    "role": "Water/electricity regulation, environmental incident and energy-policy context",
+    "url": "https://www.ric.org.tt/"
+  },
+  {
+    "id": "gef",
+    "name": "Global Environment Facility",
+    "level": "International",
+    "role": "Trinidad and Tobago environmental projects, evaluations and project-document evidence",
+    "url": "https://www.thegef.org/"
+  },
+  {
+    "id": "idb",
+    "name": "Inter-American Development Bank",
+    "level": "International",
+    "role": "Trinidad and Tobago development projects and environmental/social project documentation",
+    "url": "https://www.iadb.org/"
+  },
+  {
+    "id": "cbd",
+    "name": "Convention on Biological Diversity",
+    "level": "International",
+    "role": "Trinidad and Tobago biodiversity submissions, strategies and national reports",
+    "url": "https://www.cbd.int/"
+  },
+  {
+    "id": "unfccc",
+    "name": "UN Framework Convention on Climate Change",
+    "level": "International",
+    "role": "Trinidad and Tobago climate submissions and national reporting",
+    "url": "https://unfccc.int/"
   }
 ]

@@ -1,15 +1,15 @@
 {
-  "data_version": "2026.08.26.1",
-  "audit_date": "2026-08-26",
-  "record_count": 654,
+  "data_version": "2026.08.27.4",
+  "audit_date": "2026-08-27",
+  "record_count": 931,
   "counts": {
-    "documents": 279,
+    "documents": 282,
     "news_events": 108,
     "judgments": 30,
-    "external_references": 49,
+    "external_references": 300,
     "parliamentary_evidence": 35,
     "gazette_records": 15,
-    "statistical_context": 42,
+    "statistical_context": 65,
     "regional_references": 21,
     "international_references": 43,
     "videos": 32
@@ -19,7 +19,7 @@
       "severity": "Info",
       "check": "News freshness note",
       "record_id": "—",
-      "finding": "Latest captured EMA News & Events date is 2026-08-18; this 2026-08-26 release updates other source families and does not imply a same-day EMA news refresh.",
+      "finding": "Latest captured EMA News & Events date is 2026-08-18; this 2026-08-27 release updates other source families and does not imply a same-day EMA news refresh.",
       "status": "Passed"
     }
   ],

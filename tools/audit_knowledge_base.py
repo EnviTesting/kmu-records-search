@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Conservative audit of knowledge base integrity and public-facing contextual fields."""
 import json, re
+import sys
 from pathlib import Path
 from collections import Counter, defaultdict
 from urllib.parse import urlparse
@@ -112,3 +113,7 @@ audit_path=ROOT/'docs'/'AUDIT_CURRENT.md'
 audit_path.parent.mkdir(parents=True,exist_ok=True)
 audit_path.write_text('\n'.join(lines)+'\n',encoding='utf-8')
 print(json.dumps(report,indent=2))
+open_blockers=[x for x in rows if x.get('status')=='Open' and x.get('severity') in {'High','Medium'}]
+if open_blockers:
+    print(f"Audit failed: {len(open_blockers)} open High/Medium finding(s).", file=sys.stderr)
+    raise SystemExit(1)

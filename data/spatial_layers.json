@@ -1,0 +1,76 @@
+[
+  {
+    "id": "aaqmn",
+    "name": "EMA Air Quality Monitoring Stations",
+    "provider": "Environmental Management Authority",
+    "kind": "local_points",
+    "data_url": "data/aaqmn_stations.json",
+    "default_on": false,
+    "exclusive_group": null,
+    "colour_role": "air",
+    "description": "Nine AAQMN station/host-site points. Verification status is preserved for each coordinate.",
+    "match_terms": [
+      "ambient air quality",
+      "aaqmn",
+      "air quality monitoring"
+    ]
+  },
+  {
+    "id": "ima_caroni_wq",
+    "name": "IMA Caroni River Basin water-quality stations (1984)",
+    "provider": "Institute of Marine Affairs",
+    "kind": "arcgis_feature_service",
+    "service_url": "https://mdh.ima.gov.tt/server/rest/services/Hosted/Location_of_phase1_water_quality_sampling_stations_in_Caroni_River_Basin_1984/FeatureServer",
+    "default_on": false,
+    "exclusive_group": "ima",
+    "colour_role": "ima-water",
+    "description": "IMA Marine Data Hub sampling-station layer; layer ID is discovered at runtime.",
+    "match_terms": [
+      "Caroni River Basin",
+      "water quality",
+      "Caroni River",
+      "IMA"
+    ],
+    "cache_url": "data/spatial_cache/ima_caroni_wq.geojson"
+  },
+  {
+    "id": "ima_wetlands",
+    "name": "IMA Wetlands locations",
+    "provider": "Institute of Marine Affairs",
+    "kind": "arcgis_feature_service",
+    "service_url": "https://mdh.ima.gov.tt/server/rest/services/Hosted/Location_of_wetlands_in_Trinidad_and_Tobago/FeatureServer",
+    "default_on": false,
+    "exclusive_group": "ima",
+    "colour_role": "ima-wetland",
+    "description": "IMA Marine Data Hub wetland locations; displayed only when selected.",
+    "match_terms": [
+      "wetland",
+      "wetlands",
+      "mangrove",
+      "Caroni Swamp",
+      "Nariva Swamp",
+      "IMA"
+    ],
+    "cache_url": "data/spatial_cache/ima_wetlands.geojson"
+  },
+  {
+    "id": "ima_oil_gas_blocks",
+    "name": "IMA Oil and gas blocks",
+    "provider": "Institute of Marine Affairs",
+    "kind": "arcgis_feature_service",
+    "service_url": "https://mdh.ima.gov.tt/server/rest/services/Hosted/Oil_and_gas_blocks_in_Trinidad_and_Tobago_waters/FeatureServer",
+    "default_on": false,
+    "exclusive_group": "ima",
+    "colour_role": "ima-energy",
+    "description": "IMA Marine Data Hub offshore oil and gas blocks; displayed only when selected.",
+    "match_terms": [
+      "oil and gas",
+      "offshore block",
+      "oil block",
+      "petroleum",
+      "offshore energy",
+      "IMA"
+    ],
+    "cache_url": "data/spatial_cache/ima_oil_gas_blocks.geojson"
+  }
+]

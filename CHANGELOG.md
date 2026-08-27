@@ -1,5 +1,20 @@
 # Changelog
 
+## v8.0.0 — 27 August 2026
+
+- Renamed the working platform **TRACE — Environmental Information Discovery Platform** while retaining the v7.3/v6.12 design language and search-first structure.
+- Expanded the canonical searchable knowledge base from 654 to **931 records** with source-attributed national, IMA, Social Development, Planning, Energy, Public Utilities, CSO, ODPM, RIC and development-partner material.
+- Preserved the EMA/external-source toggle and keyword search; no AI search is implemented.
+- Rebuilt EMA in the News as **701 story parents / 785 article children / 963 source options**; repaired chart/render compatibility and normalised publisher labels.
+- Added distinct amber media proportional rings in Spatial Discovery.
+- Added 9 optional AAQMN station/host-site points with coordinate-verification metadata.
+- Added three optional IMA Marine Data Hub layers with one-at-a-time selection, runtime layer-ID discovery and cache fallback.
+- Added explicit **Request from the IMA** access handling across search, My List and Dataset Discovery.
+- Expanded Dataset Discovery to **68 entries** and controlled search concepts to **50**.
+- Added conservative GitHub Actions candidate harvesting for EMA/IMA releases and optional IMA spatial-cache refresh.
+- Normalised release metadata to data version **2026.08.27.4** and regenerated master/search/related indexes.
+- Automated knowledge-base audit passes with no open integrity findings.
+
 ## v7.3.0 — 26 August 2026
 
 - Rebuilt the release from the actual **v6.12.0 package** so the established visual shell and interaction model remain the product baseline.

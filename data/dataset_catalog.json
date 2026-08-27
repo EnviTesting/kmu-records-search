@@ -19,7 +19,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "Official CSO data tables for the Forestry, Wildlife and Biodiversity chapter of the Second Compendium of Environmental Statistics.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0001",
@@ -41,7 +42,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "Examines household livelihoods, awareness, resource use and socioeconomic relationships around six pilot protected areas, providing context for ecosystem services and protected-area management.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "LOCAL-PA-SOCIO",
@@ -63,7 +65,8 @@
     "download_url": "data/datasets/Report-on-Socio-Economic-Survey-related-to-Protected-Areas.xlsx",
     "access_status": "open_online",
     "description": "Bundled official/contextual dataset supplied for the prototype dataset catalogue.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-INT-TT-0039",
@@ -85,7 +88,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "Trinidad and Tobago country profile from the World Database on Protected Areas, providing current protected-area counts, coverage, designation types and downloadable spatial-data context.",
-    "source_level": "International"
+    "source_level": "International",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-REG-CARICOM-003",
@@ -105,7 +109,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "Regional climate-change statistical publication for comparison and environmental intelligence.",
-    "source_level": "Regional"
+    "source_level": "Regional",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-REG-CCCCC-001",
@@ -125,7 +130,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "Regional climate-model access point with country and regional datasets. Dataset use should retain model/scenario metadata and limitations.",
-    "source_level": "Regional"
+    "source_level": "Regional",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0034",
@@ -147,7 +153,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "CSO-hosted greenhouse-gas emissions data table listed within its National Communication on Climate Change collection.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0035",
@@ -169,7 +176,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "CSO-hosted data table summarising greenhouse-gas information in carbon-dioxide-equivalent terms for 2006–2018.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0041",
@@ -191,7 +199,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "NIHERST-hosted technical report from a UNFCCC fellowship concerning climate data and related capacity development.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0040",
@@ -213,7 +222,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "NIHERST-hosted presentation from a UNFCCC fellowship concerning climate data and national climate-information capacity.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-INT-WB-002",
@@ -233,7 +243,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "World Bank country data portal providing downloadable and API-accessible indicators. Individual indicators should retain source, definition and time-series metadata.",
-    "source_level": "International"
+    "source_level": "International",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0039",
@@ -255,7 +266,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "NIHERST sector skills assessment for the maritime sector, retained as supporting national evidence for maritime, coastal and blue-economy context.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-REG-CCCCC-002",
@@ -275,7 +287,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "Regional climate/marine monitoring tool listing an Angel’s Reef, Tobago station. Treat station observations as source data with their accompanying metadata.",
-    "source_level": "Regional"
+    "source_level": "Regional",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0010",
@@ -297,7 +310,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "Second CSO environmental-statistics compendium providing cross-theme national environmental data and reference material.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0031",
@@ -319,7 +333,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "Official CSO data tables for the Coastal Areas chapter of the Second Compendium of Environmental Statistics.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0029",
@@ -341,7 +356,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "Official CSO data tables for the Fisheries and Aquaculture chapter of the Second Compendium of Environmental Statistics.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-EMA-KM-0116",
@@ -361,7 +377,8 @@
     "download_url": null,
     "access_status": "request_ema",
     "description": "Record catalogued under Air. No public online copy is currently linked in this register.",
-    "source_level": "EMA"
+    "source_level": "EMA",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0011",
@@ -370,7 +387,7 @@
     "title": "Annual 2019 Ambient Air Quality Monitoring Report",
     "source_agency": "Environmental Management Authority (EMA)",
     "host_agency": "Central Statistical Office (CSO), Trinidad and Tobago",
-    "knowledge_area": "Corporate & Institutional Management",
+    "knowledge_area": "Air & Atmosphere",
     "dataset_kind": "Data-bearing publication / survey",
     "coverage_start": null,
     "coverage_end": null,
@@ -383,7 +400,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "Annual ambient air-quality monitoring report prepared by the EMA Air Unit and hosted within CSO Environment Statistics.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "LOCAL-CSO-BUS-IND",
@@ -405,7 +423,8 @@
     "download_url": "data/datasets/TABLE-1-NUMBER-OF-BUSINESS-ESTABLISHMENTS-BY-EMPLOY-AND-INDUSTRY-2.xlsx",
     "access_status": "open_online",
     "description": "Bundled official/contextual dataset supplied for the prototype dataset catalogue.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "LOCAL-CSO-BUS-REGEMP",
@@ -427,7 +446,8 @@
     "download_url": "data/datasets/TABLE-2-NUMBER-OF-BUSINESS-ESTABLISHMENTS-BY-EMPLOY-AND-REGION.xlsx",
     "access_status": "open_online",
     "description": "Bundled official/contextual dataset supplied for the prototype dataset catalogue.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "LOCAL-CSO-BUS-REG",
@@ -449,7 +469,8 @@
     "download_url": "data/datasets/TABLE-3-NUMBER-OF-BUSINESS-ESTABLISHMENTS-BY-REGION.xlsx",
     "access_status": "open_online",
     "description": "Bundled official/contextual dataset supplied for the prototype dataset catalogue.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "LOCAL-CSO-EMP-ALL",
@@ -471,7 +492,8 @@
     "download_url": "data/datasets/Index-of-Employment-All-Employees-2000-2026Q1.xlsx",
     "access_status": "open_online",
     "description": "Bundled official/contextual dataset supplied for the prototype dataset catalogue.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "LOCAL-CSO-EMP-PROD",
@@ -493,7 +515,8 @@
     "download_url": "data/datasets/Index-of-Employment-Production-Employees-2000-2026Q1.xlsx",
     "access_status": "open_online",
     "description": "Bundled official/contextual dataset supplied for the prototype dataset catalogue.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "LOCAL-CSO-INDUSTRY",
@@ -515,7 +538,8 @@
     "download_url": "data/datasets/Table-1.-Industry.xlsx",
     "access_status": "open_online",
     "description": "Bundled official/contextual dataset supplied for the prototype dataset catalogue.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0012",
@@ -524,7 +548,7 @@
     "title": "Q1 2020 Ambient Air Quality Monitoring Report",
     "source_agency": "Environmental Management Authority (EMA)",
     "host_agency": "Central Statistical Office (CSO), Trinidad and Tobago",
-    "knowledge_area": "Corporate & Institutional Management",
+    "knowledge_area": "Air & Atmosphere",
     "dataset_kind": "Data-bearing publication / survey",
     "coverage_start": null,
     "coverage_end": null,
@@ -537,7 +561,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "Quarterly ambient air-quality monitoring report for Q1 2020, prepared by the EMA Air Unit and hosted by CSO.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0013",
@@ -546,7 +571,7 @@
     "title": "Q2 2020 Ambient Air Quality Monitoring Report",
     "source_agency": "Environmental Management Authority (EMA)",
     "host_agency": "Central Statistical Office (CSO), Trinidad and Tobago",
-    "knowledge_area": "Corporate & Institutional Management",
+    "knowledge_area": "Air & Atmosphere",
     "dataset_kind": "Data-bearing publication / survey",
     "coverage_start": null,
     "coverage_end": null,
@@ -559,7 +584,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "Quarterly ambient air-quality monitoring report for Q2 2020, prepared by the EMA Air Unit and hosted by CSO.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0014",
@@ -568,7 +594,7 @@
     "title": "Q3 2020 Ambient Air Quality Monitoring Report",
     "source_agency": "Environmental Management Authority (EMA)",
     "host_agency": "Central Statistical Office (CSO), Trinidad and Tobago",
-    "knowledge_area": "Corporate & Institutional Management",
+    "knowledge_area": "Air & Atmosphere",
     "dataset_kind": "Data-bearing publication / survey",
     "coverage_start": null,
     "coverage_end": null,
@@ -581,7 +607,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "Quarterly ambient air-quality monitoring report for Q3 2020, prepared by the EMA Air Unit and hosted by CSO.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0015",
@@ -590,7 +617,7 @@
     "title": "Q4 2020 Ambient Air Quality Monitoring Report",
     "source_agency": "Environmental Management Authority (EMA)",
     "host_agency": "Central Statistical Office (CSO), Trinidad and Tobago",
-    "knowledge_area": "Corporate & Institutional Management",
+    "knowledge_area": "Air & Atmosphere",
     "dataset_kind": "Data-bearing publication / survey",
     "coverage_start": null,
     "coverage_end": null,
@@ -603,7 +630,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "Quarterly ambient air-quality monitoring report for Q4 2020, prepared by the EMA Air Unit and hosted by CSO.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0008",
@@ -625,7 +653,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "Annual Ministry of Finance review of Trinidad and Tobago’s economy. Curated here as contextual evidence for energy, extractive industries, utilities, agriculture, public expenditure and environmental/economic transition issues; it is not an environmental performance report.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-EMA-KM-0119",
@@ -645,7 +674,8 @@
     "download_url": null,
     "access_status": "request_ema",
     "description": "Record catalogued under Water. No public online copy is currently linked in this register.",
-    "source_level": "EMA"
+    "source_level": "EMA",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0007",
@@ -667,7 +697,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "NIHERST science and technology indicator series showing R&D expenditure by higher education, research institutions, Government departments and business, useful for national research-capacity context.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0017",
@@ -689,7 +720,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "Earlier national environmental-awareness survey that can be used alongside the 2013 study for historical comparison.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0016",
@@ -711,7 +743,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "National survey providing a baseline on environmental awareness, attitudes and reported practices in Trinidad and Tobago.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0022",
@@ -733,7 +766,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "National public-perception survey useful as contextual evidence for science communication, trust and public-information planning.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0026",
@@ -755,7 +789,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "CSO collection page for the combined 2023 Household Budget Survey / Survey of Living Conditions, with indexed topics including water, electricity, household amenities, home-produced food, income, expenditure and vulnerability.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-REG-CCREEE-001",
@@ -775,7 +810,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "Trinidad-and-Tobago energy report card covering electricity, renewable-energy indicators, targets, resource potential and related energy information.",
-    "source_level": "Regional"
+    "source_level": "Regional",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0036",
@@ -797,7 +833,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "NIHERST sectoral innovation mapping study focused on energy services and the national innovation context.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0037",
@@ -819,7 +856,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "NIHERST sector skills assessment for agro-processing, retained as supporting national evidence for sustainable production, agriculture and workforce context.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0038",
@@ -841,7 +879,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "NIHERST sector skills assessment for tourism, retained as supporting national evidence for tourism, workforce and sustainable-development context.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0003",
@@ -863,7 +902,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "Provides regional counts of establishments by size, supporting spatial context for development pressure, permitting demand and environmental-management workload.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0004",
@@ -885,7 +925,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "Provides official counts of business establishments by municipal and regional corporation for Trinidad and Tobago.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "LOCAL-NIHERST-RD",
@@ -907,7 +948,8 @@
     "download_url": "data/datasets/Expenditure on Research and Development by Sector 2017 - 2021 (TT$M).xlsx",
     "access_status": "open_online",
     "description": "Bundled official/contextual dataset supplied for the prototype dataset catalogue.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0042",
@@ -929,7 +971,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "NIHERST foresight material for niche manufacturing; the source inventory flags content touching green materials/plastics and environmental-policy trends.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0021",
@@ -951,7 +994,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "NIHERST measurement resource relevant to development of science, technology and innovation indicators and research-information systems.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0019",
@@ -973,7 +1017,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "National science and technology indicator report useful for historical research-capacity and innovation-system context.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0032",
@@ -995,7 +1040,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "Official CSO data tables for the Natural Hazards chapter of the Second Compendium of Environmental Statistics.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0020",
@@ -1017,7 +1063,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "Socio-economic indicator report that can provide contextual variables for environmental analysis and indicator design.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-REG-CARICOM-002",
@@ -1037,7 +1084,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "CARICOM Statistics country environment profile for Trinidad and Tobago, useful as a regional statistical access point.",
-    "source_level": "Regional"
+    "source_level": "Regional",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0002",
@@ -1059,7 +1107,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "Counts Trinidad and Tobago establishments by industry and employment size; useful as contextual evidence for regulated-sector pressure, including mining and quarrying, manufacturing, construction, and water/waste activities.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0005",
@@ -1081,7 +1130,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "Quarterly employment index across industries; included as economic context for changes in industrial and productive activity that may intersect with environmental pressures.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0006",
@@ -1103,7 +1153,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "Quarterly production-employment index across industries, useful as contextual evidence for changes in industrial activity.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-EMA-KM-0117",
@@ -1123,7 +1174,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "Public Register catalogued under CEC.",
-    "source_level": "EMA"
+    "source_level": "EMA",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0009",
@@ -1145,7 +1197,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "CSO collection of national environmental statistics covering multiple themes including agriculture, coastal areas, energy, fisheries, forestry/biodiversity, land use, natural hazards, solid waste, tourism, transport and water resources.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0027",
@@ -1167,7 +1220,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "Official CSO data tables for the Land Use and Development chapter of the Second Compendium of Environmental Statistics.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-EMA-KM-0118",
@@ -1187,7 +1241,8 @@
     "download_url": null,
     "access_status": "request_ema",
     "description": "Record catalogued under Noise. No public online copy is currently linked in this register.",
-    "source_level": "EMA"
+    "source_level": "EMA",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-INT-ICC-001",
@@ -1207,7 +1262,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "International Coastal Cleanup reporting containing a distinct Trinidad and Tobago country record. Treat cleanup counts as programme data, not as a complete measure of national marine-litter conditions.",
-    "source_level": "International"
+    "source_level": "International",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-CMP-OECS-003",
@@ -1227,7 +1283,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "Waste-characterisation results from OECS member states included as a comparator to Trinidad and Tobago waste-characterisation evidence.",
-    "source_level": "Regional–Comparative"
+    "source_level": "Regional–Comparative",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0033",
@@ -1249,7 +1306,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "Official CSO data tables for the Solid Waste Management chapter of the Second Compendium of Environmental Statistics.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0018",
@@ -1271,7 +1329,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "National industry innovation survey providing contextual evidence on chemical and non-metallic manufacturing activity.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-EMA-KM-0120",
@@ -1291,7 +1350,8 @@
     "download_url": null,
     "access_status": "reference_only",
     "description": "Public Register catalogued under Waste.",
-    "source_level": "EMA"
+    "source_level": "EMA",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0025",
@@ -1313,7 +1373,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "National household survey report whose published subject tags include environment, water, sanitation and household information.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0024",
@@ -1335,7 +1396,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "National household survey report whose published subject tags include water and sanitation alongside health, education and household information.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0023",
@@ -1357,7 +1419,8 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "NIHERST programme information on rainwater-harvesting solutions, education, training and technical demonstrations.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "DS-STAT-TT-0030",
@@ -1379,6 +1442,100 @@
     "download_url": null,
     "access_status": "open_online",
     "description": "Official CSO data tables for the Water Resources chapter of the Second Compendium of Environmental Statistics.",
-    "source_level": "National"
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
+  },
+  {
+    "id": "DS-EMA-AAQMN-STATIONS",
+    "related_record_id": "STAT-TT-0015",
+    "dataset_title": "EMA Ambient Air Quality Monitoring Network — Station Register",
+    "title": "EMA Ambient Air Quality Monitoring Network — Station Register",
+    "source_agency": "Environmental Management Authority (EMA)",
+    "host_agency": "TRACE bundled discovery register",
+    "knowledge_area": "Air & Atmosphere",
+    "dataset_kind": "Spatial station register",
+    "coverage_start": null,
+    "coverage_end": null,
+    "year": "2026",
+    "geography": [
+      "Trinidad and Tobago"
+    ],
+    "format": "JSON / CSV-derived station register",
+    "source_url": "https://www.ema.co.tt/",
+    "download_url": "data/aaqmn_stations.json",
+    "access_status": "open_online",
+    "description": "Nine AAQMN station or host-site points used for spatial record association. Per-station coordinate verification status is preserved; provisional points are not exact EMA GPS.",
+    "source_level": "EMA",
+    "data_version": "2026.08.27.4"
+  },
+  {
+    "id": "DS-IMA-CARONI-WQ",
+    "related_record_id": "IMA-EXT-0014",
+    "dataset_title": "IMA Marine Data Hub — Caroni River Basin Phase 1 Water-Quality Sampling Stations (1984)",
+    "title": "IMA Marine Data Hub — Caroni River Basin Phase 1 Water-Quality Sampling Stations (1984)",
+    "source_agency": "Institute of Marine Affairs",
+    "host_agency": "IMA Marine Data Hub",
+    "knowledge_area": "Water & Watersheds",
+    "dataset_kind": "ArcGIS REST spatial layer",
+    "coverage_start": "1984",
+    "coverage_end": "1984",
+    "year": "1984",
+    "geography": [
+      "Caroni River Basin",
+      "Trinidad"
+    ],
+    "format": "ArcGIS FeatureServer / GeoJSON query",
+    "source_url": "https://mdh.ima.gov.tt/server/rest/services/Hosted/Location_of_phase1_water_quality_sampling_stations_in_Caroni_River_Basin_1984/FeatureServer",
+    "download_url": null,
+    "access_status": "open_online",
+    "description": "Public IMA Marine Data Hub service used as an optional Spatial Discovery layer. TRACE discovers the actual sublayer ID at runtime rather than assuming layer 0.",
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
+  },
+  {
+    "id": "DS-IMA-WETLANDS",
+    "related_record_id": null,
+    "dataset_title": "IMA Marine Data Hub — Wetland Locations in Trinidad and Tobago",
+    "title": "IMA Marine Data Hub — Wetland Locations in Trinidad and Tobago",
+    "source_agency": "Institute of Marine Affairs",
+    "host_agency": "IMA Marine Data Hub",
+    "knowledge_area": "Biodiversity, Ecosystems & Protected Areas",
+    "dataset_kind": "ArcGIS REST spatial layer",
+    "coverage_start": null,
+    "coverage_end": null,
+    "year": null,
+    "geography": [
+      "Trinidad and Tobago"
+    ],
+    "format": "ArcGIS FeatureServer / GeoJSON query",
+    "source_url": "https://mdh.ima.gov.tt/server/rest/services/Hosted/Location_of_wetlands_in_Trinidad_and_Tobago/FeatureServer",
+    "download_url": null,
+    "access_status": "open_online",
+    "description": "Public IMA Marine Data Hub wetland-location service. Exposed as an off-by-default, single-select map layer.",
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
+  },
+  {
+    "id": "DS-IMA-OILGAS-BLOCKS",
+    "related_record_id": null,
+    "dataset_title": "IMA Marine Data Hub — Oil and Gas Blocks in Trinidad and Tobago Waters",
+    "title": "IMA Marine Data Hub — Oil and Gas Blocks in Trinidad and Tobago Waters",
+    "source_agency": "Institute of Marine Affairs",
+    "host_agency": "IMA Marine Data Hub",
+    "knowledge_area": "Industry, Extractives & Quarrying",
+    "dataset_kind": "ArcGIS REST spatial layer",
+    "coverage_start": null,
+    "coverage_end": null,
+    "year": null,
+    "geography": [
+      "Trinidad and Tobago waters"
+    ],
+    "format": "ArcGIS FeatureServer / GeoJSON query",
+    "source_url": "https://mdh.ima.gov.tt/server/rest/services/Hosted/Oil_and_gas_blocks_in_Trinidad_and_Tobago_waters/FeatureServer",
+    "download_url": null,
+    "access_status": "open_online",
+    "description": "Public IMA Marine Data Hub offshore oil/gas block service. Exposed as an off-by-default, single-select map layer for record discovery.",
+    "source_level": "National",
+    "data_version": "2026.08.27.4"
   }
 ]

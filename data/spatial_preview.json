@@ -12,7 +12,7 @@
     ],
     "precision": "approximate",
     "note": "Representative preview location; not presented as an EMA legal, regulatory, survey or GIS boundary.",
-    "data_version": "2026.08.26.1"
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "SP-NARIVA",
@@ -27,7 +27,7 @@
     ],
     "precision": "approximate",
     "note": "Representative preview location; map is for knowledge base discovery, not regulatory delineation.",
-    "data_version": "2026.08.26.1"
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "SP-MATURA",
@@ -41,7 +41,7 @@
     ],
     "precision": "approximate",
     "note": "Representative preview location.",
-    "data_version": "2026.08.26.1"
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "SP-CARONI",
@@ -56,7 +56,7 @@
     ],
     "precision": "approximate",
     "note": "Representative preview location.",
-    "data_version": "2026.08.26.1"
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "SP-BUCCOO",
@@ -72,7 +72,7 @@
     ],
     "precision": "approximate",
     "note": "Representative preview location.",
-    "data_version": "2026.08.26.1"
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "SP-NETOBAGO",
@@ -88,7 +88,7 @@
     ],
     "precision": "regional",
     "note": "Regional preview point representing records explicitly about North-East Tobago.",
-    "data_version": "2026.08.26.1"
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "SP-POINTLISAS",
@@ -103,7 +103,7 @@
     ],
     "precision": "approximate",
     "note": "Representative industrial-area preview location.",
-    "data_version": "2026.08.26.1"
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "SP-ARIMA",
@@ -117,7 +117,7 @@
     ],
     "precision": "municipal",
     "note": "Municipal preview point; records may refer to the wider Arima area.",
-    "data_version": "2026.08.26.1"
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "SP-BEETHAM",
@@ -131,7 +131,7 @@
     ],
     "precision": "approximate",
     "note": "Representative preview location; not a facility boundary.",
-    "data_version": "2026.08.26.1"
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "SP-CHAG",
@@ -145,7 +145,7 @@
     ],
     "precision": "approximate",
     "note": "Representative discovery location; not a project or legal boundary.",
-    "data_version": "2026.08.26.1"
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "SP-MAINRIDGE",
@@ -160,7 +160,7 @@
     ],
     "precision": "approximate",
     "note": "Representative discovery location.",
-    "data_version": "2026.08.26.1"
+    "data_version": "2026.08.27.4"
   },
   {
     "id": "SP-ANGELS",
@@ -175,6 +175,6 @@
     ],
     "precision": "approximate",
     "note": "Representative discovery location for explicitly linked climate/marine records.",
-    "data_version": "2026.08.26.1"
+    "data_version": "2026.08.27.4"
   }
 ]

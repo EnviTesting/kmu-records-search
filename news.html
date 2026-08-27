@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#006b5f" />
   <meta name="description" content="Search the EMA in the News media-monitoring archive and review high-level topic and source coverage." />
-  <title>EMA in the News · EMA Document Search Tool</title>
+  <title>EMA in the News · TRACE</title>
   <link rel="stylesheet" href="assets/news.css" />
   <link rel="stylesheet" href="assets/mylist.css" />
 </head>
@@ -17,7 +17,7 @@
         <p class="eyebrow">Knowledge Management · Media monitoring</p>
         <h1>EMA in the News</h1>
         <p class="lede">Search indexed external media coverage and review what was reported, by whom and when. The archive supports information discovery and does not represent EMA findings, views or an assessment of environmental condition.</p>
-        <p class="news-tool-meta">Data updated 26 Aug 2026 · Coverage 11 Dec 2025–24 Jul 2026 · Archived clipping/OCR-only records excluded</p>
+        <p class="news-tool-meta">TRACE · Data updated 27 Aug 2026 · Coverage 11 Dec 2025–24 Jul 2026 · Archived clipping/OCR-only records excluded</p>
       </div>
       <nav class="news-nav" aria-label="Knowledge tool navigation">
         <a href="index.html">← Search tool</a>
@@ -30,7 +30,7 @@
   <main id="newsMain" class="news-shell">
     <section class="use-note">
       <strong>How to read this page</strong>
-      <span>Article counts describe the captured media archive only. Multiple outlets may report the same event, and frequency of reporting should not be interpreted as frequency, severity, compliance status or environmental risk. Use the original article where available.</span>
+      <span>TRACE organises related coverage under conservative story parents while retaining each article as a selectable child. Counts describe the captured media archive only; reporting frequency is not environmental incidence, severity, compliance status or risk. Use the original article where available.</span>
     </section>
 
     <div class="news-tabs" role="tablist" aria-label="News views">
@@ -40,10 +40,10 @@
 
     <section id="dashboardPanel" class="news-panel" role="tabpanel" aria-labelledby="dashboardTab">
       <div class="summary-grid" aria-label="Media archive summary">
-        <article><strong id="newsTotal">—</strong><span>Media articles indexed</span></article>
+        <article><strong id="newsTotal">—</strong><span>Distinct story parents</span></article>
+        <article><strong id="newsArticleTotal">—</strong><span>Selectable article records</span></article>
         <article><strong id="newsDateRange">—</strong><span>Coverage</span></article>
-        <article><strong id="newsOutletCount">—</strong><span>Publications / sources</span></article>
-        <article><strong id="newsOnlineCount">—</strong><span>Direct article links</span></article>
+        <article><strong id="newsCrossConfirmed">—</strong><span>Cross-confirmed stories</span></article>
       </div>
 
       <div class="dashboard-grid">
@@ -75,12 +75,12 @@
         <label>Sort<select id="newsSort"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="title">Headline A–Z</option><option value="source">Publication A–Z</option></select></label>
         <button id="resetNewsSearch" type="button">Reset</button>
       </div>
-      <div class="results-line"><strong id="newsResultCount">—</strong><span>matching article records</span></div>
+      <div class="results-line"><strong id="newsResultCount">—</strong><span>matching story records</span></div>
       <div id="newsResults" class="news-results"></div>
     </section>
   </main>
 
-  <footer class="news-footer">EMA Document Search Tool · EMA in the News · <a href="index.html">Return to search</a></footer>
+  <footer class="news-footer">TRACE · EMA in the News · <a href="index.html">Return to search</a></footer>
   <script src="assets/mylist.js"></script>
   <script src="assets/news.js"></script>
 </body>
