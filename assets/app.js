@@ -1,11 +1,13 @@
 (() => {
   'use strict';
 
-  const APP_VERSION = '8.0.0';
-  const APP_BUILD = '2026.08.27-trace-v8.0.0';
+  const APP_VERSION = '8.1.0';
+  const APP_BUILD = '2026.08.27-knowledge-records-v8.1.0';
+  const U = window.KRSTSearch || {};
+  const SearchState = window.KRSTState || {};
   const EMA_REQUEST_URL = 'https://www.ema.co.tt/information-centre-general-request/';
   const KMU_CONTACT_EMAIL = 'rseemungal@ema.co.tt'; // Knowledge Management contact for record suggestions, corrections and broken-link reports.
-  const DATA_VERSION = '2026.08.27.4';
+  const DATA_VERSION = '2026.08.27.5';
   const PAGE_SIZE = 45;
   const RELATED_DATABASES = new Set(['external_references','parliamentary_evidence','gazette_records','statistical_context','regional_references','international_references','videos']);
 
@@ -27,6 +29,9 @@
     resultAccess: 'all',
     resultYear: 'all',
     resultTopic: 'all',
+    institution: 'all',
+    withinQuery: '',
+    refinements: [],
     sortMode: 'relevance',
     searchInitiated: false,
     dataLoaded: false,
@@ -109,11 +114,20 @@
     bindEvents();
     await unregisterOldServiceWorkers(false);
     const params = new URLSearchParams(window.location.search);
-    const initialSearch = clean(params.get('search'));
+    const saved = SearchState.read ? SearchState.read() : {};
+    const initialSearch = clean(params.get('search') || saved.query || '');
     if (initialSearch) { state.query = initialSearch; const input = $('searchInput'); if (input) input.value = initialSearch; }
-    if (params.get('related') === '1') { state.includeExternal = true; const ext = $('externalToggle'); if (ext) ext.checked = true; }
+    state.includeExternal = params.get('related') === '1' || (!params.has('related') && Boolean(saved.includeExternal));
+    const ext = $('externalToggle'); if (ext) ext.checked = state.includeExternal;
     if(params.get('area')) state.area=params.get('area'); if(params.get('type')) state.type=params.get('type'); if(params.get('source')) state.resultSource=params.get('source'); if(params.get('access')) state.resultAccess=params.get('access');
-    state.searchInitiated = !state.mobileMode || Boolean(initialSearch);
+    state.institution = clean(params.get('institution') || saved.institution || 'all') || 'all';
+    state.withinQuery = clean(params.get('within') || saved.within || '');
+    state.resultTopic = clean(params.get('topic') || saved.topic || state.resultTopic) || 'all';
+    state.resultYear = clean(params.get('year') || saved.year || state.resultYear) || 'all';
+    state.refinements = clean(params.get('refine')).split('|').map(clean).filter(Boolean);
+    if ($('withinResultsInput')) $('withinResultsInput').value = state.withinQuery;
+    const initialIntent = Boolean(initialSearch || params.has('area') || params.has('type') || params.has('source') || params.has('institution') || params.has('access') || params.has('topic') || params.has('year') || params.has('within') || params.has('refine') || params.get('related')==='1');
+    state.searchInitiated = !state.mobileMode || initialIntent;
     setMobileIdle(state.mobileMode && !state.searchInitiated);
     renderBasket();
     if (state.searchInitiated) {
@@ -132,6 +146,14 @@
     if (results && state.mobileMode) results.classList.toggle('hidden', Boolean(idle));
   }
 
+  async function activateSearchAndApply(){
+    state.searchInitiated = true;
+    setMobileIdle(false);
+    await ensureDataLoaded();
+    state.visibleCount = PAGE_SIZE;
+    applyFiltersAndRender();
+  }
+
   async function ensureDataLoaded(){
     if (state.dataLoaded) return;
     if (state.loadingPromise) return state.loadingPromise;
@@ -147,7 +169,7 @@
       state.relatedIndex = related && typeof related === 'object' && !Array.isArray(related) ? related : {};
       normaliseAllRecords();
       populateFilters();
-      [['areaFilter',state.area],['typeFilter',state.type],['resultSourceFilter',state.resultSource],['resultAccessFilter',state.resultAccess]].forEach(([id,v])=>{const el=$(id);if(el&&v&&v!=='all')el.value=v;});
+      [['areaFilter',state.area],['typeFilter',state.type],['resultSourceFilter',state.resultSource],['institutionFilter',state.institution],['resultAccessFilter',state.resultAccess],['resultYearFilter',state.resultYear],['resultTopicFilter',state.resultTopic]].forEach(([id,v])=>{const el=$(id);if(el&&v&&v!=='all')el.value=v;});
       state.dataLoaded = true;
     })();
     try { await state.loadingPromise; } finally { state.loadingPromise=null; }
@@ -156,7 +178,7 @@
   async function loadSupportJson(paths, fallback){
     for (const path of paths) {
       try {
-        const response=await fetch(`${path}?v=${encodeURIComponent(APP_VERSION)}`,{cache:'no-store'});
+        const response=await fetch(`${path}?v=${encodeURIComponent(APP_VERSION)}`);
         if(response.ok) return await response.json();
       } catch {}
     }
@@ -181,23 +203,27 @@
       if(!state.dataLoaded) return;
       state.visibleCount = PAGE_SIZE; applyFiltersAndRender();
     });
-    $('clearSearchBtn')?.addEventListener('click', () => {
+    $('clearSearchBtn')?.addEventListener('click', async () => {
       state.query = ''; const input = $('searchInput'); if (input) input.value = ''; state.visibleCount = PAGE_SIZE;
-      if(state.mobileMode){ state.searchInitiated=false; setMobileIdle(true); safeText('resultCount','Search to view records.'); return; }
-      if(state.dataLoaded) applyFiltersAndRender();
+      const otherIntent = state.quickFilter!=='all' || state.journey!=='all' || state.area!=='all' || state.type!=='all' || state.status!=='all' || state.year!=='all' || state.resultSource!=='all' || state.institution!=='all' || state.resultAccess!=='all' || state.resultYear!=='all' || state.resultTopic!=='all' || clean(state.withinQuery) || state.refinements.length || state.includeExternal;
+      if(state.mobileMode && !otherIntent){ state.searchInitiated=false; setMobileIdle(true); safeText('resultCount','Search to view records.'); return; }
+      state.searchInitiated=true; setMobileIdle(false); await ensureDataLoaded(); applyFiltersAndRender();
     });
-    $('journeySelect')?.addEventListener('change', (e) => { state.journey = e.target.value; state.quickFilter = e.target.value === 'all' ? 'all' : e.target.value; syncQuickFilters(); state.visibleCount = PAGE_SIZE; applyFiltersAndRender(); });
-    $('areaFilter')?.addEventListener('change', (e) => { state.area = e.target.value; state.visibleCount = PAGE_SIZE; applyFiltersAndRender(); });
-    $('typeFilter')?.addEventListener('change', (e) => { state.type = e.target.value; state.visibleCount = PAGE_SIZE; applyFiltersAndRender(); });
-    $('statusFilter')?.addEventListener('change', (e) => { state.status = e.target.value; state.visibleCount = PAGE_SIZE; applyFiltersAndRender(); });
-    $('yearFilter')?.addEventListener('change', (e) => { state.year = e.target.value; state.visibleCount = PAGE_SIZE; applyFiltersAndRender(); });
-    $('sortResults')?.addEventListener('change', (e) => { state.sortMode = e.target.value; state.visibleCount = PAGE_SIZE; applyFiltersAndRender(); });
-    $('resultSourceFilter')?.addEventListener('change', (e) => { state.resultSource = e.target.value; if(state.resultSource!=='all' && state.resultSource!=='ema' && state.resultSource!=='court'){ state.includeExternal=true; const ext=$('externalToggle'); if(ext) ext.checked=true; } state.visibleCount = PAGE_SIZE; applyFiltersAndRender(); });
-    $('resultAccessFilter')?.addEventListener('change', (e) => { state.resultAccess = e.target.value; state.visibleCount = PAGE_SIZE; applyFiltersAndRender(); });
-    $('resultYearFilter')?.addEventListener('change', (e) => { state.resultYear = e.target.value; state.visibleCount = PAGE_SIZE; applyFiltersAndRender(); });
-    $('resultTopicFilter')?.addEventListener('change', (e) => { state.resultTopic = e.target.value; state.visibleCount = PAGE_SIZE; applyFiltersAndRender(); });
+    $('journeySelect')?.addEventListener('change', async (e) => { state.journey=e.target.value; state.quickFilter=e.target.value==='all'?'all':e.target.value; syncQuickFilters(); await activateSearchAndApply(); });
+    $('areaFilter')?.addEventListener('change', async (e) => { state.area=e.target.value; await activateSearchAndApply(); });
+    $('typeFilter')?.addEventListener('change', async (e) => { state.type=e.target.value; await activateSearchAndApply(); });
+    $('statusFilter')?.addEventListener('change', async (e) => { state.status=e.target.value; await activateSearchAndApply(); });
+    $('yearFilter')?.addEventListener('change', async (e) => { state.year=e.target.value; await activateSearchAndApply(); });
+    $('sortResults')?.addEventListener('change', async (e) => { state.sortMode=e.target.value; await activateSearchAndApply(); });
+    $('resultSourceFilter')?.addEventListener('change', async (e) => { state.resultSource=e.target.value; if(state.resultSource!=='all'&&!['ema','court'].includes(state.resultSource)){state.includeExternal=true;const ext=$('externalToggle');if(ext)ext.checked=true;} await activateSearchAndApply(); });
+    $('institutionFilter')?.addEventListener('change', async (e) => { state.institution=e.target.value; if(state.institution!=='all'&&state.institution!=='Environmental Management Authority'){state.includeExternal=true;const ext=$('externalToggle');if(ext)ext.checked=true;} await activateSearchAndApply(); });
+    $('resultAccessFilter')?.addEventListener('change', async (e) => { state.resultAccess=e.target.value; await activateSearchAndApply(); });
+    $('resultYearFilter')?.addEventListener('change', async (e) => { state.resultYear=e.target.value; await activateSearchAndApply(); });
+    $('resultTopicFilter')?.addEventListener('change', async (e) => { state.resultTopic=e.target.value; await activateSearchAndApply(); });
+    $('withinResultsInput')?.addEventListener('input', async (e) => { state.withinQuery=e.target.value; await activateSearchAndApply(); });
+    $('clearWithinResultsBtn')?.addEventListener('click', async () => { state.withinQuery=''; const el=$('withinResultsInput'); if(el)el.value=''; await activateSearchAndApply(); });
     $('clearResultFiltersBtn')?.addEventListener('click', clearResultFilters);
-    $('externalToggle')?.addEventListener('change', async (e) => { state.includeExternal = Boolean(e.target.checked); if(!state.searchInitiated && state.mobileMode) return; await ensureDataLoaded(); state.visibleCount = PAGE_SIZE; applyFiltersAndRender(); });
+    $('externalToggle')?.addEventListener('change', async (e) => { state.includeExternal=Boolean(e.target.checked); await activateSearchAndApply(); });
     $('loadMoreBtn')?.addEventListener('click', () => { state.visibleCount += PAGE_SIZE; renderResults(); });
     $('exportResultsBtn')?.addEventListener('click', () => downloadCsv(state.filtered, 'ema-current-results.csv'));
     $('openBasketBtn')?.addEventListener('click', openBasket);
@@ -233,21 +259,17 @@
     document.addEventListener('click', async (e) => {
       const tab = e.target.closest('[data-database]');
       if (tab) {
-        state.database = tab.getAttribute('data-database') || 'all';
-        $$('.tab').forEach(b => b.classList.toggle('active', b === tab));
-        state.visibleCount = PAGE_SIZE;
-        applyFiltersAndRender();
+        state.database=tab.getAttribute('data-database')||'all';
+        $$('.tab').forEach(b=>b.classList.toggle('active',b===tab));
+        await activateSearchAndApply();
         return;
       }
       const filter = e.target.closest('[data-filter]');
       if (filter) {
-        state.quickFilter = filter.getAttribute('data-filter') || 'all';
-        if(['video','datasets'].includes(state.quickFilter)){state.includeExternal=true; const ext=$('externalToggle'); if(ext) ext.checked=true;}
-        state.journey = state.quickFilter;
-        const select = $('journeySelect'); if (select) select.value = state.journey;
-        syncQuickFilters();
-        state.visibleCount = PAGE_SIZE;
-        applyFiltersAndRender();
+        state.quickFilter=filter.getAttribute('data-filter')||'all';
+        if(state.quickFilter==='video'){state.includeExternal=true;const ext=$('externalToggle');if(ext)ext.checked=true;}
+        state.journey=state.quickFilter; const select=$('journeySelect'); if(select)select.value=state.journey; syncQuickFilters();
+        await activateSearchAndApply();
         return;
       }
       const example = e.target.closest('[data-example]');
@@ -259,6 +281,11 @@
         applyFiltersAndRender();
         return;
       }
+      const addRef=e.target.closest('[data-add-refinement]');
+      if(addRef){const term=clean(addRef.getAttribute('data-add-refinement'));if(term&&!state.refinements.includes(term))state.refinements.push(term);await activateSearchAndApply();return;}
+      const removeRef=e.target.closest('[data-remove-refinement]');
+      if(removeRef){const term=clean(removeRef.getAttribute('data-remove-refinement'));state.refinements=state.refinements.filter(x=>x!==term);await activateSearchAndApply();return;}
+
       const searchRecordBtn=e.target.closest('[data-action="search-record"]');
       if(searchRecordBtn){
         const rec=state.records.find(x=>x.id===searchRecordBtn.getAttribute('data-id'));
@@ -362,7 +389,7 @@
     for (const path of paths) {
       try {
         const url = `${path}${path.includes('?') ? '&' : '?'}v=${encodeURIComponent(APP_VERSION)}`;
-        const response = await fetch(url, { cache: 'no-store' });
+        const response = await fetch(url);
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const data = await response.json();
         if (!Array.isArray(data)) throw new Error('JSON is not an array');
@@ -433,6 +460,7 @@
         reliability: clean(r.source_reliability || r.verification_status || ''),
         issuer: clean(r.issuer || r.custodian_or_owner || ''),
         sourceAgency: clean(r.source_agency || r.issuer || r.custodian_or_owner || ''),
+        institution: U.institution ? U.institution(r,database) : clean(r.source_agency || r.issuer || r.custodian_or_owner || (database==='documents'||database==='press_releases'?'Environmental Management Authority':'')),
         hostAgency: clean(r.host_agency || ''),
         sourceFamily: clean(r.source_family || ''),
         sourceLevel: clean(r.source_level || ''),
@@ -460,7 +488,7 @@
         raw: r
       };
       norm.accessStatus = deriveAccessStatus({url:norm.url,sourcePage:norm.sourcePage,status:norm.status,accessRoute:norm.accessRoute,availabilityNote:norm.availabilityNote,hasRequest:norm.hasRequest,rawAccessStatus:norm.rawAccessStatus,requestAgency:norm.requestAgency});
-      norm.searchText = lower([norm.shortTitle, norm.title, norm.category, norm.area, norm.status, norm.year, ...yearTags, norm.date, norm.dbLabel, norm.accessRoute, norm.description, norm.notes, norm.issuer, norm.sourceAgency, norm.hostAgency, norm.relationship, norm.authorityNote, norm.court, norm.caseNumber, norm.citation, norm.caseStatus, norm.sourceFamily, norm.repositoryBody, norm.contributor, norm.country, ...norm.alternateSources.map(x=>clean(x?.label || x?.repository || x?.url || x)), ...keywords].join(' '));
+      norm.searchText = lower([norm.shortTitle, norm.title, norm.category, norm.area, norm.status, norm.year, ...yearTags, norm.date, norm.dbLabel, norm.accessRoute, norm.description, norm.notes, norm.issuer, norm.sourceAgency, norm.institution, norm.hostAgency, norm.relationship, norm.authorityNote, norm.court, norm.caseNumber, norm.citation, norm.caseStatus, norm.sourceFamily, norm.repositoryBody, norm.contributor, norm.country, ...norm.alternateSources.map(x=>clean(x?.label || x?.repository || x?.url || x)), ...keywords].join(' '));
       norm.statusClass = statusClass(norm);
       return norm;
     } catch (err) {
@@ -522,6 +550,7 @@
     setOptions('yearFilter', years, 'numeric-desc');
     setOptions('resultYearFilter', years, 'numeric-desc');
     setOptions('resultTopicFilter', state.records.map(generalTopic));
+    setCountedOptions('institutionFilter', state.records.map(r=>r.institution));
   }
   function setOptions(id, values, sortMode){
     const el = $(id); if (!el) return;
@@ -530,6 +559,13 @@
     if (sortMode === 'numeric-desc') vals.sort((a,b)=>Number(b)-Number(a) || String(b).localeCompare(String(a)));
     else vals.sort((a,b)=>a.localeCompare(b));
     el.innerHTML = first + vals.map(v=>`<option value="${esc(v)}">${esc(v)}</option>`).join('');
+  }
+
+  function setCountedOptions(id, values){
+    const el=$(id); if(!el)return; const first=el.querySelector('option')?.outerHTML||'<option value="all">All institutions</option>';
+    const counts=new Map(); values.map(clean).filter(Boolean).forEach(v=>counts.set(v,(counts.get(v)||0)+1));
+    const vals=[...counts.entries()].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]));
+    el.innerHTML=first+vals.map(([v,n])=>`<option value="${esc(v)}">${esc(v)} (${n})</option>`).join('');
   }
 
   function syncQuickFilters(){
@@ -576,8 +612,9 @@
   function recordYear(r){ return Number((r.yearTags && r.yearTags[0]) || extractYearTags(r.year)[0] || 0); }
 
   function clearResultFilters(){
-    state.resultSource='all'; state.resultAccess='all'; state.resultYear='all'; state.resultTopic='all'; state.sortMode='relevance';
-    [['resultSourceFilter','all'],['resultAccessFilter','all'],['resultYearFilter','all'],['resultTopicFilter','all'],['sortResults','relevance']].forEach(([id,v])=>{ const el=$(id); if(el) el.value=v; });
+    state.resultSource='all'; state.institution='all'; state.resultAccess='all'; state.resultYear='all'; state.resultTopic='all'; state.withinQuery=''; state.refinements=[]; state.sortMode='relevance';
+    [['resultSourceFilter','all'],['institutionFilter','all'],['resultAccessFilter','all'],['resultYearFilter','all'],['resultTopicFilter','all'],['sortResults','relevance']].forEach(([id,v])=>{ const el=$(id); if(el) el.value=v; });
+    const within=$('withinResultsInput'); if(within)within.value='';
     state.visibleCount=PAGE_SIZE; applyFiltersAndRender();
   }
 
@@ -598,9 +635,16 @@
       if(state.area!=='all') p.set('area',state.area);
       if(state.type!=='all') p.set('type',state.type);
       if(state.resultSource!=='all') p.set('source',state.resultSource);
+      if(state.institution!=='all') p.set('institution',state.institution);
       if(state.resultAccess!=='all') p.set('access',state.resultAccess);
+      if(state.resultTopic!=='all') p.set('topic',state.resultTopic);
+      if(state.resultYear!=='all') p.set('year',state.resultYear);
+      if(clean(state.withinQuery)) p.set('within',clean(state.withinQuery));
+      if(state.refinements.length) p.set('refine',state.refinements.join('|'));
       const u=p.toString()?`${location.pathname}?${p}`:location.pathname;
       history.replaceState(null,'',u);
+      SearchState.save?.({query:state.query,includeExternal:state.includeExternal,institution:state.institution,topic:state.resultTopic,year:state.resultYear,within:state.withinQuery});
+      const mapBtn=$('viewMapBtn'); if(mapBtn) mapBtn.href=SearchState.link?SearchState.link('preview.html',{query:state.query,includeExternal:state.includeExternal,institution:state.institution,topic:state.resultTopic,year:state.resultYear,within:state.withinQuery}):`preview.html${p.toString()?`?${p}`:''}`;
     }catch{}
   }
 
@@ -617,9 +661,12 @@
     if (state.year !== 'all') records = records.filter(r => (r.yearTags || []).includes(state.year) || r.year === state.year || String(r.date || '').startsWith(state.year));
     if (q) records = records.map(r => ({ record: r, score: scoreRecord(r, state.queryPlan) })).filter(x => x.score > 0).sort((a,b)=>b.score-a.score).map(x=>x.record);
     if (state.resultSource !== 'all') records = records.filter(r => sourceGroup(r) === state.resultSource);
+    if (state.institution !== 'all') records = records.filter(r => r.institution === state.institution);
     if (state.resultAccess !== 'all') records = records.filter(r => r.accessStatus === state.resultAccess);
     if (state.resultYear !== 'all') records = records.filter(r => (r.yearTags || []).includes(state.resultYear) || r.year === state.resultYear || String(r.date || '').startsWith(state.resultYear));
     if (state.resultTopic !== 'all') records = records.filter(r => generalTopic(r) === state.resultTopic);
+    if (state.refinements.length) records = records.filter(r => state.refinements.every(term=>termPresent(r.searchText,term)));
+    if (clean(state.withinQuery)) { const withinPlan=buildQueryPlan(state.withinQuery); records=records.filter(r=>scoreRecord(r,withinPlan)>0); }
     records = sortRecords(records, q);
     state.filtered = records;
     syncUrlState();
@@ -644,10 +691,9 @@
     }
   }
 
-  function termPresent(text, term){
-    const hay=lower(text), t=lower(term); if(!t) return false;
-    if(/^[a-z0-9]{1,3}$/.test(t)) return new RegExp(`(^|[^a-z0-9])${t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}([^a-z0-9]|$)`,'i').test(hay);
-    return hay.includes(t);
+  function termPresent(text,term){
+    if(U.termPresent) return U.termPresent(text,term);
+    const hay=lower(text),t=lower(term); if(!t)return false; return hay.includes(t);
   }
 
   function buildQueryPlan(q){
@@ -695,7 +741,7 @@
     if (!body) { debug('Missing resultsBody element'); return; }
     const total = state.filtered.length;
     const activeTools=$('activeResultsTools'); if(activeTools) activeTools.classList.toggle('hidden', !hasActiveFilters());
-    safeText('resultCount', `${total} result${total===1?'':'s'}${state.query ? ` for “${state.query}”` : ''}`);
+    safeText('resultCount', `${total} result${total===1?'':'s'}${state.query ? ` for “${state.query}”` : ''}${state.withinQuery ? ` · narrowed by “${state.withinQuery}”` : ''}`);
     renderSearchExpansionNote();
     renderResultBreakdown();
     updateRecordSuggestionLink();
@@ -722,15 +768,14 @@
   }
 
   function renderSearchExpansionNote(){
-    const el=$('searchExpansionNote'); if(!el) return;
-    const plan=state.queryPlan;
-    if(!plan || (!plan.aliases.length && !plan.related.length)){el.classList.add('hidden'); el.textContent=''; return;}
-    const aliasText=plan.aliases.slice(0,5).join(', '); const relatedText=plan.related.slice(0,4).join(', ');
-    const pieces=[];
-    if(aliasText) pieces.push(`Also searched equivalent/common terms: ${aliasText}`);
-    if(relatedText) pieces.push(`Related terms are ranked lower: ${relatedText}`);
-    el.textContent=pieces.join('. ')+'.'; el.classList.remove('hidden');
+    const el=$('searchExpansionNote'); if(!el)return; const plan=state.queryPlan;
+    const suggestions=plan?uniq([...plan.related,...plan.aliases]).filter(x=>x&&!state.refinements.includes(x)&&!termPresent(state.query,x)).slice(0,5):[];
+    if(!suggestions.length&&!state.refinements.length){el.classList.add('hidden');el.innerHTML='';return;}
+    const active=state.refinements.length?`<div class="applied-refinements"><strong>Added:</strong>${state.refinements.map(x=>`<button type="button" data-remove-refinement="${esc(x)}">${esc(x)} ×</button>`).join('')}</div>`:'';
+    const add=suggestions.length?`<div class="refinement-suggestions"><strong>Try narrowing:</strong>${suggestions.map(x=>`<button type="button" data-add-refinement="${esc(x)}">+ ${esc(x)}</button>`).join('')}</div>`:'';
+    el.innerHTML=active+add; el.classList.remove('hidden');
   }
+
 
   function renderRow(r){
     const requestTarget = r.accessStatus==='request_ima' ? (r.requestUrl || 'https://www.ima.gov.tt/library/') : EMA_REQUEST_URL;
@@ -811,7 +856,7 @@
   }
 
   function hasActiveFilters(){
-    return Boolean(state.query || state.database !== 'all' || state.quickFilter !== 'all' || state.area !== 'all' || state.type !== 'all' || state.status !== 'all' || state.year !== 'all' || state.resultSource !== 'all' || state.resultAccess !== 'all' || state.resultYear !== 'all' || state.resultTopic !== 'all' || state.sortMode !== 'relevance');
+    return Boolean(state.query || state.database !== 'all' || state.quickFilter !== 'all' || state.area !== 'all' || state.type !== 'all' || state.status !== 'all' || state.year !== 'all' || state.resultSource !== 'all' || state.institution !== 'all' || state.resultAccess !== 'all' || state.resultYear !== 'all' || state.resultTopic !== 'all' || state.withinQuery || state.refinements.length || state.sortMode !== 'relevance');
   }
 
   function toggleRecordSuggestionPanel(){
@@ -850,17 +895,20 @@
     if (state.status !== 'all') parts.push(`Source status: ${state.status}`);
     if (state.year !== 'all') parts.push(`Year: ${state.year}`);
     if (state.resultSource !== 'all') parts.push(`Source: ${state.resultSource}`);
+    if (state.institution !== 'all') parts.push(`Institution: ${state.institution}`);
     if (state.resultAccess !== 'all') parts.push(`Access: ${state.resultAccess}`);
     if (state.resultYear !== 'all') parts.push(`Result year: ${state.resultYear}`);
     if (state.resultTopic !== 'all') parts.push(`Topic: ${state.resultTopic}`);
+    if (state.withinQuery) parts.push(`Within results: ${state.withinQuery}`);
+    if (state.refinements.length) parts.push(`Added terms: ${state.refinements.join(', ')}`);
     return parts;
   }
 
   function kmuMailto(){
-    const subject='TRACE – search assistance / possible missing record';
+    const subject='Knowledge Records Search Tool – search assistance / possible missing record';
     const filters=activeFilterSummary();
     const body=[
-      'I was searching TRACE and would like assistance locating a record or suggesting a possible addition/correction.',
+      'I was searching the Knowledge Records Search Tool and would like assistance locating a record or suggesting a possible addition/correction.',
       '',
       `Search used: ${state.query || '(none)'}`,
       `Active filters: ${filters.length ? filters.join('; ') : '(none)'}`,
@@ -873,9 +921,9 @@
   }
 
   function brokenLinkMailto(r){
-    const subject='TRACE – broken link report';
+    const subject='Knowledge Records Search Tool – broken link report';
     const body=[
-      'I found a link in TRACE that may be broken or may no longer lead to the expected record.',
+      'I found a link in the Knowledge Records Search Tool that may be broken or may no longer lead to the expected record.',
       '',
       `Record title: ${r.title || r.shortTitle || '(not available)'}`,
       `Record ID: ${r.id || '(not available)'}`,
@@ -889,11 +937,12 @@
   }
 
   function clearAllFilters(){
-    state.database='all'; state.quickFilter='all'; state.journey='all'; state.area='all'; state.type='all'; state.status='all'; state.year='all'; state.visibleCount=PAGE_SIZE;
+    state.database='all'; state.quickFilter='all'; state.journey='all'; state.area='all'; state.type='all'; state.status='all'; state.year='all'; state.resultSource='all'; state.institution='all'; state.resultAccess='all'; state.resultYear='all'; state.resultTopic='all'; state.withinQuery=''; state.refinements=[]; state.visibleCount=PAGE_SIZE;
     $$('.tab').forEach(b=>b.classList.toggle('active',b.getAttribute('data-database')==='all'));
     syncQuickFilters();
     const journey=$('journeySelect'); if (journey) journey.value='all';
-    ['areaFilter','typeFilter','statusFilter','yearFilter'].forEach(id=>{ const el=$(id); if(el) el.value='all'; });
+    ['areaFilter','typeFilter','statusFilter','yearFilter','resultSourceFilter','institutionFilter','resultAccessFilter','resultYearFilter','resultTopicFilter'].forEach(id=>{ const el=$(id); if(el) el.value='all'; });
+    const within=$('withinResultsInput'); if(within) within.value='';
     applyFiltersAndRender();
   }
 
@@ -989,7 +1038,7 @@
     const requestItems = state.basket.filter(r => r.accessStatus === 'request_ema');
     const imaRequestItems = state.basket.filter(r => r.accessStatus === 'request_ima');
     const lines = [];
-    lines.push('EMA DOCUMENT SEARCH TOOL — MY LIST');
+    lines.push('KNOWLEDGE RECORDS SEARCH TOOL — MY LIST');
     lines.push('');
     lines.push('Selected references');
     state.basket.forEach((r,i)=>lines.push(`${i+1}. ${formatEmaReference(r)}`));
@@ -1006,7 +1055,7 @@
       imaRequestItems.forEach((r,i)=>lines.push(`${i+1}. ${r.title} [${r.id}]`));
     }
     lines.push('');
-    lines.push('Generated from TRACE for environmental information discovery. Verify citation and source details before formal, regulatory or legal reliance. The tool does not provide legal advice or an EMA determination.');
+    lines.push('Generated from the Knowledge Records Search Tool for environmental information discovery. Verify citation and source details before formal, regulatory or legal reliance. The tool does not provide legal advice or an EMA determination.');
     return lines.join('\n');
   }
 

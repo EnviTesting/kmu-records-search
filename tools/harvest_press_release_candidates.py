@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Harvest EMA/IMA press-release *candidates* without modifying canonical TRACE records.
+"""Harvest EMA/IMA press-release *candidates* without modifying canonical Knowledge Records Search Tool records.
 
 The output is review-only. If a source is unavailable or parsing returns no candidates,
 existing candidate files are preserved and the run is recorded in a status manifest.
@@ -13,7 +13,7 @@ from urllib.request import Request, urlopen
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'data'/'candidates'; OUT.mkdir(parents=True,exist_ok=True)
-UA='TRACE-source-candidate-harvester/1.0 (+https://www.ema.co.tt/)'
+UA='knowledge-records-search-source-candidate-harvester/1.0 (+https://www.ema.co.tt/)'
 SOURCES={
   'ema':{
     'name':'Environmental Management Authority','index':'https://www.ema.co.tt/category/news-events/',
@@ -118,7 +118,7 @@ def harvest(key,cfg,known_urls,known_titles):
           'already_indexed':u in known_urls or norm_title(title) in known_titles,
           'review_status':'review_required','canonical_action':'none','harvested_at':datetime.now(timezone.utc).isoformat(),
           'source_index':cfg['index'],
-          'note':'Candidate only. Review provenance, relevance and duplication before adding to a canonical TRACE record set.'
+          'note':'Candidate only. Review provenance, relevance and duplication before adding to a canonical Knowledge Records Search Tool record set.'
         })
     return rows,errors
 

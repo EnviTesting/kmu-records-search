@@ -1,15 +1,15 @@
 {
-  "version": "8.0.0",
-  "application_version": "8.0.0",
-  "data_version": "2026.08.27.4",
+  "version": "8.1.0",
+  "application_version": "8.1.0",
+  "data_version": "2026.08.27.5",
   "effective_date": "2026-08-27",
   "design_anchor": "v7.3.0 / v6.12 visual language",
-  "product_name": "TRACE",
-  "product_descriptor": "Environmental Information Discovery Platform",
+  "product_name": "Knowledge Records Search Tool",
+  "product_descriptor": "EMA Knowledge Management",
   "record_count": 931,
   "media_story_count": 701,
   "media_archive_count": 785,
   "media_source_option_count": 963,
-  "dataset_catalog_count": 68,
+  "dataset_catalog_count": 65,
   "aaqmn_station_count": 9
 }

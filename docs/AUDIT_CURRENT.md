@@ -1,6 +1,6 @@
 # Knowledge base Audit — 2026-08-27
 
-**Data version:** 2026.08.27.4
+**Data version:** 2026.08.27.5
 **Records audited:** 931
 
 ## Automated checks

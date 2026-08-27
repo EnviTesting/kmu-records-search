@@ -24,15 +24,5 @@
     "crs": "EPSG:4326",
     "feature_count": 9,
     "use_note": "Coordinates marked provisional or host-site are not presented as exact EMA station GPS."
-  },
-  {
-    "id": "ima-marine-data-hub",
-    "name": "IMA Marine Data Hub ArcGIS REST services",
-    "purpose": "Optional public spatial layers for record discovery, introduced one layer at a time.",
-    "source": "Institute of Marine Affairs Marine Data Hub",
-    "provenance_status": "Official IMA public data service",
-    "crs": "Runtime query requests EPSG:4326",
-    "feature_count": null,
-    "use_note": "Layer presence supports information discovery only. TRACE does not interpret environmental condition, regulatory status or project boundaries."
   }
 ]

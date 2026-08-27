@@ -1,234 +1,204 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#006b5f" />
-  <meta name="description" content="TRACE helps discover EMA records and related environmental information for Trinidad and Tobago, with source and access information." />
-  <title>TRACE — Environmental Information Discovery Platform</title>
-  <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="stylesheet" href="assets/styles.css" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#006b5f" name="theme-color"/>
+<meta content="Search EMA knowledge records and selected related environmental sources for Trinidad and Tobago." name="description"/>
+<title>Knowledge Records Search Tool</title>
+<link href="manifest.webmanifest" rel="manifest"/>
+<link href="assets/styles.css" rel="stylesheet"/>
 </head>
 <body>
-  <a class="skip-link" href="#searchInput">Skip to search</a>
-
-  <header class="app-header">
-    <div class="header-wrap">
-      <div class="title-block">
-        <p class="eyebrow">Knowledge Management</p>
-        <h1>TRACE</h1>
-        <p class="product-descriptor">Environmental Information Discovery Platform</p>
-        <p class="lede">Find EMA records and related environmental source material for Trinidad and Tobago. Descriptions support discovery only; check the original published source and applicable EMA process before relying on the information.</p>
-        <p class="tool-meta-line">Data updated 27 Aug 2026 · 931 knowledge records · indexed coverage 1988–2026</p>
-      </div>
-      <div class="header-tools">
-        <div class="metric-strip" aria-label="Register metrics">
-          <div class="metric"><span id="metricTotal">—</span><small>Total</small></div>
-          <div class="metric"><span id="metricDocuments">—</span><small>Documents</small></div>
-          <div class="metric"><span id="metricJudgments">—</span><small>Judgments</small></div>
-          <div class="metric"><span id="metricPress">—</span><small>News & Events</small></div>
-        </div>
-        <div class="header-utility-links">
-          <a class="insights-link" href="insights.html" aria-label="Open Knowledge Insights dashboard">
-            <span>Knowledge Insights</span><small>Explore topic coverage & gaps</small><span aria-hidden="true">→</span>
-          </a>
-          <a class="insights-link preview-link" href="preview.html" aria-label="Open spatial and environmental calendar preview">
-            <span>Spatial Discovery</span><small>Map & environmental calendar</small><span aria-hidden="true">→</span>
-          </a>
-          <a class="insights-link" href="news.html" aria-label="Open News and Intelligence page">
-            <span>EMA in the News</span><small>Search external media coverage</small><span aria-hidden="true">→</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main class="app-shell">
-    <section class="search-panel" aria-labelledby="searchHeading">
-      <div class="search-topline">
-        <div>
-          <h2 id="searchHeading">Search</h2>
-          <p>Type what you are looking for. Filters are optional and can be used after you search. <a class="inline-tool-link" href="datasets.html">Browse Dataset Discovery →</a></p>
-        </div>
-        <div class="db-tabs" role="group" aria-label="Choose database">
-          <button class="tab active" type="button" data-database="all">All</button>
-          <button class="tab" type="button" data-database="documents">Documents</button>
-          <button class="tab" type="button" data-database="judgments">Judgments</button>
-          <button class="tab" type="button" data-database="press_releases">News &amp; Events</button>
-        </div>
-      </div>
-
-      <form class="search-box" id="searchForm" role="search">
-        <label class="sr-only" for="searchInput">Search records</label>
-        <input id="searchInput" type="search" autocomplete="off" placeholder="Search EMA environmental information…" />
-        <button class="primary search-submit" type="submit" id="searchSubmitBtn">Search</button>
-        <button class="ghost clear-search" type="button" id="clearSearchBtn">Clear</button>
-      </form>
-      <p class="examples">Try: <button type="button" class="text-chip" data-example="air">air</button> <button type="button" class="text-chip" data-example="water permit">water permit</button> <button type="button" class="text-chip" data-example="noise variation">noise variation</button> <button type="button" class="text-chip" data-example="CEC">CEC</button> <button type="button" class="text-chip" data-example="polluter pays">polluter pays</button> <button type="button" class="text-chip" data-example="press release">news release</button></p>
-
-      <label class="external-source-toggle" for="externalToggle">
-        <input id="externalToggle" type="checkbox" />
-        <span class="switch-ui" aria-hidden="true"></span>
-        <span><strong>Search related sources too</strong><small>Include Parliament, Gazette, Government policy, selected national statistics, curated Caribbean regional sources, Trinidad &amp; Tobago-specific international records and verified videos. Inclusion supports discovery and does not imply EMA endorsement or legal interpretation.</small></span>
-      </label>
-
-      <div class="toggle-row">
-        <button class="ghost" type="button" id="quickFiltersToggle" aria-expanded="false" aria-controls="quickFilters">Show filters</button>
-        <button class="ghost" type="button" id="advancedToggle" aria-expanded="false" aria-controls="advancedFilters">Show advanced search</button>
-      </div>
-
-      <div class="quick-filters hidden" id="quickFilters" role="group" aria-label="Quick filters">
-        <button type="button" class="filter active" data-filter="all">All records</button>
-        <button type="button" class="filter" data-filter="public">Open online</button>
-        <button type="button" class="filter" data-filter="request">Request / library access</button>
-        <button type="button" class="filter" data-filter="forms">Forms & guides</button>
-        <button type="button" class="filter" data-filter="law">Laws & rules</button>
-        <button type="button" class="filter" data-filter="reports">Reports & studies</button>
-        <button type="button" class="filter" data-filter="internal">Internal / governance</button>
-        <button type="button" class="filter" data-filter="judgments">Judgments</button>
-        <button type="button" class="filter" data-filter="press">News &amp; Events</button>
-        <button type="button" class="filter" data-filter="video">Videos</button>
-        <button type="button" class="filter" data-filter="datasets">Datasets</button>
-        
-      </div>
-
-      <div class="advanced hidden" id="advancedFilters">
-        <label>Knowledge area
+<a class="skip-link" href="#searchInput">Skip to search</a>
+<header class="app-header">
+<div class="header-wrap">
+<div class="title-block">
+<p class="eyebrow">Knowledge Management</p>
+<h1>Knowledge Records Search Tool</h1>
+<p class="lede">Find EMA records and selected related environmental information. Search first, then narrow the results if needed.</p>
+<p class="tool-meta-line">Data updated 27 Aug 2026 · 931 searchable knowledge records · indexed coverage 1988–2026</p>
+</div>
+<div class="header-tools">
+<div aria-label="Register metrics" class="metric-strip">
+<div class="metric"><span id="metricTotal">—</span><small>Total</small></div>
+<div class="metric"><span id="metricDocuments">—</span><small>Documents</small></div>
+<div class="metric"><span id="metricJudgments">—</span><small>Judgments</small></div>
+<div class="metric"><span id="metricPress">—</span><small>News &amp; Events</small></div>
+</div>
+<div class="header-utility-links"><a aria-label="Open Data Search" class="insights-link" href="datasets.html"><span>Data Search</span><small>Find datasets, tables and reusable data</small><span aria-hidden="true">→</span></a><a aria-label="Open Spatial Discovery" class="insights-link preview-link" href="preview.html"><span>Spatial Discovery</span><small>View records and news by place</small><span aria-hidden="true">→</span></a><a aria-label="Open EMA in the News" class="insights-link" href="news.html"><span>EMA in the News</span><small>Explore media coverage patterns</small><span aria-hidden="true">→</span></a><a aria-label="Open Knowledge Insights" class="insights-link" href="insights.html"><span>Knowledge Insights</span><small>Charts and Knowledge Canvas</small><span aria-hidden="true">→</span></a></div>
+</div>
+</div>
+</header>
+<main class="app-shell">
+<section aria-labelledby="searchHeading" class="search-panel">
+<div class="search-topline">
+<div>
+<h2 id="searchHeading">Search</h2>
+<p>Search by subject, title, place or institution. Filters are optional.</p>
+</div>
+<div aria-label="Choose database" class="db-tabs" role="group">
+<button class="tab active" data-database="all" type="button">All</button>
+<button class="tab" data-database="documents" type="button">Documents</button>
+<button class="tab" data-database="judgments" type="button">Judgments</button>
+<button class="tab" data-database="press_releases" type="button">News &amp; Events</button>
+</div>
+</div>
+<form class="search-box" id="searchForm" role="search">
+<label class="sr-only" for="searchInput">Search records</label>
+<input autocomplete="off" id="searchInput" placeholder="Search EMA environmental information…" type="search"/>
+<button class="primary search-submit" id="searchSubmitBtn" type="submit">Search</button>
+<button class="ghost clear-search" id="clearSearchBtn" type="button">Clear</button>
+</form>
+<p class="examples">Try: <button class="text-chip" data-example="air quality" type="button">air quality</button> <button class="text-chip" data-example="Caroni Swamp" type="button">Caroni Swamp</button> <button class="text-chip" data-example="CEC" type="button">CEC</button> <button class="text-chip" data-example="oil spill" type="button">oil spill</button> <button class="text-chip" data-example="waste" type="button">waste</button> <button class="text-chip" data-example="Tobago" type="button">Tobago</button> </p>
+<label class="external-source-toggle" for="externalToggle">
+<input id="externalToggle" type="checkbox"/>
+<span aria-hidden="true" class="switch-ui"></span>
+<span><strong>Include related external sources</strong><small>Add selected government, research, regional and international records. Source attribution remains visible.</small></span>
+</label>
+<div class="toggle-row">
+<button aria-controls="quickFilters" aria-expanded="false" class="ghost" id="quickFiltersToggle" type="button">Show filters</button>
+<button aria-controls="advancedFilters" aria-expanded="false" class="ghost" id="advancedToggle" type="button">Show advanced search</button>
+</div>
+<div aria-label="Quick filters" class="quick-filters hidden" id="quickFilters" role="group">
+<button class="filter active" data-filter="all" type="button">All records</button>
+<button class="filter" data-filter="public" type="button">Open online</button>
+<button class="filter" data-filter="request" type="button">Request / library access</button>
+<button class="filter" data-filter="forms" type="button">Forms &amp; guides</button>
+<button class="filter" data-filter="law" type="button">Laws &amp; rules</button>
+<button class="filter" data-filter="reports" type="button">Reports &amp; studies</button>
+<button class="filter" data-filter="internal" type="button">Internal / governance</button>
+<button class="filter" data-filter="judgments" type="button">Judgments</button>
+<button class="filter" data-filter="press" type="button">News &amp; Events</button>
+<button class="filter" data-filter="video" type="button">Videos</button>
+</div>
+<div class="advanced hidden" id="advancedFilters">
+<label>Knowledge area
           <select id="areaFilter"><option value="all">All areas</option></select>
-        </label>
-        <label>Record type
+</label>
+<label>Record type
           <select id="typeFilter"><option value="all">All types</option></select>
-        </label>
-        <label>Source status
+</label>
+<label>Source status
           <select id="statusFilter"><option value="all">All statuses</option></select>
-        </label>
-        <label>Year
+</label>
+<label>Year
           <select id="yearFilter"><option value="all">All years</option></select>
-        </label>
-      </div>
-    </section>
-
-    <section class="notice hidden" id="loadNotice" aria-live="polite"></section>
-
-    <section class="results-panel" aria-labelledby="resultsHeading">
-      <div class="results-head">
-        <div class="results-summary-line">
-          <div class="results-title-block">
-            <h2 id="resultsHeading">Results</h2>
-            <p id="resultCount">Search to view records.</p><p class="results-use-note">Summaries and connections support information discovery. Review the original published source before relying on a record.</p><p id="searchExpansionNote" class="search-expansion-note hidden"></p>
-          </div>
-          <button class="text-disclosure" type="button" id="recordSuggestionToggle" aria-expanded="false" aria-controls="recordSuggestionPanel">
+</label>
+</div>
+</section>
+<section aria-live="polite" class="notice hidden" id="loadNotice"></section>
+<section aria-labelledby="resultsHeading" class="results-panel">
+<div class="results-head">
+<div class="results-summary-line">
+<div class="results-title-block">
+<h2 id="resultsHeading">Results</h2>
+<p id="resultCount">Search to view records.</p><p class="results-use-note">Summaries and connections support information discovery. Review the original published source before relying on a record.</p><div class="search-expansion-note hidden" id="searchExpansionNote"></div>
+</div>
+<button aria-controls="recordSuggestionPanel" aria-expanded="false" class="text-disclosure" id="recordSuggestionToggle" type="button">
             Suggest a record or correction <span aria-hidden="true" class="disclosure-mark">▾</span>
-          </button>
-        </div>
-
-        <div id="recordSuggestionPanel" class="results-support-panel hidden">
-          <div class="results-breakdown" aria-label="Results breakdown">
-            <span><strong id="resultDocumentsCount">0</strong> Documents</span>
-            <span><strong id="resultJudgmentsCount">0</strong> Judgments &amp; Proceedings</span>
-            <span><strong id="resultNewsCount">0</strong> News &amp; Events</span>
-            <span><strong id="resultRelatedCount">0</strong> Related sources</span>
-          </div>
-          <div class="results-support-contact">
-            <strong>Can't find a record or noticed something incorrect?</strong>
-            <p>Contact Knowledge Management to suggest an addition or correction. This tool supports discovery of records and source links. Descriptions and relationships are informational aids only and do not constitute legal advice, legal interpretation, an EMA determination, or a substitute for the original published source.</p>
-            <a id="recordSuggestionLink" href="mailto:rseemungal@ema.co.tt?subject=EMA%20Document%20Search%20Tool%20%E2%80%93%20record%20suggestion">Email Knowledge Management</a>
-          </div>
-        </div>
-
-        <div class="results-actions">
-          <button class="ghost" type="button" id="exportResultsBtn">Export current results</button>
-
-        </div>
-      </div>
-
-      <div class="active-results-tools" id="activeResultsTools">
-        <div class="active-filter-group">
-          <label>Sort results
+</button>
+</div>
+<div class="results-support-panel hidden" id="recordSuggestionPanel">
+<div aria-label="Results breakdown" class="results-breakdown">
+<span><strong id="resultDocumentsCount">0</strong> Documents</span>
+<span><strong id="resultJudgmentsCount">0</strong> Judgments &amp; Proceedings</span>
+<span><strong id="resultNewsCount">0</strong> News &amp; Events</span>
+<span><strong id="resultRelatedCount">0</strong> Related sources</span>
+</div>
+<div class="results-support-contact">
+<strong>Can't find a record or noticed something incorrect?</strong>
+<p>Contact Knowledge Management to suggest an addition or correction. This tool supports discovery of records and source links. Descriptions and relationships are informational aids only and do not constitute legal advice, legal interpretation, an EMA determination, or a substitute for the original published source.</p>
+<a href="mailto:rseemungal@ema.co.tt?subject=Knowledge%20Records%20Search%20Tool%20%E2%80%93%20record%20suggestion" id="recordSuggestionLink">Email Knowledge Management</a>
+</div>
+</div>
+<div class="results-actions">
+<button class="ghost" id="exportResultsBtn" type="button">Export current results</button>
+<a class="ghost link-btn" href="preview.html" id="viewMapBtn">View results on map</a><a class="ghost link-btn" href="datasets.html">Data Search</a></div>
+</div><div class="within-results" id="withinResultsPanel"><label for="withinResultsInput">Search within these results</label><input autocomplete="off" id="withinResultsInput" placeholder="Add another word or phrase…" type="search"/><button class="ghost" id="clearWithinResultsBtn" type="button">Clear</button></div>
+<div class="active-results-tools" id="activeResultsTools">
+<div class="active-filter-group">
+<label>Sort results
             <select id="sortResults">
-              <option value="relevance">Relevance</option>
-              <option value="ema-first">EMA records first</option>
-              <option value="newest">Newest first</option>
-              <option value="oldest">Oldest first</option>
-              <option value="title">Title A–Z</option>
-            </select>
-          </label>
-          <label>Source
+<option value="relevance">Relevance</option>
+<option value="ema-first">EMA records first</option>
+<option value="newest">Newest first</option>
+<option value="oldest">Oldest first</option>
+<option value="title">Title A–Z</option>
+</select>
+</label>
+<label>Source family
             <select id="resultSourceFilter">
-              <option value="all">All sources</option>
-              <option value="ema">EMA</option>
-              <option value="parliament">Parliament</option>
-              <option value="gazette">Government Gazette</option>
-              <option value="government">Government policy / agencies</option>
-              <option value="court">Courts / tribunals</option>
-              <option value="statistical">Research &amp; statistics</option>
-              <option value="regional">Regional sources</option>
-              <option value="international">International — T&amp;T only</option>
-              <option value="video">Video</option>
-            </select>
-          </label>
-          <label>Access
+<option value="all">All sources</option>
+<option value="ema">EMA</option>
+<option value="parliament">Parliament</option>
+<option value="gazette">Government Gazette</option>
+<option value="government">Government policy / agencies</option>
+<option value="court">Courts / tribunals</option>
+<option value="statistical">Research &amp; statistics</option>
+<option value="regional">Regional sources</option>
+<option value="international">International — T&amp;T only</option>
+<option value="video">Video</option>
+</select>
+</label><label>Source institution<select id="institutionFilter"><option value="all">All institutions</option></select></label>
+<label>Access
             <select id="resultAccessFilter">
-              <option value="all">All access</option>
-              <option value="open_online">Open online</option>
-              <option value="request_ema">Request from EMA</option>
-              <option value="request_ima">Request from the IMA</option>
-              <option value="reference_only">Reference only</option>
-              <option value="link_review">Link under review</option>
-            </select>
-          </label>
-          <label>Year
+<option value="all">All access</option>
+<option value="open_online">Open online</option>
+<option value="request_ema">Request from EMA</option>
+<option value="request_ima">Request from the IMA</option>
+<option value="reference_only">Reference only</option>
+<option value="link_review">Link under review</option>
+</select>
+</label>
+<label>Year
             <select id="resultYearFilter"><option value="all">All years</option></select>
-          </label>
-          <label>Topic
+</label>
+<label>Topic
             <select id="resultTopicFilter"><option value="all">All topics</option></select>
-          </label>
-        </div>
-        <button class="text-link" type="button" id="clearResultFiltersBtn">Clear result filters</button>
-      </div>
-
-      <div class="table-wrap" role="region" aria-label="Search results" tabindex="0">
-        <table class="results-table">
-          <thead>
-            <tr>
-              <th scope="col">Access</th>
-              <th scope="col">Record</th>
-              <th scope="col">Area</th>
-              <th scope="col">Type</th>
-              <th scope="col">Year / Date</th>
-              <th scope="col">Action</th>
-            </tr>
-          </thead>
-          <tbody id="resultsBody">
-            <tr><td colspan="6">Enter a search above to view matching records.</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <section id="lowResultAssist" class="low-result-assist hidden" aria-live="polite"></section>
-      <div class="load-more-row"><button class="ghost" type="button" id="loadMoreBtn">Load more</button></div>
-    </section>
-  </main>
-
-
-  <button class="list-mini-button" type="button" id="openBasketBtn" aria-label="Open My List">My List <strong id="basketCount" data-mylist-count>0</strong></button>
-
-  <footer class="footer">
-    <div class="footer-mainline">
-      <span>TRACE · Environmental Information Discovery Platform · EMA Knowledge Management</span><span class="legal-use-note">Information discovery tool — not legal advice or an EMA determination.</span>
-      <span class="version-shell" aria-label="App version">v<span id="appVersion" class="secret-version" tabindex="0">—</span></span>
-    </div>
-    <div id="adminPanel" class="admin-panel hidden" aria-live="polite">
-      <div class="admin-head">
-        <div>
-          <strong>Admin tools</strong>
-          <small>Version and diagnostics for GitHub Pages troubleshooting.</small>
-        </div>
-        <button class="ghost danger-lite" type="button" id="resetCacheBtn" title="Use if GitHub Pages still shows an old cached version">Refresh app cache</button>
-      </div>
-      <div id="diagnosticsPanel" class="diagnostics"></div>
-    </div>
-  </footer>
-
-  <script src="assets/app.js" defer></script>
+</label>
+</div>
+<button class="text-link" id="clearResultFiltersBtn" type="button">Clear result filters</button>
+</div>
+<div aria-label="Search results" class="table-wrap" role="region" tabindex="0">
+<table class="results-table">
+<thead>
+<tr>
+<th scope="col">Access</th>
+<th scope="col">Record</th>
+<th scope="col">Area</th>
+<th scope="col">Type</th>
+<th scope="col">Year / Date</th>
+<th scope="col">Action</th>
+</tr>
+</thead>
+<tbody id="resultsBody">
+<tr><td colspan="6">Enter a search above to view matching records.</td></tr>
+</tbody>
+</table>
+</div>
+<section aria-live="polite" class="low-result-assist hidden" id="lowResultAssist"></section>
+<div class="load-more-row"><button class="ghost" id="loadMoreBtn" type="button">Load more</button></div>
+</section>
+</main>
+<button aria-label="Open My List" class="list-mini-button" id="openBasketBtn" type="button">My List <strong data-mylist-count="" id="basketCount">0</strong></button>
+<footer class="footer">
+<div class="footer-mainline">
+<span>Knowledge Records Search Tool · EMA Knowledge Management</span><span class="legal-use-note">Information discovery tool — not legal advice or an EMA determination.</span>
+<span aria-label="App version" class="version-shell">v<span class="secret-version" id="appVersion" tabindex="0">—</span></span>
+</div>
+<div aria-live="polite" class="admin-panel hidden" id="adminPanel">
+<div class="admin-head">
+<div>
+<strong>Admin tools</strong>
+<small>Version and diagnostics for GitHub Pages troubleshooting.</small>
+</div>
+<button class="ghost danger-lite" id="resetCacheBtn" title="Use if GitHub Pages still shows an old cached version" type="button">Refresh app cache</button>
+</div>
+<div class="diagnostics" id="diagnosticsPanel"></div>
+</div>
+</footer>
+<script src="assets/search-utils.js"></script><script src="assets/search-state.js"></script><script defer="" src="assets/app.js"></script>
 </body>
 </html>

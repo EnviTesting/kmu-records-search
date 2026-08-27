@@ -1,27 +1,177 @@
 [
-  {"from":"EMA-KM-0031","to":"GAZ-TT-0008","type":"related_official_source","label":"Related Gazette source","note":"Indexed together for discovery. Check the linked published sources for the text and formal status."},
-  {"from":"EMA-KM-0031","to":"EMA-KM-0090","type":"related_ema_material","label":"Related EMA material","note":"Related EMA information on the same subject."},
-  {"from":"PAR-TT-0129","to":"VID-TT-0010","type":"related_video","label":"Related parliamentary video","note":"Video associated with parliamentary discussion of the same subject."},
-  {"from":"PAR-TT-0129","to":"VID-TT-0011","type":"related_video","label":"Related parliamentary video","note":"Video associated with parliamentary discussion of the same subject."},
-  {"from":"EMA-KM-0028","to":"GAZ-TT-0007","type":"related_official_source","label":"Related Gazette source","note":"Indexed together for discovery. Check the linked published sources for the text and formal status."},
-  {"from":"EMA-KM-0028","to":"VID-TT-0026","type":"related_video","label":"Related EMA video","note":"EMA Knowledge Series video on the same subject."},
-  {"from":"EMA-KM-0003","to":"GAZ-TT-0006","type":"related_official_source","label":"Related Gazette source","note":"Indexed together for discovery. Check the linked published sources for the text and formal status."},
-  {"from":"EMA-KM-0027","to":"GAZ-TT-0009","type":"related_official_source","label":"Related Gazette source","note":"Indexed together for discovery. Check the linked published sources for the text and formal status."},
-  {"from":"PAR-TT-0022","to":"VID-TT-0016","type":"related_video","label":"Related parliamentary video","note":"Video associated with the parliamentary inquiry."},
-  {"from":"PAR-TT-0022","to":"VID-TT-0017","type":"related_video","label":"Related parliamentary video","note":"Video associated with the parliamentary inquiry."},
-  {"from":"PAR-TT-0022","to":"VID-TT-0030","type":"related_ema_material","label":"Related EMA video","note":"EMA Knowledge Series material on noise pollution management."},
-  {"from":"EMA-KM-0012","to":"INT-TT-0015","type":"related_international_record","label":"Related international record","note":"Trinidad and Tobago-specific Ramsar record for Nariva Swamp."},
-  {"from":"EMA-KM-0012","to":"VID-TT-0002","type":"related_video","label":"Related EMA video","note":"EMA biodiversity video about Nariva Swamp."},
-  {"from":"EMA-KM-0013","to":"VID-TT-0004","type":"related_video","label":"Related EMA video","note":"EMA biodiversity video about the Aripo Savannas."},
-  {"from":"EMA-KM-0181","to":"EXT-ENV-0015","type":"related_policy","label":"Related Government policy","note":"Indexed together because both concern the quarry/minerals subject area. Check each source independently."},
-  {"from":"EMA-KM-0181","to":"VID-TT-0021","type":"related_video","label":"Related project video","note":"Trinidad and Tobago quarry-restoration video indexed on the same subject."},
-  {"from":"EMA-KM-0005","to":"GAZ-TT-0001","type":"related_official_source","label":"Related Gazette source","note":"Indexed together for discovery. Check the linked published sources for the text and formal status."},
-  {"from":"EMA-KM-0005","to":"VID-TT-0028","type":"related_video","label":"Related EMA video","note":"EMA Knowledge Series video about the CEC process."},
-  {"from":"EMA-KM-0102","to":"EXT-ENV-0011","type":"alternate_record","label":"Related national biodiversity record","note":"Related national biodiversity strategy record. Check source details because repositories may hold different versions or copies."},
-  {"from":"STAT-TT-0001","to":"INT-TT-0015","type":"related_place","label":"Related protected-area record","note":"Connected through protected-area and livelihood context; this does not imply the datasets cover identical boundaries or periods."},
-  {"from":"STAT-TT-0001","to":"INT-TT-0016","type":"related_place","label":"Related protected-area record","note":"Connected through protected-area and livelihood context; this does not imply the datasets cover identical boundaries or periods."},
-  {"from":"STAT-TT-0001","to":"INT-TT-0017","type":"related_place","label":"Related protected-area record","note":"Connected through protected-area and livelihood context; this does not imply the datasets cover identical boundaries or periods."},
-  {"from":"PAR-TT-0124","to":"INT-TT-0001","type":"related_climate_material","label":"Related climate record","note":"Indexed together for climate-policy discovery; check each source for its own purpose, date and scope."},
-  {"from":"PAR-TT-0124","to":"INT-TT-0002","type":"related_climate_material","label":"Related climate record","note":"Indexed together for climate-transparency discovery; check each source for its own purpose, date and scope."},
-  {"from":"EXT-ENV-0012","to":"PAR-TT-0112","type":"related_water_material","label":"Related parliamentary material","note":"Indexed together for water-security and water-resources discovery."}
+  {
+    "from": "EMA-KM-0031",
+    "to": "GAZ-TT-0008",
+    "type": "related_official_source",
+    "label": "Related Gazette source",
+    "note": "Indexed together for discovery. Check the linked published sources for the text and formal status."
+  },
+  {
+    "from": "EMA-KM-0031",
+    "to": "EMA-KM-0090",
+    "type": "related_ema_material",
+    "label": "Related EMA material",
+    "note": "Related EMA information on the same subject."
+  },
+  {
+    "from": "PAR-TT-0129",
+    "to": "VID-TT-0010",
+    "type": "related_video",
+    "label": "Related parliamentary video",
+    "note": "Video associated with parliamentary discussion of the same subject."
+  },
+  {
+    "from": "PAR-TT-0129",
+    "to": "VID-TT-0011",
+    "type": "related_video",
+    "label": "Related parliamentary video",
+    "note": "Video associated with parliamentary discussion of the same subject."
+  },
+  {
+    "from": "EMA-KM-0028",
+    "to": "GAZ-TT-0007",
+    "type": "related_official_source",
+    "label": "Related Gazette source",
+    "note": "Indexed together for discovery. Check the linked published sources for the text and formal status."
+  },
+  {
+    "from": "EMA-KM-0028",
+    "to": "VID-TT-0026",
+    "type": "related_video",
+    "label": "Related EMA video",
+    "note": "EMA Knowledge Series video on the same subject."
+  },
+  {
+    "from": "EMA-KM-0003",
+    "to": "GAZ-TT-0006",
+    "type": "related_official_source",
+    "label": "Related Gazette source",
+    "note": "Indexed together for discovery. Check the linked published sources for the text and formal status."
+  },
+  {
+    "from": "EMA-KM-0027",
+    "to": "GAZ-TT-0009",
+    "type": "related_official_source",
+    "label": "Related Gazette source",
+    "note": "Indexed together for discovery. Check the linked published sources for the text and formal status."
+  },
+  {
+    "from": "PAR-TT-0022",
+    "to": "VID-TT-0016",
+    "type": "related_video",
+    "label": "Related parliamentary video",
+    "note": "Video associated with the parliamentary inquiry."
+  },
+  {
+    "from": "PAR-TT-0022",
+    "to": "VID-TT-0017",
+    "type": "related_video",
+    "label": "Related parliamentary video",
+    "note": "Video associated with the parliamentary inquiry."
+  },
+  {
+    "from": "PAR-TT-0022",
+    "to": "VID-TT-0030",
+    "type": "related_ema_material",
+    "label": "Related EMA video",
+    "note": "EMA Knowledge Series material on noise pollution management."
+  },
+  {
+    "from": "EMA-KM-0012",
+    "to": "INT-TT-0015",
+    "type": "related_international_record",
+    "label": "Related international record",
+    "note": "Trinidad and Tobago-specific Ramsar record for Nariva Swamp."
+  },
+  {
+    "from": "EMA-KM-0012",
+    "to": "VID-TT-0002",
+    "type": "related_video",
+    "label": "Related EMA video",
+    "note": "EMA biodiversity video about Nariva Swamp."
+  },
+  {
+    "from": "EMA-KM-0013",
+    "to": "VID-TT-0004",
+    "type": "related_video",
+    "label": "Related EMA video",
+    "note": "EMA biodiversity video about the Aripo Savannas."
+  },
+  {
+    "from": "EMA-KM-0181",
+    "to": "EXT-ENV-0015",
+    "type": "related_policy",
+    "label": "Related Government policy",
+    "note": "Indexed together because both concern the quarry/minerals subject area. Check each source independently."
+  },
+  {
+    "from": "EMA-KM-0181",
+    "to": "VID-TT-0021",
+    "type": "related_video",
+    "label": "Related project video",
+    "note": "Trinidad and Tobago quarry-restoration video indexed on the same subject."
+  },
+  {
+    "from": "EMA-KM-0005",
+    "to": "GAZ-TT-0001",
+    "type": "related_official_source",
+    "label": "Related Gazette source",
+    "note": "Indexed together for discovery. Check the linked published sources for the text and formal status."
+  },
+  {
+    "from": "EMA-KM-0005",
+    "to": "VID-TT-0028",
+    "type": "related_video",
+    "label": "Related EMA video",
+    "note": "EMA Knowledge Series video about the CEC process."
+  },
+  {
+    "from": "EMA-KM-0102",
+    "to": "EXT-ENV-0011",
+    "type": "alternate_record",
+    "label": "Related national biodiversity record",
+    "note": "Related national biodiversity strategy record. Check source details because repositories may hold different versions or copies."
+  },
+  {
+    "from": "STAT-TT-0001",
+    "to": "INT-TT-0015",
+    "type": "related_place",
+    "label": "Related protected-area record",
+    "note": "Connected through protected-area and livelihood context; this does not imply the datasets cover identical boundaries or periods."
+  },
+  {
+    "from": "STAT-TT-0001",
+    "to": "INT-TT-0016",
+    "type": "related_place",
+    "label": "Related protected-area record",
+    "note": "Connected through protected-area and livelihood context; this does not imply the datasets cover identical boundaries or periods."
+  },
+  {
+    "from": "STAT-TT-0001",
+    "to": "INT-TT-0017",
+    "type": "related_place",
+    "label": "Related protected-area record",
+    "note": "Connected through protected-area and livelihood context; this does not imply the datasets cover identical boundaries or periods."
+  },
+  {
+    "from": "PAR-TT-0124",
+    "to": "INT-TT-0001",
+    "type": "related_climate_material",
+    "label": "Related climate record",
+    "note": "Indexed together for climate-policy discovery; check each source for its own purpose, date and scope."
+  },
+  {
+    "from": "PAR-TT-0124",
+    "to": "INT-TT-0002",
+    "type": "related_climate_material",
+    "label": "Related climate record",
+    "note": "Indexed together for climate-transparency discovery; check each source for its own purpose, date and scope."
+  },
+  {
+    "from": "EXT-ENV-0012",
+    "to": "PAR-TT-0112",
+    "type": "related_water_material",
+    "label": "Related parliamentary material",
+    "note": "Indexed together for water-security and water-resources discovery."
+  }
 ]

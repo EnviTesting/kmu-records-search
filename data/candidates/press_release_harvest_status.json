@@ -1,6 +1,6 @@
 {
   "release_state": "not_run_in_release_environment",
-  "note": "Run the Refresh TRACE source candidates GitHub Action to check EMA/IMA press-release pages. Canonical records are never modified automatically by this candidate harvester.",
+  "note": "Run the Refresh Knowledge Records Search Tool source candidates GitHub Action to check EMA/IMA press-release pages. Canonical records are never modified automatically by this candidate harvester.",
   "sources": {
     "ema": {
       "status": "not_run"

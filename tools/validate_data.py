@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validation for the static TRACE knowledge base."""
+"""Validation for the static Knowledge Records Search Tool knowledge base."""
 import json
 from pathlib import Path
 from urllib.parse import urlparse
@@ -45,6 +45,11 @@ def check_preview_page():
         if not path.exists(): problems.append(f"{path.relative_to(ROOT)}: required Spatial Discovery asset is missing")
     if (ROOT/'index.html').exists() and 'href="preview.html"' not in (ROOT/'index.html').read_text(encoding='utf-8'):
         problems.append('index.html: Spatial Discovery link is missing')
+    if (ROOT/'preview.html').exists():
+        html=(ROOT/'preview.html').read_text(encoding='utf-8')
+        for ident in ['recordsMapToggle','mediaMapToggle','aaqmnMapToggle']:
+            if f'id="{ident}"' not in html: problems.append(f'preview.html: missing independent map control {ident}')
+        if 'imaLayerSelect' in html: problems.append('preview.html: retired IMA spatial selector remains')
     if (ROOT/'assets'/'preview.js').exists():
         js=(ROOT/'assets'/'preview.js').read_text(encoding='utf-8')
         for dataset in ['master_list','spatial_preview.json','environmental_observances.json']:
@@ -78,6 +83,8 @@ def check_news_page():
         js=(ROOT/'assets'/'news.js').read_text(encoding='utf-8')
         for dataset in ['ema_in_news.json','ema_news_stories.json','ema_news_sources.json']:
             if dataset not in js: problems.append(f'assets/news.js: missing media dataset hook for {dataset}')
+        for fn in ['renderDashboard','valuesTable']:
+            if fn not in js: problems.append(f'assets/news.js: missing chart path {fn}')
     paths=[ROOT/'data'/'ema_news_stories.json',ROOT/'data'/'ema_in_news.json',ROOT/'data'/'ema_news_sources.json']
     if all(x.exists() for x in paths):
         stories=json.loads(paths[0].read_text(encoding='utf-8')); articles=json.loads(paths[1].read_text(encoding='utf-8')); sources=json.loads(paths[2].read_text(encoding='utf-8'))

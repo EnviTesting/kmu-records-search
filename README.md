@@ -1,28 +1,32 @@
-# TRACE
+# Knowledge Records Search Tool
 
-**Environmental Information Discovery Platform** — a static GitHub Pages prototype centred on Environmental Management Authority (EMA) records and selected related environmental information for Trinidad and Tobago.
+A static GitHub Pages prototype for finding Environmental Management Authority (EMA) knowledge records and selected related environmental information for Trinidad and Tobago.
 
-**Application version:** 8.0.0  
-**Data version:** 2026.08.27.4  
+**Application version:** 8.1.0  
+**Data version:** 2026.08.27.5  
 **Design anchor:** v7.3.0 / v6.12 visual language  
 **Searchable knowledge records:** 931  
-**EMA in the News:** 701 story parents / 785 selectable articles / 963 source options  
-**Dataset Discovery:** 68 entries  
+**EMA in the News:** 701 stories / 785 article records / 963 source options  
+**Data Search:** 65 catalogue entries  
 **AAQMN:** 9 station/host-site points
 
 ## Release approach
 
-TRACE v8.0 deliberately preserves the v7.3 structure, interaction model and institutional styling rather than redesigning the application. The upgrade expands the knowledge base, repairs and restructures the News page, adds controlled spatial-discovery layers, improves source/access handling and adds maintainable refresh tooling.
+Version 8.1 is an interface and findability refinement, not a redesign. It retains the established search-first structure and institutional styling while improving consistency, mobile behaviour, result refinement, cross-page context and discovery views.
 
-There is **no AI search in this release**. Keyword/search-index retrieval remains the production discovery method.
+There is **no AI search in this release**. Controlled keyword search remains the production retrieval method.
 
-## Pages
+## Main pages
 
-- `index.html` — primary keyword and filtered record discovery.
-- `insights.html` — Knowledge Insights across controlled Knowledge Areas and Record Types; the related/external-source toggle is preserved.
-- `preview.html` — Spatial Discovery and environmental calendar.
-- `news.html` — EMA in the News using story parents with selectable article children.
-- `datasets.html` — Dataset Discovery catalogue.
+- `index.html` — **Knowledge Records Search**: reports, policies, plans, legal material, research, institutional publications and other indexed records.
+- `datasets.html` — **Data Search**: datasets, tables, surveys, spreadsheets, spatial data and data-bearing publications.
+- `preview.html` — **Spatial Discovery**: geographic associations for the current search or browse view.
+- `news.html` — **EMA in the News**: simple dynamic analysis of media coverage plus story/source search.
+- `insights.html` — **Knowledge Insights** with two tabs:
+  - **Chart Insights** for quantitative understanding of the indexed collection.
+  - **Knowledge Canvas** for exploring evidence/governance baskets and the institutions represented in them.
+
+All five tools are linked in the persistent navigation.
 
 ## Canonical knowledge record sets
 
@@ -40,77 +44,96 @@ There is **no AI search in this release**. Keyword/search-index retrieval remain
 | Environmental Video | `data/videos.json` | 32 |
 | **Total** |  | **931** |
 
-`data/master_list.json`, `data/master_list.csv` and `data/search_index.json` are derived from those canonical sets. `data/related_index.json` is also generated and provides discovery-only related-record suggestions.
+`data/master_list.json`, `data/master_list.csv`, `data/search_index.json`, `data/groups.json` and `data/related_index.json` are derived maintenance/discovery files.
 
-## Source and access model
+## Search and findability
 
-TRACE remains EMA-centred. Related records are opt-in in the main search and are visibly attributed to their issuing source. Important access states are:
+The three searchable collections — Records, Data and News — use the same controlled terminology utilities in `assets/search-utils.js`.
 
-- `open_online` — an authoritative/public source can be opened.
-- `request_ema` — an EMA Information Centre/request pathway is indexed.
-- `request_ima` — an IMA-held record is identified but a public file is not available; use **Request from the IMA** / the IMA Library.
-- `reference_only` — the record is confirmed for discovery, but no direct request pathway/file is asserted.
-- `link_review` — a stored link requires review.
+The current interface supports:
 
-IMA records retain Institute of Marine Affairs attribution. IMA Library: <https://www.ima.gov.tt/library/>.
+- controlled synonyms and aliases;
+- simple singular/plural variants;
+- source-institution filtering;
+- search within the current result set;
+- `+` suggestions that narrow the existing query rather than replacing it;
+- visible active filters and clear/reset actions;
+- search/filter state stored in the URL/session so Spatial Discovery can inherit useful context;
+- mobile filters that initiate and display results without first requiring a typed query.
+
+The main search keeps related/external records opt-in. Dataset and media collections remain distinct from the 931-record master rather than being merged into an undifferentiated result count.
+
+## Knowledge Insights and Knowledge Canvas
+
+Chart Insights remains the default view and summarizes record distribution, source mix, metadata quality, access and collection coverage.
+
+The Knowledge Canvas reorganizes the same filtered record set into seven discovery baskets:
+
+1. Legislation & Regulation
+2. Policy & Strategy
+3. Plans & Management
+4. Projects & Activities
+5. Data & Monitoring
+6. Research & Evidence
+7. Guidance & Public Information
+
+Each basket shows a record count, leading institutions represented and a scrollable sample of records. Institution chips can narrow the whole canvas. These are **record-coverage views**, not assessments of institutional responsibility, statutory mandate, performance or governance quality.
 
 ## EMA in the News
 
-The media archive is intentionally separate from the 931-record knowledge master:
+The media archive is deliberately separate from the knowledge-record master:
 
 - `data/ema_news_stories.json` — 701 conservative story parents.
-- `data/ema_in_news.json` — 785 selectable article children.
+- `data/ema_in_news.json` — 785 article records.
 - `data/ema_news_sources.json` — 963 article/source options.
 
-The dashboard uses **story-level counts for topics** and **article-level counts for publishers**. Publisher variants such as `103.1FM` / `103.1 FM` are normalised. Story parents preserve all available child articles instead of treating each URL as a separate environmental event.
+The page supports dynamic filtering by year, topic, publication and location, with simple charts for:
 
-News/media frequency is not an EMA finding of environmental incidence, severity, causation, compliance or risk.
+- coverage over time;
+- coverage by topic;
+- coverage by publication.
+
+Charts use the cleaned story/article model. Story-level counts are used where the unit is a story; publication counts use the associated article records. Each chart also has a readable values table so the underlying information remains available if visual rendering fails.
+
+Media frequency is not an EMA finding of environmental incidence, severity, causation, compliance or risk.
 
 ## Spatial Discovery
 
-Spatial Discovery remains an information-association tool rather than a general GIS application.
+Spatial Discovery is an information-association view rather than a general GIS application.
 
-- Existing knowledge-record proportional circles remain teal.
-- Media, when enabled, is shown with a separate amber proportional ring.
-- The media layer is **off by default**.
-- The 9 AAQMN stations are **off by default** and retain coordinate-verification status.
-- Three IMA Marine Data Hub layers are available but **only one can be selected at a time**:
-  - Caroni River Basin phase-1 water-quality sampling stations (1984)
-  - Wetland locations
-  - Oil and gas blocks in Trinidad and Tobago waters
-- IMA layer IDs are discovered at runtime; the app does not assume `FeatureServer/0`.
-- The browser attempts the live IMA REST layer first, then a GitHub-cached GeoJSON snapshot if present.
-- The local Trinidad and Tobago ADM1 GeoJSON remains the map-boundary fallback.
+Independent controls allow users to choose what appears on the map:
 
-Map density, locations and associations support discovery only; they do not represent regulatory jurisdiction, legal boundaries, environmental condition, hazard extent or an EMA determination.
+- **Knowledge records** — on by default, shown in teal.
+- **News coverage** — off by default, shown in amber.
+- **AAQMN stations** — off by default, with coordinate-verification status retained.
 
-## Dataset Discovery
+Knowledge records and media therefore appear together only when the user deliberately enables both. The simple associated-record/story list remains available alongside the map.
 
-`data/dataset_catalog.json` contains 68 entries. It distinguishes source agency, host agency, access status and dataset/data-bearing-publication type. Bundled reference spreadsheets are stored under `data/datasets/`.
+Live IMA REST/spatial layers are **not part of this release**. IMA remains a first-class knowledge source in Records and Data Search, with Institute of Marine Affairs attribution and the IMA Library/request pathway where appropriate.
 
-## Search
+## Source and access model
 
-Keyword search remains the primary retrieval method. `data/search_terms.json` contains 50 controlled concepts/synonym groups, including newer terms for IMA, AAQMN, marine/coastal issues, oil and gas blocks, ODPM, Social Development, CSO environmental compendia and related national terminology.
+Important access states include:
 
-## Scheduled refreshes
+- `open_online` — an authoritative/public source can be opened.
+- `request_ema` — an EMA Information Centre/request pathway is indexed.
+- `request_ima` — an IMA-held record is identified but a public file is not available; use **Request from the IMA** / IMA Library.
+- `reference_only` — the record is confirmed for discovery without asserting a public file/request route.
+- `link_review` — a stored link requires review.
 
-### EMA / IMA press-release candidates and IMA spatial cache
+Related sources are visibly attributed. Institution labels indicate the institution represented by the indexed record; they should not be interpreted as a statement of statutory responsibility.
 
-`.github/workflows/refresh-source-candidates.yml` runs weekly or manually. It:
+## Scheduled maintenance
 
-1. harvests **candidate** EMA and IMA press-release URLs into `data/candidates/`;
-2. does **not** automatically insert those candidates into canonical record sets;
-3. refreshes optional IMA GeoJSON caches in `data/spatial_cache/` when the Marine Data Hub is reachable;
-4. preserves existing caches/candidates if an upstream service is unavailable;
-5. rebuilds and validates canonical TRACE data before committing candidate/cache changes.
+### EMA / IMA press-release candidates
 
-This conservative review step prevents a website-layout change from silently corrupting the public knowledge base.
+`.github/workflows/refresh-source-candidates.yml` runs weekly or manually. It harvests candidate EMA/IMA press-release records into `data/candidates/`, validates the knowledge base, and only commits candidate files when their content changes. Candidates are **not** automatically inserted into canonical records.
 
-### Official EMA YouTube
+### Official EMA YouTube metadata
 
-The existing `tools/harvest_youtube.py` / `.github/workflows/harvest-youtube.yml` workflow is retained. It requires `YOUTUBE_API_KEY` in GitHub Secrets. No AI/API model key is required by TRACE.
+`.github/workflows/harvest-youtube.yml` retains the optional official EMA YouTube refresh. It requires `YOUTUBE_API_KEY` in GitHub Secrets.
 
-## Updating canonical records
+## Validation
 
 After editing canonical JSON:
 
@@ -119,38 +142,19 @@ python tools/build_master_list.py
 python tools/build_related_index.py
 python tools/validate_data.py
 python tools/validate_relationships.py
+python tools/validate_news_data.py
 python tools/audit_knowledge_base.py
+python tools/smoke_static_site.py
 ```
 
 A release should not be published with open High/Medium automated audit findings.
 
 ## GitHub Pages deployment
 
-Upload the contents of this folder to the repository root and preserve the directory structure. No framework or application server is required.
+Upload the contents of this folder to the repository root and preserve the directory structure. No framework or application server is required. Enable GitHub Pages for the selected branch/root.
 
-```text
-.github/workflows/
-.nojekyll
-index.html
-insights.html
-preview.html
-news.html
-datasets.html
-assets/
-data/
-docs/
-tools/
-README.md
-CHANGELOG.md
-VERSION.json
-manifest.webmanifest
-LICENSE
-LICENSE-DATA
-NOTICE
-```
+Because the application uses `fetch()` for local JSON, test through GitHub Pages or a local HTTP server rather than opening `index.html` directly with `file://`.
 
-Enable GitHub Pages for the selected branch/root. Because the app uses `fetch()` for local JSON, test it through GitHub Pages or a local HTTP server rather than opening `index.html` directly with `file://`.
+## Information-use safeguard
 
-## Product safeguards
-
-TRACE is an information-discovery prototype. Descriptions, classifications, keyword expansion, media groupings, maps and related-record suggestions help users locate sources. They do **not** provide legal advice, determine legal effect/applicability, establish regulatory jurisdiction or compliance status, or represent an EMA determination. Review the original authoritative source and applicable EMA process before formal reliance.
+The Knowledge Records Search Tool is an information-discovery prototype. Descriptions, classifications, keyword expansion, media groupings, charts, maps and related-record suggestions help users locate sources. They do **not** provide legal advice, determine legal effect/applicability, establish regulatory jurisdiction or compliance status, or represent an EMA determination. Review the original authoritative source and applicable EMA process before formal reliance.

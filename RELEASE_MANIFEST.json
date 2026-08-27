@@ -1,76 +1,299 @@
 {
-  "product": "TRACE — Environmental Information Discovery Platform",
-  "application_version": "8.0.0",
-  "data_version": "2026.08.27.4",
+  "product": "Knowledge Records Search Tool",
+  "application_version": "8.1.0",
+  "data_version": "2026.08.27.5",
   "effective_date": "2026-08-27",
-  "searchable_record_count": 931,
+  "record_count": 931,
   "media_story_count": 701,
-  "media_article_count": 785,
+  "media_archive_count": 785,
   "media_source_option_count": 963,
-  "dataset_catalog_count": 68,
+  "dataset_catalog_count": 65,
   "aaqmn_station_count": 9,
-  "ima_optional_spatial_layer_count": 3,
-  "release_audit": "docs/RELEASE_AUDIT_v8.0.0.md",
-  "core_file_hashes": [
+  "release_audit": "docs/RELEASE_AUDIT_v8.1.0.md",
+  "file_count_excluding_manifest": 98,
+  "validation": [
+    "validate_data",
+    "validate_relationships",
+    "validate_news_data",
+    "audit_knowledge_base",
+    "smoke_static_site",
+    "all JavaScript syntax"
+  ],
+  "files": [
     {
-      "path": "index.html",
-      "bytes": 13497,
-      "sha256": "c04c2b0cd64c8147df9a6fbde05f98f20131380a87ed4b2e1875a969b5b1aec6"
+      "path": ".github/workflows/harvest-youtube.yml",
+      "bytes": 1208,
+      "sha256": "1093344a07d5d5b89971072674eba20d982c5629545a41a7630ef607d85b087d"
     },
     {
-      "path": "insights.html",
-      "bytes": 6152,
-      "sha256": "a6c8c1a72fcd051f826fa515fbfe3e0498ebf166ad5a7dade0fc2db9a3d4687d"
+      "path": ".github/workflows/refresh-source-candidates.yml",
+      "bytes": 1408,
+      "sha256": "d645376e0962eff2ad90993592a043ad0df700c71f29e641369796e9f240d9d0"
     },
     {
-      "path": "preview.html",
-      "bytes": 8009,
-      "sha256": "94b94074560a2f0911238d4d6c003498f62e6330994e6e168a229038b070ba39"
+      "path": ".github/workflows/validate.yml",
+      "bytes": 1014,
+      "sha256": "29343d28cfe66c28b71b8097de31476999d015cf4e90555a70edc18654a21c18"
     },
     {
-      "path": "news.html",
-      "bytes": 5841,
-      "sha256": "3a359e19894da86fcebcfd141c4f105bee0422d6b644b70b4fdac80e75c8c529"
+      "path": ".gitignore",
+      "bytes": 65,
+      "sha256": "e29d8e8b8aa59b0a67bfbfef659b94aa3b6a4a9510a9c66045a1411128066350"
     },
     {
-      "path": "datasets.html",
-      "bytes": 3475,
-      "sha256": "539902735e10a7d8e1155952374245c074995058ccb5fd57a36bd88bac0fe626"
-    },
-    {
-      "path": "README.md",
-      "bytes": 7863,
-      "sha256": "ef1290bf7ed304dab5a0b929fe4350bf8cd0aa1469ed53be8ff56d0612efac4e"
+      "path": ".nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 7543,
-      "sha256": "be174e33d02212240d402e03002c76b519c2dab90d61f067509e26ff2f3270ba"
+      "bytes": 2008,
+      "sha256": "c9477b8c06d9064c6358844dc56c20870efa13b7abfad8665afb30b7cce85ad8"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1071,
+      "sha256": "27569fc492927ac6139ab5a72e89d1314cde358ae79f478b44949148d8515be2"
+    },
+    {
+      "path": "LICENSE-DATA",
+      "bytes": 746,
+      "sha256": "f08c2af067c2e5768fb2817dd280b7cc3fead1dc4dc7af48ca5bdea09bae9762"
+    },
+    {
+      "path": "NOTICE",
+      "bytes": 895,
+      "sha256": "e3054603bd23c328ee682b0044a230c6f42a33b3a451fdbd0189701ebc0a65be"
+    },
+    {
+      "path": "README.md",
+      "bytes": 8451,
+      "sha256": "67c914a6ffc44a3bb066edc655376001ea712296d0b5d5e24cd8a3a115e41604"
     },
     {
       "path": "VERSION.json",
-      "bytes": 455,
-      "sha256": "f27feac484e4a7099baac80dd1c2541bb3bef669774fc0e30617d8f5812c7995"
+      "bytes": 459,
+      "sha256": "3db447dce6b50bbd8512241adc8effc4b002a198f0cfd7ce28f6bb1368c7793e"
     },
     {
-      "path": "data/version.json",
-      "bytes": 455,
-      "sha256": "f27feac484e4a7099baac80dd1c2541bb3bef669774fc0e30617d8f5812c7995"
+      "path": "assets/app.js",
+      "bytes": 75644,
+      "sha256": "9bd8ecbdecd19551f36a225e04c05942dd5e3b4734b187232aa1461d11f89eb1"
     },
     {
-      "path": "data/summary.json",
-      "bytes": 2784,
-      "sha256": "0c1efa93b27535f670902a47ad5e6c58352ff42a8a740bc7f6e74120ac575a00"
+      "path": "assets/datasets.css",
+      "bytes": 726,
+      "sha256": "7bf6e03d7cb1daaa5133c76c4c629ebacce33898feed11646f702fce42a8f5ec"
+    },
+    {
+      "path": "assets/datasets.js",
+      "bytes": 5452,
+      "sha256": "b4fcb829a68025276ebf8a8c56afc9b015679038dd52f1d1e0791af45aea7880"
+    },
+    {
+      "path": "assets/insights.css",
+      "bytes": 8489,
+      "sha256": "6d3e3354250ec447d056a92db04016e5120cd7cc60ecbeee58707c48aec9c508"
+    },
+    {
+      "path": "assets/insights.js",
+      "bytes": 13245,
+      "sha256": "a869b32e6896156b581fe13bc02099246d3263a8ab1fb51f7981361d6e16bc8b"
+    },
+    {
+      "path": "assets/mylist.css",
+      "bytes": 2186,
+      "sha256": "eb1a87c6a1a169248a2507df1bfaaae79057ec7441928447a081e88b956e5827"
+    },
+    {
+      "path": "assets/mylist.js",
+      "bytes": 5164,
+      "sha256": "c73173b5b0ad773f54ce33744e0cd6aaeaa1c5bd1481f9b4c4a65a3808d68a98"
+    },
+    {
+      "path": "assets/news.css",
+      "bytes": 9921,
+      "sha256": "88d8a50deabc2ad028be4be790a93e54c40da3295442b1e7753c2d5441e4431f"
+    },
+    {
+      "path": "assets/news.js",
+      "bytes": 12669,
+      "sha256": "3986b46450af77b8d3d6789acd3e90c77d4940fa926915d24b0200fba0445dcd"
+    },
+    {
+      "path": "assets/preview.css",
+      "bytes": 11351,
+      "sha256": "fda4f7f00a851cad9717e256052b962add4bee7fcc10b7310c4685a8a931e12f"
+    },
+    {
+      "path": "assets/preview.js",
+      "bytes": 18156,
+      "sha256": "92503f99ff17ff81b7fd427db2450486ea77fc62b406231898443d9835bc0124"
+    },
+    {
+      "path": "assets/search-state.js",
+      "bytes": 1093,
+      "sha256": "65cef8b307228e874e54f95a85124351d5a4f0b4e27b53bfbfe6ea29a87ba9b3"
+    },
+    {
+      "path": "assets/search-utils.js",
+      "bytes": 8194,
+      "sha256": "bc84a5885316bd7dbaf98dbabf0b1831a0ae07106f0d1631afc86d4453b79523"
+    },
+    {
+      "path": "assets/styles.css",
+      "bytes": 31517,
+      "sha256": "27316f5758d42cbfa27e1431b5e19107b377c7def1465b13f23136c85e232508"
+    },
+    {
+      "path": "data/aaqmn_stations.json",
+      "bytes": 6980,
+      "sha256": "6a018ea720933fbbc8622410fceb9403748bba3f1a4db53fcd0d1be69e44043f"
+    },
+    {
+      "path": "data/audit_report.json",
+      "bytes": 2194,
+      "sha256": "10ff473ec7bf278f449e2e84f0f0191649207d980cd111dbf72a7bc0cd9b3ce4"
+    },
+    {
+      "path": "data/candidates/README.md",
+      "bytes": 467,
+      "sha256": "6307c735617eb65f6596d2e6e51e4ef2e2a279cf07cfb690897fa6876ec7db10"
+    },
+    {
+      "path": "data/candidates/press_release_harvest_status.json",
+      "bytes": 376,
+      "sha256": "7ca802f82c24a059dd7fa8bc29775f9db00e0290a0294ed25a5af19da0cf71f6"
+    },
+    {
+      "path": "data/dataset_catalog.json",
+      "bytes": 62555,
+      "sha256": "5d82ebf89c5c89849ab20fa8345729af2f50149c7019ae0b7c7f30b19061fbfc"
+    },
+    {
+      "path": "data/datasets/Expenditure on Research and Development by Sector 2017 - 2021 (TT$M).xlsx",
+      "bytes": 9987,
+      "sha256": "99dda96384d4aad82a5f3d8a3979f1f6d1c73c331049422da0528f0d0afc1e8f"
+    },
+    {
+      "path": "data/datasets/Index-of-Employment-All-Employees-2000-2026Q1.xlsx",
+      "bytes": 149981,
+      "sha256": "5d173bc097d6e99bc85651a3d4c4d4230139734622f53a1fd9c43bdbd433adb5"
+    },
+    {
+      "path": "data/datasets/Index-of-Employment-Production-Employees-2000-2026Q1.xlsx",
+      "bytes": 144924,
+      "sha256": "a0b5152ceefc6e37541929a75cccb61b065ecf306471cdf07d9d35b57c99f9e6"
+    },
+    {
+      "path": "data/datasets/Report-on-Socio-Economic-Survey-related-to-Protected-Areas.xlsx",
+      "bytes": 57770,
+      "sha256": "ac869cd05680f6a1dc46f9d054b6f67586b1f16ffed31ac5d4ef0716e6e70c63"
+    },
+    {
+      "path": "data/datasets/TABLE-1-NUMBER-OF-BUSINESS-ESTABLISHMENTS-BY-EMPLOY-AND-INDUSTRY-2.xlsx",
+      "bytes": 12883,
+      "sha256": "4979f06069b86a2216c4453778c576df2a00e4ceb206740234dc38144d47f704"
+    },
+    {
+      "path": "data/datasets/TABLE-2-NUMBER-OF-BUSINESS-ESTABLISHMENTS-BY-EMPLOY-AND-REGION.xlsx",
+      "bytes": 12748,
+      "sha256": "347a2d0dd93fbf02fca8d09f3c222284fe1ce2e3159684e98331801037c499ea"
+    },
+    {
+      "path": "data/datasets/TABLE-3-NUMBER-OF-BUSINESS-ESTABLISHMENTS-BY-REGION.xlsx",
+      "bytes": 11610,
+      "sha256": "020d78af7f3f4d7853e1cb06ce60c4d9c8002ec8b9710ffffaeb2e65eb04b5ad"
+    },
+    {
+      "path": "data/datasets/Table-1.-Industry.xlsx",
+      "bytes": 14095,
+      "sha256": "d1bea18a7d6d7e3a09e3749e5505bcc80c015c2ac941f0df9f395f80840ff47b"
+    },
+    {
+      "path": "data/document.schema.json",
+      "bytes": 2843,
+      "sha256": "508e5079a76b1aa4d32f0f608568bcee355ccde7146485ebdee85e3932f82a51"
+    },
+    {
+      "path": "data/documents.json",
+      "bytes": 1212788,
+      "sha256": "c5380f954074751f467f88b3a67555dfa70ac89e5823086e4d6b2960f36f2bf5"
+    },
+    {
+      "path": "data/ema_in_news.json",
+      "bytes": 1589745,
+      "sha256": "b878af1e7c2876cee51622c317ce71796bc878ebc4367c65c549f2129d4ddc78"
+    },
+    {
+      "path": "data/ema_news_sources.json",
+      "bytes": 444242,
+      "sha256": "97801755b47389f79c47dae77e950e2eb3a5156e5b964da85fa3532a2464c42a"
+    },
+    {
+      "path": "data/ema_news_stories.json",
+      "bytes": 852153,
+      "sha256": "3925ba3cfd587a2250fe44710cf64916f669c748ad4039d8fb06b1daf69bc6f4"
+    },
+    {
+      "path": "data/environmental_observances.json",
+      "bytes": 21143,
+      "sha256": "f5b3e54e526b66e1f69fdc80f2e6990587967c5551cc015980c621907545c030"
+    },
+    {
+      "path": "data/external_references.json",
+      "bytes": 794676,
+      "sha256": "f1b5429d789d8aa1a386f1c900429294299acc3956b5e64f76943192b3bb2d55"
+    },
+    {
+      "path": "data/gazette_records.json",
+      "bytes": 31895,
+      "sha256": "b878933b682058e781ac73e285a46374abb11bd3b65a3ace82a158564f40737a"
+    },
+    {
+      "path": "data/groups.json",
+      "bytes": 7986,
+      "sha256": "8de21c784a09179ea4012f9e40854e290f575fda410ce253d95e322047d1a464"
+    },
+    {
+      "path": "data/international_references.json",
+      "bytes": 99945,
+      "sha256": "6dc93b8aa07c52e8a22a66843d311cd8a4ffdaf6dc337a129b22c2116c36300e"
+    },
+    {
+      "path": "data/judgments.json",
+      "bytes": 69102,
+      "sha256": "6424b4809fb1015885bb0916589612384690e538ee97e9c5b29ef5a45cc6a94f"
+    },
+    {
+      "path": "data/keyword_audit.csv",
+      "bytes": 403761,
+      "sha256": "9bf23b4c7e848c75555684857b597696b41e76cf18efb3ef324f1425bcabf0ce"
+    },
+    {
+      "path": "data/master_list.csv",
+      "bytes": 1916852,
+      "sha256": "8e27cacc757ec509c63b93e544ae1248ed58c6ab90861640434f718f1c31ea6e"
     },
     {
       "path": "data/master_list.json",
-      "bytes": 2839129,
-      "sha256": "7aecfe02cbd207850dd80388e683b2f056679ea02b20f8a77f2dfdf228519413"
+      "bytes": 2848257,
+      "sha256": "5c14021c20115d7b046e102daa3acbf08f69bb2046aa5b19ac1efc468ce8426f"
     },
     {
-      "path": "data/search_index.json",
-      "bytes": 1204189,
-      "sha256": "240a73ad308bb100074d69542f737d4b98dc40efc0063791b2a348036b8a8c80"
+      "path": "data/parliamentary_evidence.json",
+      "bytes": 87406,
+      "sha256": "2c20777dafc8c269802a429b021528017b520b13a299c30780faf83f6216080e"
+    },
+    {
+      "path": "data/press_releases.json",
+      "bytes": 275324,
+      "sha256": "4bc3d5df20352b0d6721c65e470a7528e7bcc6de15d316d5bdf6a5b9c3926c10"
+    },
+    {
+      "path": "data/regional_references.json",
+      "bytes": 42306,
+      "sha256": "0d0b2e0cb63a9c4bba6fdf46c3cd9bbed207c709e44ae06103be0181182ac7ba"
     },
     {
       "path": "data/related_index.json",
@@ -78,39 +301,214 @@
       "sha256": "6f03bd63af6b5bd0577a9702ec8a35797f2acc69bcb2b214862e884b3035f514"
     },
     {
-      "path": "data/ema_news_stories.json",
-      "bytes": 826916,
-      "sha256": "fc15e6956e92fbdbb833b8e78691c339851b86630f986e9f00f0e90146bcbdaf"
+      "path": "data/relationships.json",
+      "bytes": 5799,
+      "sha256": "39cae81903c8c23ecc7fa429b0c6b985729924031b027a7e7bb96472bd367529"
     },
     {
-      "path": "data/ema_in_news.json",
-      "bytes": 1561484,
-      "sha256": "e35cc92b72c3c02d11c6d533e85b69bb4630ca28c7ff6eb93c3334f3d6a65364"
+      "path": "data/schema.json",
+      "bytes": 3665,
+      "sha256": "569a802a0198d9fd9b024cc526f88a33a096d49c4afd50f5d86035839ff6c964"
     },
     {
-      "path": "data/ema_news_sources.json",
-      "bytes": 409573,
-      "sha256": "2927622803de6cf30daca4ef3c880c5f4732f9900bb62097ad6ec7352a389bc6"
-    },
-    {
-      "path": "data/aaqmn_stations.json",
-      "bytes": 6979,
-      "sha256": "db45f6f9521a83a7e1adf05d5b8e4cc38802178731a0ab74b8b4ea8ebdadc56c"
-    },
-    {
-      "path": "data/dataset_catalog.json",
-      "bytes": 65784,
-      "sha256": "f8ab28790fbfe06fce280018b45266fc2287f953c08e7dd176b319fc915d6201"
-    },
-    {
-      "path": "data/spatial_layers.json",
-      "bytes": 2585,
-      "sha256": "04e54249c4c2b0042c42bf4bc935e1a349cbdf79c8fa43b82cb66d7e111ef82e"
+      "path": "data/search_index.json",
+      "bytes": 1204285,
+      "sha256": "13bff554f9ddca4eb231fd56a253733b5911e980f40a7f19b1363206b15b5d0e"
     },
     {
       "path": "data/search_terms.json",
-      "bytes": 12987,
-      "sha256": "748fe4796ed5a4ca09e840b43ee7d21a0fe6323c19a7c78fcb04631544a733c5"
+      "bytes": 12988,
+      "sha256": "2f0d42bb98efe3170cdbc02c6a0241cf55e2925d88645972ed487364012cde39"
+    },
+    {
+      "path": "data/source_registry.json",
+      "bytes": 7352,
+      "sha256": "4170a9117dc4a59fb27b2f99c46c58c23fe6072f4c33f42141a1c1e4cf4be777"
+    },
+    {
+      "path": "data/spatial_preview.json",
+      "bytes": 4573,
+      "sha256": "413cfd7f071bbf941e653ef9ef57f25353e7952e7b33a9326723bdc391a8a7d1"
+    },
+    {
+      "path": "data/spatial_relations.json",
+      "bytes": 703,
+      "sha256": "618d42ed6a4d15092f1f2dbd3b38f7606843d1b1f71b9fc8df24c60b0fd7deaa"
+    },
+    {
+      "path": "data/spatial_sources.json",
+      "bytes": 1280,
+      "sha256": "b9d963d7f8e11150b21b439d6f1ecffd2fd96a25572d9d8a3207eb372eddb802"
+    },
+    {
+      "path": "data/statistical_context.json",
+      "bytes": 151689,
+      "sha256": "0477064d96ecb1bcf6144aa91bc0f533ac4b8e22d22646092f9e5edb7bf8c147"
+    },
+    {
+      "path": "data/summary.json",
+      "bytes": 2211,
+      "sha256": "7391a75ab56af37292550af87083fcdf15d05676752ab49e36dfc5245513ffa6"
+    },
+    {
+      "path": "data/taxonomy.json",
+      "bytes": 1034,
+      "sha256": "13aa29b6ecdc7b8d9b0aedaa05a680ca52c26a4c6008e5dc824098c3c2efde0b"
+    },
+    {
+      "path": "data/tt_adm1_fallback.geojson",
+      "bytes": 114029,
+      "sha256": "44d6988ec7f061b878e775653a86434dc23ddc8ca81ba622f6c06b5f29f0cb17"
+    },
+    {
+      "path": "data/version.json",
+      "bytes": 459,
+      "sha256": "3db447dce6b50bbd8512241adc8effc4b002a198f0cfd7ce28f6bb1368c7793e"
+    },
+    {
+      "path": "data/videos.json",
+      "bytes": 65136,
+      "sha256": "8ec763fa1f4f82798968a0cd1d0b6940d877c30a4692daa22de19496e63ef279"
+    },
+    {
+      "path": "data/youtube_channel.json",
+      "bytes": 469,
+      "sha256": "74e4ed4332bf3904968724df827a80335ce7a1d1a2d59962add521eb78fd7b88"
+    },
+    {
+      "path": "data/youtube_videos.json",
+      "bytes": 29587,
+      "sha256": "2b3af01713aaa92c6148af73da7f47a6d87d1631799f1a463456f3f35b0d2ba9"
+    },
+    {
+      "path": "datasets.html",
+      "bytes": 3526,
+      "sha256": "2cc1a415b0ffc136f6879e0feee0e28987a9711c70c2e176db600213dd1ca88b"
+    },
+    {
+      "path": "docs/AUDIT_CURRENT.md",
+      "bytes": 1612,
+      "sha256": "a70264bde7c7aa761bb727562dadb2899dd28db09ab674e3af70362141cc8780"
+    },
+    {
+      "path": "docs/BOUNDARY_FALLBACK_README.json",
+      "bytes": 711,
+      "sha256": "0df0be2d0da98caa6fc2a9b623376b934cbc8b033a81099c95b6cde00aeb4912"
+    },
+    {
+      "path": "docs/ENVIRONMENTAL_OBSERVANCE_SOURCE_MAP.md",
+      "bytes": 3277,
+      "sha256": "e36d0e8984dc7a168997f160e1609282d9729aa4fd5ed720a1e2327b8662a366"
+    },
+    {
+      "path": "docs/KNOWLEDGE_BASE_SCOPE_POLICY.md",
+      "bytes": 979,
+      "sha256": "59d596e78790425ea62fcf891bfb62bf967955c70d2bd38eb1e7618eb8ec6c72"
+    },
+    {
+      "path": "docs/KNOWLEDGE_SERIES_VIDEO_AUDIT.md",
+      "bytes": 2340,
+      "sha256": "10fa3c3c8f948dd12ac99e0918c88ba0b685c133e38ed1a669c68857af153d76"
+    },
+    {
+      "path": "docs/METADATA_MODEL.md",
+      "bytes": 1456,
+      "sha256": "a553e9fbaf3ad4febea97376200e38ed6f432c9ca5658f7aa1964909cee11d29"
+    },
+    {
+      "path": "docs/NEWS_RECONCILIATION_2026-08-25.md",
+      "bytes": 4908,
+      "sha256": "469f07766bd023b6435061c653291535180d98cc97b6addb3389aefef23c7cb1"
+    },
+    {
+      "path": "docs/RELEASE_AUDIT_v7.3.0.md",
+      "bytes": 5205,
+      "sha256": "6c2d071fa8f994a83b1e26b219671d1a45fd0f31a98bcfb2a8a471d3160dec5d"
+    },
+    {
+      "path": "docs/RELEASE_AUDIT_v8.1.0.md",
+      "bytes": 3813,
+      "sha256": "94ae2a9f8c84294d318cda70a3a13351b7f9130ee326a59de043aa633068dde9"
+    },
+    {
+      "path": "docs/UPGRADE_STAGES.md",
+      "bytes": 1254,
+      "sha256": "a1f8a04bb7d5c19c1be48cbda04eed5a3136b3da760a1ecac93e8fcf3dec7c33"
+    },
+    {
+      "path": "index.html",
+      "bytes": 12010,
+      "sha256": "b6f54bcfc457b108c988fa9961b2b9d5896378b4463f8681372b9a88bbd1ac38"
+    },
+    {
+      "path": "insights.html",
+      "bytes": 8310,
+      "sha256": "98aff6a8afa034f9e73cd98c9621e19affcd22af61c3e4f1f9d1ffdf6a450ef0"
+    },
+    {
+      "path": "manifest.webmanifest",
+      "bytes": 331,
+      "sha256": "438ec8d25dc35ea01de7a36d78a094a45d0b05f16cd29294be575bbc44d984fc"
+    },
+    {
+      "path": "news.html",
+      "bytes": 6055,
+      "sha256": "57c91e506eaa0e58b778daa3f072a41ddbc9d47d31063a14ed6d2e4649c46ef1"
+    },
+    {
+      "path": "preview.html",
+      "bytes": 5831,
+      "sha256": "0cfd39077ca11d9944aec31101321b1b89db0442338fbcaa1cc6c1e6b863da96"
+    },
+    {
+      "path": "tools/audit_knowledge_base.py",
+      "bytes": 8728,
+      "sha256": "42f5a015a2c319aed8694841b6642d59413b8b981bddb4b4a0c40f3873cca1d9"
+    },
+    {
+      "path": "tools/build_master_list.py",
+      "bytes": 3686,
+      "sha256": "c2a5423c1ffb132ed7e2680936b06bc29c388a1bf319d69807b0ee52895caa32"
+    },
+    {
+      "path": "tools/build_related_index.py",
+      "bytes": 6543,
+      "sha256": "9a80a185a6d50889cae5760d4080c5ac848d06f700916b85236f4be1763a6192"
+    },
+    {
+      "path": "tools/harvest_press_release_candidates.py",
+      "bytes": 6826,
+      "sha256": "eed8660f798cc3d8b31250c6ed3f5682fae39b6a488ac2f7cef818421c3d205b"
+    },
+    {
+      "path": "tools/harvest_youtube.py",
+      "bytes": 7128,
+      "sha256": "7203430968aa00201c5cba8e46ed3343c008c5e2b1022bc6dc3fff49557a94bc"
+    },
+    {
+      "path": "tools/import_ema_news.py",
+      "bytes": 10573,
+      "sha256": "2648457b5349b08d19c9b094d5513ebbfeb7a3c77b31aaf0c9c349f00205d785"
+    },
+    {
+      "path": "tools/smoke_static_site.py",
+      "bytes": 4110,
+      "sha256": "7745a28fb4f3364e9d4136b339ef923d9c1c659c2d7799dc41ed62c16bd62200"
+    },
+    {
+      "path": "tools/validate_data.py",
+      "bytes": 14284,
+      "sha256": "870e4922330fe24a26230632998e3ee50fbcf8c4b263096d6b2491e7398358c5"
+    },
+    {
+      "path": "tools/validate_news_data.py",
+      "bytes": 4554,
+      "sha256": "f10d3990efb4b0c49fc3b6ca6f94e97319cfca5f5dbbd67391a9ae376cf0710d"
+    },
+    {
+      "path": "tools/validate_relationships.py",
+      "bytes": 4430,
+      "sha256": "8ec2450a8718e3aee9b27ce24ef79a412390c90bd6621505e1d84e82c6f46bdd"
     }
   ]
 }
