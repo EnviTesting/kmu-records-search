@@ -1,39 +1,30 @@
 {
-  "product": "Knowledge Records Search Tool",
-  "application_version": "8.1.0",
-  "data_version": "2026.08.27.5",
-  "effective_date": "2026-08-27",
+  "application": "Knowledge Records Search Tool",
+  "application_version": "8.2.0",
+  "data_version": "2026.08.28.1",
+  "generated_at": "2026-08-28T14:31:37Z",
+  "file_count": 101,
   "record_count": 931,
   "media_story_count": 701,
-  "media_archive_count": 785,
-  "media_source_option_count": 963,
+  "media_article_count": 785,
   "dataset_catalog_count": 65,
+  "external_spatial_place_count": 19,
   "aaqmn_station_count": 9,
-  "release_audit": "docs/RELEASE_AUDIT_v8.1.0.md",
-  "file_count_excluding_manifest": 98,
-  "validation": [
-    "validate_data",
-    "validate_relationships",
-    "validate_news_data",
-    "audit_knowledge_base",
-    "smoke_static_site",
-    "all JavaScript syntax"
-  ],
   "files": [
     {
       "path": ".github/workflows/harvest-youtube.yml",
-      "bytes": 1208,
-      "sha256": "1093344a07d5d5b89971072674eba20d982c5629545a41a7630ef607d85b087d"
+      "bytes": 1261,
+      "sha256": "1ccd0160e753f1fa320f63063f145cb7228eb6d1cb4179ab3eb1ec3e944b4486"
     },
     {
       "path": ".github/workflows/refresh-source-candidates.yml",
-      "bytes": 1408,
-      "sha256": "d645376e0962eff2ad90993592a043ad0df700c71f29e641369796e9f240d9d0"
+      "bytes": 1461,
+      "sha256": "92e24847abec4742bdc6888df4cb4582a0d2aa576b8e59db59da8501bac0f87e"
     },
     {
       "path": ".github/workflows/validate.yml",
-      "bytes": 1014,
-      "sha256": "29343d28cfe66c28b71b8097de31476999d015cf4e90555a70edc18654a21c18"
+      "bytes": 1124,
+      "sha256": "9a88deff58968dede88e087813ff3a213b96467b79f31ed807e5844ba30c43f8"
     },
     {
       "path": ".gitignore",
@@ -47,8 +38,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 2008,
-      "sha256": "c9477b8c06d9064c6358844dc56c20870efa13b7abfad8665afb30b7cce85ad8"
+      "bytes": 2910,
+      "sha256": "311c9271175b20ad8f4c59427092024e87e8673c6933fcec472e9f6cd0b69582"
     },
     {
       "path": "LICENSE",
@@ -67,18 +58,18 @@
     },
     {
       "path": "README.md",
-      "bytes": 8451,
-      "sha256": "67c914a6ffc44a3bb066edc655376001ea712296d0b5d5e24cd8a3a115e41604"
+      "bytes": 9488,
+      "sha256": "b999a657a5b7d4ad9dac8e02bf8725bb1548aeccc68a1fa25588414626c5e6e5"
     },
     {
       "path": "VERSION.json",
       "bytes": 459,
-      "sha256": "3db447dce6b50bbd8512241adc8effc4b002a198f0cfd7ce28f6bb1368c7793e"
+      "sha256": "3332b1fa3fe31a2a0c4e1704a8123d0b734e19ddaee37686cb530792cca9a3ae"
     },
     {
       "path": "assets/app.js",
-      "bytes": 75644,
-      "sha256": "9bd8ecbdecd19551f36a225e04c05942dd5e3b4734b187232aa1461d11f89eb1"
+      "bytes": 75972,
+      "sha256": "20c66502bef0ca5221e9618501403bbf4f8b11c7c7ff0e4fb396d9b717e52f9a"
     },
     {
       "path": "assets/datasets.css",
@@ -92,13 +83,13 @@
     },
     {
       "path": "assets/insights.css",
-      "bytes": 8489,
-      "sha256": "6d3e3354250ec447d056a92db04016e5120cd7cc60ecbeee58707c48aec9c508"
+      "bytes": 10763,
+      "sha256": "61be5bf91d68fe1199d1e8275cc41ecc2f96c009bd6255c7ccd5c51842520546"
     },
     {
       "path": "assets/insights.js",
-      "bytes": 13245,
-      "sha256": "a869b32e6896156b581fe13bc02099246d3263a8ab1fb51f7981361d6e16bc8b"
+      "bytes": 16030,
+      "sha256": "65ad6d24c2ced2bec5112e779deabfa62b0bad4155a442525453c27387c16b66"
     },
     {
       "path": "assets/mylist.css",
@@ -111,24 +102,29 @@
       "sha256": "c73173b5b0ad773f54ce33744e0cd6aaeaa1c5bd1481f9b4c4a65a3808d68a98"
     },
     {
+      "path": "assets/nav.css",
+      "bytes": 835,
+      "sha256": "6182c69744bd01ea8b04252cc66681c1f7e4a5e04b14080691c5244c28da7129"
+    },
+    {
       "path": "assets/news.css",
-      "bytes": 9921,
-      "sha256": "88d8a50deabc2ad028be4be790a93e54c40da3295442b1e7753c2d5441e4431f"
+      "bytes": 11942,
+      "sha256": "66ad27066fb6c5097f57e5fedbaaf919eaade70a9bfe7a9fde9942b6213693b9"
     },
     {
       "path": "assets/news.js",
-      "bytes": 12669,
-      "sha256": "3986b46450af77b8d3d6789acd3e90c77d4940fa926915d24b0200fba0445dcd"
+      "bytes": 11828,
+      "sha256": "a864f1d47d325fffd32a6844134e8aaf8849a95ac8f709c9a5e3b60dff28a8e3"
     },
     {
       "path": "assets/preview.css",
-      "bytes": 11351,
-      "sha256": "fda4f7f00a851cad9717e256052b962add4bee7fcc10b7310c4685a8a931e12f"
+      "bytes": 12831,
+      "sha256": "19fc50d42a82f10935e923c385e4c5e057d6d07ba850f1e04dbbab78cad85d27"
     },
     {
       "path": "assets/preview.js",
-      "bytes": 18156,
-      "sha256": "92503f99ff17ff81b7fd427db2450486ea77fc62b406231898443d9835bc0124"
+      "bytes": 21580,
+      "sha256": "555e846ecbbeac5c64ab4200e107b7f011c57ba45075406f6ceea7ab81f7d9ad"
     },
     {
       "path": "assets/search-state.js",
@@ -142,18 +138,18 @@
     },
     {
       "path": "assets/styles.css",
-      "bytes": 31517,
-      "sha256": "27316f5758d42cbfa27e1431b5e19107b377c7def1465b13f23136c85e232508"
+      "bytes": 32536,
+      "sha256": "f06b1e7c24fb1a13fe4d6dcc5f171d025750109561f83a106c091d69780cbfd5"
     },
     {
       "path": "data/aaqmn_stations.json",
-      "bytes": 6980,
-      "sha256": "6a018ea720933fbbc8622410fceb9403748bba3f1a4db53fcd0d1be69e44043f"
+      "bytes": 8717,
+      "sha256": "c626a65cd575df6005a25332da5f4a26c6ed52539bf6362debbb0e8b35a2ff65"
     },
     {
       "path": "data/audit_report.json",
       "bytes": 2194,
-      "sha256": "10ff473ec7bf278f449e2e84f0f0191649207d980cd111dbf72a7bc0cd9b3ce4"
+      "sha256": "37d32f00febe059a73ef495f1ca93dd6f89f08255e16d1b9412d99945df1c798"
     },
     {
       "path": "data/candidates/README.md",
@@ -168,7 +164,7 @@
     {
       "path": "data/dataset_catalog.json",
       "bytes": 62555,
-      "sha256": "5d82ebf89c5c89849ab20fa8345729af2f50149c7019ae0b7c7f30b19061fbfc"
+      "sha256": "19b80aeddbc54c664c0cbf9a821709d5aec5feee9c5998970db228980c3d3565"
     },
     {
       "path": "data/datasets/Expenditure on Research and Development by Sector 2017 - 2021 (TT$M).xlsx",
@@ -218,37 +214,42 @@
     {
       "path": "data/documents.json",
       "bytes": 1212788,
-      "sha256": "c5380f954074751f467f88b3a67555dfa70ac89e5823086e4d6b2960f36f2bf5"
+      "sha256": "4c0d6d1792787e38bfc6768eb7385d24a3299e3f295a894f12f088ecf789c1e6"
     },
     {
       "path": "data/ema_in_news.json",
       "bytes": 1589745,
-      "sha256": "b878af1e7c2876cee51622c317ce71796bc878ebc4367c65c549f2129d4ddc78"
+      "sha256": "f6193d431d96b59c020d5a1e73d937909cd0614ef546b27eb0c3503e113d2859"
     },
     {
       "path": "data/ema_news_sources.json",
       "bytes": 444242,
-      "sha256": "97801755b47389f79c47dae77e950e2eb3a5156e5b964da85fa3532a2464c42a"
+      "sha256": "96f3e21df8883e266291ed39b76d5bba26152dd2fa0012067b49aba132dde1f0"
     },
     {
       "path": "data/ema_news_stories.json",
       "bytes": 852153,
-      "sha256": "3925ba3cfd587a2250fe44710cf64916f669c748ad4039d8fb06b1daf69bc6f4"
+      "sha256": "9c3b7bbed1e7645b00a1019591f27eacf55e6f90ed97051c712e18dee47ac552"
     },
     {
       "path": "data/environmental_observances.json",
       "bytes": 21143,
-      "sha256": "f5b3e54e526b66e1f69fdc80f2e6990587967c5551cc015980c621907545c030"
+      "sha256": "a97c5e4b1867d697301250eb6cd391fcb19e50492d0bc2b8118f29fa479cfdef"
     },
     {
       "path": "data/external_references.json",
-      "bytes": 794676,
-      "sha256": "f1b5429d789d8aa1a386f1c900429294299acc3956b5e64f76943192b3bb2d55"
+      "bytes": 796204,
+      "sha256": "5d9817cb61972aeb54f80386f93ed82c9a2fce4014dfc4b527d071c3dc53d94d"
+    },
+    {
+      "path": "data/external_spatial_places.json",
+      "bytes": 7635,
+      "sha256": "3ad55d070189a39ae7395502ea22690549519278135bb185174890a2f3ec5ab4"
     },
     {
       "path": "data/gazette_records.json",
       "bytes": 31895,
-      "sha256": "b878933b682058e781ac73e285a46374abb11bd3b65a3ace82a158564f40737a"
+      "sha256": "f9af950c876087bec5338455e883da847ff9b37b6516055e7deddf240aa98a14"
     },
     {
       "path": "data/groups.json",
@@ -258,12 +259,12 @@
     {
       "path": "data/international_references.json",
       "bytes": 99945,
-      "sha256": "6dc93b8aa07c52e8a22a66843d311cd8a4ffdaf6dc337a129b22c2116c36300e"
+      "sha256": "180c775e19cd9ffc06ed7ec6d979b0aab69f128dee3494cee37137b3ed58ef5b"
     },
     {
       "path": "data/judgments.json",
       "bytes": 69102,
-      "sha256": "6424b4809fb1015885bb0916589612384690e538ee97e9c5b29ef5a45cc6a94f"
+      "sha256": "b9d03d6327f8d6cd7f82266be3914bab1d33a47fca006c17a829cbeba4bd9f72"
     },
     {
       "path": "data/keyword_audit.csv",
@@ -272,28 +273,28 @@
     },
     {
       "path": "data/master_list.csv",
-      "bytes": 1916852,
-      "sha256": "8e27cacc757ec509c63b93e544ae1248ed58c6ab90861640434f718f1c31ea6e"
+      "bytes": 1920541,
+      "sha256": "08d3d15c22d728cc0519383496926ff53fe3955de0ce32884b4a6dcc79d94794"
     },
     {
       "path": "data/master_list.json",
-      "bytes": 2848257,
-      "sha256": "5c14021c20115d7b046e102daa3acbf08f69bb2046aa5b19ac1efc468ce8426f"
+      "bytes": 2849785,
+      "sha256": "f7988e9963f5ec681965a18254ee250721049661b9a3f89a8501cfdff5a950cf"
     },
     {
       "path": "data/parliamentary_evidence.json",
       "bytes": 87406,
-      "sha256": "2c20777dafc8c269802a429b021528017b520b13a299c30780faf83f6216080e"
+      "sha256": "b0920b1b1339c69cd7b66b60066d35a04078bbd334596b215af1ac445a0c791e"
     },
     {
       "path": "data/press_releases.json",
       "bytes": 275324,
-      "sha256": "4bc3d5df20352b0d6721c65e470a7528e7bcc6de15d316d5bdf6a5b9c3926c10"
+      "sha256": "d551a515b163749b450482c7f0a6bf38863e0b1440362c0489a2a33545825baf"
     },
     {
       "path": "data/regional_references.json",
       "bytes": 42306,
-      "sha256": "0d0b2e0cb63a9c4bba6fdf46c3cd9bbed207c709e44ae06103be0181182ac7ba"
+      "sha256": "39793dfa4be090047b1eec843bab79fbc81cd900996f6006fb27d74028ecf361"
     },
     {
       "path": "data/related_index.json",
@@ -307,13 +308,13 @@
     },
     {
       "path": "data/schema.json",
-      "bytes": 3665,
-      "sha256": "569a802a0198d9fd9b024cc526f88a33a096d49c4afd50f5d86035839ff6c964"
+      "bytes": 3615,
+      "sha256": "db35ddea291f8e1915c8f9b9b6ef790a518658bcfadf51fb1f70097c082c8c19"
     },
     {
       "path": "data/search_index.json",
       "bytes": 1204285,
-      "sha256": "13bff554f9ddca4eb231fd56a253733b5911e980f40a7f19b1363206b15b5d0e"
+      "sha256": "2d084fde04c352af1652e51fb778b06d8ee61302a8f5b25c74576649c2a6b448"
     },
     {
       "path": "data/search_terms.json",
@@ -328,7 +329,7 @@
     {
       "path": "data/spatial_preview.json",
       "bytes": 4573,
-      "sha256": "413cfd7f071bbf941e653ef9ef57f25353e7952e7b33a9326723bdc391a8a7d1"
+      "sha256": "87f05aa32111a4d28b89da17abe39497fc7cdd69027fa32cd87e76e60207b3fc"
     },
     {
       "path": "data/spatial_relations.json",
@@ -337,18 +338,18 @@
     },
     {
       "path": "data/spatial_sources.json",
-      "bytes": 1280,
-      "sha256": "b9d963d7f8e11150b21b439d6f1ecffd2fd96a25572d9d8a3207eb372eddb802"
+      "bytes": 2183,
+      "sha256": "4e2615b3dabb02091320e3d874474c7e1424a40df55a52db1d6b50d8685c6330"
     },
     {
       "path": "data/statistical_context.json",
       "bytes": 151689,
-      "sha256": "0477064d96ecb1bcf6144aa91bc0f533ac4b8e22d22646092f9e5edb7bf8c147"
+      "sha256": "0c59168820b22ad4947120c4596a2a776471263a214b996e04d42311579f2f73"
     },
     {
       "path": "data/summary.json",
-      "bytes": 2211,
-      "sha256": "7391a75ab56af37292550af87083fcdf15d05676752ab49e36dfc5245513ffa6"
+      "bytes": 2410,
+      "sha256": "3b76f51cafc4006e1c1b97fcda99f3ae537986dc164d0dc47829262f03dda967"
     },
     {
       "path": "data/taxonomy.json",
@@ -363,12 +364,12 @@
     {
       "path": "data/version.json",
       "bytes": 459,
-      "sha256": "3db447dce6b50bbd8512241adc8effc4b002a198f0cfd7ce28f6bb1368c7793e"
+      "sha256": "3332b1fa3fe31a2a0c4e1704a8123d0b734e19ddaee37686cb530792cca9a3ae"
     },
     {
       "path": "data/videos.json",
       "bytes": 65136,
-      "sha256": "8ec763fa1f4f82798968a0cd1d0b6940d877c30a4692daa22de19496e63ef279"
+      "sha256": "027b2f7f185d460820cf354f76a57de2304f1c3dfbe6f7a865977bd80382eccb"
     },
     {
       "path": "data/youtube_channel.json",
@@ -382,13 +383,13 @@
     },
     {
       "path": "datasets.html",
-      "bytes": 3526,
-      "sha256": "2cc1a415b0ffc136f6879e0feee0e28987a9711c70c2e176db600213dd1ca88b"
+      "bytes": 3521,
+      "sha256": "698e63834d8f4fd81304b795652263c3c21cdc25f1831727f187e9ccb32c41e4"
     },
     {
       "path": "docs/AUDIT_CURRENT.md",
       "bytes": 1612,
-      "sha256": "a70264bde7c7aa761bb727562dadb2899dd28db09ab674e3af70362141cc8780"
+      "sha256": "3b7a0f8d3ef3fbe2c67f4d4fa7d36d7bd038198f7f2e114bfc54b50cd1793bb4"
     },
     {
       "path": "docs/BOUNDARY_FALLBACK_README.json",
@@ -426,24 +427,24 @@
       "sha256": "6c2d071fa8f994a83b1e26b219671d1a45fd0f31a98bcfb2a8a471d3160dec5d"
     },
     {
-      "path": "docs/RELEASE_AUDIT_v8.1.0.md",
-      "bytes": 3813,
-      "sha256": "94ae2a9f8c84294d318cda70a3a13351b7f9130ee326a59de043aa633068dde9"
+      "path": "docs/RELEASE_AUDIT_v8.2.0.md",
+      "bytes": 3393,
+      "sha256": "e767ac718162fe1fc416a46b20c5bfc1847d60cc74ba2137c34e4386ee76718d"
     },
     {
       "path": "docs/UPGRADE_STAGES.md",
-      "bytes": 1254,
-      "sha256": "a1f8a04bb7d5c19c1be48cbda04eed5a3136b3da760a1ecac93e8fcf3dec7c33"
+      "bytes": 3096,
+      "sha256": "dc74c510ae2e35b9eaaacff61bce60d8665ff435d2e9c6a6c7b18c9785c97e76"
     },
     {
       "path": "index.html",
-      "bytes": 12010,
-      "sha256": "b6f54bcfc457b108c988fa9961b2b9d5896378b4463f8681372b9a88bbd1ac38"
+      "bytes": 11313,
+      "sha256": "b56e895a1d28b61fa90ea0c3f3960cefe62861535a7ac879d2d636d30caa27e7"
     },
     {
       "path": "insights.html",
-      "bytes": 8310,
-      "sha256": "98aff6a8afa034f9e73cd98c9621e19affcd22af61c3e4f1f9d1ffdf6a450ef0"
+      "bytes": 9010,
+      "sha256": "5fb5fab6968a50ddd83be6c9bbcbd456a56425271449fc4eb7c3170192ad4b99"
     },
     {
       "path": "manifest.webmanifest",
@@ -452,13 +453,13 @@
     },
     {
       "path": "news.html",
-      "bytes": 6055,
-      "sha256": "57c91e506eaa0e58b778daa3f072a41ddbc9d47d31063a14ed6d2e4649c46ef1"
+      "bytes": 5888,
+      "sha256": "b62cc917320de7d62431a1db05e51b44ee1c7f02352f7de208b7e8d075136f57"
     },
     {
       "path": "preview.html",
-      "bytes": 5831,
-      "sha256": "0cfd39077ca11d9944aec31101321b1b89db0442338fbcaa1cc6c1e6b863da96"
+      "bytes": 6106,
+      "sha256": "1c53e5dd59b058b88683d516a8cd6eb33bd9cca4571a28bf8ae6da11233b8c39"
     },
     {
       "path": "tools/audit_knowledge_base.py",
@@ -492,8 +493,8 @@
     },
     {
       "path": "tools/smoke_static_site.py",
-      "bytes": 4110,
-      "sha256": "7745a28fb4f3364e9d4136b339ef923d9c1c659c2d7799dc41ed62c16bd62200"
+      "bytes": 4343,
+      "sha256": "9fd3000039f1754fd2f577e14295e5c258a82c95ce1ca9d52ace3d90ab68ad96"
     },
     {
       "path": "tools/validate_data.py",
@@ -509,6 +510,12 @@
       "path": "tools/validate_relationships.py",
       "bytes": 4430,
       "sha256": "8ec2450a8718e3aee9b27ce24ef79a412390c90bd6621505e1d84e82c6f46bdd"
+    },
+    {
+      "path": "tools/validate_spatial_discovery.py",
+      "bytes": 2956,
+      "sha256": "7ed30ea7811c5d73ad4b380b6834f0ff3b445c76034cfc3f7c1f75a19a9930e5"
     }
-  ]
+  ],
+  "note": "Manifest excludes RELEASE_MANIFEST.json itself. Hashes describe the packaged repository files before ZIP compression."
 }

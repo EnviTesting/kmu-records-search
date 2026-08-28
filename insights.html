@@ -8,6 +8,7 @@
   <title>Knowledge Insights · Knowledge Records Search Tool</title>
   <link rel="stylesheet" href="assets/styles.css" />
   <link rel="stylesheet" href="assets/insights.css" />
+<link rel="stylesheet" href="assets/nav.css" />
   <link rel="stylesheet" href="assets/mylist.css" />
 </head>
 <body class="insights-page">
@@ -18,14 +19,9 @@
         <p class="eyebrow">Knowledge Management · Understand the collection</p>
         <h1>Knowledge Insights</h1>
         <p class="lede">Use charts for a quick overview, or the Knowledge Canvas to explore how topics, evidence types and institutions are represented in the indexed records.</p>
-        <p class="tool-meta-line">Knowledge Records Search Tool · Data updated 27 Aug 2026 · 931 searchable knowledge records</p>
+        <p class="tool-meta-line">Knowledge Records Search Tool · Data updated 28 Aug 2026 · 931 searchable knowledge records</p>
       </div>
-      <nav class="insights-header-links" aria-label="Knowledge tool navigation">
-        <a class="back-search" href="index.html">← Records Search</a>
-        <a class="back-search" href="datasets.html">Data Search</a>
-        <a class="back-search" href="preview.html">Spatial Discovery</a>
-        <a class="back-search" href="news.html">EMA in the News</a>
-      </nav>
+      <nav class="tool-nav" aria-label="Knowledge tool navigation"><a href="index.html">Records Search</a><a href="datasets.html">Data Search</a><a href="preview.html">Spatial Discovery</a><a href="news.html">EMA in the News</a><a href="insights.html" aria-current="page">Knowledge Insights</a></nav>
     </div>
   </header>
 
@@ -75,14 +71,20 @@
 
     <section id="canvasPanel" class="insights-view-panel hidden" role="tabpanel" aria-labelledby="canvasTab">
       <article class="dashboard-panel canvas-intro">
-        <div><p class="eyebrow">Visual knowledge workspace</p><h2>Knowledge Canvas</h2><p>See the indexed records as evidence baskets. Choose a topic or institution above; the canvas repopulates automatically.</p></div>
+        <div><p class="eyebrow">Visual knowledge workspace</p><h2>Knowledge Canvas</h2><p>See the shape of the indexed knowledge at a glance. Open a basket only when you want the underlying records.</p></div>
         <div id="canvasContext" class="canvas-context"></div>
       </article>
       <section class="dashboard-panel institution-panel" aria-labelledby="institutionHeading">
-        <div class="panel-heading"><div><p class="eyebrow">Institutions</p><h2 id="institutionHeading">Institutions represented in this view</h2></div><p>Click <strong>+</strong> to narrow the entire canvas to an institution.</p></div>
+        <div class="panel-heading"><div><p class="eyebrow">Institutions</p><h2 id="institutionHeading">Institutions represented in this view</h2></div><p>Choose an institution to narrow the entire canvas. The most represented institutions are shown first.</p></div>
         <div id="institutionChips" class="institution-chips"></div>
       </section>
       <section id="knowledgeCanvas" class="knowledge-canvas" aria-label="Knowledge coverage baskets"></section>
+
+      <section id="canvasDetailPanel" class="dashboard-panel canvas-detail-panel hidden" aria-live="polite">
+        <div class="canvas-detail-head"><div><p class="eyebrow">Selected basket</p><h2 id="canvasDetailTitle">Basket records</h2><p id="canvasDetailMeta"></p></div><button class="ghost" id="closeCanvasDetail" type="button">Close</button></div>
+        <div class="canvas-detail-tools"><label>Search within this basket<input id="canvasDetailSearch" type="search" placeholder="Search these records…" autocomplete="off" /></label><div id="canvasDetailInstitutions" class="basket-institutions"></div></div>
+        <div id="canvasDetailRecords" class="canvas-detail-records"></div>
+      </section>
       <div class="canvas-safeguard">The canvas describes <strong>records currently indexed in the Knowledge Records Search Tool</strong>. A sparse basket does not mean the underlying activity, law, policy, dataset or institutional work is absent.</div>
     </section>
 

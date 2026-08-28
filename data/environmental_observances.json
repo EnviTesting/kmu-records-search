@@ -15,7 +15,7 @@
     "custodian_url": "https://www.unesco.org/en/days/education",
     "note": "EMA includes this observance to support environmental education and public awareness.",
     "scope_note": "Included because the observance/date appears in EMA’s environmental calendar; custodian labels distinguish UN/treaty bodies from non-UN campaigns.",
-    "data_version": "2026.08.27.5"
+    "data_version": "2026.08.28.1"
   },
   {
     "id": "OBS-002",
@@ -33,7 +33,7 @@
     "custodian_url": "https://www.ramsar.org/our-work/activities/world-wetlands-day",
     "note": "EMA links the day to Trinidad and Tobago’s Ramsar wetlands, including Caroni Swamp, Nariva Swamp and Buccoo Reef/Bon Accord Lagoon Complex.",
     "scope_note": "Included because the observance/date appears in EMA’s environmental calendar; custodian labels distinguish UN/treaty bodies from non-UN campaigns.",
-    "data_version": "2026.08.27.5"
+    "data_version": "2026.08.28.1"
   },
   {
     "id": "OBS-003",
@@ -51,7 +51,7 @@
     "custodian_url": "https://www.wildlifeday.org/en/about",
     "note": "EMA lists 3 March in its environmental calendar; the CITES Secretariat facilitates the UN observance.",
     "scope_note": "Included because the observance/date appears in EMA’s environmental calendar; custodian labels distinguish UN/treaty bodies from non-UN campaigns.",
-    "data_version": "2026.08.27.5"
+    "data_version": "2026.08.28.1"
   },
   {
     "id": "OBS-004",
@@ -69,7 +69,7 @@
     "custodian_url": "https://www.fao.org/international-day-of-forests",
     "note": "EMA lists the observance within its environmental calendar; FAO coordinates global communication for the day.",
     "scope_note": "Included because the observance/date appears in EMA’s environmental calendar; custodian labels distinguish UN/treaty bodies from non-UN campaigns.",
-    "data_version": "2026.08.27.5"
+    "data_version": "2026.08.28.1"
   },
   {
     "id": "OBS-005",
@@ -87,7 +87,7 @@
     "custodian_url": "https://www.unwater.org/our-work/world-water-day",
     "note": "EMA lists 22 March; UN-Water coordinates the annual United Nations World Water Day observance.",
     "scope_note": "Included because the observance/date appears in EMA’s environmental calendar; custodian labels distinguish UN/treaty bodies from non-UN campaigns.",
-    "data_version": "2026.08.27.5"
+    "data_version": "2026.08.28.1"
   },
   {
     "id": "OBS-006",
@@ -105,7 +105,7 @@
     "custodian_url": "https://wmo.int/events-and-meetings/world-met-day",
     "note": "EMA lists 23 March; WMO commemorates the entry into force of the WMO Convention on this date.",
     "scope_note": "Included because the observance/date appears in EMA’s environmental calendar; custodian labels distinguish UN/treaty bodies from non-UN campaigns.",
-    "data_version": "2026.08.27.5"
+    "data_version": "2026.08.28.1"
   },
   {
     "id": "OBS-007",
@@ -123,7 +123,7 @@
     "custodian_url": "https://www.who.int/campaigns/world-health-day",
     "note": "EMA includes 7 April in its environmental calendar, providing a cross-cutting environment-and-health connection.",
     "scope_note": "Included because the observance/date appears in EMA’s environmental calendar; custodian labels distinguish UN/treaty bodies from non-UN campaigns.",
-    "data_version": "2026.08.27.5"
+    "data_version": "2026.08.28.1"
   },
   {
     "id": "OBS-008",
@@ -141,7 +141,7 @@
     "custodian_url": "https://www.earthday.org/",
     "note": "EMA includes Earth Day as a broad public environmental awareness observance.",
     "scope_note": "Included because the observance/date appears in EMA’s environmental calendar; custodian labels distinguish UN/treaty bodies from non-UN campaigns.",
-    "data_version": "2026.08.27.5"
+    "data_version": "2026.08.28.1"
   },
   {
     "id": "OBS-009",
@@ -159,7 +159,7 @@
     "custodian_url": "https://www.fao.org/world-bee-day/en",
     "note": "EMA lists 20 May; FAO hosts the UN World Bee Day programme and resources.",
     "scope_note": "Included because the observance/date appears in EMA’s environmental calendar; custodian labels distinguish UN/treaty bodies from non-UN campaigns.",
-    "data_version": "2026.08.27.5"
+    "data_version": "2026.08.28.1"
   },
   {
     "id": "OBS-010",
@@ -177,7 +177,7 @@
     "custodian_url": "https://www.cbd.int/biodiversity-day",
     "note": "EMA includes the international biodiversity observance, directly aligned with its biodiversity remit.",
     "scope_note": "Included because the observance/date appears in EMA’s environmental calendar; custodian labels distinguish UN/treaty bodies from non-UN campaigns.",
-    "data_version": "2026.08.27.5"
+    "data_version": "2026.08.28.1"
   },
   {
     "id": "OBS-011",
@@ -195,7 +195,7 @@
     "custodian_url": "https://www.worldenvironmentday.global/",
     "note": "EMA observes World Environment Day as a major public environmental awareness date.",
     "scope_note": "Included because the observance/date appears in EMA’s environmental calendar; custodian labels distinguish UN/treaty bodies from non-UN campaigns.",
-    "data_version": "2026.08.27.5"
+    "data_version": "2026.08.28.1"
   },
   {
     "id": "OBS-012",
@@ -213,7 +213,7 @@
     "custodian_url": "https://unworldoceansday.org/",
     "note": "EMA lists 8 June, connecting the calendar to coastal and marine environmental themes.",
     "scope_note": "Included because the observance/date appears in EMA’s environmental calendar; custodian labels distinguish UN/treaty bodies from non-UN campaigns.",
-    "data_version": "2026.08.27.5"
+    "data_version": "2026.08.28.1"
   },
   {
     "id": "OBS-013",
@@ -231,7 +231,7 @@
     "custodian_url": "https://www.unccd.int/events/desertification-drought-day",
     "note": "EMA lists 17 June; UNCCD coordinates the international observance on land degradation and drought.",
     "scope_note": "Included because the observance/date appears in EMA’s environmental calendar; custodian labels distinguish UN/treaty bodies from non-UN campaigns.",
-    "data_version": "2026.08.27.5"
+    "data_version": "2026.08.28.1"
   },
   {
     "id": "OBS-014",
@@ -249,7 +249,7 @@
     "custodian_url": "https://zerowasteeurope.eu/",
     "note": "EMA includes the campaign date in its calendar. It is not presented here as a UN-designated day.",
     "scope_note": "Included because the observance/date appears in EMA’s environmental calendar; custodian labels distinguish UN/treaty bodies from non-UN campaigns.",
-    "data_version": "2026.08.27.5"
+    "data_version": "2026.08.28.1"
   },
   {
     "id": "OBS-015",
@@ -267,7 +267,7 @@
     "custodian_url": "https://www.paho.org/en/topics/air-quality",
     "note": "EMA includes this regional air-quality observance; PAHO/WHO provides the regional institutional air-quality reference.",
     "scope_note": "Included because the observance/date appears in EMA’s environmental calendar; custodian labels distinguish UN/treaty bodies from non-UN campaigns.",
-    "data_version": "2026.08.27.5"
+    "data_version": "2026.08.28.1"
   },
   {
     "id": "OBS-016",
@@ -285,7 +285,7 @@
     "custodian_url": "https://www.cleanairblueskies.org/",
     "note": "EMA has used this observance to communicate on air pollution and health in Trinidad and Tobago.",
     "scope_note": "Included because the observance/date appears in EMA’s environmental calendar; custodian labels distinguish UN/treaty bodies from non-UN campaigns.",
-    "data_version": "2026.08.27.5"
+    "data_version": "2026.08.28.1"
   },
   {
     "id": "OBS-017",
@@ -303,7 +303,7 @@
     "custodian_url": "https://ozone.unep.org/",
     "note": "EMA lists 16 September; the UNEP Ozone Secretariat supports the Montreal Protocol observance.",
     "scope_note": "Included because the observance/date appears in EMA’s environmental calendar; custodian labels distinguish UN/treaty bodies from non-UN campaigns.",
-    "data_version": "2026.08.27.5"
+    "data_version": "2026.08.28.1"
   },
   {
     "id": "OBS-018",
@@ -321,7 +321,7 @@
     "custodian_url": "",
     "note": "EMA lists 21 September. This is labelled as a campaign observance rather than a UN-designated international day because no treaty/UN custodian is asserted.",
     "scope_note": "Included because the observance/date appears in EMA’s environmental calendar; custodian labels distinguish UN/treaty bodies from non-UN campaigns.",
-    "data_version": "2026.08.27.5"
+    "data_version": "2026.08.28.1"
   },
   {
     "id": "OBS-019",
@@ -339,7 +339,7 @@
     "custodian_url": "https://www.undrr.org/",
     "note": "EMA includes the observance as relevant to environmental hazards and resilience.",
     "scope_note": "Included because the observance/date appears in EMA’s environmental calendar; custodian labels distinguish UN/treaty bodies from non-UN campaigns.",
-    "data_version": "2026.08.27.5"
+    "data_version": "2026.08.28.1"
   },
   {
     "id": "OBS-020",
@@ -357,7 +357,7 @@
     "custodian_url": "https://www.fao.org/world-food-day/en",
     "note": "EMA lists 16 October; FAO leads World Food Day.",
     "scope_note": "Included because the observance/date appears in EMA’s environmental calendar; custodian labels distinguish UN/treaty bodies from non-UN campaigns.",
-    "data_version": "2026.08.27.5"
+    "data_version": "2026.08.28.1"
   },
   {
     "id": "OBS-021",
@@ -375,7 +375,7 @@
     "custodian_url": "https://350.org/",
     "note": "EMA lists 24 October. The platform labels this as a climate-action campaign reference, not a UN-designated day.",
     "scope_note": "Included because the observance/date appears in EMA’s environmental calendar; custodian labels distinguish UN/treaty bodies from non-UN campaigns.",
-    "data_version": "2026.08.27.5"
+    "data_version": "2026.08.28.1"
   },
   {
     "id": "OBS-022",
@@ -393,6 +393,6 @@
     "custodian_url": "https://www.fao.org/world-soil-day/en",
     "note": "EMA lists 5 December; FAO maintains the international World Soil Day programme.",
     "scope_note": "Included because the observance/date appears in EMA’s environmental calendar; custodian labels distinguish UN/treaty bodies from non-UN campaigns.",
-    "data_version": "2026.08.27.5"
+    "data_version": "2026.08.28.1"
   }
 ]

@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-27T19:59:00Z",
-  "data_version": "2026.08.27.5",
-  "application_version": "8.1.0",
-  "effective_date": "2026-08-27",
+  "generated_at": "2026-08-28T14:30:17Z",
+  "data_version": "2026.08.28.1",
+  "application_version": "8.2.0",
+  "effective_date": "2026-08-28",
   "product_name": "Knowledge Records Search Tool",
   "product_descriptor": "EMA Knowledge Management",
   "record_count": 931,
@@ -26,11 +26,12 @@
   "aaqmn_station_count": 9,
   "environmental_observance_count": 22,
   "source_access_note": "Records without public links are not treated as missing. The tool distinguishes EMA request pathways, IMA Library request pathways, reference-only records and public online access.",
-  "knowledge_base_maintenance": "The master list is generated from the canonical data/*.json source files. v8.1 retains the established v7.3/v6.12 interface while improving findability, shared search behaviour, mobile filters and cross-page state.",
-  "preview_note": "Spatial Discovery keeps knowledge records, news coverage and AAQMN as independent display toggles. Live IMA REST/spatial layers are not part of this release.",
+  "knowledge_base_maintenance": "The master list is generated from the canonical data/*.json source files. v8.2 retains the established v7.3/v8.1 interface while improving navigation, progressive refinement, mobile behaviour, Knowledge Canvas drill-down and source-based spatial discovery.",
+  "preview_note": "Spatial Discovery keeps EMA records, external institutional records, news coverage, AAQMN stations and administrative coverage as independent display controls. Nineteen curated external discovery points add source-based record geography without live external GIS dependencies.",
   "news_note": "EMA in the News contains 701 story parents linked to 785 selectable article records. Dynamic charts operate on the cleaned story/article model and include readable fallback tables.",
   "international_scope_note": "International references remain restricted to records materially related to Trinidad and Tobago.",
   "video_note": "Official EMA YouTube metadata remains an optional maintained record family.",
   "deduplication_note": "Story/article and document records remain distinct where they represent different source objects; duplicate IDs are prohibited.",
-  "use_note": "This is an information-discovery prototype. Source descriptions, classifications, charts, maps and related-record suggestions are discovery aids, not legal or regulatory determinations."
+  "use_note": "This is an information-discovery prototype. Source descriptions, classifications, charts, maps and related-record suggestions are discovery aids, not legal or regulatory determinations.",
+  "external_spatial_place_count": 19
 }

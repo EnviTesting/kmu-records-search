@@ -1,0 +1,7 @@
+
+/* Shared v8.2 navigation — intentionally familiar, but consistent across all tools. */
+.tool-nav{display:flex;gap:.42rem;flex-wrap:wrap;align-items:center;justify-content:flex-end}
+.tool-nav a{display:inline-flex;align-items:center;min-height:34px;padding:.43rem .68rem;border-radius:9px;border:1px solid rgba(255,255,255,.34);color:#fff;text-decoration:none;font-size:.78rem;font-weight:800;background:rgba(255,255,255,.08);transition:background .15s ease,border-color .15s ease}
+.tool-nav a:hover{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.65)}
+.tool-nav a[aria-current="page"]{background:#fff;color:#006b5f;border-color:#fff}
+@media(max-width:760px){.tool-nav{justify-content:flex-start;margin-top:.55rem;overflow-x:auto;flex-wrap:nowrap;padding-bottom:.18rem}.tool-nav a{white-space:nowrap;flex:0 0 auto}}

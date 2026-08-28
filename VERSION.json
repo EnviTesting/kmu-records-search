@@ -1,8 +1,8 @@
 {
-  "version": "8.1.0",
-  "application_version": "8.1.0",
-  "data_version": "2026.08.27.5",
-  "effective_date": "2026-08-27",
+  "version": "8.2.0",
+  "application_version": "8.2.0",
+  "data_version": "2026.08.28.1",
+  "effective_date": "2026-08-28",
   "design_anchor": "v7.3.0 / v6.12 visual language",
   "product_name": "Knowledge Records Search Tool",
   "product_descriptor": "EMA Knowledge Management",

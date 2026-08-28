@@ -29,11 +29,11 @@ for page in PAGES:
         except ValueError: continue
         if not target.exists(): problems.append(f'{page}: missing local {tag} reference {ref}')
 required={
- 'index.html':['externalToggle','resultAccessFilter','institutionFilter','withinResultsInput','viewMapBtn','metricTotal'],
- 'preview.html':['recordsMapToggle','mediaMapToggle','aaqmnMapToggle','mapSearchContext','leafletMap'],
- 'news.html':['newsSearchInput','newsOutletFilter','newsTotal','newsArticleTotal','newsTimelineChart','newsTopicChart','newsOutletChart'],
+ 'index.html':['externalToggle','resultAccessFilter','institutionFilter','withinResultsInput','viewMapBtn','browseAllBtn','resultsPanel'],
+ 'preview.html':['recordsMapToggle','externalMapToggle','mediaMapToggle','aaqmnMapToggle','adminMapToggle','jumpPlace','mapSearchContext','leafletMap'],
+ 'news.html':['newsSearchInput','newsYearFilter','newsTopicFilter','newsOutletFilter','newsLocationFilter','resetNewsShared','newsTotal','newsArticleTotal','newsTimelineChart','newsTopicChart','newsOutletChart'],
  'datasets.html':['datasetSearch','datasetAccess','datasetSource'],
- 'insights.html':['chartsTab','canvasTab','chartsPanel','canvasPanel','knowledgeCanvas','institutionFilter'],
+ 'insights.html':['chartsTab','canvasTab','chartsPanel','canvasPanel','knowledgeCanvas','institutionFilter','canvasDetailPanel','canvasDetailSearch'],
 }
 for page,ids in required.items():
     h=(ROOT/page).read_text(encoding='utf-8')
@@ -60,7 +60,7 @@ for js in (ROOT/'assets').glob('*.js'):
 scan='\n'.join((ROOT/p).read_text(encoding='utf-8') for p in ['preview.html','assets/preview.js','data/dataset_catalog.json','data/spatial_sources.json'])
 for token in ['imaLayerSelect','FeatureServer','mdh.ima.gov.tt/server/rest','spatial_layers.json','refresh_ima_spatial_cache']:
     if token in scan: problems.append(f'retired IMA spatial/REST functionality remains: {token}')
-for rel in ['VERSION.json','data/version.json','data/summary.json','manifest.webmanifest','.github/workflows/refresh-source-candidates.yml','.github/workflows/validate.yml','tools/validate_news_data.py']:
+for rel in ['data/external_spatial_places.json','assets/nav.css','VERSION.json','data/version.json','data/summary.json','manifest.webmanifest','.github/workflows/refresh-source-candidates.yml','.github/workflows/validate.yml','tools/validate_news_data.py']:
     if not (ROOT/rel).exists(): problems.append(f'missing release asset {rel}')
 if problems:
     print('STATIC SMOKE FAILED')

@@ -325,3 +325,16 @@ body:has(.list-dock:not(.hidden)){padding-bottom:92px}
 @media(max-width:1050px){.active-filter-group{grid-template-columns:repeat(3,minmax(130px,1fr))}}
 @media(max-width:760px){.header-utility-links{grid-template-columns:1fr;width:100%}.within-results{grid-template-columns:1fr auto}.within-results label{grid-column:1/-1}.active-filter-group{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.within-results{grid-template-columns:1fr}.active-filter-group{grid-template-columns:1fr}}
+
+/* v8.2 QoL refinement — preserves established visual language */
+.compact-header-tools{align-self:center}.browse-start{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;margin:.55rem 0 .15rem}.browse-start span{font-size:.76rem;color:var(--muted)}
+.header-wrap{align-items:center}.compact-header-tools{max-width:610px}.tool-meta-line{margin-top:.42rem}
+.results-panel.hidden{display:none!important}.source-context{display:block;margin-top:.22rem;color:#527069;font-size:.74rem}.within-results.hidden,.active-results-tools.hidden{display:none!important}
+@media(max-width:850px){.compact-header-tools{max-width:none;width:100%}.browse-start{align-items:flex-start}.header-wrap{gap:.45rem}}
+
+/* v8.2 mobile landing: keep product identity and primary navigation visible. */
+@media (max-width:760px){
+  body.mobile-search-idle .app-header{display:block!important;padding:.65rem .7rem .5rem}
+  body.mobile-search-idle .header-tools{display:block!important}
+  body.mobile-search-idle .app-shell{margin-top:.7rem}
+}

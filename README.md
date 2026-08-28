@@ -2,8 +2,8 @@
 
 A static GitHub Pages prototype for finding Environmental Management Authority (EMA) knowledge records and selected related environmental information for Trinidad and Tobago.
 
-**Application version:** 8.1.0  
-**Data version:** 2026.08.27.5  
+**Application version:** 8.2.0  
+**Data version:** 2026.08.28.1  
 **Design anchor:** v7.3.0 / v6.12 visual language  
 **Searchable knowledge records:** 931  
 **EMA in the News:** 701 stories / 785 article records / 963 source options  
@@ -12,7 +12,7 @@ A static GitHub Pages prototype for finding Environmental Management Authority (
 
 ## Release approach
 
-Version 8.1 is an interface and findability refinement, not a redesign. It retains the established search-first structure and institutional styling while improving consistency, mobile behaviour, result refinement, cross-page context and discovery views.
+Version 8.2 is a quality-of-life and findability refinement, not a redesign. It keeps the established v7.3/v8.1 page structure and institutional styling while reducing interface competition, standardising navigation, improving progressive refinement, expanding source-based spatial associations and making the Knowledge Canvas easier to scan.
 
 There is **no AI search in this release**. Controlled keyword search remains the production retrieval method.
 
@@ -77,7 +77,7 @@ The Knowledge Canvas reorganizes the same filtered record set into seven discove
 6. Research & Evidence
 7. Guidance & Public Information
 
-Each basket shows a record count, leading institutions represented and a scrollable sample of records. Institution chips can narrow the whole canvas. These are **record-coverage views**, not assessments of institutional responsibility, statutory mandate, performance or governance quality.
+Each basket is presented first as a compact overview card with a record count, leading institutions and a short preview. **View records** opens a focused basket panel with search-within-basket and institution refinements. This avoids nested mini-scroll areas while retaining direct access to the underlying records. Institution chips can narrow the whole canvas. These are **record-coverage views**, not assessments of institutional responsibility, statutory mandate, performance or governance quality.
 
 ## EMA in the News
 
@@ -103,11 +103,15 @@ Spatial Discovery is an information-association view rather than a general GIS a
 
 Independent controls allow users to choose what appears on the map:
 
-- **Knowledge records** — on by default, shown in teal.
+- **EMA records** — on by default, shown in teal.
+- **External institutional records** — off by default, shown separately from EMA holdings.
 - **News coverage** — off by default, shown in amber.
 - **AAQMN stations** — off by default, with coordinate-verification status retained.
+- **Administrative coverage** — independently switchable.
 
-Knowledge records and media therefore appear together only when the user deliberately enables both. The simple associated-record/story list remains available alongside the map.
+The map includes the established EMA/core discovery places plus a curated set of source-based locations for external institutional records, including selected IMA press releases and technical records. External geography is added only where the source or curated record association supports the place; national records are not assigned invented point locations. Knowledge records and media therefore appear together only when the user deliberately enables them. The simple associated-record/story list remains available alongside the map.
+
+Each AAQMN station popup prioritises the EMA public monitoring portal for current and historical air-quality data, followed by related EMA records and media coverage where available.
 
 Live IMA REST/spatial layers are **not part of this release**. IMA remains a first-class knowledge source in Records and Data Search, with Institute of Marine Affairs attribution and the IMA Library/request pathway where appropriate.
 
@@ -143,6 +147,7 @@ python tools/build_related_index.py
 python tools/validate_data.py
 python tools/validate_relationships.py
 python tools/validate_news_data.py
+python tools/validate_spatial_discovery.py
 python tools/audit_knowledge_base.py
 python tools/smoke_static_site.py
 ```

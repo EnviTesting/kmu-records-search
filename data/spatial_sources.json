@@ -23,6 +23,18 @@
     "provenance_status": "Mixed: four EMA-published GPS conversions; remaining host/locality coordinates explicitly flagged for verification",
     "crs": "EPSG:4326",
     "feature_count": 9,
-    "use_note": "Coordinates marked provisional or host-site are not presented as exact EMA station GPS."
+    "use_note": "Coordinates marked provisional or host-site are not presented as exact EMA station GPS.",
+    "monitoring_portal_url": "https://ei.weblakes.com/RTTPublic/PublicWelcome",
+    "monitoring_portal_note": "EMA public portal for current and historical air-quality monitoring data."
+  },
+  {
+    "id": "external-record-discovery-points",
+    "name": "Curated external institutional record discovery points",
+    "purpose": "Static source-based locations used to associate selected external institutional records with places in Spatial Discovery.",
+    "source": "Indexed record metadata and source-based place associations maintained in data/external_spatial_places.json",
+    "provenance_status": "Curated discovery metadata; not a regulatory, hazard, survey or property boundary layer",
+    "crs": "EPSG:4326",
+    "feature_count": 19,
+    "use_note": "Points support information discovery only. Location precision varies by source and national records are not assigned invented point locations."
   }
 ]

@@ -1,6 +1,6 @@
 {
-  "data_version": "2026.08.27.5",
-  "audit_date": "2026-08-27",
+  "data_version": "2026.08.28.1",
+  "audit_date": "2026-08-28",
   "record_count": 931,
   "counts": {
     "documents": 282,
@@ -19,7 +19,7 @@
       "severity": "Info",
       "check": "News freshness note",
       "record_id": "—",
-      "finding": "Latest captured EMA News & Events date is 2026-08-18; this 2026-08-27 release updates other source families and does not imply a same-day EMA news refresh.",
+      "finding": "Latest captured EMA News & Events date is 2026-08-18; this 2026-08-28 release updates other source families and does not imply a same-day EMA news refresh.",
       "status": "Passed"
     }
   ],

@@ -1,0 +1,323 @@
+[
+  {
+    "id": "EXT-SP-CAURA",
+    "name": "Caura / Tacarigua Catchment",
+    "lat": 10.68,
+    "lon": -61.35,
+    "topic": "Water & Watersheds",
+    "record_ids": [
+      "IMA-EXT-0014"
+    ],
+    "aliases": [
+      "caura",
+      "tacarigua",
+      "caura/tacarigua"
+    ],
+    "precision": "approximate",
+    "note": "Source-based study-area association for the Caura/Tacarigua catchment of the Caroni River Basin.",
+    "data_version": "2026.08.28.1"
+  },
+  {
+    "id": "EXT-SP-CEDROS",
+    "name": "Cedros Bay / Bonasse–Fullerton",
+    "lat": 10.1,
+    "lon": -61.85,
+    "topic": "Water & Watersheds",
+    "record_ids": [
+      "IMA-EXT-0013"
+    ],
+    "aliases": [
+      "cedros bay",
+      "bonasse",
+      "fullerton"
+    ],
+    "precision": "approximate",
+    "note": "Source-based coastline study-area association; representative discovery point.",
+    "data_version": "2026.08.28.1"
+  },
+  {
+    "id": "EXT-SP-CARLIBAY",
+    "name": "Carli Bay",
+    "lat": 10.42,
+    "lon": -61.48,
+    "topic": "Coastal & Marine",
+    "record_ids": [
+      "IMA-PR-0010"
+    ],
+    "aliases": [
+      "carli bay"
+    ],
+    "precision": "approximate",
+    "note": "Named mangrove rehabilitation area in the IMA press release.",
+    "data_version": "2026.08.28.1"
+  },
+  {
+    "id": "EXT-SP-CLAxton",
+    "name": "Claxton Bay",
+    "lat": 10.35,
+    "lon": -61.46,
+    "topic": "Coastal & Marine",
+    "record_ids": [
+      "IMA-PR-0010"
+    ],
+    "aliases": [
+      "claxton bay",
+      "north claxton bay",
+      "south claxton bay"
+    ],
+    "precision": "approximate",
+    "note": "Named mangrove systems in the IMA press release; representative discovery point.",
+    "data_version": "2026.08.28.1"
+  },
+  {
+    "id": "EXT-SP-MTIRVINE",
+    "name": "Mount Irvine Reef",
+    "lat": 11.19,
+    "lon": -60.79,
+    "topic": "Coastal & Marine",
+    "record_ids": [
+      "IMA-PR-0005",
+      "IMA-PR-0006"
+    ],
+    "aliases": [
+      "mount irvine"
+    ],
+    "precision": "approximate",
+    "note": "Named coral-bleaching observation site in official IMA releases.",
+    "data_version": "2026.08.28.1"
+  },
+  {
+    "id": "EXT-SP-ARNOS",
+    "name": "Arnos Vale",
+    "lat": 11.22,
+    "lon": -60.78,
+    "topic": "Coastal & Marine",
+    "record_ids": [
+      "IMA-PR-0006"
+    ],
+    "aliases": [
+      "arnos vale"
+    ],
+    "precision": "approximate",
+    "note": "Named coral-bleaching observation location in the IMA release.",
+    "data_version": "2026.08.28.1"
+  },
+  {
+    "id": "EXT-SP-CASTARA",
+    "name": "Castara Reef",
+    "lat": 11.28,
+    "lon": -60.7,
+    "topic": "Coastal & Marine",
+    "record_ids": [
+      "IMA-PR-0005"
+    ],
+    "aliases": [
+      "castara",
+      "castara reef"
+    ],
+    "precision": "approximate",
+    "note": "Named coral-bleaching assessment site in the IMA release.",
+    "data_version": "2026.08.28.1"
+  },
+  {
+    "id": "EXT-SP-CULLODEN",
+    "name": "Culloden Reef",
+    "lat": 11.22,
+    "lon": -60.76,
+    "topic": "Coastal & Marine",
+    "record_ids": [
+      "IMA-PR-0005"
+    ],
+    "aliases": [
+      "culloden",
+      "culloden reef"
+    ],
+    "precision": "approximate",
+    "note": "Named coral-bleaching assessment site in the IMA release.",
+    "data_version": "2026.08.28.1"
+  },
+  {
+    "id": "EXT-SP-CHARLOTTE",
+    "name": "Charlotteville",
+    "lat": 11.33,
+    "lon": -60.55,
+    "topic": "Coastal & Marine",
+    "record_ids": [
+      "IMA-PR-0006"
+    ],
+    "aliases": [
+      "charlotteville"
+    ],
+    "precision": "approximate",
+    "note": "Named coral-bleaching observation location in the IMA release.",
+    "data_version": "2026.08.28.1"
+  },
+  {
+    "id": "EXT-SP-COVE",
+    "name": "Cove Bay",
+    "lat": 11.15,
+    "lon": -60.7,
+    "topic": "Coastal & Marine",
+    "record_ids": [
+      "IMA-PR-0009"
+    ],
+    "aliases": [
+      "cove bay"
+    ],
+    "precision": "approximate",
+    "note": "Nearshore source/impact context named in the IMA Tobago spill assessment release.",
+    "data_version": "2026.08.28.1"
+  },
+  {
+    "id": "EXT-SP-PETITTROU",
+    "name": "Petit Trou",
+    "lat": 11.16,
+    "lon": -60.74,
+    "topic": "Coastal & Marine",
+    "record_ids": [
+      "IMA-PR-0009"
+    ],
+    "aliases": [
+      "petit trou"
+    ],
+    "precision": "approximate",
+    "note": "Sensitive lagoon and mangrove area explicitly named in the IMA Tobago spill assessment release.",
+    "data_version": "2026.08.28.1"
+  },
+  {
+    "id": "EXT-SP-LAMBEAU",
+    "name": "Lambeau",
+    "lat": 11.18,
+    "lon": -60.73,
+    "topic": "Coastal & Marine",
+    "record_ids": [
+      "IMA-PR-0009"
+    ],
+    "aliases": [
+      "lambeau"
+    ],
+    "precision": "approximate",
+    "note": "Beach location shown/named in the IMA Tobago spill assessment release.",
+    "data_version": "2026.08.28.1"
+  },
+  {
+    "id": "EXT-SP-MAYARO",
+    "name": "Mayaro / Rio Claro",
+    "lat": 10.3,
+    "lon": -61.0,
+    "topic": "Climate Change & Resilience",
+    "record_ids": [
+      "EXT-ENV-0028",
+      "MSDFS-020"
+    ],
+    "aliases": [
+      "mayaro",
+      "rio claro"
+    ],
+    "precision": "regional",
+    "note": "Regional/source association only; not a hazard or project boundary.",
+    "data_version": "2026.08.28.1"
+  },
+  {
+    "id": "EXT-SP-POINTFORTIN",
+    "name": "Point Fortin",
+    "lat": 10.17,
+    "lon": -61.68,
+    "topic": "Climate Change & Resilience",
+    "record_ids": [
+      "MSDFS-015"
+    ],
+    "aliases": [
+      "point fortin"
+    ],
+    "precision": "regional",
+    "note": "Regional/source association from a public disaster-relief record.",
+    "data_version": "2026.08.28.1"
+  },
+  {
+    "id": "EXT-SP-DIEGOMARTIN",
+    "name": "Diego Martin",
+    "lat": 10.72,
+    "lon": -61.57,
+    "topic": "Climate Change & Resilience",
+    "record_ids": [
+      "MSDFS-016",
+      "MSDFS-017"
+    ],
+    "aliases": [
+      "diego martin"
+    ],
+    "precision": "regional",
+    "note": "Regional/source association from public disaster-relief records.",
+    "data_version": "2026.08.28.1"
+  },
+  {
+    "id": "EXT-SP-SANGRE",
+    "name": "Sangre Grande",
+    "lat": 10.59,
+    "lon": -61.13,
+    "topic": "Climate Change & Resilience",
+    "record_ids": [
+      "MSDFS-019"
+    ],
+    "aliases": [
+      "sangre grande"
+    ],
+    "precision": "regional",
+    "note": "Regional/source association from a public disaster-relief record.",
+    "data_version": "2026.08.28.1"
+  },
+  {
+    "id": "EXT-SP-PENAL",
+    "name": "Penal / Debe",
+    "lat": 10.17,
+    "lon": -61.46,
+    "topic": "Climate Change & Resilience",
+    "record_ids": [
+      "MSDFS-018"
+    ],
+    "aliases": [
+      "penal",
+      "debe",
+      "penal/debe"
+    ],
+    "precision": "regional",
+    "note": "Regional/source association from a public disaster-relief record.",
+    "data_version": "2026.08.28.1"
+  },
+  {
+    "id": "EXT-SP-SIPARIA",
+    "name": "Siparia",
+    "lat": 10.14,
+    "lon": -61.51,
+    "topic": "Water & Watersheds",
+    "record_ids": [
+      "EXT-ENV-0029",
+      "MSDFS-018"
+    ],
+    "aliases": [
+      "siparia"
+    ],
+    "precision": "regional",
+    "note": "Regional/source association; combines source-based water-infrastructure and disaster-relief discovery records.",
+    "data_version": "2026.08.28.1"
+  },
+  {
+    "id": "EXT-SP-COUVA",
+    "name": "Couva / Chaguanas",
+    "lat": 10.52,
+    "lon": -61.41,
+    "topic": "Climate Change & Resilience",
+    "record_ids": [
+      "MSDFS-014"
+    ],
+    "aliases": [
+      "couva",
+      "chaguanas",
+      "couva/tabaquite/talparo"
+    ],
+    "precision": "regional",
+    "note": "Regional/source association from a public disaster-relief record.",
+    "data_version": "2026.08.28.1"
+  }
+]

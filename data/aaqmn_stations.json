@@ -18,7 +18,10 @@
     "notes": "EMA source gives UTM Zone 20N: X 664727.996, Y 1176857.003; converted to decimal WGS84.",
     "knowledge_area": "Air & Atmosphere",
     "layer": "AAQMN",
-    "source_agency": "Environmental Management Authority"
+    "source_agency": "Environmental Management Authority",
+    "monitoring_portal_url": "https://ei.weblakes.com/RTTPublic/PublicWelcome",
+    "monitoring_portal_label": "View current & historical air-quality data",
+    "data_version": "2026.08.28.1"
   },
   {
     "id": "aaqmn_point_lisas",
@@ -38,7 +41,10 @@
     "notes": "EMA source gives UTM Zone 20N: X 666970.000, Y 1151813.005; converted to decimal WGS84.",
     "knowledge_area": "Air & Atmosphere",
     "layer": "AAQMN",
-    "source_agency": "Environmental Management Authority"
+    "source_agency": "Environmental Management Authority",
+    "monitoring_portal_url": "https://ei.weblakes.com/RTTPublic/PublicWelcome",
+    "monitoring_portal_label": "View current & historical air-quality data",
+    "data_version": "2026.08.28.1"
   },
   {
     "id": "aaqmn_san_fernando",
@@ -57,7 +63,10 @@
     "notes": "EMA source gives UTM Zone 20N: X 667884.000, Y 1135445.000; converted to decimal WGS84.",
     "knowledge_area": "Air & Atmosphere",
     "layer": "AAQMN",
-    "source_agency": "Environmental Management Authority"
+    "source_agency": "Environmental Management Authority",
+    "monitoring_portal_url": "https://ei.weblakes.com/RTTPublic/PublicWelcome",
+    "monitoring_portal_label": "View current & historical air-quality data",
+    "data_version": "2026.08.28.1"
   },
   {
     "id": "aaqmn_signal_hill",
@@ -76,7 +85,10 @@
     "notes": "EMA source gives UTM Zone 20N: X 744611.001, Y 1236207.001; converted to decimal WGS84.",
     "knowledge_area": "Air & Atmosphere",
     "layer": "AAQMN",
-    "source_agency": "Environmental Management Authority"
+    "source_agency": "Environmental Management Authority",
+    "monitoring_portal_url": "https://ei.weblakes.com/RTTPublic/PublicWelcome",
+    "monitoring_portal_label": "View current & historical air-quality data",
+    "data_version": "2026.08.28.1"
   },
   {
     "id": "aaqmn_arima",
@@ -96,7 +108,10 @@
     "notes": "Station site is confirmed; coordinate is the host facility point, not an EMA-published station GPS.",
     "knowledge_area": "Air & Atmosphere",
     "layer": "AAQMN",
-    "source_agency": "Environmental Management Authority"
+    "source_agency": "Environmental Management Authority",
+    "monitoring_portal_url": "https://ei.weblakes.com/RTTPublic/PublicWelcome",
+    "monitoring_portal_label": "View current & historical air-quality data",
+    "data_version": "2026.08.28.1"
   },
   {
     "id": "aaqmn_point_fortin",
@@ -116,7 +131,10 @@
     "notes": "Use as host-site coordinate pending an EMA-published station GPS.",
     "knowledge_area": "Air & Atmosphere",
     "layer": "AAQMN",
-    "source_agency": "Environmental Management Authority"
+    "source_agency": "Environmental Management Authority",
+    "monitoring_portal_url": "https://ei.weblakes.com/RTTPublic/PublicWelcome",
+    "monitoring_portal_label": "View current & historical air-quality data",
+    "data_version": "2026.08.28.1"
   },
   {
     "id": "aaqmn_mayaro",
@@ -135,7 +153,10 @@
     "notes": "Station host-site identification is strong; coordinate is the parking-area feature centroid.",
     "knowledge_area": "Air & Atmosphere",
     "layer": "AAQMN",
-    "source_agency": "Environmental Management Authority"
+    "source_agency": "Environmental Management Authority",
+    "monitoring_portal_url": "https://ei.weblakes.com/RTTPublic/PublicWelcome",
+    "monitoring_portal_label": "View current & historical air-quality data",
+    "data_version": "2026.08.28.1"
   },
   {
     "id": "aaqmn_toco",
@@ -153,7 +174,10 @@
     "notes": "DO NOT treat as exact station GPS. Replace once the EMA/AQMIS site coordinate or host facility is confirmed.",
     "knowledge_area": "Air & Atmosphere",
     "layer": "AAQMN",
-    "source_agency": "Environmental Management Authority"
+    "source_agency": "Environmental Management Authority",
+    "monitoring_portal_url": "https://ei.weblakes.com/RTTPublic/PublicWelcome",
+    "monitoring_portal_label": "View current & historical air-quality data",
+    "data_version": "2026.08.28.1"
   },
   {
     "id": "aaqmn_kings_bay",
@@ -173,6 +197,9 @@
     "notes": "EMA confirms the host facility and the network total of nine; coordinate is for the WTP, not a separately published station GPS.",
     "knowledge_area": "Air & Atmosphere",
     "layer": "AAQMN",
-    "source_agency": "Environmental Management Authority"
+    "source_agency": "Environmental Management Authority",
+    "monitoring_portal_url": "https://ei.weblakes.com/RTTPublic/PublicWelcome",
+    "monitoring_portal_label": "View current & historical air-quality data",
+    "data_version": "2026.08.28.1"
   }
 ]

@@ -1,13 +1,13 @@
 (() => {
   'use strict';
 
-  const APP_VERSION = '8.1.0';
-  const APP_BUILD = '2026.08.27-knowledge-records-v8.1.0';
+  const APP_VERSION = '8.2.0';
+  const APP_BUILD = '2026.08.28-knowledge-records-v8.2.0';
   const U = window.KRSTSearch || {};
   const SearchState = window.KRSTState || {};
   const EMA_REQUEST_URL = 'https://www.ema.co.tt/information-centre-general-request/';
   const KMU_CONTACT_EMAIL = 'rseemungal@ema.co.tt'; // Knowledge Management contact for record suggestions, corrections and broken-link reports.
-  const DATA_VERSION = '2026.08.27.5';
+  const DATA_VERSION = '2026.08.28.1';
   const PAGE_SIZE = 45;
   const RELATED_DATABASES = new Set(['external_references','parliamentary_evidence','gazette_records','statistical_context','regional_references','international_references','videos']);
 
@@ -127,7 +127,7 @@
     state.refinements = clean(params.get('refine')).split('|').map(clean).filter(Boolean);
     if ($('withinResultsInput')) $('withinResultsInput').value = state.withinQuery;
     const initialIntent = Boolean(initialSearch || params.has('area') || params.has('type') || params.has('source') || params.has('institution') || params.has('access') || params.has('topic') || params.has('year') || params.has('within') || params.has('refine') || params.get('related')==='1');
-    state.searchInitiated = !state.mobileMode || initialIntent;
+    state.searchInitiated = initialIntent;
     setMobileIdle(state.mobileMode && !state.searchInitiated);
     renderBasket();
     if (state.searchInitiated) {
@@ -141,9 +141,9 @@
   }
 
   function setMobileIdle(idle){
-    document.body.classList.toggle('mobile-search-idle', Boolean(idle));
+    document.body.classList.toggle('mobile-search-idle', Boolean(idle) && state.mobileMode);
     const results=$('resultsPanel') || document.querySelector('.results-panel');
-    if (results && state.mobileMode) results.classList.toggle('hidden', Boolean(idle));
+    if (results) results.classList.toggle('hidden', Boolean(idle));
   }
 
   async function activateSearchAndApply(){
@@ -187,6 +187,7 @@
 
   function bindEvents(){
     document.addEventListener('keydown',(e)=>{if(e.key==='/'&&!/input|textarea|select/i.test(document.activeElement?.tagName||'')){e.preventDefault();$('searchInput')?.focus();}});
+    $('browseAllBtn')?.addEventListener('click', async()=>{state.query='';const i=$('searchInput');if(i)i.value='';await activateSearchAndApply();$('resultsHeading')?.scrollIntoView({behavior:'smooth',block:'start'});});
     $('searchForm')?.addEventListener('submit', async (e) => {
       e.preventDefault();
       state.query = $('searchInput')?.value || '';
@@ -206,7 +207,7 @@
     $('clearSearchBtn')?.addEventListener('click', async () => {
       state.query = ''; const input = $('searchInput'); if (input) input.value = ''; state.visibleCount = PAGE_SIZE;
       const otherIntent = state.quickFilter!=='all' || state.journey!=='all' || state.area!=='all' || state.type!=='all' || state.status!=='all' || state.year!=='all' || state.resultSource!=='all' || state.institution!=='all' || state.resultAccess!=='all' || state.resultYear!=='all' || state.resultTopic!=='all' || clean(state.withinQuery) || state.refinements.length || state.includeExternal;
-      if(state.mobileMode && !otherIntent){ state.searchInitiated=false; setMobileIdle(true); safeText('resultCount','Search to view records.'); return; }
+      if(!otherIntent){ state.searchInitiated=false; setMobileIdle(true); safeText('resultCount','Search to view records.'); return; }
       state.searchInitiated=true; setMobileIdle(false); await ensureDataLoaded(); applyFiltersAndRender();
     });
     $('journeySelect')?.addEventListener('change', async (e) => { state.journey=e.target.value; state.quickFilter=e.target.value==='all'?'all':e.target.value; syncQuickFilters(); await activateSearchAndApply(); });
@@ -246,14 +247,14 @@
       if (!el) return;
       const hidden = el.classList.toggle('hidden');
       const btn = $('quickFiltersToggle');
-      if (btn) { btn.textContent = hidden ? 'Show search filters' : 'Hide quick filters'; btn.setAttribute('aria-expanded', String(!hidden)); }
+      if (btn) { btn.textContent = hidden ? 'Show filters' : 'Hide filters'; btn.setAttribute('aria-expanded', String(!hidden)); }
     });
     $('advancedToggle')?.addEventListener('click', () => {
       const el = $('advancedFilters');
       if (!el) return;
       const hidden = el.classList.toggle('hidden');
       const btn = $('advancedToggle');
-      if (btn) { btn.textContent = hidden ? 'Show advanced search' : 'Hide advanced search'; btn.setAttribute('aria-expanded', String(!hidden)); }
+      if (btn) { btn.textContent = hidden ? 'More filters' : 'Hide more filters'; btn.setAttribute('aria-expanded', String(!hidden)); }
     });
 
     document.addEventListener('click', async (e) => {
@@ -737,10 +738,11 @@
 
   function renderResults(){
     const body = $('resultsBody');
-    if(state.mobileMode && !state.searchInitiated){ if(body) body.innerHTML=''; return; }
+    if(!state.searchInitiated){ if(body) body.innerHTML=''; return; }
     if (!body) { debug('Missing resultsBody element'); return; }
     const total = state.filtered.length;
-    const activeTools=$('activeResultsTools'); if(activeTools) activeTools.classList.toggle('hidden', !hasActiveFilters());
+    const activeTools=$('activeResultsTools'); if(activeTools) activeTools.classList.toggle('hidden', !state.searchInitiated);
+    const withinPanel=$('withinResultsPanel'); if(withinPanel) withinPanel.classList.toggle('hidden', total<=10 && !state.withinQuery);
     safeText('resultCount', `${total} result${total===1?'':'s'}${state.query ? ` for “${state.query}”` : ''}${state.withinQuery ? ` · narrowed by “${state.withinQuery}”` : ''}`);
     renderSearchExpansionNote();
     renderResultBreakdown();
@@ -772,7 +774,7 @@
     const suggestions=plan?uniq([...plan.related,...plan.aliases]).filter(x=>x&&!state.refinements.includes(x)&&!termPresent(state.query,x)).slice(0,5):[];
     if(!suggestions.length&&!state.refinements.length){el.classList.add('hidden');el.innerHTML='';return;}
     const active=state.refinements.length?`<div class="applied-refinements"><strong>Added:</strong>${state.refinements.map(x=>`<button type="button" data-remove-refinement="${esc(x)}">${esc(x)} ×</button>`).join('')}</div>`:'';
-    const add=suggestions.length?`<div class="refinement-suggestions"><strong>Try narrowing:</strong>${suggestions.map(x=>`<button type="button" data-add-refinement="${esc(x)}">+ ${esc(x)}</button>`).join('')}</div>`:'';
+    const add=suggestions.length?`<div class="refinement-suggestions"><strong>Narrow this search:</strong>${suggestions.map(x=>`<button type="button" data-add-refinement="${esc(x)}">+ ${esc(x)}</button>`).join('')}</div>`:'';
     el.innerHTML=active+add; el.classList.remove('hidden');
   }
 
@@ -787,14 +789,14 @@
     const context = legalMeta || r.description || r.dbLabel;
     const attribution = r.sourceAgency ? ` · ${esc(r.sourceAgency)}` : (r.issuer ? ` · ${esc(r.issuer)}` : '');
     const hosted = r.hostAgency && lower(r.hostAgency)!==lower(r.sourceAgency) ? ` · Hosted by ${esc(r.hostAgency)}` : '';
-    const sourceContext = sourceGroup(r)!=='ema' ? `<small class="source-context">${esc(sourceGroupLabel(r))}${attribution}${hosted}${r.repositoryBody ? ` · ${esc(r.repositoryBody)}` : ''}</small>` : '';
+    const sourceContext = `<small class="source-context">${esc(r.institution || r.sourceAgency || 'Environmental Management Authority')}${sourceGroup(r)!=='ema'?` · ${esc(sourceGroupLabel(r))}`:''}${hosted}${r.repositoryBody ? ` · ${esc(r.repositoryBody)}` : ''}</small>`;
     return `<tr class="result-row row-${r.statusClass}${isSelected?' is-selected':''}" data-id="${esc(r.id)}">
       <td data-label="Access"><span class="status-pill status-${r.statusClass}">${esc(statusLabel(r))}</span></td>
       <td data-label="Record" class="title-cell"><strong>${esc(r.shortTitle)}</strong>${formal}<span class="meta-sm">${esc(context)}</span>${sourceContext}</td>
       <td data-label="Area">${esc(r.area || '—')}</td>
       <td data-label="Type">${esc(r.category || '—')}</td>
       <td data-label="Year / Date">${esc(r.date || r.year || '—')}</td>
-      <td data-label="Action"><div class="result-action-cell"><div class="action-stack">${primaryAction}<button class="ghost" type="button" data-action="details" data-id="${esc(r.id)}">${state.expandedId===r.id?'Show less':'View record'}</button><button class="ghost select-toggle${isSelected?' selected':''}" type="button" aria-pressed="${isSelected?'true':'false'}" data-action="toggle-basket" data-id="${esc(r.id)}">${isSelected?'✓ Added to List':'+ Add to List'}</button></div>${r.publicUrl?`<a class="result-secondary-link" href="${esc(brokenLinkMailto(r))}">Report broken link</a>`:''}</div></td>
+      <td data-label="Action"><div class="result-action-cell"><div class="action-stack">${primaryAction}<button class="ghost" type="button" data-action="details" data-id="${esc(r.id)}">${state.expandedId===r.id?'Show less':'View record'}</button><button class="ghost select-toggle${isSelected?' selected':''}" type="button" aria-pressed="${isSelected?'true':'false'}" data-action="toggle-basket" data-id="${esc(r.id)}">${isSelected?'✓ Saved':'+ Save'}</button></div>${r.publicUrl?`<a class="result-secondary-link" href="${esc(brokenLinkMailto(r))}">Report broken link</a>`:''}</div></td>
     </tr>`;
   }
 
@@ -820,7 +822,7 @@
 
   function renderRelatedInformation(r){
     const rows=relatedFor(r); if(!rows.length) return '';
-    return `<div class="info-box related-info-box"><h4>Related information</h4><p class="source-note">Connections are discovery aids based on curated indexing or shared topics. They do not state legal applicability, legal hierarchy, policy effect or EMA endorsement.</p><div class="related-records">${rows.map(item=>{const x=item.record;const open=x.publicUrl?`<a href="${esc(x.publicUrl)}" target="_blank" rel="noopener">Open source</a>`:(x.accessStatus==='request_ima'?`<a href="${esc(x.requestUrl||'https://www.ima.gov.tt/library/')}" target="_blank" rel="noopener">Request from the IMA</a>`:(x.accessStatus==='request_ema'?`<a href="${EMA_REQUEST_URL}" target="_blank" rel="noopener">Request from EMA</a>`:''));const selected=state.basket.some(b=>b.id===x.id);return `<article class="related-record"><span class="relationship-label">${esc(item.label)}</span><strong>${esc(x.shortTitle)}</strong><small>${esc(sourceGroupLabel(x))}${x.year?` · ${esc(x.year)}`:''} · ${esc(accessLabel(x))}</small>${item.note?`<p>${esc(item.note)}</p>`:''}<div class="related-actions">${open}<button type="button" class="text-link" data-action="search-record" data-id="${esc(x.id)}">Find in search</button><button type="button" class="text-link" data-action="toggle-basket" data-id="${esc(x.id)}">${selected?'Remove from List':'+ Add to List'}</button></div></article>`}).join('')}</div></div>`;
+    return `<div class="info-box related-info-box"><h4>Related information</h4><p class="source-note">Connections are discovery aids based on curated indexing or shared topics. They do not state legal applicability, legal hierarchy, policy effect or EMA endorsement.</p><div class="related-records">${rows.map(item=>{const x=item.record;const open=x.publicUrl?`<a href="${esc(x.publicUrl)}" target="_blank" rel="noopener">Open source</a>`:(x.accessStatus==='request_ima'?`<a href="${esc(x.requestUrl||'https://www.ima.gov.tt/library/')}" target="_blank" rel="noopener">Request from the IMA</a>`:(x.accessStatus==='request_ema'?`<a href="${EMA_REQUEST_URL}" target="_blank" rel="noopener">Request from EMA</a>`:''));const selected=state.basket.some(b=>b.id===x.id);return `<article class="related-record"><span class="relationship-label">${esc(item.label)}</span><strong>${esc(x.shortTitle)}</strong><small>${esc(sourceGroupLabel(x))}${x.year?` · ${esc(x.year)}`:''} · ${esc(accessLabel(x))}</small>${item.note?`<p>${esc(item.note)}</p>`:''}<div class="related-actions">${open}<button type="button" class="text-link" data-action="search-record" data-id="${esc(x.id)}">Find in search</button><button type="button" class="text-link" data-action="toggle-basket" data-id="${esc(x.id)}">${selected?'Remove from List':'+ Save'}</button></div></article>`}).join('')}</div></div>`;
   }
 
   function renderDetailRow(r){

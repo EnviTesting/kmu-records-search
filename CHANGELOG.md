@@ -1,3 +1,13 @@
+# v8.2.0 — Quality-of-life and spatial discovery refinement
+
+- Preserves the established v7.3/v8.1 visual structure while standardising navigation and reducing interface competition.
+- Adds progressive Records Search results, Browse all, clearer Institution terminology and context-aware Search within results.
+- Reworks Knowledge Canvas baskets into overview cards with a focused drill-down panel.
+- Separates EMA records, external institutional records, media coverage and air-quality stations in Spatial Discovery.
+- Adds source-based external discovery points, including selected IMA press-release locations and regional public-sector records.
+- Air-quality station details now lead first to EMA's current/historical monitoring-data portal, followed by related EMA records and media coverage where available.
+- Uses one shared query/filter state across EMA in the News analysis and story views.
+
 # Changelog
 
 ## 8.1.0 — 27 August 2026
